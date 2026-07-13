@@ -1,42 +1,13 @@
 ---
 title: Plans and credits
-description: Pricing, plans, credit costs, and what happens when you run out.
+description: How Guhan's credit system works. Current prices live on guhan.ai/pricing.
 ---
 
 Guhan uses a **credit** system. Each plan comes with a monthly credit allocation; different actions cost different credits.
 
-## The plans
-
-<CardGroup cols={3}>
-  <Card title="Starter" icon="rocket">
-    **$49/mo** annual · **$59/mo** monthly
-
-    - 500 credits/month
-    - 1 LinkedIn sender
-    - 1 seat
-    - 100k daily Ask Guhan tokens
-  </Card>
-  <Card title="Growth" icon="chart-line">
-    **$89/mo** annual · **$109/mo** monthly
-
-    - 1,000 credits/month
-    - 1 LinkedIn + 1 email sender
-    - 1 seat
-    - 100k daily Ask Guhan tokens
-  </Card>
-  <Card title="Scale" icon="rocket">
-    **$179/mo** annual · **$219/mo** monthly
-
-    - 2,000 credits/month
-    - 2 LinkedIn + 2 email + 1 WhatsApp
-    - 2 seats
-    - 100k tokens per user per day
-  </Card>
-</CardGroup>
-
-<Note>
-  **7-day free trial** on Starter — no credit card required to start.
-</Note>
+<Card title="See current plan prices + features" icon="tag" href="https://guhan.ai/#pricing">
+  Live pricing, plan features, and pack sizes on guhan.ai. This page focuses on how credits *work* — the actual numbers can change and the pricing page is always the source of truth.
+</Card>
 
 ## What costs a credit
 
@@ -52,7 +23,7 @@ Guhan uses a **credit** system. Each plan comes with a monthly credit allocation
 | Research brief | 1 | Per-prospect research brief written by the LLM (only when the monthly free budget is exhausted) |
 | Ask Guhan overflow | 1 / 50k tokens | Past the daily per-user Ask Guhan token cap |
 
-Everything else is free — sending, receiving replies, reading profiles, running searches.
+Sending doesn't cost credits — LinkedIn / email / WhatsApp actions are gated by daily send caps on your sender accounts, not by credits.
 
 ## Two credit pools
 
@@ -63,19 +34,9 @@ Your workspace has **two credit balances** that stack:
     Refills to your plan amount on your billing anniversary. Unused credits DON'T carry over.
   </Card>
   <Card title="Top-up pool" icon="battery-full">
-    Bought in packs (below). Carries over 12 months. Spent AFTER the monthly grant is depleted.
+    Bought as credit packs. Carries over 12 months. Spent AFTER the monthly grant is depleted.
   </Card>
 </CardGroup>
-
-## Buying more credits
-
-Three pack sizes:
-
-- **Starter pack** — 200 credits — $10
-- **Growth pack** — 1,000 credits — $45 (10% off)
-- **Scale pack** — 2,000 credits — $80 (20% off)
-
-Buy from **Settings → Billing → Buy pack**.
 
 ## What happens when you run out
 
@@ -104,13 +65,23 @@ Both from **Settings → Billing → Change plan**.
 - **Day 8–14** — if no payment, workspace goes read-only; all data preserved
 - **Day 15+** — no payment yet? Data preserved for 30 more days, then archived
 
+## Payment failures on a paid plan
+
+If a monthly renewal charge fails, your workspace enters a **7-day grace period**:
+- Day 0–7 of grace: full access, banner asks you to update your card
+- Day 8+ of grace: workspace flips to read-only; data preserved
+- Update payment anytime to lift the read-only state
+
 ## Refunds
 
-Full refund on charges within 7 days of the invoice. Contact us at hello@guhan.ai.
+Full refund on charges within 7 days of the invoice. Email hello@guhan.ai.
 
 ## Related
 
 <CardGroup cols={2}>
+  <Card title="Current pricing" icon="tag" href="https://guhan.ai/#pricing">
+    Plan prices, pack sizes, and feature comparison on guhan.ai.
+  </Card>
   <Card title="Roles + permissions" icon="key" href="/workspace-settings/roles-and-permissions">
     Who in your workspace can spend credits.
   </Card>

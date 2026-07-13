@@ -21,9 +21,9 @@
             "group": "Get started",
             "pages": [
               "introduction",
+              "get-started/how-guhan-works",
               "quickstart",
               "get-started/onboarding-walkthrough",
-              "get-started/how-guhan-works",
               {
                 "group": "Sender accounts",
                 "pages": [
@@ -42,13 +42,13 @@
                 "group": "Watchlist Agents",
                 "pages": [
                   "agents/watchlist-agents/overview",
-                  "agents/watchlist-agents/icp-scoring",
-                  "agents/watchlist-agents/signals",
-                  "agents/watchlist-agents/signal-catalog",
-                  "agents/watchlist-agents/prospect-pipeline",
                   "agents/watchlist-agents/create",
                   "agents/watchlist-agents/configure-icp",
+                  "agents/watchlist-agents/signals",
+                  "agents/watchlist-agents/signal-catalog",
                   "agents/watchlist-agents/pick-signals",
+                  "agents/watchlist-agents/icp-scoring",
+                  "agents/watchlist-agents/prospect-pipeline",
                   "agents/watchlist-agents/review-prospects"
                 ]
               },
@@ -56,11 +56,11 @@
                 "group": "Outreach Agents",
                 "pages": [
                   "agents/outreach-agents/overview",
+                  "agents/outreach-agents/create",
                   "agents/outreach-agents/sequences",
+                  "agents/outreach-agents/build-sequence",
                   "agents/outreach-agents/personalization",
                   "agents/outreach-agents/sending-safety",
-                  "agents/outreach-agents/create",
-                  "agents/outreach-agents/build-sequence",
                   "agents/outreach-agents/launch"
                 ]
               }
