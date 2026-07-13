@@ -3,172 +3,149 @@ title: Signal catalog
 description: Every signal Guhan supports, with parameters and example use cases.
 ---
 
-Complete reference for every signal you can use on a Watchlist Agent's WHEN panel.
+Complete reference for the 8 shipped signals (plus 1 planned). Signals are organized into 3 groups on the Watchlist Agent's WHEN panel.
 
-## Company signals
+## Content & Engagement
 
-### Funding raised recently
+### Posted about specific topics
 
-Company announced a funding round.
+People who authored or engaged with LinkedIn posts matching keywords you provide.
 
 **Configure:**
-- **Stages** — check which rounds qualify: pre-seed, seed, Series A, Series B, Series C, Series D+, IPO, acquired
-- **Recency** — 30 / 60 / 90 / 180 / 365 days
+- **Keywords** — one or more terms or short phrases
+- **Target** — `authors` (people writing about the topic), `engagers` (people liking/commenting), or `both`
+- **Recency** — how recent the post activity should be
 
-**Best for:** selling to VC-backed companies at a specific stage, or timing outreach with a fresh cash infusion.
+**Best for:** finding people actively discussing topics in your space. Great for peer-tone openers ("your post on X hit a nerve").
 
-**Cost:** low — one search call per sweep.
-
-**Example config:**
-```
-Stages: Series A, Series B
-Recency: 90 days
-```
-Finds companies that raised A or B in the last 90 days.
+**Message opener example:**
+> Your post on attribution the other day was spot on — the point you made about last-touch was exactly what we ran into. Curious how you're solving [X].
 
 ---
 
-### They're hiring
+### Engaged with specific posts
 
-Company posted N+ open jobs in specific departments.
+People who reacted to or commented on specific LinkedIn post URLs you paste in.
+
+**Configure:**
+- **Post URLs** — one or more exact post URLs (yours, a competitor's, a thought leader's)
+- **Post decay is automatic:** engagement pulled 2×/day the first week, 1×/day weeks 2-3, then dormant
+
+**Best for:** amplifying content you know is relevant to your ICP + catching people mid-consideration.
+
+**Message opener example:**
+> Saw your comment on [author]'s post about [topic] — loved your take on [specific point].
+
+---
+
+### Engaged with competitors' content
+
+People who reacted to or commented on posts by named competitors.
+
+**Configure:**
+- **Company or profile URLs** — LinkedIn company URLs (watches every employee's posts) OR individual profile URLs (e.g. their CEO / VP of Sales / marketing lead)
+
+**Best for:** catching prospects mid-evaluation of your category — highest-intent signal Guhan supports.
+
+**Message opener example:**
+> Saw your comment on [Competitor]'s post about [topic]. We had a similar internal debate — happy to share how we think about it.
+
+---
+
+## Career Changes
+
+### New executive (in last 90 days)
+
+Companies where an executive or director joined recently.
+
+**Configure:**
+- **Company LinkedIn URLs** — companies you want to monitor for exec turnover
+
+**Best for:** catching companies inside a common buying-trigger window. New execs re-evaluate ~40% of key tooling in their first 90 days.
+
+**Message opener example:**
+> Congrats on the new role at Acme. Curious how the [X function] tooling looks — happy to share how peers at [similar company] structure it.
+
+---
+
+### New leadership (C-level / VP)
+
+Same as "New executive" but narrower — only senior leadership.
+
+**Configure:**
+- **Company LinkedIn URLs** — same as above; the difference is which seniority levels count
+
+**Best for:** larger-deal targeting when only senior leadership matters. Higher-stakes hires; longer decision-making windows.
+
+---
+
+## Hiring & Growth
+
+### Recently raised funding
+
+Companies that announced a funding round.
+
+**Configure:**
+- **Stages** — which rounds qualify: pre-seed, seed, Series A, B, C, D+, IPO, acquired
+- **Recency** — 30 / 60 / 90 / 180 / 365 days
+
+**Best for:** selling anything expensive that requires budget. Timing with the "we just closed" moment (< 60 days is peak).
+
+**Message opener example:**
+> Saw your Series A announcement — congrats. Founders at that stage usually run into [X] — happy to share how [Y other company] handled it.
+
+---
+
+### Hiring growth
+
+Companies whose headcount grew above a threshold.
+
+**Configure:**
+- **Growth threshold** — % increase over a window (e.g., +20% / +50% / +100%)
+- **Window** — 3 / 6 / 12 months
+
+**Best for:** finding fast-scaling companies. Growth = budget = active buying window.
+
+---
+
+### Hiring in specific areas
+
+Companies posting jobs in specific departments.
 
 **Configure:**
 - **Departments** — Sales, Engineering, Marketing, Product, Customer Success, Operations, People/HR
-- **Min open jobs** — 1 / 3 / 5 / 10+
+- **Minimum open jobs** — 1+ / 3+ / 5+ / 10+
 - **Recency** — 30 / 60 / 90 days
 
-**Best for:** selling to companies that are scaling a specific function (great for tools serving that function).
+**Best for:** selling tools that scale with a specific function (great for SaaS targeting a scaling department).
 
-**Cost:** low.
-
-**Example config:**
-```
-Departments: Sales
-Min open jobs: 5
-Recency: 30 days
-```
-Finds companies with 5+ open Sales roles posted in the last 30 days.
+**Message opener example:**
+> Noticed you're hiring 5 SDRs — that's the moment when onboarding time bloats. Curious if you've got a plan for it.
 
 ---
 
-### New leadership joined
+## Coming soon
 
-A specific C-level or VP joined the company recently.
+### Uses a specific technology
 
-**Configure:**
-- **Titles that count** — CEO, CTO, CFO, VP Sales, Head of Marketing, etc.
-- **Recency** — how many days since they joined (30 / 60 / 90 / 180)
+Wired into the registry but not shipped for customer use yet. Will surface companies detected as using a specific tool (via public tech-stack signals like BuiltWith, HG Insights, etc.).
 
-**Best for:** catching decision-makers in their "new leader, new tools" window (first 90 days).
-
-**Cost:** medium.
-
-**Example config:**
-```
-Titles: VP Sales, Head of Sales, CRO
-Recency: 60 days
-```
-Finds companies where a top sales leader joined in the last 60 days.
-
----
-
-### Company headcount growth
-
-Company grew headcount by N%+ in the last M months.
-
-**Configure:**
-- **Growth threshold** — 20%, 50%, 100%+
-- **Window** — 3 / 6 / 12 months
-
-**Best for:** finding fast-scaling companies (usually well-funded, growth-focused).
-
-**Cost:** low.
-
-**Example config:**
-```
-Growth threshold: 50%
-Window: 6 months
-```
-
----
-
-## Person + engagement signals
-
-### Engaged with a competitor's post
-
-Person liked or commented on a LinkedIn post from a competitor you name.
-
-**Configure:**
-- **Competitor company URLs** — paste 1-3 LinkedIn URLs from the Competitors tab in Brand & Voice
-- **Timeframe** — last 7 / 14 / 30 days
-- **Engagement type** — comments only (higher intent) or reactions + comments
-
-**Best for:** catching prospects mid-evaluation of your category.
-
-**Cost:** medium — polls competitor posts + fetches engager lists.
-
-**Example config:**
-```
-Competitors: linkedin.com/company/hubspot, linkedin.com/company/salesforce
-Timeframe: 14 days
-Engagement: comments only
-```
-
----
-
-### Engaged with a specific post URL
-
-Person liked or commented on a specific LinkedIn post you paste in.
-
-**Configure:**
-- **Post URL** — the exact post URL
-- **Engagement type** — comments only / reactions + comments
-
-**Best for:** finding people who engaged with your own posts (amplify), or a thought leader's post in your space.
-
-**Cost:** low.
-
-**Example config:**
-```
-Post URL: https://linkedin.com/posts/janedoe_a-thread-on-attribution-...
-Engagement: comments + reactions
-```
-
----
-
-### Posted about specific keywords
-
-Person authored a LinkedIn post containing keywords you specify.
-
-**Configure:**
-- **Keywords** — up to 10 words or phrases
-- **Timeframe** — last 7 / 14 / 30 days
-
-**Best for:** finding people actively thinking about topics in your category. Higher-intent than plain ICP.
-
-**Cost:** medium — polls posts + filters by keyword.
-
-**Example config:**
-```
-Keywords: attribution, ROAS, marketing mix modeling
-Timeframe: 14 days
-```
+Email hello@guhan.ai if you'd find this useful — we prioritize by demand.
 
 ---
 
 ## Combining signals
 
-You can pick multiple signals on one Watchlist Agent.
+You can pick multiple signals on one Watchlist Agent. Two logic modes:
 
-**Any (default):** prospect matches if ANY signal fires. Widens the funnel.
-
-**All:** prospect matches only if EVERY signal fires. Narrows the funnel — best for tightly-targeted campaigns.
+- **Any (default)** — a prospect matches if ANY signal fires. Widens the funnel.
+- **All** — a prospect matches only if EVERY signal fires. Narrows the funnel — best for tightly-targeted campaigns.
 
 Toggle on the Watchlist Agent's WHEN panel.
 
 ## No signals
 
-You can skip signals entirely → Guhan runs a plain ICP search matching your WHO panel. Higher volume, lower reply rates.
+You can skip signals entirely — Guhan runs a plain ICP search matching your WHO panel. Higher volume, lower reply rates.
 
 ## Related
 

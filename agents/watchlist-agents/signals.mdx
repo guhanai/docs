@@ -7,7 +7,7 @@ A **signal** is a real-world event that makes someone worth reaching out to *rig
 
 ## Why signals matter
 
-Cold outreach converts poorly because you're guessing at timing. Signal-based outreach converts 3-5× better because you're reaching out *because* something changed — and that "because" ends up in your first message.
+Cold outreach converts poorly because you're guessing at timing. Signal-based outreach converts several times better because you're reaching out *because* something changed — and that "because" ends up in your first message.
 
 Example without a signal:
 > Hi Sarah, wanted to introduce myself...
@@ -17,47 +17,72 @@ Example with a signal:
 
 Same person, same product, dramatically different reply rates.
 
-## Signals Guhan supports
+## The 8 signals Guhan supports today
+
+Guhan groups signals into three categories in the WHEN panel:
+
+### Content & Engagement
 
 <AccordionGroup>
-  <Accordion title="💰 Funding raised recently">
-    Company announced a funding round in the last N months. Great for "you just raised, here's what other founders did with the money" positioning.
+  <Accordion title="Posted about specific topics">
+    People who authored or engaged with LinkedIn posts matching your keywords. You pick `target = authors` (people writing about the topic — pain language, recommendation requests), `engagers` (people liking/commenting on those posts — launch announcements, vendor showcases), or `both`.
   </Accordion>
-  <Accordion title="📈 They're hiring">
-    Company posted N+ open jobs in specific departments (Sales, Engineering, Marketing). Great for "you're scaling — here's how to keep quality high" positioning.
+  <Accordion title="Engaged with specific posts">
+    Paste specific LinkedIn post URLs. Every day, Guhan picks up new reactors and commenters on those exact posts. Posts decay over time — new engagement pulled 2×/day the first week, 1×/day weeks 2-3, then dormant.
   </Accordion>
-  <Accordion title="👔 New leadership joined">
-    A VP / Director / C-level joined the company in the last N months. Great for "new leader = new tools" positioning, and the new leader is 3× more receptive than an incumbent.
-  </Accordion>
-  <Accordion title="🎯 Engaged with a competitor's post">
-    They liked or commented on a LinkedIn post from a competitor you name. They're evaluating your space — talk to them now.
-  </Accordion>
-  <Accordion title="🎁 Engaged with a specific post URL">
-    You paste in a LinkedIn post URL. Anyone who liked or commented on that post shows up as a prospect. Great for "you engaged with this post — I saw your comment about X" openers.
-  </Accordion>
-  <Accordion title="📢 Posted about specific keywords">
-    They authored a LinkedIn post mentioning topics you care about ("attribution", "product-led growth", "SDR ramp time"). Great for "your post on X was spot on" openers.
-  </Accordion>
-  <Accordion title="🏥 Company headcount growth">
-    Company grew headcount N%+ in the last M months. Growth = budget = buying window.
+  <Accordion title="Engaged with competitors' content">
+    People who reacted to or commented on posts by your competitors. Paste a LinkedIn company URL (watches every employee's posts) OR an individual profile URL (e.g. their CEO).
   </Accordion>
 </AccordionGroup>
 
+### Career Changes
+
+<AccordionGroup>
+  <Accordion title="New executive (in last 90 days)">
+    Paste LinkedIn company URLs. Guhan surfaces people who joined those companies as executives or directors in the last 90 days — a common buying-trigger window.
+  </Accordion>
+  <Accordion title="New leadership (C-level / VP)">
+    Same shape as "New executive" but narrower — only senior leadership (C-level, VPs). Higher-stakes hires; longer decision-making windows.
+  </Accordion>
+</AccordionGroup>
+
+### Hiring & Growth
+
+<AccordionGroup>
+  <Accordion title="Recently raised funding">
+    Companies that announced a funding round recently. Pick which stages count (seed, Series A, B, etc.) + the recency window.
+  </Accordion>
+  <Accordion title="Hiring growth">
+    Companies whose headcount grew above a threshold (e.g., +30% in 6 months). Growth = budget = active buying window.
+  </Accordion>
+  <Accordion title="Hiring in specific areas">
+    Companies posting jobs in specific departments (Sales, Engineering, Marketing, etc.) with a minimum open-jobs count. Great for tools that scale with team size.
+  </Accordion>
+</AccordionGroup>
+
+### Coming soon
+
+<Accordion title="Uses a specific technology">
+  Wired into the registry but not yet shipped as a customer-usable signal. It'll surface companies detected as using a specific tool (via public tech-stack signals). Reach out to hello@guhan.ai if you'd find this useful — we prioritize by demand.
+</Accordion>
+
 ## How you configure signals
 
-When you create or edit a Watchlist Agent, you'll see the **WHEN panel** — pick zero, one, or several signals and configure their parameters:
+When you create or edit a Watchlist Agent, the **WHEN panel** shows all 8 signals grouped as above. Click any signal to open its configuration:
 
-- **Funding raised recently** — pick the funding stages that qualify (seed, Series A, etc.) + how recent (last 90 days, 6 months, etc.)
-- **They're hiring** — pick the departments + minimum open jobs count
-- **Engaged with a competitor's post** — paste 1-3 LinkedIn company URLs (your competitors)
-- **Engaged with a specific post URL** — paste the exact post URL
+- **Recently raised funding** — pick stages (seed, Series A, B, C+) + recency (30 / 60 / 90 / 180 / 365 days)
+- **Hiring in specific areas** — pick departments + minimum open-jobs count
+- **Engaged with competitors' content** — paste 1-3 LinkedIn company URLs (your competitors)
+- **Engaged with specific posts** — paste exact LinkedIn post URLs
+- **Posted about specific topics** — enter keywords/phrases + pick target (authors / engagers / both)
+- **New executive / New leadership** — paste LinkedIn company URLs to watch
 
 ## Cost
 
-Signal-driven searches use different LinkedIn / Crustdata data sources — each search burns a small amount of your daily discovery quota. Nothing you pay per-signal-hit; the cost is 1 credit per **landed prospect**, regardless of how they were found.
+Signal-driven searches use different LinkedIn / Crustdata / HarvestAPI data sources. You pay per **landed prospect** (1 credit), not per signal-hit. See [Plans and credits](/workspace-settings/plans-and-credits) for the full breakdown.
 
 <Note>
-  Signals dramatically improve reply rates but they also narrow the funnel. If your Watchlist Agent is finding too few prospects, loosen the signal or remove it. If it's finding too many low-quality prospects, add a stricter signal.
+  Signals dramatically improve reply rates but they also narrow the funnel. If your Watchlist Agent is finding too few prospects, loosen a signal or remove it. If it's finding too many low-quality prospects, add a stricter signal or tighten your ICP.
 </Note>
 
 ## No signals = pure ICP search
@@ -71,6 +96,6 @@ You can skip signals entirely — Guhan will just find people matching your ICP 
     Every signal + full parameter reference + example use cases.
   </Card>
   <Card title="Pick signals for a Watchlist Agent" icon="check" href="/agents/watchlist-agents/pick-signals">
-    Step-by-step configuration walkthrough.
+    Which signal to use for which motion.
   </Card>
 </CardGroup>

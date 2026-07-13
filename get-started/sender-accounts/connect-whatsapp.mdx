@@ -52,7 +52,7 @@ The connection flow is the same for both — you connect once, then decide what 
   <Step title="Choose what this WhatsApp account does">
     Two toggles on the sender's row:
     - **Use for outreach** — Guhan can use this WhatsApp for outbound sequence steps
-    - **Use for Ask Guhan** — WhatsApp becomes a chat interface for your workspace (message "@Guhan show me today's replies" from your phone)
+    - **Enable Ask Guhan on WhatsApp** — turns your own WhatsApp into a chat interface for your workspace. You send a message to *yourself* (your own number) and Guhan replies in that chat.
 
     You can enable both.
   </Step>
@@ -90,20 +90,20 @@ Enable phone reveal on your workspace's Auto-reveal settings if you want Guhan t
 
 ## Ask Guhan on WhatsApp
 
-If you enabled **"Use for Ask Guhan"**, you can chat with your workspace from your phone:
+If you enabled **Ask Guhan on WhatsApp** on your WhatsApp sender's row, chatting from your phone works via a **self-message** — you open a WhatsApp thread with your own phone number, type a question, and Guhan replies in that thread.
 
 ```
-You:   @Guhan show me today's replies
+You:   Show me today's replies
 Guhan: [message thread]
 
-You:   @Guhan how many prospects landed today?
+You:   How many prospects landed today?
 Guhan: 8 prospects landed today across 2 Watchlist Agents. Want the breakdown?
 ```
 
 Same commands as the web chat — see [Ask Guhan concept](/ask-guhan) for the full list.
 
 <Tip>
-  The `@Guhan` prefix is required. Without it, messages you send from your phone are treated as normal WhatsApp messages (they go to the person or group you're messaging).
+  Ask Guhan only fires on **self-messages** (you texting your own number). Messages you send to actual prospects or contacts go out normally — Guhan doesn't intercept them. This is why the toggle exists at the sender-account level rather than a keyword prefix.
 </Tip>
 
 ## Disconnecting
