@@ -29,35 +29,31 @@
             "group": "Set up your workspace",
             "pages": [
               "guides/onboarding-walkthrough",
+              "guides/brand-and-voice",
               "guides/connect-linkedin",
               "guides/connect-email",
-              "guides/brand-and-voice"
+              "guides/connect-whatsapp"
             ]
           },
           {
-            "group": "Watchlist Agent",
-            "pages": [
-              "guides/create-watchlist-agent",
-              "guides/configure-icp",
-              "guides/pick-signals",
-              "guides/review-prospects"
-            ]
-          },
-          {
-            "group": "Outreach Agent",
-            "pages": [
-              "guides/create-outreach-agent",
-              "guides/build-sequence",
-              "guides/write-message-templates",
-              "guides/launch-outreach"
-            ]
-          },
-          {
-            "group": "Replies + meetings",
+            "group": "Home · Inbox · Meetings",
             "pages": [
               "guides/handle-replies-inbox",
               "guides/schedule-meetings",
               "guides/ai-reply-drafts"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "guides/create-outreach-agent",
+              "guides/build-sequence",
+              "guides/write-message-templates",
+              "guides/launch-outreach",
+              "guides/create-watchlist-agent",
+              "guides/configure-icp",
+              "guides/pick-signals",
+              "guides/review-prospects"
             ]
           }
         ]
@@ -66,33 +62,7 @@
         "tab": "Concepts",
         "groups": [
           {
-            "group": "Watchlist Agent",
-            "pages": [
-              "concepts/watchlist-agent",
-              "concepts/signals",
-              "concepts/icp-scoring",
-              "concepts/prospect-pipeline"
-            ]
-          },
-          {
-            "group": "Outreach Agent",
-            "pages": [
-              "concepts/outreach-agent",
-              "concepts/sequences",
-              "concepts/personalization",
-              "concepts/sender-accounts",
-              "concepts/sending-safety"
-            ]
-          },
-          {
-            "group": "Prospects, companies, lists",
-            "pages": [
-              "concepts/prospects-and-companies",
-              "concepts/lists"
-            ]
-          },
-          {
-            "group": "Engagement + workflows",
+            "group": "Home · Inbox · Meetings",
             "pages": [
               "concepts/inbox-tasks",
               "concepts/meetings",
@@ -100,7 +70,34 @@
             ]
           },
           {
-            "group": "Account + billing",
+            "group": "Agents",
+            "pages": [
+              "concepts/outreach-agent",
+              "concepts/sequences",
+              "concepts/personalization",
+              "concepts/sender-accounts",
+              "concepts/sending-safety",
+              "concepts/watchlist-agent",
+              "concepts/signals",
+              "concepts/icp-scoring",
+              "concepts/prospect-pipeline"
+            ]
+          },
+          {
+            "group": "Audience",
+            "pages": [
+              "concepts/prospects-and-companies",
+              "concepts/lists"
+            ]
+          },
+          {
+            "group": "Library",
+            "pages": [
+              "concepts/brand-and-voice"
+            ]
+          },
+          {
+            "group": "System",
             "pages": [
               "concepts/plans-and-credits",
               "concepts/roles-and-permissions",
@@ -129,7 +126,7 @@
       "anchors": [
         {
           "anchor": "Launch app",
-          "href": "https://guhan.ai",
+          "href": "https://app.guhan.ai",
           "icon": "arrow-up-right-from-square"
         },
         {
@@ -150,7 +147,7 @@
     "primary": {
       "type": "button",
       "label": "Launch app",
-      "href": "https://guhan.ai"
+      "href": "https://app.guhan.ai"
     }
   },
   "footer": {
@@ -174,7 +171,7 @@
       "twitter:description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
       "robots": "index, follow",
       "author": "Guhan AI",
-      "theme-color": "#1be49c"
+      "theme-color": "#EA580C"
     },
     "indexing": "navigable"
   }
