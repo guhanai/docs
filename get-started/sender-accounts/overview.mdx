@@ -7,36 +7,31 @@ description: The LinkedIn, email, and WhatsApp accounts Guhan uses to reach pros
 
 Guhan never messages from a Guhan address. It sends from you. You connect the account once, Guhan uses it for you.
 
+<Note>
+  **Sender accounts are only for sending.** Finding prospects is done entirely by Guhan's own data pipelines — your personal accounts are never touched to search for people. If you only want to see prospects Guhan finds (without messaging), you don't need to connect any sender at all.
+</Note>
+
 ## Which senders you can connect
 
 <CardGroup cols={3}>
   <Card title="LinkedIn" icon="linkedin">
-    Personal LinkedIn or Sales Navigator. Handles invites, DMs, comments, profile views, reactions.
+    Personal LinkedIn or Sales Navigator. Sends invites, DMs, comments, profile views, reactions.
   </Card>
   <Card title="Email (Gmail / Outlook)" icon="envelope">
-    Standard Google Workspace or Microsoft 365 accounts. Handles outbound + reply threading.
+    Standard Google Workspace or Microsoft 365 accounts. Sends outbound + threads inbound replies.
   </Card>
   <Card title="WhatsApp" icon="whatsapp">
-    Personal or business WhatsApp. Handles outbound messages + inbound reply capture.
+    Personal or business WhatsApp. Sends outbound + captures inbound replies.
   </Card>
 </CardGroup>
 
 ## How to connect one
 
-Go to **Settings → Sender accounts → Connect**. Pick a provider, sign in with that provider, and Guhan handles the OAuth handshake.
+Go to **Settings → Sender accounts → Connect**. Pick a channel, sign in with that provider through their official OAuth screen, and Guhan handles the handshake.
 
 <Note>
-  Guhan uses [Unipile](https://www.unipile.com) as the underlying provider for LinkedIn / Gmail / Outlook / WhatsApp. Your credentials go through their secure OAuth flow — Guhan never sees your password.
+  Guhan never sees your password. All connections go through the provider's own secure OAuth flow.
 </Note>
-
-## One account, dual role
-
-Your LinkedIn sender account plays **two roles**:
-
-1. **Sending** — invites, DMs, comments to prospects
-2. **Discovery** — searching for prospects, pulling reactor lists off posts
-
-Both count toward the same daily quota. Guhan balances discovery vs. sends automatically — if you're near your daily send cap, discovery slows down to protect sends.
 
 ## Daily limits
 
@@ -56,7 +51,7 @@ For email + WhatsApp:
 |---|---|---|
 | Gmail | 500/day | Well inside Google's provider-side ceiling |
 | Outlook | 500/day | Well inside Microsoft's provider-side ceiling |
-| WhatsApp | 40/day | Unipile personal-app tier (Unipile's own guidance is 30-50/day) |
+| WhatsApp | 40/day | Personal-app tier (safe operating range 30-50/day) |
 
 You can adjust these per-account in **Settings → Sender accounts → [account] → Quotas**.
 
