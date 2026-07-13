@@ -15,108 +15,69 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
             "group": "Get started",
             "pages": [
               "introduction",
               "quickstart",
-              "guides/how-guhan-works"
-            ]
-          },
-          {
-            "group": "Set up your workspace",
-            "pages": [
-              "guides/onboarding-walkthrough",
-              "guides/brand-and-voice",
-              "guides/connect-linkedin",
-              "guides/connect-email",
-              "guides/connect-whatsapp"
-            ]
-          },
-          {
-            "group": "Home · Inbox · Meetings",
-            "pages": [
-              "guides/handle-replies-inbox",
-              "guides/schedule-meetings",
-              "guides/ai-reply-drafts"
+              "guides/how-guhan-works",
+              "concepts/sender-accounts"
             ]
           },
           {
             "group": "Agents",
             "pages": [
-              "guides/create-outreach-agent",
-              "guides/build-sequence",
-              "guides/write-message-templates",
-              "guides/launch-outreach",
-              "guides/create-watchlist-agent",
-              "guides/configure-icp",
-              "guides/pick-signals",
-              "guides/review-prospects"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Concepts",
-        "groups": [
-          {
-            "group": "Home · Inbox · Meetings",
-            "pages": [
-              "concepts/inbox-tasks",
-              "concepts/meetings",
-              "concepts/ask-guhan"
-            ]
-          },
-          {
-            "group": "Agents",
-            "pages": [
-              "concepts/outreach-agent",
-              "concepts/sequences",
-              "concepts/personalization",
-              "concepts/sender-accounts",
-              "concepts/sending-safety",
               "concepts/watchlist-agent",
-              "concepts/signals",
-              "concepts/icp-scoring",
-              "concepts/prospect-pipeline"
+              "concepts/outreach-agent"
             ]
           },
           {
             "group": "Audience",
             "pages": [
-              "concepts/prospects-and-companies",
-              "concepts/lists"
+              "concepts/lists",
+              "concepts/prospects",
+              "concepts/companies"
             ]
           },
           {
-            "group": "Library",
+            "group": "Brand and Voice",
             "pages": [
               "concepts/brand-and-voice"
             ]
           },
           {
-            "group": "System",
+            "group": "Workspace settings",
             "pages": [
-              "concepts/plans-and-credits",
-              "concepts/roles-and-permissions",
-              "concepts/workspace-modes"
+              "workspace-settings"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Reference",
-        "groups": [
+          },
           {
-            "group": "Reference",
+            "group": "FAQ",
             "pages": [
-              "reference/keyboard-shortcuts",
-              "reference/signal-catalog",
-              "reference/faq",
-              "reference/troubleshooting",
-              "reference/glossary"
+              "reference/faq"
+            ]
+          },
+          {
+            "group": "Guides / Best practices",
+            "pages": [
+              "guides/onboarding-walkthrough",
+              "guides/brand-and-voice",
+              "guides/connect-linkedin",
+              "guides/connect-email",
+              "guides/connect-whatsapp",
+              "guides/create-watchlist-agent",
+              "guides/configure-icp",
+              "guides/pick-signals",
+              "guides/review-prospects",
+              "guides/create-outreach-agent",
+              "guides/build-sequence",
+              "guides/write-message-templates",
+              "guides/launch-outreach",
+              "guides/handle-replies-inbox",
+              "guides/schedule-meetings",
+              "guides/ai-reply-drafts"
             ]
           }
         ]
@@ -126,7 +87,7 @@
       "anchors": [
         {
           "anchor": "Launch app",
-          "href": "https://app.guhan.ai",
+          "href": "https://guhan.ai",
           "icon": "arrow-up-right-from-square"
         },
         {
@@ -147,7 +108,7 @@
     "primary": {
       "type": "button",
       "label": "Launch app",
-      "href": "https://app.guhan.ai"
+      "href": "https://guhan.ai"
     }
   },
   "footer": {

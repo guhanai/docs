@@ -1,0 +1,85 @@
+---
+title: Prospects
+description: The people you're reaching out to.
+---
+
+Every person Guhan finds is a **Prospect** — a real human tied to a real Company.
+
+## What's in a Prospect record
+
+- **Name, title, headline** — pulled from their LinkedIn profile
+- **Company** — links to the [Company](/concepts/companies) record
+- **Contact channels** — LinkedIn URL, email (if revealed), phone (if revealed)
+- **Source** — which Watchlist Agent found them + which signal triggered
+- **Score** — how well they match your ICP (0–100)
+- **Timeline** — every message sent to them + every reply received
+- **Research brief** — 3 sentences Guhan wrote about them (used by the message agent when drafting)
+- **Notes** — anything you want to jot down
+
+## Prospects page
+
+The **Audience → Prospects** page shows everyone in your workspace:
+
+- **Filter by** — List, Watchlist Agent, Outreach Agent, status, source, channel
+- **Search by** — name, title, company, email
+- **Sort by** — most recent, name, score
+- **Export** — download as CSV (up to 10,000 at a time)
+
+By default it shows **landed** prospects only — people who passed all Guhan's filters. Toggle **Include filtered-out** to see everyone (including those Guhan decided didn't match).
+
+## Prospect detail page
+
+Click into any prospect and you'll see:
+
+<AccordionGroup>
+  <Accordion title="Header">
+    Avatar, name, current title + company, direct link to their LinkedIn profile.
+  </Accordion>
+  <Accordion title="Research brief">
+    3 sentences Guhan wrote about them: who they are, why they fit your ICP, what to talk about. Refreshed once at enrollment; used every time the message agent drafts to them.
+  </Accordion>
+  <Accordion title="Contact channels">
+    LinkedIn URL, email address (or **Reveal** button if hidden — costs 4 credits), phone (Reveal button — costs 12 credits, needed for WhatsApp).
+  </Accordion>
+  <Accordion title="Source panel">
+    Which Watchlist Agent found them + which signal triggered + when. Click through to see the triggering post / job / funding announcement.
+  </Accordion>
+  <Accordion title="Timeline">
+    Chronological feed of every message sent, every reply, every profile view, every reaction. Also shows in-flight sequence steps.
+  </Accordion>
+  <Accordion title="Company card">
+    Snapshot of their employer — industry, headcount, HQ, recent funding.
+  </Accordion>
+</AccordionGroup>
+
+## Prospect status
+
+Every prospect has a derived status:
+
+| Status | What it means |
+|---|---|
+| **Replied** | Prospect responded to at least one message |
+| **Active** | In-flight in a sequence, no reply yet |
+| **Paused** | Sequence paused (agent paused OR prospect on "not now") |
+| **DNC** | On Do Not Contact list |
+| **Unmailable** | No reachable channels found |
+| **Cold** | Discovered but not yet enrolled in any sequence |
+
+## Blocking a prospect
+
+Right-click a prospect (or use the kebab menu on their detail page) → **Block** → moves them to Do Not Contact + ends any in-flight sequences for them.
+
+## Deleting
+
+Prospects are NOT deletable from the UI (chat agent tools can't delete them either — safety design). To permanently remove: contact hello@guhan.ai. Blocking is usually what you want.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Companies" icon="building" href="/concepts/companies">
+    The organizations prospects work at.
+  </Card>
+  <Card title="Lists" icon="rectangle-list" href="/concepts/lists">
+    How prospects are grouped for outreach.
+  </Card>
+</CardGroup>
