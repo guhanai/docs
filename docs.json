@@ -10,7 +10,7 @@
   "favicon": "/favicon.ico",
   "logo": {
     "light": "/logo/guhan-logo.webp",
-    "dark": "/logo/dark.png"
+    "dark": "/logo/guhan-logo.webp"
   },
   "navigation": {
     "tabs": [
