@@ -9,7 +9,7 @@
   },
   "favicon": "/favicon.ico",
   "logo": {
-    "light": "/logo/light.png",
+    "light": "/logo/guhan-logo.webp",
     "dark": "/logo/dark.png"
   },
   "navigation": {
@@ -129,7 +129,7 @@
       "anchors": [
         {
           "anchor": "Launch app",
-          "href": "https://app.guhan.ai",
+          "href": "https://guhan.ai",
           "icon": "arrow-up-right-from-square"
         },
         {
@@ -150,7 +150,7 @@
     "primary": {
       "type": "button",
       "label": "Launch app",
-      "href": "https://app.guhan.ai"
+      "href": "https://guhan.ai"
     }
   },
   "footer": {
