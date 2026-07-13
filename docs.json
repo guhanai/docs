@@ -78,6 +78,7 @@
             "group": "Meetings",
             "pages": [
               "meetings/overview",
+              "meetings/calendar-integrations",
               "meetings/schedule"
             ]
           },
