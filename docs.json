@@ -157,5 +157,25 @@
     "socials": {
       "linkedin": "https://linkedin.com/company/guhanai"
     }
+  },
+  "description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.guhan.ai",
+      "description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+      "keywords": "Guhan, AI SDR, outbound sales, prospecting, watchlist agent, outreach agent, LinkedIn automation, cold email, sales automation, AI outreach",
+      "og:title": "Guhan AI Documentation",
+      "og:description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+      "og:site_name": "Guhan AI",
+      "og:type": "website",
+      "og:url": "https://docs.guhan.ai",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Guhan AI Documentation",
+      "twitter:description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+      "robots": "index, follow",
+      "author": "Guhan AI",
+      "theme-color": "#1be49c"
+    },
+    "indexing": "navigable"
   }
 }
