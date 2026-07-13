@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Guhan",
   "colors": {
-    "primary": "#b0411a",
-    "light": "#c97049",
-    "dark": "#8a3115"
+    "primary": "#EA580C",
+    "light": "#FB923C",
+    "dark": "#C2410C"
   },
   "favicon": "/favicon.ico",
   "logo": {

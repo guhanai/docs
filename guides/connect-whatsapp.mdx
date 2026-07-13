@@ -1,0 +1,144 @@
+---
+title: Connect WhatsApp
+description: Add WhatsApp as a sender for prospect outreach or Ask Guhan on your phone.
+---
+
+WhatsApp is the highest-reply-rate channel Guhan supports — prospects treat WhatsApp as personal, not marketing. Volume is lower (40 messages/day per account) but engagement per message is much higher.
+
+WhatsApp also unlocks **Ask Guhan on your phone** — chat with your workspace from your phone by messaging Guhan on WhatsApp.
+
+## Two use cases
+
+<CardGroup cols={2}>
+  <Card title="Outreach sender" icon="paper-plane">
+    Guhan sends WhatsApp messages to prospects as part of a sequence.
+  </Card>
+  <Card title="Ask Guhan on the go" icon="mobile">
+    Chat with your workspace from your phone — "show me today's replies" via WhatsApp.
+  </Card>
+</CardGroup>
+
+The connection flow is the same for both — you connect once, then decide what the sender does.
+
+## What you'll need
+
+- Your phone with **WhatsApp installed** (personal WhatsApp or WhatsApp Business, both work)
+- **60 seconds** to scan a QR code
+
+<Note>
+  Guhan uses [Unipile](https://www.unipile.com) as the WhatsApp integration provider. Same secure OAuth substrate as LinkedIn and email — nothing goes through Meta's Cloud API (no template pre-approval, no Business Manager setup).
+</Note>
+
+## Steps
+
+<Steps>
+  <Step title="Go to Settings → Sender accounts → + Connect">
+    Sidebar → Settings → Sender accounts. Click **+ Connect** in the top-right.
+  </Step>
+  <Step title="Pick WhatsApp">
+    From the provider grid.
+  </Step>
+  <Step title="Scan the QR code with your phone">
+    A QR code appears in the browser. On your phone:
+
+    - **WhatsApp** → Settings → **Linked Devices** → **Link a Device**
+    - Scan the QR code on screen
+
+    Same flow as connecting WhatsApp Web.
+  </Step>
+  <Step title="Confirm the connection">
+    Once scanned, your browser shows "Connected — verifying…" for 5-10 seconds. Then the sender appears in your list with an **Active** dot.
+  </Step>
+  <Step title="Choose what this WhatsApp account does">
+    Two toggles on the sender's row:
+    - **Use for outreach** — Guhan can use this WhatsApp for outbound sequence steps
+    - **Use for Ask Guhan** — WhatsApp becomes a chat interface for your workspace (message "@Guhan show me today's replies" from your phone)
+
+    You can enable both.
+  </Step>
+</Steps>
+
+## Daily limits
+
+WhatsApp has the tightest safety limits of any channel:
+
+| Setting | Default | Adjustable up to |
+|---|---|---|
+| Messages per day | 40 | 100 |
+| Messages per hour | 10 | 15 |
+
+<Warning>
+  WhatsApp doesn't use Meta's Cloud API (no template pre-approval required) but your personal/business account can still get temporarily banned if you send high-volume outreach. Stick close to defaults.
+</Warning>
+
+## What Guhan sends
+
+Every WhatsApp message is:
+- **Generated per prospect** — no template blasts
+- **Sent from your name + your WhatsApp number**
+- **A real 1:1 conversation** — prospects reply back to you directly
+
+Guhan reads incoming replies + drops them in your Inbox like any other channel.
+
+## Prospect must have a phone
+
+WhatsApp requires the prospect to have a phone number. If Guhan doesn't have their phone yet:
+- Guhan reveals it at send time via a phone lookup (costs 12 credits)
+- OR skips this step if the reveal fails (no phone number found)
+
+Enable phone reveal on your workspace's Auto-reveal settings if you want Guhan to proactively look up phones as prospects land.
+
+## Ask Guhan on WhatsApp
+
+If you enabled **"Use for Ask Guhan"**, you can chat with your workspace from your phone:
+
+```
+You:   @Guhan show me today's replies
+Guhan: [message thread]
+
+You:   @Guhan how many prospects landed today?
+Guhan: 8 prospects landed today across 2 Watchlist Agents. Want the breakdown?
+```
+
+Same commands as the web chat — see [Ask Guhan concept](/concepts/ask-guhan) for the full list.
+
+<Tip>
+  The `@Guhan` prefix is required. Without it, messages you send from your phone are treated as normal WhatsApp messages (they go to the person or group you're messaging).
+</Tip>
+
+## Disconnecting
+
+Settings → Sender accounts → [WhatsApp account] → **Disconnect**.
+
+This:
+- Immediately stops all outreach through this WhatsApp
+- Ends the Ask-Guhan-on-WhatsApp session
+- Doesn't affect your WhatsApp app itself — just removes Guhan's linked-device session
+
+You can also unlink from your phone: WhatsApp → Settings → Linked Devices → Guhan → Log out.
+
+## Reauth
+
+If WhatsApp's linked-device session expires (usually after 30 days of inactivity), Guhan can't send.
+
+- Banner at the top of the app: "Your WhatsApp account needs to reconnect"
+- Settings → Sender accounts → [account] → **Reconnect** → scan QR again
+
+Takes 30 seconds.
+
+## What if the QR code times out?
+
+QR codes expire after 60 seconds. If yours does:
+- Click **Regenerate QR** in the modal
+- Scan the fresh one
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Connect LinkedIn" icon="linkedin" href="/guides/connect-linkedin">
+    LinkedIn setup.
+  </Card>
+  <Card title="Connect email" icon="envelope" href="/guides/connect-email">
+    Gmail + Outlook setup.
+  </Card>
+</CardGroup>
