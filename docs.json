@@ -158,20 +158,22 @@
       "linkedin": "https://linkedin.com/company/guhanai"
     }
   },
-  "description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+  "description": "Guhan is the AI sales agent that finds high-intent prospects, researches every one, and books meetings across LinkedIn, Email, and WhatsApp — on autopilot.",
   "seo": {
     "metatags": {
       "canonical": "https://docs.guhan.ai",
-      "description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
-      "keywords": "Guhan, AI SDR, outbound sales, prospecting, watchlist agent, outreach agent, LinkedIn automation, cold email, sales automation, AI outreach",
-      "og:title": "Guhan AI Documentation",
-      "og:description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+      "description": "Official docs for Guhan — the AI sales agent that finds high-intent prospects, researches every one, and books meetings across LinkedIn, Email, and WhatsApp.",
+      "keywords": "Guhan, AI sales agent, autonomous sales agent, AI SDR, outbound sales, intent-based prospecting, buying signals, LinkedIn automation, cold email AI, sales automation, sales prospecting tool, B2B lead generation, AI personalization, sales pipeline automation, Watchlist Agent, Outreach Agent",
+      "og:title": "Guhan Docs — The AI Sales Agent That Books Meetings on Autopilot",
+      "og:description": "Setup guides, agent tutorials, and reference for Guhan — the AI sales agent that detects buying intent, researches prospects, and books meetings across LinkedIn, Email, and WhatsApp.",
       "og:site_name": "Guhan AI",
       "og:type": "website",
       "og:url": "https://docs.guhan.ai",
+      "og:image": "https://guhan.ai/logos/guhan-logo.webp",
       "twitter:card": "summary_large_image",
-      "twitter:title": "Guhan AI Documentation",
-      "twitter:description": "Guhan is an AI teammate that finds your ideal customers, reaches out with personalized messages, and hands warm leads back to you.",
+      "twitter:title": "Guhan Docs — The AI Sales Agent That Books Meetings on Autopilot",
+      "twitter:description": "Setup, agents, and reference docs for Guhan — the autonomous AI sales agent for LinkedIn, Email, and WhatsApp outbound.",
+      "twitter:image": "https://guhan.ai/logos/guhan-logo.webp",
       "robots": "index, follow",
       "author": "Guhan AI",
       "theme-color": "#EA580C"
