@@ -1,0 +1,80 @@
+---
+title: Watchlist Agent
+description: The agent that finds prospects for you, daily.
+---
+
+A **Watchlist Agent** is Guhan's prospect finder. You describe your ideal customer + what should trigger outreach, and the agent runs a fresh search every day.
+
+## What it does
+
+Every day (or on a schedule you pick), the Watchlist Agent:
+
+1. Searches LinkedIn for people matching your **ICP** (job title + location + industry + company size)
+2. Filters that list by the **triggers** you set (funding, hiring, competitor engagement, etc.)
+3. Adds qualifying people to a **List** — your bucket of active prospects
+4. From that List, your Outreach Agent picks them up and starts messaging
+
+## What you configure
+
+<AccordionGroup>
+  <Accordion title="Who — your ideal customer">
+    - **Job titles** — one or many ("VP of Sales", "Head of RevOps")
+    - **Location** — where the person lives (city, country, or region)
+    - **Industry** — what industry their company is in ("SaaS", "Fintech")
+    - **Company size** — headcount range (50–500 employees)
+    - **HQ country** — where the company is headquartered (optional)
+  </Accordion>
+  <Accordion title="When — the trigger">
+    Pick zero, one, or several:
+    - 💰 They raised funding recently
+    - 📈 They're hiring for a role you sell to
+    - 👔 A new leader joined in a relevant seat
+    - 🎯 They engaged with a competitor's post
+    - 📢 They posted about topics you care about
+    - 🎁 They engaged with a specific post URL you paste in
+
+    No signals? Guhan runs a plain ICP search — just people matching your customer description.
+  </Accordion>
+  <Accordion title="Where prospects land">
+    You bind the Watchlist Agent to a **List**. Every prospect it finds gets added to that List. From there, your Outreach Agent picks them up.
+
+    You can point multiple Watchlist Agents at the same List (e.g., one for "VPs of Sales" + another for "Directors of Sales" both feeding your "Enterprise Sales Leaders" List).
+  </Accordion>
+</AccordionGroup>
+
+## Daily cadence
+
+You don't schedule sweeps manually. Guhan runs the Watchlist Agent on a rhythm that matches your daily prospect target — usually **once per day per signal**, spread across the day to look natural.
+
+<Note>
+  You can set a **daily prospect target** (e.g., "give me 25 new prospects per day"). Once the target is hit, Guhan pauses the agent for the day and picks up tomorrow.
+</Note>
+
+## Seeing what it found
+
+Every Watchlist Agent has a **detail page** showing:
+
+- **Today's sweeps** — how many prospects landed today, filtered by which signal
+- **Sweep history** — the last 30 sweeps, each drillable into per-prospect detail
+- **Lifetime totals** — unique prospects found + how many landed vs. got filtered out
+
+Prospects that don't quite match get filtered out ("wrong seniority", "wrong location") and show up in the **Filtered** accordion so you can spot-check what got rejected.
+
+## When to run multiple Watchlist Agents
+
+One workspace can run many Watchlist Agents at once. Common patterns:
+
+- **One per persona** — "VPs of Sales" + "Directors of Sales" + "RevOps Leaders" each feeding the same List
+- **One per market** — "US SaaS" + "EU SaaS" as separate agents
+- **One per trigger** — "Hiring signal" + "Funding signal" as two agents; different messaging in each Outreach Agent
+
+## Learn more
+
+<CardGroup cols={2}>
+  <Card title="Create a Watchlist Agent" icon="plus" href="/guides/create-watchlist-agent">
+    Step-by-step walkthrough.
+  </Card>
+  <Card title="Signal catalog" icon="list" href="/reference/signal-catalog">
+    Every trigger you can pick, with examples.
+  </Card>
+</CardGroup>

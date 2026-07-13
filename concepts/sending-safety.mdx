@@ -1,0 +1,101 @@
+---
+title: Sending safety
+description: How Guhan keeps your LinkedIn account (and inboxes) safe.
+---
+
+The fastest way to burn an outbound motion is to get your sender accounts restricted or spam-flagged. Guhan is built with safety as the default — not the setting you have to remember to turn on.
+
+## LinkedIn safety
+
+LinkedIn watches for behavior that looks automated. Guhan mimics human patterns:
+
+### Daily caps
+
+Every action type has a daily ceiling that stays inside LinkedIn's tolerance:
+
+| Action | Cap | Why |
+|---|---|---|
+| Invites | 25/day | LinkedIn flags accounts sending 100+ invites/day |
+| DMs | 30/day | Standard human rate |
+| Profile views + lookups combined | 200/day | LinkedIn's soft ceiling on browsing volume |
+| Comments | 100/week | Weekly cap; comments cluster daily is fine |
+| Reactions | 300/week | Same |
+
+You can adjust these per sender, but Guhan warns you if you push past LinkedIn's published safe limits.
+
+### Sending window
+
+Messages only go out during hours you set — default 10am–6pm in the sender's timezone. Weekends optional. Guhan **randomizes send times** within the window, spread across the day, so it doesn't look like a bot firing at exactly 10:00:00.
+
+### Warm-up
+
+New sender accounts (< 30 days) start at 30% of the daily cap and ramp over 30 days. Established accounts (existing history + connections) skip warm-up.
+
+### Randomized inter-action delay
+
+Between two consecutive actions on the same account, Guhan waits a randomized 60-240 seconds. No bursts, no evenly-spaced 1-per-minute pattern.
+
+### Auto-withdraw stale invites
+
+Pending invites older than 14 days get auto-withdrawn. LinkedIn dislikes stacks of unaccepted invites on an account — auto-withdraw keeps the pending queue clean.
+
+### Never comment/react without content
+
+Guhan requires the prospect to have a recent public post before scheduling a comment or reaction step. No content = the step gets skipped, no fake "reacted to their profile" behavior.
+
+## Email safety
+
+For Gmail / Outlook:
+
+- **Warm-up** — new email senders start at 30% capacity, ramp over 30 days
+- **Reply tracking** — replies land back in your Gmail thread + in Guhan's Inbox; no forwarding, no header manipulation
+- **Unsubscribe honored** — anyone who replies "unsubscribe" or similar goes on your workspace-level Do Not Contact list
+- **No BCC blasts** — every email is a real 1:1 thread; no mailing-list headers
+
+## WhatsApp safety
+
+Personal / business WhatsApp accounts have low daily caps by design:
+
+- Default 40 messages/day per account
+- No template-message bulk-sending — every message is generated per prospect
+- Reply capture is real-time
+
+## Do Not Contact
+
+You can add:
+- **Specific email addresses** — never message this person
+- **Specific LinkedIn URLs** — never message this person
+- **Domains** — never message anyone at this company (e.g., your own domain, competitor domains)
+- **Prospects who reply "not interested"** — auto-added
+
+The DNC list is enforced globally across your workspace — every Outreach Agent + every Watchlist Agent respects it.
+
+## Health monitoring
+
+The **Dashboard** and **Settings → Sender accounts** page show:
+
+- **Green** — sender is healthy, sending normally
+- **Amber** — sender needs attention (approaching daily cap, near sending-window end)
+- **Red** — sender is restricted or needs re-authentication
+
+Reauth flows are one-click — re-sign in with LinkedIn/Google/Microsoft and you're back in business.
+
+## What happens if you push too hard
+
+If you widen daily caps beyond LinkedIn's safe zone or shorten the sending window aggressively, Guhan will show warnings but let you do it (it's your account). If you get restricted:
+
+- Guhan pauses that sender
+- The banner tells you what happened
+- Reauth once LinkedIn lifts the restriction
+- Guhan resumes at reduced pace to rebuild reputation
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Sender accounts" icon="paper-plane" href="/concepts/sender-accounts">
+    Daily limits and warm-up detail.
+  </Card>
+  <Card title="Troubleshooting" icon="stethoscope" href="/reference/troubleshooting">
+    Fixing a broken sender.
+  </Card>
+</CardGroup>

@@ -1,0 +1,154 @@
+---
+title: Configure your ICP
+description: Get your ideal customer filters right.
+---
+
+**ICP** = Ideal Customer Profile. It's how you describe who you sell to. Guhan uses this to search LinkedIn + to score every prospect it finds.
+
+## The four ICP fields
+
+<CardGroup cols={2}>
+  <Card title="Job titles" icon="user-tie">
+    Their role. What do they do at the company?
+  </Card>
+  <Card title="Location" icon="location-dot">
+    Where they live or work.
+  </Card>
+  <Card title="Industry" icon="building">
+    What industry their company is in.
+  </Card>
+  <Card title="Company size" icon="users">
+    Headcount range.
+  </Card>
+</CardGroup>
+
+Plus optional filters:
+
+- **HQ country** — stricter than person-location; the *company* has to be headquartered there
+- **Funding stage** — company's most recent funding round
+- **Custom rules** — via the Branch node in sequences (Advanced)
+
+## Getting job titles right
+
+The most impactful filter. Start broad, narrow later.
+
+**Broad approach (recommended for first Watchlist Agent):**
+
+```
+VP of Sales
+Head of Sales
+Chief Revenue Officer
+CRO
+```
+
+Guhan will auto-expand each into variants (Vice President Sales, SVP Sales, Head of Revenue, etc.).
+
+**Narrow approach (for tightly-targeted campaigns):**
+
+```
+VP of Sales Operations
+Head of Sales Enablement
+Director of RevOps
+```
+
+More specific = fewer prospects but higher precision.
+
+<Tip>
+  Auto-variants are shown as ✨ chips under each rule row. Delete any that don't fit your ICP.
+</Tip>
+
+## Location tips
+
+<AccordionGroup>
+  <Accordion title="Country-level">
+    "United States" catches every US resident. Good for broad geo targeting.
+  </Accordion>
+  <Accordion title="State/region-level">
+    "California" or "Bay Area" catches everyone in that state/region. Better for pipeline focused on specific tech hubs.
+  </Accordion>
+  <Accordion title="City-level">
+    "San Francisco" catches SF-metro only. Narrowest.
+  </Accordion>
+  <Accordion title="Multiple locations">
+    Add them as separate chips. Logic is OR — a prospect matches if they're in any of the locations.
+  </Accordion>
+</AccordionGroup>
+
+## Industry tips
+
+LinkedIn's industry taxonomy is specific. Common ones:
+
+- **Software Development** — the "SaaS" bucket
+- **Financial Services** — fintech, banks, brokers
+- **Marketing Services** — agencies + consultancies
+- **Information Technology & Services** — IT services + integrators
+- **Computer & Network Security** — cybersecurity
+
+Full list is searchable in the picker. Multi-select with OR logic.
+
+<Warning>
+  **"SaaS" isn't in LinkedIn's taxonomy.** Use Software Development + narrow via signals or company size.
+</Warning>
+
+## Company size tips
+
+Guhan reads LinkedIn's employee count for each company:
+
+| Range | Typical company shape |
+|---|---|
+| 1–10 | Solo founders, pre-seed |
+| 11–50 | Seed / Series A |
+| 51–200 | Series B / early scaleup |
+| 201–500 | Mid-market |
+| 501–1,000 | Larger mid-market |
+| 1,001–10,000 | Enterprise |
+| 10,001+ | Fortune 500 |
+
+Leave both ends blank → no size filter.
+
+## Must-match vs. nice-to-have
+
+You can mark each filter as **Required** or **Nice-to-have**:
+
+- **Required** — prospects failing this filter are rejected
+- **Nice-to-have** — contributes to the match score but doesn't reject
+
+By default, **Titles** and **Location** are Required (they're the definitional filters). Everything else is Nice-to-have.
+
+Change with the chip next to each rule row on the Watchlist Agent WHO panel.
+
+## Score threshold
+
+Every prospect gets a match score 0–100. Below the workspace threshold (default 50) = filtered out.
+
+You can override the threshold per Watchlist Agent:
+- **Tighter (70+)** — fewer prospects, higher quality
+- **Looser (30+)** — more prospects, wider funnel
+
+Find it on the Watchlist Agent detail page → Settings.
+
+## Debugging your ICP
+
+If your first sweep found zero prospects:
+
+1. **Titles too narrow?** Try broader — "Sales Leader" instead of "VP of Enterprise Sales"
+2. **Signals too tight?** Remove or loosen your signal
+3. **Industry mismatched?** Pick a broader LinkedIn category
+4. **Company size mismatched?** Widen the range
+
+If your first sweep found 200+ prospects of dubious quality:
+
+1. **Narrow titles** — remove overly broad chips
+2. **Add signals** — turn on funding OR hiring to focus on active buying windows
+3. **Tighten the score threshold**
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="ICP scoring" icon="chart-simple" href="/concepts/icp-scoring">
+    How the score is calculated.
+  </Card>
+  <Card title="Signal catalog" icon="bolt" href="/reference/signal-catalog">
+    Every signal with examples.
+  </Card>
+</CardGroup>

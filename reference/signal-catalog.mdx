@@ -1,0 +1,182 @@
+---
+title: Signal catalog
+description: Every signal Guhan supports, with parameters and example use cases.
+---
+
+Complete reference for every signal you can use on a Watchlist Agent's WHEN panel.
+
+## Company signals
+
+### Funding raised recently
+
+Company announced a funding round.
+
+**Configure:**
+- **Stages** — check which rounds qualify: pre-seed, seed, Series A, Series B, Series C, Series D+, IPO, acquired
+- **Recency** — 30 / 60 / 90 / 180 / 365 days
+
+**Best for:** selling to VC-backed companies at a specific stage, or timing outreach with a fresh cash infusion.
+
+**Cost:** low — one search call per sweep.
+
+**Example config:**
+```
+Stages: Series A, Series B
+Recency: 90 days
+```
+Finds companies that raised A or B in the last 90 days.
+
+---
+
+### They're hiring
+
+Company posted N+ open jobs in specific departments.
+
+**Configure:**
+- **Departments** — Sales, Engineering, Marketing, Product, Customer Success, Operations, People/HR
+- **Min open jobs** — 1 / 3 / 5 / 10+
+- **Recency** — 30 / 60 / 90 days
+
+**Best for:** selling to companies that are scaling a specific function (great for tools serving that function).
+
+**Cost:** low.
+
+**Example config:**
+```
+Departments: Sales
+Min open jobs: 5
+Recency: 30 days
+```
+Finds companies with 5+ open Sales roles posted in the last 30 days.
+
+---
+
+### New leadership joined
+
+A specific C-level or VP joined the company recently.
+
+**Configure:**
+- **Titles that count** — CEO, CTO, CFO, VP Sales, Head of Marketing, etc.
+- **Recency** — how many days since they joined (30 / 60 / 90 / 180)
+
+**Best for:** catching decision-makers in their "new leader, new tools" window (first 90 days).
+
+**Cost:** medium.
+
+**Example config:**
+```
+Titles: VP Sales, Head of Sales, CRO
+Recency: 60 days
+```
+Finds companies where a top sales leader joined in the last 60 days.
+
+---
+
+### Company headcount growth
+
+Company grew headcount by N%+ in the last M months.
+
+**Configure:**
+- **Growth threshold** — 20%, 50%, 100%+
+- **Window** — 3 / 6 / 12 months
+
+**Best for:** finding fast-scaling companies (usually well-funded, growth-focused).
+
+**Cost:** low.
+
+**Example config:**
+```
+Growth threshold: 50%
+Window: 6 months
+```
+
+---
+
+## Person + engagement signals
+
+### Engaged with a competitor's post
+
+Person liked or commented on a LinkedIn post from a competitor you name.
+
+**Configure:**
+- **Competitor company URLs** — paste 1-3 LinkedIn URLs from the Competitors tab in Brand & Voice
+- **Timeframe** — last 7 / 14 / 30 days
+- **Engagement type** — comments only (higher intent) or reactions + comments
+
+**Best for:** catching prospects mid-evaluation of your category.
+
+**Cost:** medium — polls competitor posts + fetches engager lists.
+
+**Example config:**
+```
+Competitors: linkedin.com/company/hubspot, linkedin.com/company/salesforce
+Timeframe: 14 days
+Engagement: comments only
+```
+
+---
+
+### Engaged with a specific post URL
+
+Person liked or commented on a specific LinkedIn post you paste in.
+
+**Configure:**
+- **Post URL** — the exact post URL
+- **Engagement type** — comments only / reactions + comments
+
+**Best for:** finding people who engaged with your own posts (amplify), or a thought leader's post in your space.
+
+**Cost:** low.
+
+**Example config:**
+```
+Post URL: https://linkedin.com/posts/janedoe_a-thread-on-attribution-...
+Engagement: comments + reactions
+```
+
+---
+
+### Posted about specific keywords
+
+Person authored a LinkedIn post containing keywords you specify.
+
+**Configure:**
+- **Keywords** — up to 10 words or phrases
+- **Timeframe** — last 7 / 14 / 30 days
+
+**Best for:** finding people actively thinking about topics in your category. Higher-intent than plain ICP.
+
+**Cost:** medium — polls posts + filters by keyword.
+
+**Example config:**
+```
+Keywords: attribution, ROAS, marketing mix modeling
+Timeframe: 14 days
+```
+
+---
+
+## Combining signals
+
+You can pick multiple signals on one Watchlist Agent.
+
+**Any (default):** prospect matches if ANY signal fires. Widens the funnel.
+
+**All:** prospect matches only if EVERY signal fires. Narrows the funnel — best for tightly-targeted campaigns.
+
+Toggle on the Watchlist Agent's WHEN panel.
+
+## No signals
+
+You can skip signals entirely → Guhan runs a plain ICP search matching your WHO panel. Higher volume, lower reply rates.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Pick the right signals" icon="bolt" href="/guides/pick-signals">
+    Which signal to use for which motion.
+  </Card>
+  <Card title="Signals concept" icon="lightbulb" href="/concepts/signals">
+    Why signals work + the mental model.
+  </Card>
+</CardGroup>

@@ -1,0 +1,142 @@
+---
+title: Create a Watchlist Agent
+description: Set up a prospect finder from scratch.
+---
+
+Onboarding creates your first Watchlist Agent automatically. When you need a second one — targeting a different persona, a different market, or a different signal — here's how.
+
+## The 4 questions you'll answer
+
+<Steps>
+  <Step title="Who are you looking for?">
+    Job titles + location + industry + company size.
+  </Step>
+  <Step title="When should this trigger?">
+    Pick zero, one, or several signals (funding, hiring, engagement, etc.).
+  </Step>
+  <Step title="Where should they go?">
+    Pick a List. Prospects the agent finds land here.
+  </Step>
+  <Step title="What should we call this agent?">
+    A name so you recognize it in your list of agents.
+  </Step>
+</Steps>
+
+## Step-by-step
+
+### 1. Open the create panel
+
+- **Simple mode**: from your Outreach Agent's **Sources** tab → **+ Add Watchlist Agent**
+- **Advanced mode**: sidebar → **Watchlist Agents** → **+ New**
+
+### 2. Fill the WHO section
+
+<AccordionGroup>
+  <Accordion title="Job titles">
+    Add each title as a chip. Guhan auto-generates variants:
+    - You type: **VP of Sales**
+    - Guhan matches: Vice President Sales, SVP Sales, Senior Vice President Sales, Head of Revenue, Head of Sales…
+
+    You can see and edit the auto-variants below the input.
+  </Accordion>
+  <Accordion title="Location">
+    Autocomplete-backed. Type "San Francisco" → pick from suggestions. Multi-select with OR logic.
+
+    Cities, states, countries, regions all work. "United States" catches everyone in the US; "New York" catches NY-metro only.
+  </Accordion>
+  <Accordion title="Industry">
+    Same LinkedIn taxonomy Guhan uses everywhere. Pick 1-N industries.
+
+    <Warning>
+      "SaaS" isn't a LinkedIn industry — it's a subset of "Software Development". Use "Software Development" and let signals narrow further.
+    </Warning>
+  </Accordion>
+  <Accordion title="Company size">
+    Headcount slider. Leave both ends blank = no cap.
+
+    Ranges to consider:
+    - **1–10** — pre-seed startups
+    - **11–50** — seed to Series A
+    - **51–200** — post-Series-A scaleups
+    - **201–1000** — mid-market
+    - **1001+** — enterprise
+  </Accordion>
+  <Accordion title="HQ country (optional)">
+    If you sell to a specific geography (e.g., US companies only), set HQ = United States. This is stricter than person-location — the *company* has to be HQ'd there.
+  </Accordion>
+</AccordionGroup>
+
+### 3. Fill the WHEN section
+
+Pick signals. Click a signal card → configure its parameters.
+
+Common combinations:
+
+<AccordionGroup>
+  <Accordion title="Just-raised founders">
+    Signal: **Funding raised recently**
+    - Stages: seed, Series A, Series B
+    - Recency: last 90 days
+    - Job titles above: CEO, Founder, Co-founder
+  </Accordion>
+  <Accordion title="Growing sales teams">
+    Signal: **They're hiring**
+    - Departments: Sales
+    - Min open jobs: 3+
+    - Recency: last 30 days
+    - Job titles above: VP of Sales, Head of Sales, CRO
+  </Accordion>
+  <Accordion title="Competitor evaluation">
+    Signal: **Engaged with competitor's post**
+    - Competitors: paste your competitors' LinkedIn company URLs
+    - Job titles above: whoever your buyer is
+  </Accordion>
+</AccordionGroup>
+
+### 4. Pick a List
+
+The **Target List** dropdown — pick where new prospects should land.
+
+- Existing List → adds to that List
+- **+ Create new List** → new bucket + auto-binds it
+
+Multiple Watchlist Agents can feed the same List (multiple triggers, one audience).
+
+### 5. Name it
+
+Something you'll recognize: "US SaaS VPs — funding signal" or "Just hired Head of Sales — enterprise".
+
+### 6. Launch
+
+Click **Launch**. First sweep fires immediately — you'll see prospects landing within 5-15 minutes.
+
+## After launch
+
+You land on the Watchlist Agent detail page:
+
+- **Today's sweep** strip — how many prospects landed
+- **Sweep history** — the last 30 runs
+- **Filtered prospects** accordion — who Guhan considered but rejected, with reasons
+
+Come back tomorrow to see fresh prospects from the next sweep.
+
+## Editing later
+
+Everything is editable from the detail page:
+
+- Change WHO filters → next sweep uses new filters
+- Add / remove signals → next sweep uses new signals
+- Rebind to a different List → future prospects go to the new List; already-landed stay in old
+- **Pause** → agent stops sweeping
+- **Delete** → agent is gone; already-landed prospects stay in the List
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Configure your ICP" icon="user-check" href="/guides/configure-icp">
+    Deeper on the WHO section.
+  </Card>
+  <Card title="Pick the right signals" icon="bolt" href="/guides/pick-signals">
+    Deeper on the WHEN section.
+  </Card>
+</CardGroup>

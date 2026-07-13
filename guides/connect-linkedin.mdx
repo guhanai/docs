@@ -1,0 +1,118 @@
+---
+title: Connect LinkedIn
+description: Add your first (or additional) LinkedIn sender account.
+---
+
+Your LinkedIn account is the workhorse — Guhan uses it to find prospects AND send outreach. If you connected one during onboarding, you can skip this. If you're adding a second (a teammate's, or Sales Navigator alongside a personal), here's the flow.
+
+## The steps
+
+<Steps>
+  <Step title="Go to Settings">
+    Click the gear icon in the sidebar → **Settings** → **Sender accounts**.
+  </Step>
+  <Step title="Connect a new account">
+    Click **+ Connect** in the top-right → pick **LinkedIn**.
+  </Step>
+  <Step title="Choose the owner (admin only)">
+    If you're a Workspace Admin and your team has multiple members, you can pick who owns this sender. Solo workspace = skip.
+  </Step>
+  <Step title="Sign in on LinkedIn">
+    You'll be redirected to LinkedIn's login page. Sign in with the account you want to connect.
+  </Step>
+  <Step title="Come back to Guhan">
+    LinkedIn redirects you back. You'll see "Finishing setup…" for 1-2 seconds while Guhan verifies the connection.
+  </Step>
+  <Step title="Confirm the sender is active">
+    Your sender account should now show up with a green **Active** dot. If it says **Warming up**, that's normal — new accounts start at 30% pace.
+  </Step>
+</Steps>
+
+## What Guhan checks
+
+Right after connect, Guhan pulls:
+
+- Your LinkedIn name + profile URL
+- Your account age
+- Your connection count (>150 = eligible to skip warm-up)
+- Whether Sales Navigator is enabled
+
+You'll see all of this in the sender's detail row.
+
+## Sales Navigator
+
+If your account has Sales Navigator, Guhan will use it for higher-quality searches automatically. You don't need to do anything — just connect the account.
+
+## What if the OAuth fails?
+
+Common causes + fixes:
+
+<AccordionGroup>
+  <Accordion title="'LinkedIn refused authorization'">
+    Usually a browser cookie issue. Try in Incognito or a different browser.
+  </Accordion>
+  <Accordion title="'Account already connected'">
+    Somebody else in your workspace already connected this LinkedIn account. Contact them to reassign OR disconnect + reconnect.
+  </Accordion>
+  <Accordion title="'Session expired'">
+    LinkedIn's OAuth token expired mid-flow. Just retry.
+  </Accordion>
+  <Accordion title="Stuck on 'Finishing setup…' forever">
+    LinkedIn's webhook may be delayed. Wait 60 seconds; the account will appear. If not, refresh and retry.
+  </Accordion>
+</AccordionGroup>
+
+## Warm-up
+
+New sender accounts are **warmed up** for 30 days:
+
+- Day 1–7: 30% of daily cap (7 invites/day, 9 DMs/day)
+- Day 8–14: 50%
+- Day 15–21: 75%
+- Day 22–30: 90%
+- Day 30+: 100%
+
+If your account is > 30 days old AND has > 150 connections, Guhan skips warm-up entirely. You can verify from the sender's detail row — look for **Established** vs. **New account** tags.
+
+## Setting the sending window
+
+Every sender has an active-hours window. Default: 10am–6pm Mon–Sat, sender's timezone.
+
+To adjust:
+- Settings → Sender accounts → [account] → **Schedule**
+- Set start hour + end hour + which days
+- Timezone is auto-detected from LinkedIn but overridable
+
+<Warning>
+  Narrower windows look more human but limit daily volume. If you set 10–11am only, Guhan can only send ~10 things per day.
+</Warning>
+
+## Multiple LinkedIn accounts
+
+You can connect multiple LinkedIn accounts to the same workspace:
+
+- Each has independent daily caps + sending window
+- Assign each to different Outreach Agents (or the same one for rotation)
+- Cost is per-workspace, not per-account — no extra fee for a second sender
+
+## Disconnecting
+
+Settings → Sender accounts → [account] → **Disconnect**.
+
+This:
+- Immediately stops all sends via this account
+- Pauses any in-flight sequence steps that were queued for this sender
+- Preserves conversation history — replies received later still land in your Inbox
+
+The prospect can no longer be contacted via this specific account, but you can attach a different LinkedIn sender to the same sequence and resume.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Connect email" icon="envelope" href="/guides/connect-email">
+    Gmail or Outlook next.
+  </Card>
+  <Card title="Sender accounts" icon="paper-plane" href="/concepts/sender-accounts">
+    Daily caps, warm-up, quotas explained.
+  </Card>
+</CardGroup>

@@ -1,0 +1,102 @@
+---
+title: Sender accounts
+description: The LinkedIn, email, and WhatsApp accounts Guhan uses to reach prospects.
+---
+
+Guhan doesn't send messages from a Guhan email or a Guhan LinkedIn account — it sends from **your** accounts. You connect them once, Guhan uses them for you.
+
+## Which senders you can connect
+
+<CardGroup cols={3}>
+  <Card title="LinkedIn" icon="linkedin">
+    Personal LinkedIn or Sales Navigator. Handles invites, DMs, comments, profile views, reactions.
+  </Card>
+  <Card title="Email (Gmail / Outlook)" icon="envelope">
+    Standard Google Workspace or Microsoft 365 accounts. Handles outbound + reply threading.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp">
+    Personal or business WhatsApp. Handles outbound messages + inbound reply capture.
+  </Card>
+</CardGroup>
+
+## How to connect one
+
+Go to **Settings → Sender accounts → Connect**. Pick a provider, sign in with that provider, and Guhan handles the OAuth handshake.
+
+<Note>
+  Guhan uses [Unipile](https://www.unipile.com) as the underlying provider for LinkedIn / Gmail / Outlook / WhatsApp. Your credentials go through their secure OAuth flow — Guhan never sees your password.
+</Note>
+
+## One account, dual role
+
+Your LinkedIn sender account plays **two roles**:
+
+1. **Sending** — invites, DMs, comments to prospects
+2. **Discovery** — searching for prospects, pulling reactor lists off posts
+
+Both count toward the same daily quota. Guhan balances discovery vs. sends automatically — if you're near your daily send cap, discovery slows down to protect sends.
+
+## Daily limits
+
+LinkedIn's published safe caps:
+
+| Action | Default | Adjustable up to |
+|---|---|---|
+| Invites | 25/day | ~40/day |
+| DMs | 30/day | ~50/day |
+| Profile views | 30/day | ~500/day |
+| Comments | 100/week | 100/week |
+| Reactions | 300/week | 500/week |
+
+For email + WhatsApp:
+
+| Provider | Default | Note |
+|---|---|---|
+| Gmail | 100/day | Google's soft cap for personal accounts |
+| Outlook | 100/day | Microsoft's soft cap |
+| WhatsApp | 40/day | Unipile personal-app tier |
+
+You can adjust these per-account in **Settings → Sender accounts → [account] → Quotas**.
+
+## Warm-up
+
+New sender accounts (< 30 days old) start at reduced capacity and ramp over time:
+
+- **Day 0–7**: 30% of full pace
+- **Day 8–14**: 50%
+- **Day 15–21**: 75%
+- **Day 22–30**: 90%
+- **Day 30+**: 100%
+
+Established accounts (existing LinkedIn history, > 150 connections) skip the warm-up entirely.
+
+## Sending window
+
+Every sender has an active **sending window** — the hours + days of the week when messages actually go out. Default: 10am–6pm Mon–Sat, in the sender's timezone.
+
+Set narrow windows to look more human. Set broader windows to send more per day. Guhan spreads sends randomly within the window.
+
+## Multiple senders on one Outreach Agent
+
+You can attach multiple senders to a single Outreach Agent — Guhan will rotate through them to spread volume. Useful when you have 2-3 LinkedIn accounts (yours + team members') feeding the same campaign.
+
+## What happens if a sender breaks
+
+If your LinkedIn account gets restricted, or you change your Google password, Guhan can't send anymore. You'll see:
+
+- A **banner at the top of the app** — "Your LinkedIn account needs re-authentication"
+- **In-flight sequence steps** hold in place until you fix it
+- **New enrollments** pause until at least one working sender exists
+
+Click the banner or go to Settings → Sender accounts → **Reauth** to fix.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Connect LinkedIn" icon="linkedin" href="/guides/connect-linkedin">
+    Step-by-step LinkedIn connection.
+  </Card>
+  <Card title="Connect email" icon="envelope" href="/guides/connect-email">
+    Gmail + Outlook setup.
+  </Card>
+</CardGroup>

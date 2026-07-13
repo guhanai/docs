@@ -1,0 +1,178 @@
+---
+title: Troubleshooting
+description: Common issues and fixes.
+---
+
+## Sender accounts
+
+<AccordionGroup>
+  <Accordion title="LinkedIn sender says 'needs re-authentication'">
+    Your LinkedIn OAuth token expired (usually happens if you changed your password or logged out from all sessions on LinkedIn).
+
+    **Fix:** Settings → Sender accounts → [account] → **Reauth**. One-click re-sign-in with LinkedIn.
+  </Accordion>
+  <Accordion title="LinkedIn account got restricted">
+    LinkedIn flagged unusual activity and paused your account temporarily.
+
+    **Fix:**
+    1. Sign in to LinkedIn manually (not through Guhan) — you'll see a message from LinkedIn
+    2. Appeal or wait out the restriction (usually 24-48 hours for a first offense)
+    3. Once LinkedIn lifts it, return to Guhan → Settings → Sender accounts → Reauth
+    4. Guhan resumes at 50% of pace to help rebuild reputation
+
+    **Prevention:** stick to defaults (25 invites/day, 30 DMs/day), allow warm-up on new accounts, use active-hours windows that match your normal usage.
+  </Accordion>
+  <Accordion title="Email sender bounced messages">
+    Some bounces are normal (bad addresses, full mailboxes). If your bounce rate is > 5%, something is off.
+
+    **Common causes:**
+    - Your domain has poor sending reputation → use a warmed-up domain
+    - You have no SPF / DKIM / DMARC configured → set these up with your DNS provider
+    - Your emails are hitting spam → check your Brand & Voice for spammy phrases (excessive caps, "guaranteed", "limited time only")
+  </Accordion>
+  <Accordion title="WhatsApp sender disconnected">
+    WhatsApp's phone-linked session expired.
+
+    **Fix:** Settings → Sender accounts → [WhatsApp account] → Reconnect. Scan the QR code with your WhatsApp mobile app.
+  </Accordion>
+</AccordionGroup>
+
+## Watchlist Agents
+
+<AccordionGroup>
+  <Accordion title="Watchlist Agent is 'Active' but finding zero prospects">
+    Filters are too strict.
+
+    **Check:**
+    - **Filtered accordion** — is Guhan finding people but rejecting them all? Reason column tells you why.
+    - **Titles** — try broader ("Sales Leader" instead of "VP of Enterprise Sales")
+    - **HQ country** — is it filtering out people who are in your target country but their company HQ is elsewhere?
+    - **Signal** — pick "any" not "all" signal logic; loosen recency window
+
+    **Debug:** flip your Watchlist Agent to WHO-only (no signals). If it now finds prospects, your signal is the problem. If still zero, your WHO filters are too tight.
+  </Accordion>
+  <Accordion title="Watchlist Agent finds too many prospects (500+/day)">
+    Filters are too loose.
+
+    **Options:**
+    - Set a **daily prospect target** on the Watchlist Agent (e.g., 25/day). Guhan pauses when you hit it.
+    - Add a stricter **signal**
+    - Tighten **titles**, **industry**, or **company size**
+    - Raise the **score threshold**
+  </Accordion>
+  <Accordion title="Same person keeps showing up in filtered as 'already in workspace'">
+    Guhan found this person via a prior sweep or a different Watchlist Agent. They're not being messaged twice — this is normal deduplication.
+
+    Find them via **Prospects** page (search their name) — they're already in your List somewhere.
+  </Accordion>
+  <Accordion title="Prospects landing but the wrong seniority">
+    Common cause: your title filter is missing seniority modifiers.
+
+    "Sales Director" isn't the same as "Director of Sales" — LinkedIn matches them differently. Add the specific version you want.
+
+    Auto-variants may include titles below your target seniority. Delete unwanted variant chips from the WHO panel.
+  </Accordion>
+</AccordionGroup>
+
+## Outreach Agents
+
+<AccordionGroup>
+  <Accordion title="Outreach Agent is 'Active' but no messages have gone out">
+    **Common causes:**
+    - **Empty audience** — your List has no prospects yet. Wait for the Watchlist Agent to land some.
+    - **Outside sending window** — Guhan won't send at 3am. Wait for your active hours.
+    - **Sender broken** — check Sender accounts for red/amber dots.
+    - **Auto-enroll off** — prospects need manual approval. Check the Outreach Agent's Leads tab for unapproved prospects.
+  </Accordion>
+  <Accordion title="Reply rate is 0%">
+    After 100+ sends with zero replies:
+    - **Read a sent message** — look at any prospect timeline. Does the message read like something YOU'd write? Or does it feel like an AI blast?
+    - **Adjust your Brand & Voice** — tone might be off, or you might have too many "always include" phrases making messages feel scripted
+    - **Check your sequence** — is the first message a hard pitch (bad) or a soft observation (good)?
+    - **Check timing** — sending Monday 9am? Everyone else is too. Try Tuesday 2pm.
+  </Accordion>
+  <Accordion title="Reply rate is high but no meetings">
+    Replies but no bookings usually means:
+    - Your CTA is unclear — messages don't ask for a call
+    - Your CTA is too heavy — asking for 30 min on first touch is a lot
+    - Prospects reply "not now" — try a longer nurture sequence
+    - Meeting request classification is misfiring — check Inbox tasks for "interested" replies you might have missed
+  </Accordion>
+  <Accordion title="Messages feel repetitive across prospects">
+    Guhan personalizes but your BRAND VOICE + TEMPLATE combo might be over-constrained.
+
+    - Remove "always include" phrases that turn into filler
+    - Simplify the sequence brief — over-specific briefs produce over-similar outputs
+    - Turn on **Fetch recent post** for DM steps → messages ground in each prospect's actual content
+  </Accordion>
+</AccordionGroup>
+
+## Inbox + replies
+
+<AccordionGroup>
+  <Accordion title="Replies aren't showing up in my Inbox">
+    **For LinkedIn:** Guhan gets webhook notifications from Unipile. There's a 1-5 minute delay typically. If nothing arrives after 15+ minutes, your Unipile webhook may be broken — contact support.
+
+    **For email:** replies land within 30 seconds usually. If not, check your sender's Reauth status.
+  </Accordion>
+  <Accordion title="A prospect replied but Guhan didn't classify it">
+    Very short replies ("k", "thx", "no") sometimes get skipped. They'll still show in the prospect timeline but might not create a task.
+
+    Also: replies from non-prospects (colleagues cc'd, autoresponders) get filtered.
+  </Accordion>
+  <Accordion title="Guhan created a task but classified the reply wrong">
+    Report it — 👎 on the classification. We use these for model improvement.
+
+    In the meantime: click the task's kebab menu → **Reclassify** → pick the correct category.
+  </Accordion>
+</AccordionGroup>
+
+## Meetings
+
+<AccordionGroup>
+  <Accordion title="Prospect can't book any time on my calendar">
+    Your Google/Outlook calendar shows you as busy across the offered window. Check:
+    - Working hours in Google/Outlook are correct
+    - No all-day blocking events that shouldn't be there
+    - Meeting duration + buffer in Guhan aren't too long (30 min meeting + 15 min buffer = need 45 min gap; if your calendar shows only 30 min gaps, no slot appears)
+  </Accordion>
+  <Accordion title="Meeting booked but not on my calendar">
+    Sync delay from Google/Outlook, usually resolves in ~1 minute.
+
+    If it's been longer:
+    - Check your Guhan calendar connection — Settings → Calendars → [account] → status should be Active
+    - Reauth the calendar
+    - Meeting should appear on your calendar as soon as Guhan resyncs
+  </Accordion>
+  <Accordion title="Calendly / Cal.com booking not tracked">
+    Guhan uses UTM parameters (Calendly) or custom metadata (Cal.com) to track bookings. If the prospect clicks the link but the tracking gets stripped:
+    - Some URL shorteners strip UTMs — check your Guhan-generated links
+    - Cal.com's webhook may not be configured — Settings → Calendars → Cal.com → check webhook status
+  </Accordion>
+</AccordionGroup>
+
+## Billing
+
+<AccordionGroup>
+  <Accordion title="Credit balance says 0 but I just got a fresh plan">
+    Sync delay. Refresh the page. If still 0, check:
+    - Billing anniversary — did the plan actually renew? Settings → Billing → next renewal date
+    - Payment issue — did the card charge fail? Look for a payment-failed banner
+  </Accordion>
+  <Accordion title="Charged twice for the same plan">
+    Contact hello@guhan.ai with your invoice number. We'll refund one immediately.
+  </Accordion>
+  <Accordion title="Can't upgrade — 'plan change failed'">
+    Usually a payment method issue. Update your card in Settings → Billing → Payment methods, then retry the upgrade.
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck?
+
+Email **hello@guhan.ai** with:
+- What you tried
+- What you expected
+- What actually happened
+- Your workspace name / URL (so we can look it up)
+
+Typical response time: within 4 hours during business days.

@@ -1,0 +1,161 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Guhan",
+  "colors": {
+    "primary": "#b0411a",
+    "light": "#c97049",
+    "dark": "#8a3115"
+  },
+  "favicon": "/favicon.ico",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "guides/how-guhan-works"
+            ]
+          },
+          {
+            "group": "Set up your workspace",
+            "pages": [
+              "guides/onboarding-walkthrough",
+              "guides/connect-linkedin",
+              "guides/connect-email",
+              "guides/brand-and-voice"
+            ]
+          },
+          {
+            "group": "Watchlist Agent",
+            "pages": [
+              "guides/create-watchlist-agent",
+              "guides/configure-icp",
+              "guides/pick-signals",
+              "guides/review-prospects"
+            ]
+          },
+          {
+            "group": "Outreach Agent",
+            "pages": [
+              "guides/create-outreach-agent",
+              "guides/build-sequence",
+              "guides/write-message-templates",
+              "guides/launch-outreach"
+            ]
+          },
+          {
+            "group": "Replies + meetings",
+            "pages": [
+              "guides/handle-replies-inbox",
+              "guides/schedule-meetings",
+              "guides/ai-reply-drafts"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Concepts",
+        "groups": [
+          {
+            "group": "Watchlist Agent",
+            "pages": [
+              "concepts/watchlist-agent",
+              "concepts/signals",
+              "concepts/icp-scoring",
+              "concepts/prospect-pipeline"
+            ]
+          },
+          {
+            "group": "Outreach Agent",
+            "pages": [
+              "concepts/outreach-agent",
+              "concepts/sequences",
+              "concepts/personalization",
+              "concepts/sender-accounts",
+              "concepts/sending-safety"
+            ]
+          },
+          {
+            "group": "Prospects, companies, lists",
+            "pages": [
+              "concepts/prospects-and-companies",
+              "concepts/lists"
+            ]
+          },
+          {
+            "group": "Engagement + workflows",
+            "pages": [
+              "concepts/inbox-tasks",
+              "concepts/meetings",
+              "concepts/ask-guhan"
+            ]
+          },
+          {
+            "group": "Account + billing",
+            "pages": [
+              "concepts/plans-and-credits",
+              "concepts/roles-and-permissions",
+              "concepts/workspace-modes"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/keyboard-shortcuts",
+              "reference/signal-catalog",
+              "reference/faq",
+              "reference/troubleshooting",
+              "reference/glossary"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Launch app",
+          "href": "https://app.guhan.ai",
+          "icon": "arrow-up-right-from-square"
+        },
+        {
+          "anchor": "Contact",
+          "href": "mailto:hello@guhan.ai",
+          "icon": "envelope"
+        }
+      ]
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hello@guhan.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Launch app",
+      "href": "https://app.guhan.ai"
+    }
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/guhanai"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+---
+title: Plans and credits
+description: Pricing, plans, credit costs, and what happens when you run out.
+---
+
+Guhan uses a **credit** system. Each plan comes with a monthly credit allocation; different actions cost different credits.
+
+## The plans
+
+<CardGroup cols={3}>
+  <Card title="Starter" icon="rocket">
+    **$49/mo** annual · **$59/mo** monthly
+
+    - 500 credits/month
+    - 1 LinkedIn sender
+    - 1 seat
+    - 50k daily Ask Guhan tokens
+  </Card>
+  <Card title="Growth" icon="chart-line">
+    **$89/mo** annual · **$109/mo** monthly
+
+    - 1,000 credits/month
+    - 1 LinkedIn + 1 email sender
+    - 1 seat
+    - 100k daily Ask Guhan tokens
+  </Card>
+  <Card title="Scale" icon="rocket">
+    **$179/mo** annual · **$219/mo** monthly
+
+    - 2,000 credits/month
+    - 1 LinkedIn + 1 email + 1 WhatsApp
+    - 2 seats
+    - 100k tokens per user per day
+  </Card>
+</CardGroup>
+
+<Note>
+  **7-day free trial** on Starter — no credit card required to start.
+</Note>
+
+## What costs a credit
+
+| Action | Credits | When it fires |
+|---|---|---|
+| Land a prospect | 1 | Watchlist Agent adds a prospect to a List |
+| Reveal an email | 4 | Email step needs an address; Guhan looks it up |
+| Reveal a phone | 12 | WhatsApp step needs a phone; Guhan looks it up |
+| AI reply draft | 1 | AI reply node drafts a response |
+| Recent-post fetch | 0.25 | Optional post fetch on DM steps |
+| Ask Guhan overflow | 1 / 50k tokens | Past the daily Ask Guhan quota |
+
+Everything else is free — sending, receiving replies, reading profiles, running searches.
+
+## Two credit pools
+
+Your workspace has **two credit balances** that stack:
+
+<CardGroup cols={2}>
+  <Card title="Monthly grant" icon="calendar">
+    Refills to your plan amount on your billing anniversary. Unused credits DON'T carry over.
+  </Card>
+  <Card title="Top-up pool" icon="battery-full">
+    Bought in packs (below). Carries over 12 months. Spent AFTER the monthly grant is depleted.
+  </Card>
+</CardGroup>
+
+## Buying more credits
+
+Three pack sizes:
+
+- **Starter pack** — 200 credits — $10
+- **Growth pack** — 1,000 credits — $45 (10% off)
+- **Scale pack** — 2,000 credits — $80 (20% off)
+
+Buy from **Settings → Billing → Buy pack**.
+
+## What happens when you run out
+
+If your combined balance hits 0:
+
+- **Prospect discovery pauses** — Watchlist Agents stop landing new prospects
+- **Email / phone reveals pause** — steps needing an unreachable channel skip
+- **AI reply drafts pause** — replies fall back to plain-classify + hand off to you
+- **Ask Guhan works** but every response burns overflow (which fails when balance = 0 → Ask Guhan tells you)
+- **Sending doesn't pause** — messages already drafted continue going out (sending itself is free)
+
+You'll see a **banner** at the top of the app. Buy a pack OR wait for the monthly reset.
+
+## Upgrading and downgrading
+
+**Upgrade** — takes effect immediately. Guhan credits the difference between old + new monthly grant to your wallet on the same day.
+
+**Downgrade** — scheduled for the end of your current billing cycle. You keep the higher plan until then; new plan starts at renewal. You can cancel the scheduled downgrade before it lands.
+
+Both from **Settings → Billing → Change plan**.
+
+## Trial period
+
+- **Day 0–7** — full Starter features, no credit card required
+- **Day 8** — trial ends; you'll be prompted to add payment
+- **Day 8–14** — if no payment, workspace goes read-only; all data preserved
+- **Day 15+** — no payment yet? Data preserved for 30 more days, then archived
+
+## Refunds
+
+Full refund on charges within 7 days of the invoice. Contact us at hello@guhan.ai.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Roles + permissions" icon="key" href="/concepts/roles-and-permissions">
+    Who in your workspace can spend credits.
+  </Card>
+</CardGroup>

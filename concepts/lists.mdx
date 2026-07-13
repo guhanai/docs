@@ -1,0 +1,64 @@
+---
+title: Lists
+description: How prospects are grouped for outreach.
+---
+
+A **List** is a bucket of prospects. Watchlist Agents drop prospects into a List. Outreach Agents pick prospects up from a List. Simple as that.
+
+## Why Lists exist
+
+Lists let you separate audiences. Common patterns:
+
+- **One List per persona** — "Enterprise VPs", "SMB Owners", "RevOps Managers"
+- **One List per market** — "US SaaS", "EU Fintech"
+- **One List per campaign** — "Q1 launch outreach", "Conference follow-up"
+
+Each List can be fed by multiple Watchlist Agents and drained by multiple Outreach Agents.
+
+## How prospects get into a List
+
+Three ways:
+
+<CardGroup cols={3}>
+  <Card title="Watchlist Agent (automatic)" icon="binoculars">
+    Most common. Your Watchlist Agent finds people and adds them to a List automatically.
+  </Card>
+  <Card title="Copy from another List" icon="copy">
+    Duplicate the members of an existing List into a new one — useful for A/B testing sequences.
+  </Card>
+  <Card title="CSV upload" icon="file-arrow-up">
+    Upload a CSV of names + LinkedIn URLs to seed a List manually.
+  </Card>
+</CardGroup>
+
+## How prospects get out of a List
+
+- **Automatically** — Guhan removes prospects who reply "not interested", who go on Do Not Contact, or whose LinkedIn account gets restricted
+- **Manually** — you can remove prospects one at a time or in bulk from the List detail page
+- **After enrollment** — a prospect enrolled in an Outreach Agent stays in the List; enrolling doesn't remove them
+
+## List detail page
+
+Every List has a detail page with:
+
+- **Prospect table** — all prospects in this List, filterable + searchable + exportable
+- **Sources** — chips showing which Watchlist Agents feed this List, with per-source counts
+- **Bound Outreach Agents** — which agents pull prospects from this List
+
+## Deleting a List
+
+Deleting a List:
+- Does NOT delete the prospects themselves (they keep existing, just no longer in this List)
+- Does NOT stop in-flight Outreach Agent sequences (they finish per the sequence they started)
+- DOES unbind any Watchlist Agent that was feeding it — you'll need to point it at a different List
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Watchlist Agent" icon="binoculars" href="/concepts/watchlist-agent">
+    How prospects flow into Lists.
+  </Card>
+  <Card title="Outreach Agent" icon="paper-plane" href="/concepts/outreach-agent">
+    How prospects flow out of Lists into messaging.
+  </Card>
+</CardGroup>

@@ -1,0 +1,138 @@
+---
+title: Handle replies from the Inbox
+description: What lands in your Inbox and how to respond quickly.
+---
+
+Every meaningful prospect action shows up in your Inbox. Here's how to work through it fast.
+
+## The daily rhythm
+
+<Steps>
+  <Step title="Open Inbox (morning)">
+    Sidebar → Inbox. Filter to **Open · Assigned to me**.
+
+    Guhan sorted tasks by urgency — most-recent replies at the top, meeting requests flagged.
+  </Step>
+  <Step title="Process meeting requests first (2-3 clicks each)">
+    Anything with **mode = Schedule** — click **Send scheduling link** on each. Done.
+  </Step>
+  <Step title="Approve AI-drafted replies next">
+    Anything with **mode = Approve** — read the draft, edit if needed, click **Approve**. Sends immediately.
+  </Step>
+  <Step title="Take over the interesting conversations">
+    Anything with **mode = Take over** — click **Reply** and write freely. Message goes out via the same sender that started the thread.
+  </Step>
+  <Step title="Snooze the ones you don't need to touch now">
+    Notifications you want to check later → **Snooze until tomorrow**.
+  </Step>
+</Steps>
+
+## Task types explained
+
+<AccordionGroup>
+  <Accordion title="mode = Notify">
+    Guhan is letting you know something happened but no action is required. Example: "Prospect accepted your LinkedIn invite."
+
+    Read → mark done → close.
+  </Accordion>
+  <Accordion title="mode = Approve">
+    Guhan drafted a reply. You approve or edit-then-approve. On approval, Guhan sends immediately.
+
+    Best practice: edit for tone if the draft is 80% right; discard + write your own if it's off.
+  </Accordion>
+  <Accordion title="mode = Decide">
+    Guhan is unsure how to handle. Usually 2-3 options presented ("Reply with X" / "Reply with Y" / "Hand off to me").
+
+    Pick one → Guhan runs with your choice.
+  </Accordion>
+  <Accordion title="mode = Take over">
+    Guhan is stepping out of the conversation entirely. You write the response freely, from the same sender.
+
+    Common triggers: high-stakes reply, unclear intent, prospect asked a technical question.
+  </Accordion>
+  <Accordion title="mode = Schedule">
+    Prospect asked to book time. Primary action: **Send scheduling link**.
+
+    Guhan generates a fresh booking link tied to your calendar. One click → link sent.
+  </Accordion>
+</AccordionGroup>
+
+## The task detail view
+
+Click any task and you see:
+
+- **Prospect card** — name, title, company, avatar
+- **Full conversation thread** — chronological, all messages both ways
+- **Reply classification** — Guhan's read ("meeting_request" / "interested" / "not_now" / "unsubscribe" / etc.)
+- **AI draft** (if any) — preview + edit
+- **Primary action button** — Approve / Send link / Reply / Mark done
+- **Reassign** — send to a teammate
+- **Snooze** — hide until later
+- **Add note** — for the prospect record
+
+## Bulk actions
+
+Multiple tasks selected → bulk actions in the toolbar:
+
+- **Bulk close** — mark done without acting
+- **Bulk snooze** — snooze all until same time
+- **Bulk reassign** — send batch to a teammate
+
+Useful for cleanup at end of week.
+
+## Reassigning to a teammate
+
+Two ways:
+
+<Steps>
+  <Step title="Per-task">
+    Task detail → Assign button → pick teammate.
+  </Step>
+  <Step title="Automatic (per-sender)">
+    Every task auto-assigns to whoever owns the sender that sent the last message in that thread. Change ownership in Settings → Sender accounts → [account] → Owner.
+  </Step>
+</Steps>
+
+## Snooze
+
+Snooze options:
+- Later today (3pm)
+- Tomorrow morning
+- Next week
+- Custom date/time
+
+Snoozed tasks disappear from Open, reappear at the snooze time.
+
+## Deadlines
+
+Some tasks have implicit deadlines:
+
+| Mode | Deadline | On timeout |
+|---|---|---|
+| Approve | 4 hours | Fallback per sequence config (send / discard) |
+| Decide | 2 hours | Fallback per sequence config |
+| Schedule | 24 hours | Auto-send a fallback booking link |
+| Take over | None | Sits in Inbox indefinitely |
+| Notify | None | Sits in Inbox indefinitely |
+
+If you're going to be away, snooze tasks past their deadlines OR reassign to a teammate.
+
+## Notifications
+
+You get an email digest of new Inbox tasks:
+
+- **Real-time** — new task landed (during your active hours)
+- **Daily digest** — 8am summary of pending tasks
+
+Configure in Settings → Notifications.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="AI reply drafts" icon="wand-magic-sparkles" href="/guides/ai-reply-drafts">
+    How Guhan drafts replies.
+  </Card>
+  <Card title="Inbox tasks concept" icon="inbox" href="/concepts/inbox-tasks">
+    Task types + assignment logic.
+  </Card>
+</CardGroup>

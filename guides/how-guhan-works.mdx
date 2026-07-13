@@ -1,0 +1,77 @@
+---
+title: How Guhan works
+description: The mental model in 2 minutes.
+---
+
+Guhan is built around **two kinds of agents** that do the work for you.
+
+## The two agents
+
+<CardGroup cols={2}>
+  <Card title="Watchlist Agent" icon="binoculars">
+    **Finds prospects.** Runs a daily search on LinkedIn based on your ideal customer + triggers.
+  </Card>
+  <Card title="Outreach Agent" icon="paper-plane">
+    **Reaches out to prospects.** Writes personalized messages and sends them in a sequence.
+  </Card>
+</CardGroup>
+
+They work together:
+
+```
+Watchlist Agent → finds people → adds them to a List → Outreach Agent picks them up → sends messages
+```
+
+## A concrete example
+
+Say you sell an analytics tool to VPs of Marketing at SaaS companies.
+
+**Watchlist Agent** (you set this up once):
+- Look for: **VP of Marketing** at **SaaS companies** with **50-500 employees**
+- Only when: they **posted about attribution** in the last 30 days
+
+Every day, the Watchlist Agent runs. It finds people matching that description and adds them to your **List of prospects**.
+
+**Outreach Agent** (also set up once):
+- Pull prospects from that List
+- Send them this sequence:
+  - Day 0: LinkedIn invite
+  - Day 3: LinkedIn DM
+  - Day 7: Email
+  - Day 14: Follow-up email
+
+Every message is written fresh, referencing the specific post that person made about attribution.
+
+**You** open Guhan once a day, see who replied, and jump into the interesting conversations. That's it.
+
+## What Guhan does behind the scenes
+
+You never see this, but it matters:
+
+- **Reads every prospect's profile** before writing to them — so the message references their actual role, company, and recent activity.
+- **Throttles your daily send volume** to what LinkedIn considers safe — so your account doesn't get restricted.
+- **Retries when a message fails** (rate limit, network blip, etc.) so you never lose a send.
+- **Withdraws unaccepted invites after 14 days** to keep your pending-invites queue clean.
+- **Classifies every reply** so meeting requests turn into calendar links automatically and out-of-office replies don't waste your time.
+
+## Where you fit in
+
+Guhan handles the volume. You handle the judgment calls:
+
+- **Reviewing prospects** the Watchlist Agent found — was it right about this person?
+- **Editing message drafts** when Guhan asks for approval on a high-stakes reply
+- **Jumping into real conversations** — Guhan hands you the thread, you take it from there
+
+## The three surfaces you'll use daily
+
+<CardGroup cols={3}>
+  <Card title="Dashboard" icon="house">
+    Today's snapshot — new prospects, pending replies, upcoming meetings.
+  </Card>
+  <Card title="Inbox" icon="inbox">
+    Tasks that need you — reply drafts to approve, meeting requests, escalations.
+  </Card>
+  <Card title="Ask Guhan" icon="comment">
+    Chat with your workspace — "show me all prospects from Series B fintechs" or "which sequence performed best last week?"
+  </Card>
+</CardGroup>
