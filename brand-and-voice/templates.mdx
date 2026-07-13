@@ -1,0 +1,132 @@
+---
+title: Write message templates
+description: Reusable briefs you can pick from anywhere.
+---
+
+Templates are pre-written **briefs** — you describe what a message should say, Guhan personalizes the exact wording per prospect.
+
+## Where to manage templates
+
+**Brand & Voice → Templates**. All your templates in one table.
+
+## The 10 defaults Guhan ships
+
+Every new workspace gets these built-in. Read-only (clone to customize):
+
+| Template | Channels | When to use |
+|---|---|---|
+| Cold connect · no pitch | LinkedIn invite | First-touch, no ask |
+| First message after connect · deliver value | LinkedIn DM + email | Right after invite accepted |
+| Signal hook — funding raise | DM + email + WhatsApp | After they raised |
+| Signal hook — hiring | DM + email + WhatsApp | After they posted jobs |
+| Signal hook — post engagement | LinkedIn DM | After they engaged with a post |
+| Follow-up · new value (Day 7) | DM + email + WhatsApp | Adding new angle mid-sequence |
+| Channel shift · 10-min call ask | DM + email + WhatsApp | Nudge for a call |
+| Break-up · graceful close | DM + email + WhatsApp | End-of-sequence "one last note" |
+| First email · async version | Email only | Cold email opener |
+| Substantive post comment | LinkedIn post comment | Public engagement |
+
+## Creating a new template
+
+<Steps>
+  <Step title="Brand & Voice → Templates → + New template">
+    Top-right button.
+  </Step>
+  <Step title="Give it a name">
+    "Signal hook — new leadership" or "Break-up — direct".
+  </Step>
+  <Step title="Pick channels">
+    Which channels can use this template — LinkedIn DM, email, WhatsApp, comment, invite. Multi-select.
+  </Step>
+  <Step title="Write the brief">
+    A short paragraph describing WHAT to say — not the exact words.
+
+    Good:
+    > Congratulate them on the funding announcement. Reference the specific round and lead investor if visible. Offer a specific value angle relevant to their stage.
+
+    Bad:
+    > Hi {firstName}, saw that {companyName} raised! Congrats!
+    (Bad because it's the literal template; Guhan wants intent + context.)
+  </Step>
+  <Step title="Optional: fetch recent post">
+    For DM channels, opt in to fetching the prospect's most recent LinkedIn post at send time. Guhan uses it as the opener. Costs 1 credit per fetch.
+  </Step>
+  <Step title="Optional: subject brief (for email)">
+    A short prompt for the subject line. Guhan generates the actual subject per prospect.
+  </Step>
+  <Step title="Save">
+    Template is now available in any Outreach Agent's sequence steps.
+  </Step>
+</Steps>
+
+## Using a template in a sequence
+
+Any Send step → "Start from template" dropdown → pick your template.
+
+The step gets pre-filled with the template's brief + channel. You can:
+- Use the brief as-is (recommended)
+- Edit for this specific step (overrides the template)
+- Change channels if the step's channel is one of the template's supported channels
+
+<Note>
+  Editing a template doesn't retroactively change sequences that started from it. Each sequence step captures the brief at creation time.
+</Note>
+
+## Cloning + customizing a default
+
+<Steps>
+  <Step title="Find the default template">
+    Templates table → click the template name.
+  </Step>
+  <Step title="Click Clone">
+    Kebab menu → **Clone**. You get a new editable copy.
+  </Step>
+  <Step title="Rename + edit">
+    Give it your own name + tweak the brief to match your voice.
+  </Step>
+  <Step title="Save">
+    Your custom version now shows up in the picker alongside the default.
+  </Step>
+</Steps>
+
+## Tips for writing effective briefs
+
+<AccordionGroup>
+  <Accordion title="Be specific about the opener">
+    "Reference their post on {topic}" > "Compliment their content."
+
+    "Congratulate the specific Series A + name-drop the lead VC if visible" > "Say congrats."
+  </Accordion>
+  <Accordion title="Include the value angle">
+    "Offer one specific insight from working with 3 other Series A founders in the same 90-day window" beats "Offer to help".
+  </Accordion>
+  <Accordion title="Constrain length + format">
+    "3 short paragraphs, no signature" or "1 sentence, question format" — Guhan will honor.
+  </Accordion>
+  <Accordion title="Specify the CTA">
+    "Ask if they'd like a 90-second explainer video" — Guhan will end with that ask. Otherwise it'll pick its own.
+  </Accordion>
+  <Accordion title="Anti-patterns to explicitly block">
+    "Don't use the phrase 'I hope this finds you well'" or "No emoji" — Guhan strictly obeys.
+  </Accordion>
+</AccordionGroup>
+
+## Filtering the template picker
+
+The Templates table has filters:
+- **By tag** — you can tag your templates for organization
+- **By channel** — only see templates that support a specific channel
+- **By tone** — professional / casual / friendly / direct / playful
+
+Useful when you have 30+ templates and need to find the right one quickly.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Brand & Voice" icon="palette" href="/brand-and-voice/setup">
+    Where templates live.
+  </Card>
+  <Card title="Build a sequence" icon="diagram-project" href="/agents/outreach-agents/build-sequence">
+    Using templates in sequence steps.
+  </Card>
+</CardGroup>

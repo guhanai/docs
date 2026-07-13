@@ -1,0 +1,80 @@
+---
+title: How Guhan scores prospects
+description: What "match" means when a Watchlist Agent finds someone.
+---
+
+Every prospect that comes through a Watchlist Agent gets a **match score** from 0 to 100.
+
+## What the score means
+
+- **80–100** — Strong match. All your filters check out — right title, right location, right industry, right company size.
+- **50–79** — Partial match. Some filters match, some don't. Prospect lands but is flagged.
+- **0–49** — Weak match. Filtered out. You can still see them under the "Filtered" toggle.
+
+Prospects below the threshold (default: **50**) don't land in your List. They exist in your workspace as "filtered" but Guhan won't message them.
+
+## What Guhan checks
+
+<AccordionGroup>
+  <Accordion title="Job title match">
+    Compares the prospect's LinkedIn title against your list of target titles. Handles common variations — "VP of Sales" matches "Vice President Sales", "SVP Sales", "Head of Revenue", etc.
+  </Accordion>
+  <Accordion title="Location match">
+    Does the prospect's LinkedIn location fall within your target regions? Handles city/state/country granularity.
+  </Accordion>
+  <Accordion title="Industry match">
+    Does the prospect's company industry match your target industries? Uses LinkedIn's own industry taxonomy.
+  </Accordion>
+  <Accordion title="Headcount match">
+    Is the company within your headcount range (e.g., 50–500 employees)?
+  </Accordion>
+  <Accordion title="HQ country match">
+    If you set an HQ country filter, is the company actually headquartered there?
+  </Accordion>
+  <Accordion title="Signal match">
+    Did the triggering signal actually fire on this prospect / company? (E.g., "posted about attribution" — does their recent post actually mention attribution?)
+  </Accordion>
+</AccordionGroup>
+
+## Must-match vs. nice-to-have
+
+Some filters are **required** (must-match) and some are **weighted** (nice-to-have).
+
+By default:
+- **Title** and **Location** are must-match — fail either and the prospect is rejected outright.
+- Everything else contributes to the score but isn't a hard gate.
+
+You can change which filters are must-match on the Watchlist Agent's WHO panel — look for the **Required** / **Nice-to-have** chip next to each rule.
+
+## Why prospects get filtered
+
+The Watchlist Agent's detail page has a **Filtered** accordion showing every prospect that didn't make it, with a plain-English reason:
+
+- "Wrong job title" — their title didn't match any of yours
+- "Wrong location" — they're in a country you didn't target
+- "Wrong industry" — their company's industry didn't match
+- "Competitor employee" — they work at one of your competitors (auto-block)
+- "Do Not Contact" — they're on your DNC list
+- "Already in your workspace" — you found them via a different signal already
+
+This is useful for debugging. If Guhan keeps rejecting people you think should qualify, the Filtered accordion tells you which rule is being strict.
+
+## Tightening or loosening the threshold
+
+Every workspace has a global **score threshold**. Default is 50 (moderately strict). You can override it per Watchlist Agent.
+
+- **Tighten to 70** — fewer prospects, higher quality
+- **Loosen to 30** — more prospects, more noise
+
+Play with this after your first 100 prospects land — you'll see the shape of what you're getting.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Prospect pipeline" icon="filter" href="/agents/watchlist-agents/prospect-pipeline">
+    The full flow from LinkedIn search to landed prospect.
+  </Card>
+  <Card title="Watchlist Agent" icon="binoculars" href="/agents/watchlist-agents/overview">
+    Configure the filters that drive scoring.
+  </Card>
+</CardGroup>

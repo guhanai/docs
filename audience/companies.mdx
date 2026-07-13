@@ -1,0 +1,80 @@
+---
+title: Companies
+description: The organizations your prospects work at.
+---
+
+A **Company** is the org a Prospect works for. Companies are first-class records with their own detail page, signals, and filters.
+
+## What's in a Company record
+
+- **Name, domain, LinkedIn URL**
+- **Industry** — LinkedIn's taxonomy (Software Development, Financial Services, etc.)
+- **Headcount** — current employee count
+- **HQ location** — country + city
+- **Description** — pulled from LinkedIn's company page
+- **Signals** — recent funding, hiring activity, growth metrics (what drives your Watchlist Agent)
+- **Related prospects** — everyone you've discovered at this company
+
+## Companies page
+
+The **Audience → Companies** page shows every org Guhan has discovered:
+
+- **Filter by** — industry, headcount range, HQ, has-prospects
+- **Search by** — name, domain
+- **Sort by** — most recent, name, headcount
+
+By default it shows companies with **at least one landed prospect**. Toggle **Include companies without prospects** to see everyone (including companies discovered via a signal but where nobody landed yet).
+
+## Company detail page
+
+<AccordionGroup>
+  <Accordion title="Header">
+    Logo (favicon-derived from domain), name, LinkedIn URL, website link.
+  </Accordion>
+  <Accordion title="Firmographics">
+    Industry · headcount · HQ · founded year · funding stage.
+  </Accordion>
+  <Accordion title="Signals">
+    What Guhan knows: recent funding rounds, hiring activity, executive changes, growth metrics. These are what drive Watchlist Agent triggers.
+  </Accordion>
+  <Accordion title="Related prospects">
+    Everyone at this company Guhan has found — their names, titles, current status.
+  </Accordion>
+  <Accordion title="Timeline">
+    Chronological feed of every prospect you've discovered at this company + every outbound / inbound message across them.
+  </Accordion>
+</AccordionGroup>
+
+## Blocking a company
+
+If you never want to reach out to anyone at a company:
+
+- **Block a company** → automatically applies Do Not Contact to every prospect at that company + prevents future prospects at this company from landing
+
+Common uses:
+- Blocking your own company (so you don't outreach yourself)
+- Blocking competitors (auto-detected — see Brand & Voice → Competitors)
+- Blocking customers you already have relationships with
+
+## How companies get discovered
+
+Three ways:
+
+1. **Via a prospect** — you found a person; Guhan pulls their employer as a Company
+2. **Via a signal** — a signal like "funded recently" finds a Company first; then people at that Company get pulled
+3. **Manual** — you can add a company by URL in Advanced mode
+
+## Deleting
+
+Companies are NOT deletable from the UI (chat agent tools can't delete them either). Blocking is the typical action.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Prospects" icon="users" href="/audience/prospects">
+    The people who work at these companies.
+  </Card>
+  <Card title="Lists" icon="rectangle-list" href="/audience/lists">
+    Buckets that group prospects across companies.
+  </Card>
+</CardGroup>

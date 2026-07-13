@@ -22,62 +22,103 @@
             "pages": [
               "introduction",
               "quickstart",
-              "guides/how-guhan-works",
-              "concepts/sender-accounts"
+              "get-started/onboarding-walkthrough",
+              "get-started/how-guhan-works",
+              {
+                "group": "Sender accounts",
+                "pages": [
+                  "get-started/sender-accounts/overview",
+                  "get-started/sender-accounts/connect-linkedin",
+                  "get-started/sender-accounts/connect-email",
+                  "get-started/sender-accounts/connect-whatsapp"
+                ]
+              }
             ]
           },
           {
             "group": "Agents",
             "pages": [
-              "concepts/watchlist-agent",
-              "concepts/outreach-agent"
+              {
+                "group": "Watchlist Agents",
+                "pages": [
+                  "agents/watchlist-agents/overview",
+                  "agents/watchlist-agents/icp-scoring",
+                  "agents/watchlist-agents/signals",
+                  "agents/watchlist-agents/signal-catalog",
+                  "agents/watchlist-agents/prospect-pipeline",
+                  "agents/watchlist-agents/create",
+                  "agents/watchlist-agents/configure-icp",
+                  "agents/watchlist-agents/pick-signals",
+                  "agents/watchlist-agents/review-prospects"
+                ]
+              },
+              {
+                "group": "Outreach Agents",
+                "pages": [
+                  "agents/outreach-agents/overview",
+                  "agents/outreach-agents/sequences",
+                  "agents/outreach-agents/personalization",
+                  "agents/outreach-agents/sending-safety",
+                  "agents/outreach-agents/create",
+                  "agents/outreach-agents/build-sequence",
+                  "agents/outreach-agents/launch"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Inbox",
+            "pages": [
+              "inbox/overview",
+              "inbox/handle-replies",
+              "inbox/ai-reply-drafts"
+            ]
+          },
+          {
+            "group": "Meetings",
+            "pages": [
+              "meetings/overview",
+              "meetings/schedule"
             ]
           },
           {
             "group": "Audience",
             "pages": [
-              "concepts/lists",
-              "concepts/prospects",
-              "concepts/companies"
+              "audience/lists",
+              "audience/prospects",
+              "audience/companies"
+            ]
+          },
+          {
+            "group": "Ask Guhan",
+            "pages": [
+              "ask-guhan"
             ]
           },
           {
             "group": "Brand and Voice",
             "pages": [
-              "concepts/brand-and-voice"
+              "brand-and-voice/overview",
+              "brand-and-voice/setup",
+              "brand-and-voice/templates"
             ]
           },
           {
             "group": "Workspace settings",
             "pages": [
-              "workspace-settings"
+              "workspace-settings/overview",
+              "workspace-settings/plans-and-credits",
+              "workspace-settings/roles-and-permissions",
+              "workspace-settings/modes"
             ]
           },
           {
-            "group": "FAQ",
+            "group": "Help",
             "pages": [
-              "reference/faq"
-            ]
-          },
-          {
-            "group": "Guides / Best practices",
-            "pages": [
-              "guides/onboarding-walkthrough",
-              "guides/brand-and-voice",
-              "guides/connect-linkedin",
-              "guides/connect-email",
-              "guides/connect-whatsapp",
-              "guides/create-watchlist-agent",
-              "guides/configure-icp",
-              "guides/pick-signals",
-              "guides/review-prospects",
-              "guides/create-outreach-agent",
-              "guides/build-sequence",
-              "guides/write-message-templates",
-              "guides/launch-outreach",
-              "guides/handle-replies-inbox",
-              "guides/schedule-meetings",
-              "guides/ai-reply-drafts"
+              "help/faq",
+              "help/troubleshooting",
+              "help/keyboard-shortcuts",
+              "help/glossary"
             ]
           }
         ]

@@ -1,0 +1,118 @@
+---
+title: Workspace settings
+description: Every tab under Settings, what it controls, and when you'd use it.
+---
+
+Access **Settings** from the gear icon at the bottom of the sidebar (or the user menu). Settings is organized into tabs — here's what each one does.
+
+## General
+
+- **Workspace name** — how your workspace shows in the sidebar and on invites
+- **Workspace slug** — the URL fragment (e.g., `guhan.ai/acme` where "acme" is the slug)
+- **Time zone** — used for sending windows, sweep schedules, and Meetings display
+- **Delete workspace** — permanent; contact support to restore
+
+## Members
+
+Manage who has access.
+
+- **Invite** — send an email invite; pick a role
+- **Change role** — promote / demote a teammate
+- **Remove** — offboard a teammate (their sender accounts stay but need reassignment)
+- **Pending invites** — resend or revoke
+
+## Roles
+
+Beyond the 3 built-in roles (Workspace Admin, Campaign Manager, Sales Rep), you can create custom roles with granular permissions.
+
+Built-ins:
+- **Workspace Admin** — full access
+- **Campaign Manager** — create + edit + launch agents; can't delete workspace records or manage billing
+- **Sales Rep** — see + reply to assigned prospects only
+
+See [Roles and permissions](/workspace-settings/roles-and-permissions) for details.
+
+## Sender accounts
+
+Every LinkedIn / email / WhatsApp account Guhan uses to send.
+
+- **+ Connect** — add a new sender
+- **Reauth** — re-authorize when OAuth expires
+- **Schedule** — set the sender's active hours + timezone + weekdays
+- **Quotas** — adjust per-action daily caps
+- **Owner** — reassign to a teammate
+- **Disconnect** — remove; pauses any in-flight sequences using this sender
+
+See [Sender accounts](/get-started/sender-accounts/overview) for concept + safety detail.
+
+## Calendars
+
+Connect your calendar for meeting bookings.
+
+- **Google Calendar** — native OAuth
+- **Outlook Calendar** — native OAuth
+- **Cal.com** — paste your booking URL
+- **Calendly** — paste your booking URL
+
+Configure meeting duration, buffer time, meeting title template, available hours.
+
+See [Meetings](/meetings/overview) for the full flow.
+
+## Do Not Contact (DNC)
+
+The workspace-wide block list.
+
+- **Emails** — specific email addresses to never message
+- **LinkedIn URLs** — specific people to never message
+- **Domains** — every prospect at this domain gets auto-blocked (add your own domain here so you don't outreach yourself)
+- **Companies** — LinkedIn company URLs; auto-blocks all their employees
+
+Enforced globally across every agent.
+
+## Data sources
+
+Third-party integrations for enrichment + discovery.
+
+- **Crustdata** — the LinkedIn-adjacent database Guhan uses for company + person enrichment (managed for you)
+- **HarvestAPI** — LinkedIn discovery + engagement (managed)
+- **Unipile** — sender-account OAuth layer (managed)
+
+Nothing to configure here in most cases — it's status + connection info.
+
+## Billing
+
+Manage your plan + credits + payment method.
+
+- **Current plan** — Starter / Growth / Scale + current billing cycle
+- **Credit balance** — monthly grant + top-up pool + last 50 ledger entries
+- **Buy credit pack** — top up with a 200 / 1,000 / 2,000 credit pack
+- **Change plan** — upgrade (immediate) or downgrade (at cycle end)
+- **Payment methods** — cards + billing address
+- **Invoices** — download past invoices
+- **Cancel subscription** — takes effect at cycle end
+
+See [Plans and credits](/workspace-settings/plans-and-credits) for the full pricing overview.
+
+## Notifications
+
+Configure how Guhan pings you.
+
+- **Real-time** — new Inbox task, meeting request, sender reauth needed
+- **Daily digest** — 8am summary
+- **Weekly summary** — Monday morning stats
+- **Channels** — email / in-app / SMS / WhatsApp (if you enabled Ask Guhan on WhatsApp)
+
+## API keys (Advanced)
+
+For programmatic access — currently limited to a few internal use cases. Contact hello@guhan.ai if you need API access.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    What credits cost + how to buy more.
+  </Card>
+  <Card title="Roles and permissions" icon="key" href="/workspace-settings/roles-and-permissions">
+    Built-in roles + custom-role builder.
+  </Card>
+</CardGroup>

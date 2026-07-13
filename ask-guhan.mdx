@@ -1,0 +1,87 @@
+---
+title: Ask Guhan
+description: Chat with your workspace to build agents, find prospects, and answer questions.
+---
+
+**Ask Guhan** is the chat interface for your whole workspace. Ask a question, run an action, build an agent — all by typing.
+
+<Note>
+  Ask Guhan is in beta. It can do most things you can do in the UI, but occasionally makes mistakes. Verify anything you'd act on before hitting Send.
+</Note>
+
+## What you can ask
+
+<CardGroup cols={2}>
+  <Card title="Show me things" icon="magnifying-glass">
+    "Show all prospects from Series B fintechs."
+    "Which sequence had the best reply rate last week?"
+    "List meetings booked in the last 30 days."
+  </Card>
+  <Card title="Take an action" icon="bolt">
+    "Create a Watchlist Agent for VPs of Sales at 100–500 person SaaS companies in the US."
+    "Pause my Enterprise Outreach Agent."
+    "Add sarah@acme.com to Do Not Contact."
+  </Card>
+  <Card title="Draft something" icon="pen-nib">
+    "Draft a follow-up message to Alex Chen."
+    "Suggest a break-up email variant."
+    "Rewrite my brand voice to be more direct."
+  </Card>
+  <Card title="Explain something" icon="lightbulb">
+    "Why did this prospect get filtered?"
+    "What signals fire on my Watchlist Agent?"
+    "How many credits do I have left this month?"
+  </Card>
+</CardGroup>
+
+## What Ask Guhan can't do
+
+By design:
+
+- **Delete records** — no delete tools. Ask Guhan can create, update, pause, and unbind — but never delete. If you need to delete a prospect / list / agent, use the UI's kebab menu.
+- **Change other users' data** — actions only affect your workspace and the workspace's records
+- **Complete OAuth flows** — if you say "connect my LinkedIn", Ask Guhan will point you at the Settings page where the OAuth handshake happens; it won't do it for you
+
+## How to open the chat
+
+- Click **+ Ask Guhan** in the sidebar
+- Or press `Cmd+K` from anywhere in the app (opens a mini search + chat)
+
+## Threads and history
+
+Every conversation is a **thread** — a chat you can come back to later. Guhan remembers what you discussed in that thread.
+
+- **New thread** — every fresh `+ Ask Guhan` click starts one
+- **History** — the sidebar shows your recent threads; click any to reopen
+- Full history page at **History** in the sidebar
+
+## Tool calls in the chat
+
+When Ask Guhan does something on your behalf, you'll see a **tool card** in the message stream. Example:
+
+> **Tool: List prospects** — filter: List = "Enterprise VPs"
+>
+> Found 47 prospects.
+> [table shown]
+
+Every tool call is scoped to your workspace (you can never see other workspaces' data via chat).
+
+## The 👍 / 👎 feedback
+
+Every response has a thumb-up / thumb-down. Click them — the feedback goes to us and improves future models.
+
+## WhatsApp version
+
+If you connect a WhatsApp sender that's owned by you (not for outreach), you can also chat with Guhan from WhatsApp: "@Guhan show me today's replies" from your phone.
+
+## Credits
+
+Ask Guhan is free within your daily token allowance (50k tokens per user per day on Starter). Beyond that, overflow tokens burn from your workspace credit balance at 1 credit per 50k tokens.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    Token budget + overflow billing.
+  </Card>
+</CardGroup>

@@ -1,0 +1,102 @@
+---
+title: Outreach Agent
+description: The agent that writes and sends your personalized messages.
+---
+
+An **Outreach Agent** is the messaging half of Guhan. You give it a List of prospects + a sequence + a sender account, and it does the writing and sending for you.
+
+## What it does
+
+For every prospect in its List:
+
+1. **Reads the prospect's profile** — recent posts, current company, recent job change, whatever signal brought them in
+2. **Writes a personalized message** using your brand voice + product context
+3. **Sends the first step** through your connected LinkedIn / email / WhatsApp account
+4. **Waits + follows up** per the sequence you configured
+5. **Stops if they reply** and drops the reply into your Inbox
+
+## The three ingredients
+
+<CardGroup cols={3}>
+  <Card title="Audience" icon="users">
+    Which **List** of prospects to reach out to. Fed by one or more Watchlist Agents.
+  </Card>
+  <Card title="Sequence" icon="diagram-project">
+    The steps: LinkedIn invite → wait → DM → wait → email, etc. Any mix of channels and timings.
+  </Card>
+  <Card title="Sender account" icon="paper-plane">
+    Which of your connected accounts (LinkedIn, Gmail, WhatsApp) actually sends the messages.
+  </Card>
+</CardGroup>
+
+## Two ways to view the sequence
+
+**Simple mode** — a step-by-step stair:
+
+```
+Step 1  →  Send LinkedIn invite
+Step 2  →  Wait 3 days
+Step 3  →  Send LinkedIn DM
+Step 4  →  Wait 4 days
+Step 5  →  Send email
+```
+
+Clean, easy to read, easy to edit. Works for linear sequences (no branches).
+
+**Advanced mode** — a visual canvas:
+
+Drag-drop nodes for **branches** ("if they replied → escalate to me", "if they didn't reply → try email"), **conditions** ("only send if they have a work email"), and **AI reply nodes** (Guhan drafts a reply for you to approve).
+
+You can toggle between the two views for the same sequence.
+
+## What Guhan writes
+
+Every message is generated fresh per prospect. Guhan pulls from:
+
+- **Their profile** — name, title, current company, headline
+- **Their recent activity** — the post that triggered them showing up, or their most recent LinkedIn post
+- **Your brand voice** — tone, phrases you use, phrases to avoid
+- **Your product** — what you sell, key value props
+- **The step context** — first invite is short and vague; a follow-up email 2 weeks in is longer and more concrete
+
+You can also **start from a template** — pick one of your saved message templates, and Guhan customizes it per prospect.
+
+## Safety and cadence
+
+Guhan throttles sending to keep your accounts safe:
+
+- **Daily caps per action** — LinkedIn invites: ~25/day. DMs: ~30/day. Adjustable in Sender account settings.
+- **Sending window** — messages only fire during hours you set (e.g., 9am–6pm Mon-Fri).
+- **Warm-up** — new sender accounts start at 30% of full pace and ramp over 30 days.
+- **Retries** — transient failures (rate limit, network) retry automatically; you never lose a message.
+
+## Launching, pausing, editing
+
+You can:
+
+- **Launch** an Outreach Agent — it starts sending immediately (within its sending window)
+- **Pause** it — no new messages go out; in-flight sequences hold in place
+- **Edit the sequence** — Guhan publishes a new version; anyone already in flight keeps their old version until their next step
+- **Clone** it — duplicate the agent to test a different sequence variant
+
+## Cost
+
+Sending doesn't cost credits (LinkedIn actions are gated by daily caps, not credits). What costs credits:
+
+- **Discovering a prospect** (1 credit per landed prospect) — the Watchlist Agent side
+- **Revealing an email** (4 credits) — if a step needs email but the prospect's email is hidden
+- **Revealing a phone** (12 credits) — WhatsApp steps
+- **AI reply draft** (1 credit) — when Guhan drafts a reply for you to approve
+
+See [Plans and credits](/workspace-settings/plans-and-credits) for the full breakdown.
+
+## Learn more
+
+<CardGroup cols={2}>
+  <Card title="Create an Outreach Agent" icon="plus" href="/agents/outreach-agents/create">
+    Step-by-step: audience + sequence + sender.
+  </Card>
+  <Card title="Build the sequence" icon="diagram-project" href="/agents/outreach-agents/build-sequence">
+    Simple vs. advanced canvas walkthrough.
+  </Card>
+</CardGroup>

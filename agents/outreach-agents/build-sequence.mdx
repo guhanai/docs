@@ -1,0 +1,193 @@
+---
+title: Build your sequence
+description: Design the step-by-step flow that runs for every prospect.
+---
+
+Your sequence is what actually gets sent. Guhan gives you two views for building it — pick the one that fits your flow.
+
+## Simple (stair) view
+
+A vertical list of steps. Use for linear sequences with no branches.
+
+```
+Step 1  →  LinkedIn invite       [Edit]
+Step 2  →  Wait 3 days           [Edit]
+Step 3  →  LinkedIn DM            [Edit]
+Step 4  →  Wait 4 days            [Edit]
+Step 5  →  Email                  [Edit]
+Step 6  →  Exit                    [—]
+```
+
+- Click **Edit** on any step → change the message brief, channel, timing
+- Click **+** between steps → add a new step
+- Reorder by drag
+
+Simple view is enough for most workspaces. If your sequence has any branches, Guhan automatically switches you to Advanced.
+
+## Advanced (canvas) view
+
+A visual node graph. Use for:
+- **Branches** based on prospect behavior
+- **AI reply nodes** with multi-round approval flows
+- **Complex conditions** (e.g., "only send email if prospect has an email address")
+
+Drag nodes onto the canvas, click node handles to wire them, click nodes to configure.
+
+## The node types
+
+<AccordionGroup>
+  <Accordion title="Start node">
+    Where every prospect begins. One per sequence. Nothing to configure.
+  </Accordion>
+  <Accordion title="Send node — LinkedIn invite">
+    Sends a LinkedIn connection invite.
+
+    Configure:
+    - **Note** (optional) — short custom note attached to the invite
+    - **Template** — pick a Brand & Voice template as the starting point
+    - **Sender** — which LinkedIn account sends this
+
+    Max note length: 300 characters.
+  </Accordion>
+  <Accordion title="Send node — LinkedIn DM">
+    Sends a direct message on LinkedIn. Requires prior connection.
+
+    Configure:
+    - **Brief** — what to say (Guhan drafts the actual message)
+    - **Template** — starting point
+    - **Sender**
+    - **Fetch recent post** — opt-in; Guhan reads the prospect's latest post + uses it as a hook (1 credit)
+  </Accordion>
+  <Accordion title="Send node — Email">
+    Sends an email.
+
+    Configure:
+    - **Subject brief** — Guhan writes the subject per prospect
+    - **Body brief** — what to say
+    - **Template** — starting point
+    - **Sender** (Gmail / Outlook)
+    - **Require approval** — hold send until you click Approve
+  </Accordion>
+  <Accordion title="Send node — WhatsApp">
+    Sends a WhatsApp message. Requires prospect to have a revealed phone.
+
+    Configure:
+    - **Brief** — what to say
+    - **Template**
+    - **Sender** (WhatsApp)
+  </Accordion>
+  <Accordion title="Send node — Comment on LinkedIn post">
+    Guhan drafts + posts a public comment on the prospect's most recent LinkedIn post. Great for warming a cold prospect before you DM them.
+
+    Configure:
+    - **Brief** — what kind of comment (question / observation / support)
+    - **Fetch recent post** — required; Guhan needs a post to comment on
+    - **Sender**
+  </Accordion>
+  <Accordion title="Send node — React to LinkedIn post">
+    Reacts (like / celebrate / insightful) to the prospect's most recent post. Zero-cost warming step.
+
+    Configure:
+    - **Reaction type** — default: Like
+    - **Sender**
+  </Accordion>
+  <Accordion title="Send node — View LinkedIn profile">
+    Just views the prospect's profile (they'll see "who viewed your profile" if their privacy settings allow). Zero-cost warming step.
+  </Accordion>
+  <Accordion title="Wait node">
+    Wait N hours or days before continuing.
+
+    Configure:
+    - **Duration** — 1 hour → 90 days
+  </Accordion>
+  <Accordion title="Wait for event node">
+    Wait for a specific event (they replied, they accepted the invite, they opened your email) OR until a timeout expires.
+
+    Configure:
+    - **Event type** — invite accepted / LinkedIn replied / email opened / email clicked / email replied / any reply
+    - **Timeout** — max wait (e.g., 7 days)
+    - **On timeout** → which edge to take
+  </Accordion>
+  <Accordion title="Branch node">
+    Split the flow based on rules about the prospect.
+
+    Configure:
+    - **Rule** — e.g., "has an email" / "in list X" / "posted in last 30 days" / "score > 70"
+    - **Yes edge** → goes here if rule matches
+    - **No edge** → goes here otherwise
+  </Accordion>
+  <Accordion title="AI reply node">
+    When a reply comes in from a preceding wait_for_event, Guhan classifies + drafts a response.
+
+    Configure:
+    - **Send for approval** — you approve the draft before it sends (safer)
+    - **Auto-send** — Guhan sends the draft immediately
+    - **Max consecutive replies** — how many rounds Guhan handles before handing off to you
+  </Accordion>
+  <Accordion title="Handoff node">
+    Pause the sequence, drop a task in your Inbox.
+
+    Configure:
+    - **Mode** — Notify / Approve / Decide / Take over / Schedule
+    - **Subject** — task title
+    - **Body** — instructions for whoever handles it
+  </Accordion>
+  <Accordion title="Exit node">
+    End of the sequence. Prospect is marked done.
+  </Accordion>
+</AccordionGroup>
+
+## A recipe: the standard 5-step flow
+
+Great starting point for most B2B outbound:
+
+```
+Start
+  ↓
+LinkedIn invite (with brief note)
+  ↓
+Wait for event: invite accepted (timeout 14d → Exit)
+  ↓
+Wait 2 days
+  ↓
+LinkedIn DM (opt-in: fetch recent post)
+  ↓
+Wait for event: reply (timeout 5d → next)
+  ↓
+Email (short, references the DM they didn't reply to)
+  ↓
+Wait for event: reply (timeout 7d → next)
+  ↓
+Email follow-up (new value, no ask)
+  ↓
+Wait for event: reply (timeout 14d → Exit)
+  ↓
+Exit
+```
+
+Total sequence spans ~30 days. Typical reply rates:
+- After invite: 40-60% acceptance
+- After DM: 5-10% reply
+- After first email: 2-4% additional reply
+- After follow-up: 1-2% additional reply
+
+Blended reply rate: ~10-15% across the full sequence.
+
+## Editing a live sequence
+
+You can edit anytime. When you click **Publish**:
+- New prospects enrolled after publish use the new version
+- Prospects already in-flight keep their old version (finish per what they started)
+
+If you want to force in-flight prospects to move to the new version, use **Restart from step 1** on the sequence detail page (warning: may double-message them if they already got step 1).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Message templates" icon="file-lines" href="/brand-and-voice/templates">
+    Reusable briefs to start steps from.
+  </Card>
+  <Card title="Sequences" icon="diagram-project" href="/agents/outreach-agents/sequences">
+    Concept overview.
+  </Card>
+</CardGroup>

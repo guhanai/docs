@@ -1,0 +1,115 @@
+---
+title: Review the prospects Guhan found
+description: What to check after your first sweep + how to spot signal / filter issues.
+---
+
+You launched a Watchlist Agent. 20 minutes later, prospects are landing. Here's what to look at.
+
+## Where to look
+
+Two places:
+
+<CardGroup cols={2}>
+  <Card title="Watchlist Agent detail page" icon="binoculars">
+    See what today's sweep found + why prospects landed OR got filtered.
+  </Card>
+  <Card title="List detail page" icon="rectangle-list">
+    See all landed prospects across all sweeps + Watchlist Agents feeding this List.
+  </Card>
+</CardGroup>
+
+## Watchlist Agent detail page
+
+Top of the page:
+
+- **Today's sweep** — landed count + filtered count + running count
+- **In-flight** — how many are being processed right now
+- **Enriched** — how many have their LinkedIn profile fully pulled
+
+Below:
+- **Sweep history** — click any row → drill into that specific sweep's prospects
+
+### The Filtered accordion
+
+Every prospect Guhan considered but rejected shows here with a plain-English reason:
+
+- **Wrong job title** — their title didn't match
+- **Wrong location** — outside your regions
+- **Wrong industry** — company industry didn't match
+- **Wrong company size** — outside headcount range
+- **Competitor employee** — works at one of your competitors
+- **Do Not Contact** — on your DNC list
+- **Already in your workspace** — you've found them before
+- **No reachable identity** — no LinkedIn URL / email / phone
+
+**Read a few filtered prospects.** If Guhan is rejecting people you think should qualify, one of your filters is too strict. Common finds:
+
+- Titles filter too narrow — expand with more variants
+- Location filter set to a city when you wanted the country
+- Industry set to a specific sub-category when a broader one fits
+- Score threshold too high — try 40 instead of 50
+
+## List detail page
+
+See every prospect in the List across ALL sweeps + Watchlist Agents. Filterable + searchable.
+
+- **Sort by** — Most recently added / Match score / Name
+- **Filter by** — Source Watchlist Agent, source signal, ICP score bucket, channel available
+
+## Prospect detail page
+
+Click any prospect to open their detail page:
+
+1. **Header** — name, current title + company, LinkedIn profile link
+2. **Research brief** — the 3-sentence summary Guhan wrote about them
+3. **Contact channels** — LinkedIn URL, email (or Reveal button), phone (Reveal button)
+4. **Source panel** — which Watchlist Agent + which signal
+5. **Timeline** — every message + reply + event (empty until you start messaging)
+6. **Company card** — their employer
+
+Ask yourself: **would I send them a personalized message right now?**
+
+- **Yes** → they're a good match. Keep them in the List.
+- **No** → they slipped through your filters. Options:
+  - Add them to Do Not Contact so they don't come back
+  - Tighten the Watchlist Agent's filters
+  - Just remove them from the List (right-click → Remove)
+
+## Common early-launch surprises
+
+<AccordionGroup>
+  <Accordion title="'Guhan found 100 people but only 20 look right'">
+    Match score is doing its job — 20 landed above threshold. But maybe some in the 50–60 range are borderline. Tighten the threshold to 65 → next sweep only lands prospects Guhan is very confident about.
+  </Accordion>
+  <Accordion title="'All 30 prospects are the wrong seniority'">
+    Your job titles filter is missing the seniority word. "Sales Director" isn't the same as "Director of Sales" — they can match different LinkedIn results. Add explicit variants.
+  </Accordion>
+  <Accordion title="'Everyone's from the wrong industry'">
+    Your industry filter is too broad. "Software Development" catches all SaaS + non-SaaS software. Add a more specific sub-industry OR narrow via signals.
+  </Accordion>
+  <Accordion title="'Most prospects don't have an email'">
+    Normal — LinkedIn hides emails by default. Guhan reveals them at send time (costs 4 credits per reveal) OR you can enable auto-reveal at landing (Settings → Auto-reveal, uses more credits per landed prospect).
+  </Accordion>
+  <Accordion title="'The sweep found nobody'">
+    Your filters are too strict. Loosen a signal, remove HQ country filter, or add more title variants. Check the Filtered accordion — if it shows N filtered, your filters are running but rejecting everyone.
+  </Accordion>
+</AccordionGroup>
+
+## After the first few sweeps
+
+Once you've seen 50–100 prospects:
+
+- **Great match rate?** → do nothing, let it run daily.
+- **Some misses?** → adjust filters, but don't rebuild from scratch. Small edits compound.
+- **All wrong?** → new Watchlist Agent from scratch. Delete the old one after — no data loss (prospects stay in the List even if their source Watchlist Agent is deleted).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="ICP scoring" icon="chart-simple" href="/agents/watchlist-agents/icp-scoring">
+    How the score is calculated.
+  </Card>
+  <Card title="Prospect pipeline" icon="filter" href="/agents/watchlist-agents/prospect-pipeline">
+    The full flow from search to landed.
+  </Card>
+</CardGroup>

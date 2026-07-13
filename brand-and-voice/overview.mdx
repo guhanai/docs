@@ -1,0 +1,87 @@
+---
+title: Brand & Voice
+description: How Guhan learns to write in your voice.
+---
+
+**Brand & Voice** is the settings page (Library → Brand & Voice in the sidebar) where you calibrate Guhan's personality. Every message it drafts references this page.
+
+## What lives here
+
+Five tabs organized as tiles:
+
+<CardGroup cols={2}>
+  <Card title="Brand" icon="tag">
+    Industry · Company description & value proposition · Customer pain points.
+  </Card>
+  <Card title="Voice" icon="music">
+    Preferred tone · Preferred language · Always-include phrases · Never-say phrases.
+  </Card>
+  <Card title="Competitors" icon="users">
+    LinkedIn URLs of competitors · Positioning notes per competitor.
+  </Card>
+  <Card title="Templates" icon="file-lines">
+    Reusable message briefs you can pick when configuring sequence steps.
+  </Card>
+  <Card title="Products" icon="box">
+    Everything you sell — each product carries value props + ideal use cases.
+  </Card>
+</CardGroup>
+
+## Why this matters
+
+The message agent that writes every outbound message pulls from Brand & Voice on every call:
+
+- **Tone + language** control HOW the message sounds
+- **Always-include / never-say** enforce specific phrases in or out
+- **Industry + pain points + value prop** give the message its subject-matter grounding
+- **Product context** anchors the pitch to what you sell
+- **Competitor positioning** shapes how Guhan differentiates when responding to a competitor-related reply
+
+Change any of these and every future draft matches. Nothing here is locked.
+
+## When to update Brand & Voice
+
+- **After onboarding** — the wizard pre-fills; refine anything that doesn't sound like you
+- **After the first 20 messages** — read what Guhan sent; if messages feel off, tune the voice
+- **When launching a new product line** — add a new Product record + set up a dedicated Outreach Agent for it
+- **When entering a new market** — adjust customer pain points to match the new segment's language
+
+## What NOT to put here
+
+- ❌ **Prospect-specific info** — that goes on individual prospect notes
+- ❌ **One-off campaign messaging** — use a message template instead
+- ❌ **Rules that change per prospect** — use sequence Branch nodes
+
+Brand & Voice is workspace-wide — everything here applies to every Outreach Agent's every message.
+
+## The Templates tab
+
+Message templates are pre-written **briefs** you pick from when configuring a sequence step:
+
+- 10 defaults ship with every workspace (cold connect, signal hooks, follow-ups, break-ups, etc.)
+- Clone any default to customize
+- Templates work across multiple channels (one template can be a LinkedIn DM, an email, and a WhatsApp message)
+- Templates aren't blast text — Guhan personalizes per prospect
+
+See [Write message templates](/brand-and-voice/templates) for the deep dive.
+
+## The Products tab
+
+Each product record holds:
+- Name + short description
+- Value props (bulleted)
+- Ideal use cases
+- Optional pricing
+
+When you create an Outreach Agent, you pick which Product it's pitching. Multiple products = multiple Outreach Agents.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Set up Brand & Voice" icon="palette" href="/brand-and-voice/setup">
+    Step-by-step configuration walkthrough.
+  </Card>
+  <Card title="Personalization" icon="wand-magic-sparkles" href="/agents/outreach-agents/personalization">
+    How the message agent uses Brand & Voice at draft time.
+  </Card>
+</CardGroup>

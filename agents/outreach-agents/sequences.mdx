@@ -1,0 +1,122 @@
+---
+title: Sequences
+description: The step-by-step outreach flow your Outreach Agent runs.
+---
+
+A **sequence** is a chain of steps that runs for every prospect enrolled in an Outreach Agent. Send an invite → wait N days → send a DM → wait → send an email — and so on.
+
+## The step types
+
+<CardGroup cols={2}>
+  <Card title="Send" icon="paper-plane">
+    Send a message on a specific channel: LinkedIn invite, LinkedIn DM, email, WhatsApp message, LinkedIn comment, LinkedIn reaction, LinkedIn profile view.
+  </Card>
+  <Card title="Wait" icon="clock">
+    Wait N hours or days before the next step.
+  </Card>
+  <Card title="Wait for event" icon="hourglass">
+    Wait for a specific event (they replied, they accepted the invite, they opened the email) before continuing.
+  </Card>
+  <Card title="Branch" icon="code-branch">
+    Split the flow based on a rule ("if they replied → escalate; if not → try email").
+  </Card>
+  <Card title="AI reply" icon="wand-magic-sparkles">
+    When a reply comes in, Guhan drafts a response for you to approve — then sends automatically or waits for your OK.
+  </Card>
+  <Card title="Hand off" icon="user">
+    Pause the sequence and send you a task in the Inbox. Useful for high-stakes moments.
+  </Card>
+</CardGroup>
+
+## Two ways to build a sequence
+
+### Simple (stair view)
+
+A vertical list of steps. Great for **linear** sequences with no branching.
+
+```
+Step 1  →  LinkedIn invite
+Step 2  →  Wait 3 days
+Step 3  →  LinkedIn DM
+Step 4  →  Wait 4 days
+Step 5  →  Email
+Step 6  →  Wait 7 days
+Step 7  →  Follow-up email
+```
+
+Read top to bottom. Click any step to edit it.
+
+### Advanced (canvas)
+
+A visual node graph. Necessary if you want to **branch** based on prospect behavior.
+
+```
+                  ┌── replied ──→  AI reply → Meeting request?
+                  │                    ├── yes → Book call
+LinkedIn invite ──┤                    └── no  → Hand off to me
+                  └── didn't reply ─→ Wait 4d → LinkedIn DM
+                                          ...
+```
+
+Drag nodes onto the canvas, wire them together, click to configure.
+
+You can toggle between views for the same sequence — the underlying data is the same.
+
+## Send steps: what actually gets sent
+
+Every **send step** has:
+
+- **Channel** — LinkedIn invite, DM, email, WhatsApp, comment, reaction, profile view
+- **Body / brief** — you write a short **brief** describing what to say, not the literal words. Guhan writes the actual message per prospect.
+- **Subject line** (email only) — same treatment; you write intent, Guhan personalizes
+- **Sender account** — which of your connected accounts sends this step (defaults to the agent's default)
+- **Require approval** (optional) — hold the send until you click Approve in the Inbox
+
+<Note>
+  **Brief, not body.** In older systems you'd write "Hi {{firstName}}, saw that {{companyName}} raised..." with token-replacement. Guhan doesn't do that — you write "Congratulate on the funding, offer help with SDR ramp" and Guhan writes a fresh message per prospect referencing their actual funding round.
+</Note>
+
+## Wait steps
+
+- **Fixed wait** — "wait 3 days" then go to the next step regardless
+- **Wait for event** — "wait until they reply OR 7 days pass, whichever first"
+
+Common pattern: `Send invite → wait for invite acceptance (up to 14 days) → send DM if accepted`. Guhan handles the "if they didn't accept, don't try to DM" automatically.
+
+## Branch steps
+
+Split the flow based on rules. Example:
+
+- If prospect has an email → try email next
+- If not → try WhatsApp next
+
+Rules can check: title, company, headline, ICP score, whether they have an email/phone, whether they're on Do Not Contact, whether they came from a specific List, days since added, and more.
+
+## AI reply steps
+
+When a reply comes in during a sequence, Guhan can:
+
+1. **Classify** the reply — is it a "yes", a "not now", a "not interested", a meeting request?
+2. **Draft** an appropriate response — brief, on-brand, references what they said
+3. Either **auto-send** it OR **hand off** to you for approval
+
+You configure how many rounds Guhan will handle before pulling you in (default: 1 exchange).
+
+## Editing a live sequence
+
+When you edit a sequence on a live Outreach Agent, Guhan publishes a **new version**. What happens:
+
+- **New prospects** enrolled after the edit get the new version
+- **Prospects already in-flight** keep their old version (so they don't get double-messages or skipped steps)
+- **You can pause** the agent, edit, publish, and the pause resumes on the new version
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Build a sequence" icon="pen-to-square" href="/agents/outreach-agents/build-sequence">
+    Step-by-step canvas walkthrough.
+  </Card>
+  <Card title="AI reply drafts" icon="wand-magic-sparkles" href="/inbox/ai-reply-drafts">
+    How Guhan drafts replies for you.
+  </Card>
+</CardGroup>

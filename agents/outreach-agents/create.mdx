@@ -1,0 +1,147 @@
+---
+title: Create an Outreach Agent
+description: Set up your messaging campaign.
+---
+
+An Outreach Agent is the messaging half of Guhan. Onboarding creates one for you. When you need a second (different audience, different sequence, different product), here's how.
+
+## The 3 ingredients
+
+<Steps>
+  <Step title="Audience — which List of prospects">
+    Pick an existing List (one that a Watchlist Agent feeds) OR create a new one on the fly.
+  </Step>
+  <Step title="Sequence — the message flow">
+    Guhan seeds a default 3-step sequence (invite → wait → DM). You can rewrite entirely.
+  </Step>
+  <Step title="Sender — which of your accounts sends">
+    LinkedIn / email / WhatsApp — whichever fits your sequence steps.
+  </Step>
+</Steps>
+
+Plus optional settings:
+- **Product** — which of your products this campaign is selling (default: your first product)
+- **Handoff preference** — what happens on reply (Guhan drafts / auto-send / always hand off)
+- **Auto-enroll** — automatically enroll new List members OR require manual approval
+
+## Step-by-step
+
+### 1. Open the create panel
+
+- Sidebar → **Outreach Agents** → **+ New Outreach Agent**
+
+Or in Simple mode:
+- Home → **Create Outreach Agent** button
+
+### 2. Name it
+
+Something descriptive: "US SaaS VPs — funding hook", "Enterprise Sales Directors follow-up", etc.
+
+### 3. Pick your audience
+
+Two ways:
+
+**Existing List:**
+- Dropdown → pick a List. Prospects already in that List + future arrivals get enrolled.
+
+**New List:**
+- **+ Create List** inline → gives you a fresh empty List
+- You'll need to bind a Watchlist Agent to feed it (either now or later)
+
+<Tip>
+  You can pick MULTIPLE Lists (Advanced mode only) — the Outreach Agent pulls from all of them, with de-duplication.
+</Tip>
+
+### 4. Pick a product (optional)
+
+If you have multiple products, pick which one this Outreach Agent is selling. The message agent uses the product's value props to write outreach.
+
+Only one product? Auto-selected.
+
+### 5. Build the sequence
+
+You'll see the sequence canvas OR the stair view (depending on your mode). By default, Guhan seeds:
+
+```
+Send LinkedIn invite → Wait 3 days → Send LinkedIn DM → Exit
+```
+
+Options:
+- **Keep the default** and edit later
+- **Rewrite now** — see [Build a sequence](/agents/outreach-agents/build-sequence) for the full walkthrough
+- **Start from a template** — pick one of Guhan's pre-built sequence shapes
+
+### 6. Assign a sender
+
+Under **Senders**, pick which of your connected sender accounts handles each channel:
+
+- LinkedIn steps → pick a LinkedIn sender
+- Email steps → pick a Gmail / Outlook sender
+- WhatsApp steps → pick a WhatsApp sender
+
+If a step's channel doesn't have a matching connected sender, Guhan will warn you. You can save the agent as a draft + connect the sender later.
+
+### 7. Configure enrollment behavior
+
+- **Auto-enroll** (default) — every new prospect in the audience List gets enrolled automatically
+- **Manual enroll** — new prospects wait for you to approve (from the Outreach Agent detail page)
+
+For most workspaces, auto-enroll is fine. Turn it off when you want a human review step before sending.
+
+### 8. Configure handoff behavior
+
+When a prospect replies, what should happen?
+
+- **AI drafts + auto-send** — Guhan writes a response + sends it (only for confirmed follow-ups)
+- **AI drafts + hand off** — Guhan writes a draft; you approve in the Inbox before it sends
+- **Always hand off** — no AI drafts; every reply gets a plain "reply here" task in your Inbox
+
+Default: **AI drafts + hand off**. Safe starting point.
+
+### 9. Launch
+
+Click **Launch**. Guhan:
+- Marks the agent as active
+- Starts enrolling prospects from the audience List
+- First message drafts start generating within 2-5 minutes
+- Actual sends fire during your sending window
+
+If the audience List is empty right now, the agent just waits — as prospects land, they enroll automatically.
+
+## After launch
+
+You land on the Outreach Agent detail page:
+
+- **Overview** — sent count, reply count, meeting count, sequence stats
+- **Sources** — which Watchlist Agents feed this Outreach Agent's audience
+- **Leads** — table of everyone enrolled, with per-prospect status
+- **Sequence** — the graph / stair view; edit anytime
+- **Settings** — name, product, senders, handoff pref, auto-enroll
+
+## Pausing, editing, cloning, deleting
+
+<AccordionGroup>
+  <Accordion title="Pause">
+    Sends stop; in-flight sequences hold in place. No new enrollments. Resume anytime.
+  </Accordion>
+  <Accordion title="Edit sequence">
+    Pause the agent → make changes → Publish → Resume. Guhan versions your sequences — in-flight prospects use their old version until their next step.
+  </Accordion>
+  <Accordion title="Clone">
+    Copy the whole agent (audience, sequence, senders, settings) into a new one. Good for A/B testing message variants.
+  </Accordion>
+  <Accordion title="Delete">
+    Ends the agent permanently. In-flight prospects stop mid-sequence. Prospects stay in the List — you can start a new Outreach Agent against the same List.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Build the sequence" icon="pen-to-square" href="/agents/outreach-agents/build-sequence">
+    Deep-dive into the canvas + stair views.
+  </Card>
+  <Card title="Launch checklist" icon="rocket" href="/agents/outreach-agents/launch">
+    Pre-launch verification checklist.
+  </Card>
+</CardGroup>

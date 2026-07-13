@@ -1,0 +1,123 @@
+---
+title: Connect email
+description: Add Gmail or Outlook as a sender.
+---
+
+Adding email unlocks another 100 daily sends per sender and gives you an inbox-native channel. Reply threading is native — replies land back in your Gmail / Outlook the way they always do, plus in Guhan's Inbox.
+
+## Supported providers
+
+- **Google Workspace** — @yourcompany.com hosted on Google
+- **Personal Gmail** — @gmail.com addresses
+- **Microsoft 365** — @yourcompany.com hosted on Microsoft
+- **Personal Outlook / Hotmail** — @outlook.com, @hotmail.com
+
+## Steps
+
+<Steps>
+  <Step title="Go to Settings → Sender accounts">
+    Sidebar → Settings → Sender accounts.
+  </Step>
+  <Step title="Click + Connect">
+    Top-right. Choose **Google (Gmail)** or **Microsoft (Outlook)**.
+  </Step>
+  <Step title="Sign in on the provider's page">
+    Google or Microsoft OAuth screen — sign in with the email account.
+  </Step>
+  <Step title="Allow requested scopes">
+    Guhan needs:
+    - **Send email as you** — for outbound
+    - **Read email threads** — for reply capture
+    - **Calendar read + write** (if you connect this as your calendar too)
+
+    Approve to continue.
+  </Step>
+  <Step title="Confirm the sender appears">
+    You'll be redirected back. Your email sender shows with an **Active** dot.
+  </Step>
+</Steps>
+
+## What Guhan sees
+
+Guhan reads:
+- Emails matching outbound threads (to detect replies)
+- Calendar availability (if calendar scope granted)
+
+Guhan does NOT read:
+- Unrelated inbox threads
+- Your archive
+- Attachments not tied to Guhan-sent messages
+
+## What Guhan sends as
+
+Every email goes out with:
+- **From** — your name + your email address
+- **Reply-to** — same address (replies come back to your inbox)
+- **BCC** — none. Every email is a real 1:1 thread.
+
+No mailing-list headers. No "unsubscribe" footer added by Guhan (you add it in Brand & Voice if you want one).
+
+## Email vs. LinkedIn
+
+Trade-offs:
+
+| | LinkedIn | Email |
+|---|---|---|
+| Daily volume | 25 invites + 30 DMs | ~100 sends |
+| Reply rate | Higher (~8%) | Lower (~3%) |
+| Requires connection first | Yes (invite step) | No |
+| Deliverability | Almost 100% (in-app) | Depends on your domain reputation |
+| Reply feel | Chat-like | Email-formal |
+
+Most workspaces use both — LinkedIn to initiate, email as a fallback channel a week later.
+
+## Calendar integration
+
+If you connect Google or Outlook as a sender, Guhan asks whether to ALSO use it as your calendar. Say yes → meeting bookings write directly to this calendar.
+
+You can also connect a calendar without a sender (e.g., Cal.com booking URL). Details on [the Meetings concept page](/meetings/overview).
+
+## Warm-up
+
+Same 30-day ramp as LinkedIn:
+
+- Day 1–7: 30% of daily cap (~30 sends/day)
+- Day 8–14: 50%
+- ... etc.
+
+Established senders (accounts > 30 days old + regular use) skip warm-up.
+
+## What if the OAuth fails?
+
+<AccordionGroup>
+  <Accordion title="'Access denied' from Google">
+    Some Google Workspace admins restrict third-party OAuth. Ask your admin to allow Guhan (unipile.com is the underlying OAuth partner).
+  </Accordion>
+  <Accordion title="Microsoft: 'AADSTS50011: The reply URL does not match'">
+    Rare tenant-config issue. Contact hello@guhan.ai — we'll walk your admin through it.
+  </Accordion>
+  <Accordion title="'Consent required for additional scopes'">
+    Some Workspace tenants require admin consent for calendar scopes. Get your admin to approve Guhan once; then any user can connect.
+  </Accordion>
+</AccordionGroup>
+
+## Reauth
+
+If you change your email password, Guhan gets locked out until you re-authorize.
+
+- You'll see a **banner** at the top of the app: "Your Gmail account needs re-authentication"
+- Click it OR go to Settings → Sender accounts → [account] → **Reauth**
+- One click through OAuth → back in business
+
+In-flight email steps hold in place until reauth completes.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Sender accounts" icon="paper-plane" href="/get-started/sender-accounts/overview">
+    Full concept + safety details.
+  </Card>
+  <Card title="Meetings" icon="calendar" href="/meetings/overview">
+    Calendar setup.
+  </Card>
+</CardGroup>
