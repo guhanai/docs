@@ -108,8 +108,7 @@
             "pages": [
               "workspace-settings/overview",
               "workspace-settings/plans-and-credits",
-              "workspace-settings/roles-and-permissions",
-              "workspace-settings/modes"
+              "workspace-settings/roles-and-permissions"
             ]
           },
           {
