@@ -37,6 +37,10 @@ description: Every term Guhan uses.
 
 **Enrollment** — a specific prospect being placed into a specific Outreach Agent's sequence.
 
+## F
+
+**Fit chip** — the Strong / Moderate / Weak tag Guhan's research agent assigns every landed prospect, based on how well they match what you sell. Sortable on every prospect table.
+
 ## H
 
 **Handoff** — when Guhan pauses its automation and drops a task in your Inbox for you to handle.
@@ -57,13 +61,11 @@ description: Every term Guhan uses.
 
 ## L
 
-**Land / Landed** — a prospect that passed all Watchlist Agent filters and got added to your List. This is what you're billed 1 credit for.
+**Land / Landed** — a prospect that passed every filter on a source and got added to your List. This is what you're billed 1 credit for.
 
-**List** — a bucket of prospects. Watchlist Agents feed a List; Outreach Agents drain from a List.
+**List** — a bucket of prospects. A List can be fed by any combination of sources (search criteria, buying signals, competitor engagement, another List, CSV, manual). An Outreach Agent then drains it.
 
 ## M
-
-**Match score** — a 0-100 number Guhan assigns each prospect based on how well they match your ICP. Below the threshold (default 50) they get filtered out.
 
 **Message agent** — the LLM that drafts your outbound messages. Reads Brand & Voice + prospect profile + step context.
 
@@ -91,7 +93,7 @@ description: Every term Guhan uses.
 
 **Reauth** — re-signing in via OAuth when a sender's token expires.
 
-**Research brief** — the 3-sentence summary Guhan writes about each prospect. Used by the message agent to personalize.
+**Research brief** — the rich account-research paragraph (10-14 sentences) Guhan's research agent writes about each prospect. Used by the message agent to personalize.
 
 ## S
 
@@ -99,15 +101,15 @@ description: Every term Guhan uses.
 
 **Sequence** — the step-by-step flow that runs for every prospect enrolled in an Outreach Agent.
 
-**Signal** — a real-world event (funding, hiring, engagement) that triggers a Watchlist Agent to find prospects.
+**Signal** — a real-world event (funding, hiring, engagement) that triggers a List's signal source to find prospects.
 
-**Sweep** — one run of a Watchlist Agent. Usually happens once per day per signal.
+**Source** — a discovery configuration on a List. A List can have zero, one, or many sources. Types include search criteria, buying signals, competitor engagement, another List, CSV upload, and manual add.
+
+**Sweep** — one discovery run against a source on a List. Usually happens once per day per signal.
 
 ## T
 
 **Template** — a reusable brief you can start any Send step from. Lives in Brand & Voice.
-
-**Threshold** — the match-score cutoff. Prospects below it get filtered out.
 
 **Trigger** — synonym for Signal. What causes a prospect to become worth reaching out to now.
 
@@ -117,8 +119,6 @@ description: Every term Guhan uses.
 
 **Warm-up** — the 30-day ramp for new sender accounts. Starts at 30% of daily caps, grows to 100% over 30 days.
 
-**Watchlist Agent** — the prospect finder half of Guhan. Runs a daily search based on your ICP + signals; lands prospects into a List.
+**WHO panel** — the ICP fields on a List's search-criteria source (title, location, industry, size).
 
-**WHO panel** — the ICP fields on a Watchlist Agent (title, location, industry, size).
-
-**WHEN panel** — the signals section on a Watchlist Agent.
+**WHEN panel** — the signals section on a List.

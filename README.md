@@ -9,42 +9,17 @@ docs.json                     Nav config for Mintlify
 introduction.mdx              Landing page
 quickstart.mdx                5-minute setup guide
 
-concepts/                     13 concept pages (the "what")
-  watchlist-agent.mdx
-  outreach-agent.mdx
-  prospects-and-companies.mdx
-  lists.mdx
-  signals.mdx
-  icp-scoring.mdx
-  prospect-pipeline.mdx
-  sender-accounts.mdx
-  sequences.mdx
-  personalization.mdx
-  sending-safety.mdx
-  inbox-tasks.mdx
-  meetings.mdx
-  ask-guhan.mdx
-  plans-and-credits.mdx
-  roles-and-permissions.mdx
-  workspace-modes.mdx
-
-guides/                       14 how-to guides (the "how")
-  how-guhan-works.mdx
-  onboarding-walkthrough.mdx
-  connect-linkedin.mdx
-  connect-email.mdx
-  brand-and-voice.mdx
-  create-watchlist-agent.mdx
-  configure-icp.mdx
-  pick-signals.mdx
-  review-prospects.mdx
-  create-outreach-agent.mdx
-  build-sequence.mdx
-  write-message-templates.mdx
-  launch-outreach.mdx
-  handle-replies-inbox.mdx
-  schedule-meetings.mdx
-  ai-reply-drafts.mdx
+agents/outreach-agents/       Outreach Agent concept + how-tos
+audience/                     Lists (hub + sources + signal catalog + scoring
+                              + pipeline + review-prospects), prospects, companies
+brand-and-voice/              Brand + Voice + Templates + Products
+inbox/                        Inbox tasks + reply handling
+meetings/                     Calendar integrations + scheduling
+get-started/                  Onboarding walkthrough + sender-account connect
+                              (LinkedIn / Email / WhatsApp)
+workspace-settings/           Plans + credits + roles + permissions
+help/                         FAQ, troubleshooting, glossary, keyboard shortcuts
+ask-guhan.mdx                 Ask Guhan reference
 
 reference/                    5 reference pages
   keyboard-shortcuts.mdx

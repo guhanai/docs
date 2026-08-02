@@ -35,34 +35,15 @@
             ]
           },
           {
-            "group": "Agents",
+            "group": "Outreach Agents",
             "pages": [
-              {
-                "group": "Watchlist Agents",
-                "pages": [
-                  "agents/watchlist-agents/overview",
-                  "agents/watchlist-agents/create",
-                  "agents/watchlist-agents/configure-icp",
-                  "agents/watchlist-agents/signals",
-                  "agents/watchlist-agents/signal-catalog",
-                  "agents/watchlist-agents/pick-signals",
-                  "agents/watchlist-agents/icp-scoring",
-                  "agents/watchlist-agents/prospect-pipeline",
-                  "agents/watchlist-agents/review-prospects"
-                ]
-              },
-              {
-                "group": "Outreach Agents",
-                "pages": [
-                  "agents/outreach-agents/overview",
-                  "agents/outreach-agents/create",
-                  "agents/outreach-agents/sequences",
-                  "agents/outreach-agents/build-sequence",
-                  "agents/outreach-agents/personalization",
-                  "agents/outreach-agents/sending-safety",
-                  "agents/outreach-agents/launch"
-                ]
-              }
+              "agents/outreach-agents/overview",
+              "agents/outreach-agents/create",
+              "agents/outreach-agents/sequences",
+              "agents/outreach-agents/build-sequence",
+              "agents/outreach-agents/personalization",
+              "agents/outreach-agents/sending-safety",
+              "agents/outreach-agents/launch"
             ]
           },
           {
@@ -85,6 +66,11 @@
             "group": "Audience",
             "pages": [
               "audience/lists",
+              "audience/lists/add-prospects",
+              "audience/lists/signal-catalog",
+              "audience/lists/how-scoring-works",
+              "audience/lists/prospect-pipeline",
+              "audience/lists/review-prospects",
               "audience/prospects",
               "audience/companies"
             ]
@@ -138,6 +124,18 @@
       ]
     }
   },
+  "redirects": [
+    { "source": "/agents/watchlist-agents/overview", "destination": "/audience/lists" },
+    { "source": "/agents/watchlist-agents/create", "destination": "/audience/lists/add-prospects" },
+    { "source": "/agents/watchlist-agents/configure-icp", "destination": "/audience/lists/add-prospects" },
+    { "source": "/agents/watchlist-agents/signals", "destination": "/audience/lists/signal-catalog" },
+    { "source": "/agents/watchlist-agents/signal-catalog", "destination": "/audience/lists/signal-catalog" },
+    { "source": "/agents/watchlist-agents/pick-signals", "destination": "/audience/lists/signal-catalog" },
+    { "source": "/agents/watchlist-agents/icp-scoring", "destination": "/audience/lists/how-scoring-works" },
+    { "source": "/agents/watchlist-agents/prospect-pipeline", "destination": "/audience/lists/prospect-pipeline" },
+    { "source": "/agents/watchlist-agents/review-prospects", "destination": "/audience/lists/review-prospects" },
+    { "source": "/workspace-settings/modes", "destination": "/workspace-settings/overview" }
+  ],
   "navbar": {
     "links": [
       {
@@ -161,7 +159,7 @@
     "metatags": {
       "canonical": "https://docs.guhan.ai",
       "description": "Guhan is an autonomous AI sales agent that finds high-intent prospects, researches each one, and books qualified meetings across LinkedIn, Email, and WhatsApp. It runs continuously — detecting buying signals in real time and sending hyper-personalized outreach — so your pipeline grows without manual SDR work.",
-      "keywords": "Guhan, autonomous AI sales agent, AI sales agent, AI SDR, outbound sales, intent-based prospecting, buying signals, hyper-personalized outreach, LinkedIn automation, cold email AI, WhatsApp outreach, multi-channel sales, sales automation, sales prospecting tool, B2B lead generation, AI personalization, sales pipeline automation, Watchlist Agent, Outreach Agent",
+      "keywords": "Guhan, autonomous AI sales agent, AI sales agent, AI SDR, outbound sales, intent-based prospecting, buying signals, hyper-personalized outreach, LinkedIn automation, cold email AI, WhatsApp outreach, multi-channel sales, sales automation, sales prospecting tool, B2B lead generation, AI personalization, sales pipeline automation, signal-based sales lists, smart prospect lists, Outreach Agent",
       "og:title": "Guhan Docs — Autonomous AI Sales Agent for LinkedIn, Email, WhatsApp",
       "og:description": "Guhan runs continuously — detecting buying signals, researching every prospect, and sending hyper-personalized outreach across LinkedIn, Email, and WhatsApp — so your pipeline grows without manual SDR work.",
       "og:site_name": "Guhan AI",

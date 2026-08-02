@@ -39,31 +39,31 @@ description: Common issues and fixes.
   </Accordion>
 </AccordionGroup>
 
-## Watchlist Agents
+## Lists and discovery
 
 <AccordionGroup>
-  <Accordion title="Watchlist Agent is 'Active' but finding zero prospects">
+  <Accordion title="List is active but finding zero prospects">
     Filters are too strict.
 
     **Check:**
     - **Filtered accordion** — is Guhan finding people but rejecting them all? Reason column tells you why.
     - **Titles** — try broader ("Sales Leader" instead of "VP of Enterprise Sales")
     - **HQ country** — is it filtering out people who are in your target country but their company HQ is elsewhere?
-    - **Signal** — pick "any" not "all" signal logic; loosen recency window
+    - **Signal** — loosen the recency window or drop a signal source and see if the search-criteria source alone finds people
 
-    **Debug:** flip your Watchlist Agent to WHO-only (no signals). If it now finds prospects, your signal is the problem. If still zero, your WHO filters are too tight.
+    **Debug:** temporarily pause every signal source on the List, leaving only the search-criteria source. If prospects start landing, one of your signals was the problem. If still zero, your search criteria is too tight.
   </Accordion>
-  <Accordion title="Watchlist Agent finds too many prospects (500+/day)">
+  <Accordion title="List is finding too many prospects (500+/day)">
     Filters are too loose.
 
     **Options:**
-    - Set a **daily prospect target** on the Watchlist Agent (e.g., 25/day). Guhan pauses when you hit it.
-    - Add a stricter **signal**
-    - Tighten **titles**, **industry**, or **company size**
-    - Raise the **score threshold**
+    - Set a **daily prospect target** on the List (e.g., 25/day). Guhan pauses when you hit it.
+    - Add a stricter **signal source**
+    - Tighten **titles**, **industry**, or **company size** on the search-criteria source
+    - Make more fields **Required** (hard gates) instead of Nice-to-have
   </Accordion>
   <Accordion title="Same person keeps showing up in filtered as 'already in workspace'">
-    Guhan found this person via a prior sweep or a different Watchlist Agent. They're not being messaged twice — this is normal deduplication.
+    Guhan found this person via a prior discovery run or a different source. They're not being messaged twice — this is normal deduplication.
 
     Find them via **Prospects** page (search their name) — they're already in your List somewhere.
   </Accordion>
@@ -72,7 +72,7 @@ description: Common issues and fixes.
 
     "Sales Director" isn't the same as "Director of Sales" — LinkedIn matches them differently. Add the specific version you want.
 
-    Auto-variants may include titles below your target seniority. Delete unwanted variant chips from the WHO panel.
+    Auto-variants may include titles below your target seniority. Delete unwanted variant chips from the source's WHO panel.
   </Accordion>
 </AccordionGroup>
 
@@ -81,7 +81,7 @@ description: Common issues and fixes.
 <AccordionGroup>
   <Accordion title="Outreach Agent is 'Active' but no messages have gone out">
     **Common causes:**
-    - **Empty audience** — your List has no prospects yet. Wait for the Watchlist Agent to land some.
+    - **Empty audience** — your List has no prospects yet. Wait for the List's sources to land some.
     - **Outside sending window** — Guhan won't send at 3am. Wait for your active hours.
     - **Sender broken** — check Sender accounts for red/amber dots.
     - **Auto-enroll off** — prospects need manual approval. Check the Outreach Agent's Leads tab for unapproved prospects.

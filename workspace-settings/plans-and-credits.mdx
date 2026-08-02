@@ -15,7 +15,7 @@ Think of it like data on a phone plan — you get an allowance every month, top-
 
 | Action | Credits | When it fires |
 |---|---|---|
-| Land a prospect | 1 | Watchlist Agent adds a prospect to a List |
+| Land a prospect | 1 | A List source adds a prospect to a List |
 | Reveal an email | 4 | Email step needs an address; Guhan looks it up |
 | Reveal a phone | 12 | WhatsApp step needs a phone; Guhan looks it up |
 | AI reply draft | 1 | AI reply node drafts a response |
@@ -44,7 +44,7 @@ Your workspace has **two credit balances** that stack:
 
 If your combined balance hits 0:
 
-- **Prospect discovery pauses** — Watchlist Agents stop landing new prospects
+- **Prospect discovery pauses** — Lists stop landing new prospects
 - **Email / phone reveals pause** — steps needing an unreachable channel skip
 - **AI reply drafts pause** — replies fall back to plain-classify + hand off to you
 - **Ask Guhan works** but every response burns overflow (which fails when balance = 0 → Ask Guhan tells you)

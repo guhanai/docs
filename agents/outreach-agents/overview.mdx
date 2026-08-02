@@ -5,7 +5,7 @@ description: Guhan's messaging agent — writes hyper-personalized outreach and 
 
 **An Outreach Agent is your messenger. Give it a List of prospects, a sequence of steps, and a sender account. It writes each message from scratch and runs the whole follow-up flow.**
 
-If the Watchlist Agent is the finder, the Outreach Agent is the closer.
+Your List does the finding — the Outreach Agent does the closing.
 
 ## What it does
 
@@ -21,7 +21,7 @@ For every prospect in its List:
 
 <CardGroup cols={3}>
   <Card title="Audience" icon="users">
-    Which **List** of prospects to reach out to. Fed by one or more Watchlist Agents.
+    Which **List** of prospects to reach out to. Filled from search criteria, buying signals, competitors, another List, or a CSV.
   </Card>
   <Card title="Sequence" icon="diagram-project">
     The steps: LinkedIn invite → wait → DM → wait → email, etc. Any mix of channels and timings.
@@ -31,9 +31,9 @@ For every prospect in its List:
   </Card>
 </CardGroup>
 
-## Two ways to view the sequence
+## What the sequence looks like
 
-**Simple mode** — a step-by-step stair:
+A step-by-step stair:
 
 ```
 Step 1  →  Send LinkedIn invite
@@ -43,13 +43,7 @@ Step 4  →  Wait 4 days
 Step 5  →  Send email
 ```
 
-Clean, easy to read, easy to edit. Works for linear sequences (no branches).
-
-**Advanced mode** — a visual canvas:
-
-Drag-drop nodes for **branches** ("if they replied → escalate to me", "if they didn't reply → try email"), **conditions** ("only send if they have a work email"), and **AI reply nodes** (Guhan drafts a reply for you to approve).
-
-You can toggle between the two views for the same sequence.
+Clean, easy to read, easy to edit. Every step is one of: **Send** (LinkedIn / Email / WhatsApp), **Wait** (a day count or "until they reply"), or **Handoff** (drop into your Inbox for human judgment).
 
 ## What Guhan writes
 
@@ -85,7 +79,7 @@ You can:
 
 Sending doesn't cost credits (LinkedIn actions are gated by daily caps, not credits). What costs credits:
 
-- **Discovering a prospect** (1 credit per landed prospect) — the Watchlist Agent side
+- **Discovering a prospect** (1 credit per landed prospect) — every prospect a source lands in your List
 - **Revealing an email** (4 credits) — if a step needs email but the prospect's email is hidden
 - **Revealing a phone** (12 credits) — WhatsApp steps
 - **AI reply draft** (1 credit) — when Guhan drafts a reply for you to approve
@@ -99,6 +93,6 @@ See [Plans and credits](/workspace-settings/plans-and-credits) for the full brea
     Step-by-step: audience + sequence + sender.
   </Card>
   <Card title="Build the sequence" icon="diagram-project" href="/agents/outreach-agents/build-sequence">
-    Simple vs. advanced canvas walkthrough.
+    Walkthrough of adding, editing, and reordering sequence steps.
   </Card>
 </CardGroup>

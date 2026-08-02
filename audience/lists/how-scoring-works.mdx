@@ -1,0 +1,94 @@
+---
+title: How Guhan scores prospects
+description: Every landed prospect gets a fit chip — Strong, Moderate, or Weak — from Guhan's research agent. Here's what it means and how the two layers of filtering work.
+---
+
+**Every landed prospect gets a fit chip: Strong fit, Moderate fit, or Weak fit. The chip comes from Guhan's research agent — which reads each prospect's profile and rates them against what you sell.** Prospects who don't clear your hard-required filters (title, location) never land in the first place.
+
+Two layers do the work:
+
+<CardGroup cols={2}>
+  <Card title="Hard gates" icon="shield">
+    **Title and location** are required by default. A prospect who misses either is rejected outright — they never land in your List.
+  </Card>
+  <Card title="Fit assessment" icon="chart-simple">
+    Every prospect who clears the hard gates gets a Strong / Moderate / Weak chip from Guhan's research agent, which reads their profile and rates them against what you sell.
+  </Card>
+</CardGroup>
+
+## The fit chip
+
+<AccordionGroup>
+  <Accordion title="🟢 Strong fit">
+    Guhan's research agent read this prospect's profile, their company, and the triggering signal (if any) — and decided they tightly match at least one of your products or your workspace-level positioning. Right role, right scale, clear signal or pain alignment. **Reach out today.**
+  </Accordion>
+  <Accordion title="🟡 Moderate fit">
+    General audience fit but weaker on one dimension — no signal evidence, wrong scale, or partial role match. **Worth reaching out if you have pipeline capacity.**
+  </Accordion>
+  <Accordion title="⚪ Weak fit">
+    Audience alignment is thin — the seller's offering doesn't obviously solve a problem this prospect faces. **Deprioritize.** Guhan still lets them land so you can see the assessment, but the messaging agent will de-prioritize them in the queue.
+  </Accordion>
+</AccordionGroup>
+
+The chip shows on every prospect table + the Prospect detail page. Sort a List by fit tier to work your Strong prospects first.
+
+### The per-product breakdown
+
+If you have multiple products in Brand & Voice, the Prospect detail page shows a per-product fit breakdown — each product gets its own Strong / Moderate / Weak chip plus a one-sentence reason.
+
+Example, if you sell an audit tool AND a policy-monitoring tool:
+
+- **AuditPath** — Strong. Multi-branch expansion + RBI regulation makes the audit-trail consolidation angle a natural fit; the caveat is that they may already have a legacy tool in place.
+- **PolicyStream** — Moderate. Related pain but a secondary priority — they'll evaluate this after AuditPath is live.
+
+The message agent uses this at send time — a prospect enrolled in an outreach agent for Product A gets messaging anchored on Product A's fit reason.
+
+## The hard gates
+
+By default, **title** and **location** are required. A prospect who fails either is rejected — they never land in your List, and you never spend a credit on them.
+
+You can change which fields are required on the source config panel — look for the **Required / Nice-to-have** chip next to each rule. Common patterns:
+
+- **Everything required** — tightest filter. Best when your audience is very narrow and mis-fires are expensive.
+- **Title + location required** (default) — good balance. Industry and headcount contribute to the fit chip but don't block landing.
+- **Title only** — widest filter. Best when you want to see anyone in a role and let Guhan's fit chip do the sorting.
+
+## Why prospects get filtered out
+
+The List detail page has a **Filtered** accordion showing every prospect that didn't make it, with a plain-English reason:
+
+- **Wrong job title** — their title didn't match any of yours
+- **Wrong location** — they're in a country you didn't target
+- **Company / Page (not a person)** — LinkedIn returned a Page or Company row instead of a real profile (auto-handled)
+- **Competitor employee** — they work at one of your competitors (auto-block from your Brand & Voice competitors list)
+- **Do Not Contact** — they're on your DNC list
+- **Already in your workspace** — you found them via a different source already
+
+This is useful for debugging. If Guhan keeps rejecting people you think should qualify, the Filtered accordion tells you which rule is being strict.
+
+## What the research agent reads
+
+To produce the fit chip, Guhan's research agent reads:
+
+- The prospect's **LinkedIn profile** — role, tenure, current company, headline, past positions
+- The prospect's **company** — industry, headcount, HQ location, description, and any signal evidence (funding, hiring, exec change) attached to it
+- The **triggering signal** (if any) — matched keyword, post text, engagement type
+- Your **Brand & Voice** — what you sell, who you sell to, customer pain points, competitor context
+- Every **Product** you've added — with per-product ICP and value props
+
+It produces a rich research brief (10-14 sentences of actual account research) plus the fit chip. Both surface on the Prospect detail page.
+
+## Regenerating the assessment
+
+Every prospect gets a fresh assessment on landing (fire-and-forget). If a prospect's context has changed — new signal, new role, new company — hit **Regenerate brief** on the Prospect detail page. Costs 1 credit against your monthly budget, then falls back to your top-up wallet if the monthly is exhausted.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="The prospect pipeline" icon="filter" href="/audience/lists/prospect-pipeline">
+    The full flow from search to landed — every stage a prospect passes through.
+  </Card>
+  <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
+    What to check after your first landing.
+  </Card>
+</CardGroup>

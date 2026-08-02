@@ -1,0 +1,147 @@
+---
+title: Adding prospects to a List
+description: Every way to fill a List — search criteria, buying signals, competitor engagement, another List, CSV upload, or manually.
+---
+
+**A List can be fed by any combination of sources. Pick the ones that fit your workflow — there's no "right" mix.**
+
+Every source lives on the List detail page under **+ Add source**. You can add, edit, pause, or remove sources at any time.
+
+## Search criteria
+
+The most common source. You describe your ideal customer — job titles, location, industry, company size — and Guhan searches its data pipelines every day for people matching.
+
+<AccordionGroup>
+  <Accordion title="Job titles">
+    Add each title as a chip. Guhan auto-generates variants so you don't have to list every wording:
+    - You type: **VP of Sales**
+    - Guhan matches: Vice President Sales, SVP Sales, Senior Vice President Sales, Head of Revenue, Head of Sales…
+
+    You can see and edit the auto-variants below the input.
+  </Accordion>
+  <Accordion title="Location">
+    Autocomplete-backed. Type "San Francisco" → pick from suggestions. Multi-select with OR logic.
+
+    Cities, states, countries, regions all work. "United States" catches everyone in the US; "New York" catches NY-metro only.
+  </Accordion>
+  <Accordion title="Industry">
+    LinkedIn's official industry taxonomy. Pick one or many.
+
+    <Warning>
+      "SaaS" isn't a LinkedIn industry — it's a subset of "Software Development". Use "Software Development" and let a signal or your headcount range narrow further.
+    </Warning>
+  </Accordion>
+  <Accordion title="Company size">
+    Headcount slider. Leave both ends blank = no cap.
+
+    Common ranges:
+    - **1–10** — pre-seed startups
+    - **11–50** — seed to Series A
+    - **51–200** — post-Series-A scaleups
+    - **201–1000** — mid-market
+    - **1001+** — enterprise
+  </Accordion>
+  <Accordion title="HQ country (optional)">
+    If you sell to a specific geography (e.g., US companies only), set HQ = United States. This is stricter than person-location — the *company* has to be HQ'd there, not just the person.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  Search criteria alone is enough to fill a List. If you don't add a buying-signal source on top, Guhan runs a plain daily search for people matching your criteria.
+</Tip>
+
+## Buying signals
+
+Only add people when a triggering event fires. Signals turn a broad audience into a "reach out to them right now" moment.
+
+Pick from six signal types on the WHEN panel:
+
+- 💰 **Funding raised recently** — companies that just raised a round
+- 📈 **They're hiring** — companies posting roles in a department you care about
+- 👔 **New leadership joined** — companies where an exec or director joined recently
+- 🎯 **Engaged with a competitor's post** — people who liked or commented on your named competitors' posts
+- 📢 **Posted about specific keywords** — people writing (or engaging with) posts matching your keywords
+- 🎁 **Engaged with a specific post URL** — people who reacted to or commented on exact post URLs you paste in
+
+Each signal has its own config (recency window, keywords, competitor URLs, etc.).
+
+<Card title="Full signal reference" icon="bolt" href="/audience/lists/signal-catalog">
+  Every signal Guhan supports, with configuration options and example openers.
+</Card>
+
+## Competitor engagement
+
+A special case of the "posts" signals — you paste your competitors' LinkedIn URLs and Guhan watches every one of their posts, landing the people who engage.
+
+- **Company URLs** watch every employee's posts from that company.
+- **Individual profile URLs** watch a specific person (e.g., a competitor CEO or head of marketing).
+
+This is the highest-intent signal Guhan supports — someone commenting on your competitor is actively evaluating your category.
+
+<Card title="Set up competitor engagement" icon="crosshairs" href="/audience/lists/signal-catalog#engaged-with-competitors-content">
+  Details + example openers.
+</Card>
+
+## Copy from another List
+
+Duplicate the current members of an existing List into a new one. Useful when you want to:
+
+- **A/B test** two sequences against the same audience
+- **Segment** further — take an "All US SaaS" List and copy into a smaller "US SaaS · Enterprise" List
+- **Reactivate** — copy a stale List into a new one with a fresh sequence
+
+The copy is a snapshot at the moment you click Copy. Future prospects landing in the source List don't auto-flow to the copy.
+
+## CSV upload
+
+Upload a CSV of prospects you already have. Guhan enriches them from LinkedIn and treats them like any other prospect.
+
+**Minimum columns:**
+- `linkedin_url` OR `email` (at least one)
+- `name` (optional but recommended)
+
+**Optional columns:**
+- `email` — pre-populates so Guhan doesn't need to reveal it (saves credits)
+- `company_name`, `title`, `phone` — anything else you have
+
+<Tip>
+  Guhan enriches every uploaded row from LinkedIn — so even a bare CSV with 500 LinkedIn URLs becomes 500 fully-profiled prospects with fit tiers, research briefs, and current-role data.
+</Tip>
+
+## Manual add
+
+Paste a LinkedIn URL or search by name to add one prospect at a time. Best for:
+
+- **Warm leads** — someone you already know is a fit; skip discovery entirely
+- **Referrals** — a colleague forwarded you a lead
+- **Testing** — add yourself to a List before launching to confirm the messaging looks right
+
+Guhan enriches from LinkedIn on add, so a manually-added prospect behaves identically to a discovery-sourced one downstream.
+
+## Multiple sources on one List
+
+You can add as many sources as you want to the same List. Every source runs independently — Guhan de-dupes so no prospect gets added twice.
+
+**Example:** an "Enterprise Sales Leaders" List might have:
+- Search criteria source: VP Sales at 500+ headcount SaaS companies
+- Funding signal source: same criteria + only when funding announced in last 90 days
+- Competitor engagement source: watch two competitor company URLs
+
+Prospects who match multiple sources are added once and tagged with all matching sources — the message can reference whichever one is most relevant.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Signal catalog" icon="bolt" href="/audience/lists/signal-catalog">
+    Full reference for every signal, with configuration and openers.
+  </Card>
+  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
+    The fit chip and how Guhan decides what lands.
+  </Card>
+  <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
+    What to check after the first landing.
+  </Card>
+  <Card title="Outreach Agent" icon="paper-plane" href="/agents/outreach-agents/overview">
+    How prospects flow out of the List into messaging.
+  </Card>
+</CardGroup>

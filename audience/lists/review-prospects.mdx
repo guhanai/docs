@@ -1,0 +1,104 @@
+---
+title: Reviewing prospects
+description: What to check after your first landing + how to tighten if Guhan is picking the wrong people.
+---
+
+**Prospects are landing in your List. Here's what to check — and what to tighten if Guhan is picking the wrong people.**
+
+Give discovery 20 minutes after you add the first source. Then start reviewing.
+
+## The List detail page
+
+Top of the page:
+
+- **Today's discovery** — landed count + filtered count + running count
+- **In-flight** — how many are being processed right now
+- **Enriched** — how many have their LinkedIn profile fully pulled
+
+Below:
+- **Prospect table** — every prospect in the List, filterable + searchable + exportable
+- **Sources panel** — every source feeding this List, with per-source counts
+- **Sweep history** — click any row → drill into that specific discovery run's prospects
+
+### The Filtered accordion
+
+Every prospect Guhan considered but rejected shows here with a plain-English reason:
+
+- **Wrong job title** — their title didn't match
+- **Wrong location** — outside your regions
+- **Company / Page (not a person)** — LinkedIn returned a Page or Company ID
+- **Competitor employee** — works at one of your competitors
+- **Do Not Contact** — on your DNC list
+- **Already in your workspace** — you've found them before
+- **No reachable identity** — no LinkedIn URL / email / phone
+
+**Read a few filtered prospects.** If Guhan is rejecting people you think should qualify, one of your filters is too strict. Common finds:
+
+- Titles filter too narrow — expand with more variants
+- Location filter set to a city when you wanted the country
+- Industry set to a specific sub-category when a broader one fits
+- Hard gates too strict — flip industry or headcount from Required to Nice-to-have
+
+## Prospect detail page
+
+Click any prospect to open their detail page:
+
+1. **Header** — name, current title + company, LinkedIn profile link
+2. **Fit chip** — Strong / Moderate / Weak from Guhan's research agent
+3. **Research brief** — the rich SDR-quality summary Guhan wrote about them (10-14 sentences of actual account research)
+4. **Per-product fit breakdown** — one row per product with its own tier + reason
+5. **Contact channels** — LinkedIn URL, email (or Reveal button), phone (Reveal button)
+6. **Source panel** — which source (search criteria / signal / competitor / CSV) brought them in
+7. **Timeline** — every message + reply + event (empty until you start messaging)
+8. **Company card** — their employer
+
+Ask yourself: **would I send them a personalized message right now?**
+
+- **Yes** → they're a good match. Keep them in the List.
+- **No** → they slipped through your filters. Options:
+  - Add them to Do Not Contact so they don't come back
+  - Tighten the source's hard gates
+  - Just remove them from the List (right-click → Remove)
+
+## Sort by fit tier
+
+Every prospect table is sortable by **Fit tier (Strong→Weak)** — the default sort. Work your Strong prospects first, then Moderate, then decide whether to reach out to Weak.
+
+## Common early surprises
+
+<AccordionGroup>
+  <Accordion title="'Guhan found 100 people but only 20 look right'">
+    The fit chip is doing its job — you probably have 20 Strong, 40 Moderate, 40 Weak. Work the Strong first. If the Moderate rate is too high, tighten your hard gates (add industry or headcount as required).
+  </Accordion>
+  <Accordion title="'All 30 prospects are the wrong seniority'">
+    Your job titles filter is missing the seniority word. "Sales Director" isn't the same as "Director of Sales" — they can match different LinkedIn results. Add explicit variants.
+  </Accordion>
+  <Accordion title="'Everyone's from the wrong industry'">
+    Your industry filter is too broad. "Software Development" catches all SaaS + non-SaaS software. Add a more specific sub-industry OR add a signal source that narrows further.
+  </Accordion>
+  <Accordion title="'Most prospects don't have an email'">
+    Normal — LinkedIn hides emails by default. Guhan reveals them at send time (costs 4 credits per reveal) OR you can enable auto-reveal at landing (Settings → Auto-reveal, uses more credits per landed prospect).
+  </Accordion>
+  <Accordion title="'The discovery run found nobody'">
+    Your filters are too strict. Loosen a signal, remove HQ country filter, or add more title variants. Check the Filtered accordion — if it shows N filtered, your filters are running but rejecting everyone.
+  </Accordion>
+</AccordionGroup>
+
+## After the first few discovery runs
+
+Once you've seen 50–100 prospects:
+
+- **Mostly Strong fits?** → do nothing, let it run daily.
+- **Mostly Moderate?** → tighten your hard gates (make industry or headcount required).
+- **Mostly Weak?** → your source's WHO panel doesn't match your real ICP. Rewrite the search criteria from scratch, or add a signal source that filters more tightly.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
+    The fit chip and the hard gates.
+  </Card>
+  <Card title="Prospect pipeline" icon="filter" href="/audience/lists/prospect-pipeline">
+    The full flow from search to landed.
+  </Card>
+</CardGroup>

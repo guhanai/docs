@@ -1,13 +1,9 @@
 ---
 title: Lists
-description: Lists are prospect buckets — Watchlist Agents fill them, Outreach Agents drain them.
+description: A List is a bucket of prospects. Feed it from search criteria, buying signals, competitors, another List, a CSV, or manually — then point an Outreach Agent at it.
 ---
 
-**A List is just a bucket of prospects. Watchlist Agents put people in. Outreach Agents take people out. That's the whole idea.**
-
-Lists let you separate different audiences — e.g., "Enterprise VPs" in one bucket and "SMB owners" in another.
-
-## Why Lists exist
+**A List is where your prospects live.** You can fill it from any combination of sources — Guhan's daily discovery search, buying-signal triggers, competitor engagement, another List, a CSV upload, or by hand. An Outreach Agent then works the List — messaging every prospect through your chosen sequence.
 
 Lists let you separate audiences. Common patterns:
 
@@ -15,52 +11,78 @@ Lists let you separate audiences. Common patterns:
 - **One List per market** — "US SaaS", "EU Fintech"
 - **One List per campaign** — "Q1 launch outreach", "Conference follow-up"
 
-Each List can be fed by multiple Watchlist Agents and drained by multiple Outreach Agents.
+## How prospects get in
 
-## How prospects get into a List
+A List can have zero, one, or many **sources**. Each source is a way of feeding new prospects into the List.
 
-Three ways:
-
-<CardGroup cols={3}>
-  <Card title="Watchlist Agent (automatic)" icon="binoculars">
-    Most common. Your Watchlist Agent finds people and adds them to a List automatically.
+<CardGroup cols={2}>
+  <Card title="Search criteria" icon="magnifying-glass" href="/audience/lists/add-prospects#search-criteria">
+    Define your ideal customer — job titles, location, industry, company size. Guhan searches daily and lands matches.
   </Card>
-  <Card title="Copy from another List" icon="copy">
-    Duplicate the members of an existing List into a new one — useful for A/B testing sequences.
+  <Card title="Buying signals" icon="bolt" href="/audience/lists/signal-catalog">
+    Only add people when a triggering event fires — funding rounds, hiring bursts, exec changes, post engagement, competitor evaluation.
   </Card>
-  <Card title="CSV upload" icon="file-arrow-up">
+  <Card title="Competitor engagement" icon="crosshairs" href="/audience/lists/signal-catalog#engaged-with-competitors-content">
+    Watch specific competitors and land the people who liked or commented on their posts.
+  </Card>
+  <Card title="Copy from another List" icon="copy" href="/audience/lists/add-prospects#copy-from-another-list">
+    Duplicate members from an existing List — useful for A/B testing sequences.
+  </Card>
+  <Card title="CSV upload" icon="file-arrow-up" href="/audience/lists/add-prospects#csv-upload">
     Upload a CSV of names + LinkedIn URLs to seed a List manually.
+  </Card>
+  <Card title="Manual add" icon="user-plus" href="/audience/lists/add-prospects#manual-add">
+    Paste a LinkedIn URL or search by name to add one prospect at a time.
   </Card>
 </CardGroup>
 
-## How prospects get out of a List
+<Tip>
+  Most Guhan users combine two or three sources on the same List. Example: a "search criteria" source (VP Sales at SaaS companies) plus a "funding raised recently" signal source — the List fills with matching people at recently-funded companies, and every prospect carries clear signal context the message can hook onto.
+</Tip>
 
-- **Automatically** — Guhan removes prospects who reply "not interested", who go on Do Not Contact, or whose LinkedIn account gets restricted
-- **Manually** — you can remove prospects one at a time or in bulk from the List detail page
-- **After enrollment** — a prospect enrolled in an Outreach Agent stays in the List; enrolling doesn't remove them
+## How prospects get out
 
-## List detail page
+- **Automatically** — Guhan removes prospects who reply "not interested", who go on Do Not Contact, or whose LinkedIn account gets restricted.
+- **Manually** — remove prospects one at a time or in bulk from the List detail page.
+- **After enrollment** — a prospect enrolled in an Outreach Agent stays in the List; enrolling doesn't remove them.
+
+## The List detail page
 
 Every List has a detail page with:
 
-- **Prospect table** — all prospects in this List, filterable + searchable + exportable
-- **Sources** — chips showing which Watchlist Agents feed this List, with per-source counts
-- **Bound Outreach Agents** — which agents pull prospects from this List
+- **Prospect table** — every prospect in this List, filterable + searchable + exportable. Each row shows the fit chip (Strong / Moderate / Weak) from [how Guhan scores prospects](/audience/lists/how-scoring-works).
+- **Sources panel** — every source feeding this List, with per-source counts and edit affordances.
+- **Sweep history** — the last 30 discovery runs, drillable into per-prospect detail.
+- **Bound Outreach Agent** — which agent works this List.
+
+## Daily rhythm
+
+You don't schedule discovery runs manually. Guhan runs any active source on the List at a rhythm that matches your **daily prospect target** — usually **once per day per signal**, spread across the day to look natural.
+
+<Note>
+  You can set a **daily prospect target** on the List (e.g., "give me 25 new prospects per day"). Once the target is hit, Guhan pauses discovery for the day and picks up tomorrow.
+</Note>
 
 ## Deleting a List
 
 Deleting a List:
-- Does NOT delete the prospects themselves (they keep existing, just no longer in this List)
-- Does NOT stop in-flight Outreach Agent sequences (they finish per the sequence they started)
-- DOES unbind any Watchlist Agent that was feeding it — you'll need to point it at a different List
+- Does **not** delete the prospects themselves (they keep existing, just no longer in this List).
+- Does **not** stop in-flight Outreach Agent sequences (they finish per the sequence they started).
+- **Does** retire the sources feeding this List.
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Watchlist Agent" icon="binoculars" href="/agents/watchlist-agents/overview">
-    How prospects flow into Lists.
+  <Card title="Adding prospects" icon="plus" href="/audience/lists/add-prospects">
+    Every way to feed a List — search criteria, signals, competitors, another List, CSV, manual.
   </Card>
-  <Card title="Outreach Agent" icon="paper-plane" href="/agents/outreach-agents/overview">
-    How prospects flow out of Lists into messaging.
+  <Card title="Signal catalog" icon="bolt" href="/audience/lists/signal-catalog">
+    Every buying signal Guhan detects, with examples of the openers each unlocks.
+  </Card>
+  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
+    The Strong / Moderate / Weak fit chip and how Guhan decides who's worth reaching out to.
+  </Card>
+  <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
+    What to check after your first landing + how to tighten if Guhan is picking the wrong people.
   </Card>
 </CardGroup>
