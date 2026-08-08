@@ -1,57 +1,57 @@
 ---
 title: Ask Guhan
-description: Chat with your workspace to build agents, find prospects, and answer questions.
+description: How you talk to Guhan directly — assign work, get updates, check anything.
 ---
 
-**Ask Guhan is a chat box that can do anything you can do in the app. Ask a question. Build an agent. Pull a report. Just type.**
+**Ask Guhan is the direct line to your AI sales agent. Sidebar → `+ Ask Guhan`. Or WhatsApp yourself from your phone. Ask, brief, delegate — same way you'd Slack an SDR.**
 
-Sidebar → "+ Ask Guhan" — or WhatsApp yourself from your phone.
+Guhan can do almost anything you can do in the app — set up a new Campaign, spin up a List with signals, pull a report, explain why a prospect got filtered. Just type what you want.
 
 <Note>
-  Ask Guhan is in beta. It can do most things you can do in the UI, but occasionally makes mistakes. Verify anything you'd act on before hitting Send.
+  Ask Guhan is in beta. Guhan can do most things you can do in the UI, but occasionally makes mistakes. Verify anything you'd act on before hitting Send.
 </Note>
 
-## What you can ask
+## Things you can ask Guhan to do
 
 <CardGroup cols={2}>
-  <Card title="Show me things" icon="magnifying-glass">
-    "Show all prospects from Series B fintechs."
-    "Which sequence had the best reply rate last week?"
-    "List meetings booked in the last 30 days."
-  </Card>
-  <Card title="Take an action" icon="bolt">
-    "Create a List of VPs of Sales at 100–500 person SaaS companies in the US."
-    "Pause my Enterprise Outreach Agent."
+  <Card title="Assign new work" icon="bolt">
+    "Set up a List of VPs of Sales at 100–500 person SaaS companies in the US."
+    "Launch a Campaign to my top List with LinkedIn + Email."
     "Add sarah@acme.com to Do Not Contact."
   </Card>
-  <Card title="Draft something" icon="pen-nib">
-    "Draft a follow-up message to Alex Chen."
+  <Card title="Get an update" icon="magnifying-glass">
+    "Show me all prospects from Series B fintechs."
+    "Which Campaign had the best reply rate last week?"
+    "How many meetings did you book this month?"
+  </Card>
+  <Card title="Ask for a draft" icon="pen-nib">
+    "Draft a follow-up to Alex Chen."
     "Suggest a break-up email variant."
     "Rewrite my brand voice to be more direct."
   </Card>
-  <Card title="Explain something" icon="lightbulb">
+  <Card title="Get an explanation" icon="lightbulb">
     "Why did this prospect get filtered?"
     "What signals are firing on my List?"
     "How many credits do I have left this month?"
   </Card>
 </CardGroup>
 
-## What Ask Guhan can't do
+## Things Guhan won't do
 
 By design:
 
-- **Delete records** — no delete tools. Ask Guhan can create, update, pause, and unbind — but never delete. If you need to delete a prospect / list / agent, use the UI's kebab menu.
-- **Change other users' data** — actions only affect your workspace and the workspace's records
-- **Complete OAuth flows** — if you say "connect my LinkedIn", Ask Guhan will point you at the Settings page where the OAuth handshake happens; it won't do it for you
+- **Delete records** — Guhan can create, update, pause, and unbind — but never delete. If you need to delete a prospect / list / Campaign, use the UI's kebab menu. This is a safety line, not a limitation of the agent.
+- **Change other users' data** — Guhan's actions only touch your workspace and its records.
+- **Complete OAuth flows** — if you say "connect my LinkedIn", Guhan points you at the Settings page where the OAuth handshake happens. Guhan won't do that step for you.
 
 ## How to open the chat
 
-- Click **+ Ask Guhan** in the sidebar
+- Click **`+ Ask Guhan`** in the sidebar
 - Or press `Cmd+K` from anywhere in the app (opens a mini search + chat)
 
 ## Threads and history
 
-Every conversation is a **thread** — a chat you can come back to later. Guhan remembers what you discussed in that thread.
+Every conversation with Guhan is a **thread** — a chat you can come back to later. Guhan remembers what you discussed in that thread.
 
 - **New thread** — every fresh `+ Ask Guhan` click starts one
 - **History** — the sidebar shows your recent threads; click any to reopen
@@ -59,26 +59,28 @@ Every conversation is a **thread** — a chat you can come back to later. Guhan 
 
 ## Tool calls in the chat
 
-When Ask Guhan does something on your behalf, you'll see a **tool card** in the message stream. Example:
+When Guhan does something on your behalf, you'll see a **tool card** in the message stream. Example:
 
 > **Tool: List prospects** — filter: List = "Enterprise VPs"
 >
 > Found 47 prospects.
 > [table shown]
 
-Every tool call is scoped to your workspace (you can never see other workspaces' data via chat).
+Every tool call is scoped to your workspace (Guhan can never see other workspaces' data).
 
 ## The 👍 / 👎 feedback
 
-Every response has a thumb-up / thumb-down. Click them — the feedback goes to us and improves future models.
+Every response has a thumb-up / thumb-down. Click them — the feedback goes to us and improves how Guhan responds next time.
 
-## WhatsApp version
+## Guhan on WhatsApp
 
-If you connect a WhatsApp sender and turn on **Ask Guhan on WhatsApp** on that account's row (Settings → Sender accounts), you can chat with Guhan from your phone by messaging your own WhatsApp number. Guhan replies in that self-thread. See [Connect WhatsApp](/get-started/sender-accounts/connect-whatsapp) for setup.
+If you connect a WhatsApp sender and turn on **Ask Guhan on WhatsApp** on that account's row (Settings → Sender accounts), you can text Guhan from your phone by messaging your own WhatsApp number. Guhan replies in that self-thread — same agent, same memory, same tool access. See [Connect WhatsApp](/get-started/sender-accounts/connect-whatsapp) for setup.
+
+The mental model: your workspace has an SDR named Guhan. You can Slack them in the app, or text them on WhatsApp. Same person.
 
 ## Credits
 
-Ask Guhan is free within your daily token allowance (50k tokens per user per day on Starter). Beyond that, overflow tokens burn from your workspace credit balance at 1 credit per 50k tokens.
+Talking to Guhan is free within your daily token allowance (50k tokens per user per day on Starter). Beyond that, overflow tokens burn from your workspace credit balance at 1 credit per 50k tokens.
 
 ## Related
 

@@ -9,7 +9,7 @@ docs.json                     Nav config for Mintlify
 introduction.mdx              Landing page
 quickstart.mdx                5-minute setup guide
 
-agents/outreach-agents/       Outreach Agent concept + how-tos
+agents/campaigns/             Campaign concept + how-tos
 audience/                     Lists (hub + sources + signal catalog + scoring
                               + pipeline + review-prospects), prospects, companies
 brand-and-voice/              Brand + Voice + Templates + Products
