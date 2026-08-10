@@ -161,21 +161,21 @@
       "linkedin": "https://linkedin.com/company/guhanai"
     }
   },
-  "description": "Guhan is an autonomous AI sales agent that finds high-intent prospects, researches each one, and books qualified meetings across LinkedIn, Email, and WhatsApp — so your pipeline grows without manual SDR work.",
+  "description": "Guhan is an AI SDR — a Sales Development Representative that runs the full outbound workflow: learns your business, finds fit prospects, researches every one, drafts hyper-personalized outreach across LinkedIn, Email, and WhatsApp, handles replies, and books meetings for the sales team.",
   "seo": {
     "metatags": {
       "canonical": "https://docs.guhan.ai",
-      "description": "Guhan is an autonomous AI sales agent that finds high-intent prospects, researches each one, and books qualified meetings across LinkedIn, Email, and WhatsApp. It runs continuously — detecting buying signals in real time and sending hyper-personalized outreach — so your pipeline grows without manual SDR work.",
-      "keywords": "Guhan, autonomous AI sales agent, AI sales agent, AI SDR, outbound sales, intent-based prospecting, buying signals, hyper-personalized outreach, LinkedIn automation, cold email AI, WhatsApp outreach, multi-channel sales, sales automation, sales prospecting tool, B2B lead generation, AI personalization, sales pipeline automation, signal-based sales lists, smart prospect lists, Outreach Agent",
-      "og:title": "Guhan Docs — Autonomous AI Sales Agent for LinkedIn, Email, WhatsApp",
-      "og:description": "Guhan runs continuously — detecting buying signals, researching every prospect, and sending hyper-personalized outreach across LinkedIn, Email, and WhatsApp — so your pipeline grows without manual SDR work.",
+      "description": "Guhan is an AI SDR — the same role as a human Sales Development Representative embedded on your team, just executed in software. It learns your business, finds fit prospects, researches every one, drafts hyper-personalized outreach across LinkedIn, Email, and WhatsApp, handles replies, and books meetings.",
+      "keywords": "Guhan, AI SDR, AI Sales Development Representative, autonomous AI sales agent, AI sales agent, outbound sales, intent-based prospecting, buying signals, hyper-personalized outreach, LinkedIn automation, cold email AI, WhatsApp outreach, multi-channel sales, sales automation, sales prospecting tool, B2B lead generation, AI personalization, sales pipeline automation, signal-based sales lists, smart prospect lists",
+      "og:title": "Guhan Docs — AI SDR for LinkedIn, Email, WhatsApp",
+      "og:description": "Guhan is an AI SDR that learns your business, finds fit prospects, researches every one, drafts hyper-personalized outreach across LinkedIn, Email, and WhatsApp, and books meetings — so your pipeline grows without manual SDR work.",
       "og:site_name": "Guhan AI",
       "og:type": "website",
       "og:url": "https://docs.guhan.ai",
       "og:image": "https://guhan.ai/logos/guhan-logo.webp",
       "twitter:card": "summary_large_image",
-      "twitter:title": "Guhan Docs — Autonomous AI Sales Agent for LinkedIn, Email, WhatsApp",
-      "twitter:description": "Autonomous AI sales agent that finds high-intent prospects, researches each one, and books qualified meetings across LinkedIn, Email, and WhatsApp.",
+      "twitter:title": "Guhan Docs — AI SDR for LinkedIn, Email, WhatsApp",
+      "twitter:description": "AI SDR that learns your business, finds fit prospects, researches every one, drafts hyper-personalized outreach across LinkedIn, Email, and WhatsApp, and books meetings.",
       "twitter:image": "https://guhan.ai/logos/guhan-logo.webp",
       "robots": "index, follow",
       "author": "Guhan AI",

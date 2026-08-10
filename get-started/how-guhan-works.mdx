@@ -1,48 +1,77 @@
 ---
 title: How Guhan works
-description: The whole product in 2 minutes.
+description: The whole product in 2 minutes — the SDR workflow, and how Guhan runs each step.
 ---
 
-**Guhan runs outbound for you. A smart List fills with the right prospects every day; an Campaign messages every one of them in your voice; you handle only the real replies.**
+**Guhan is an AI SDR. It runs the same six-step workflow a human SDR runs — executed in software, 24/7, at scale.**
 
-## The two pieces
+## The SDR workflow Guhan runs
+
+Every good SDR does these six things. Guhan does them for you.
+
+<Steps>
+  <Step title="Learn the business">
+    Read what you sell, who buys it, what problems it solves, how you differ from competitors, what your brand voice sounds like.
+
+    **What this maps to in the app:** Brand & Voice + Products. You brief Guhan by filling these in.
+
+    **Why it matters:** every message Guhan writes downstream is only as good as the context you give here. This is where quality comes from.
+  </Step>
+  <Step title="Find fit prospects">
+    Continuously scan for people who match your ideal customer AND look ready to buy — hiring, funding, exec changes, post engagement.
+
+    **What this maps to in the app:** Lists with signal sources. Each source has a WHO filter (titles, geo, industry, headcount) + optional buying signals.
+  </Step>
+  <Step title="Research every prospect">
+    Read the person's profile, role, company, and recent activity before writing anything.
+
+    **What this maps to in the app:** the research brief that runs on every landed prospect. You never trigger it manually.
+  </Step>
+  <Step title="Draft hyper-personalized outreach">
+    Write from scratch, per prospect, per channel — same brief adapts to LinkedIn, Email, and WhatsApp with each version referencing that person's real work.
+
+    **What this maps to in the app:** the message agent inside every Campaign step. It reads Brand & Voice + Product + research brief for each draft.
+  </Step>
+  <Step title="Handle replies">
+    Route "not now" replies to a pause. Drop unsubscribe requests onto DNC. Classify meeting requests. Escalate real conversations to you.
+
+    **What this maps to in the app:** the Inbox. Guhan shows you only what needs your judgment.
+  </Step>
+  <Step title="Book meetings">
+    Convert warm interest into calendar events without back-and-forth. Send scheduling links; sync the meeting to your calendar.
+
+    **What this maps to in the app:** Meetings + calendar integrations + booking links.
+  </Step>
+</Steps>
+
+## The two building blocks: Lists and Campaigns
+
+Under the hood the workflow above runs through two records:
 
 <CardGroup cols={2}>
   <Card title="A List" icon="rectangle-list">
     A bucket of prospects. You feed it from search criteria, buying signals, competitors, another List, or a CSV — Guhan discovers new prospects daily and lands them here.
+
+    Maps to workflow Step 2 (find) + Step 3 (research).
   </Card>
-  <Card title="An Campaign" icon="paper-plane">
-    Points at a List. Reads each prospect's profile, writes a personal message, runs the full follow-up across LinkedIn, Email, and WhatsApp.
+  <Card title="A Campaign" icon="paper-plane">
+    Points at a List. Reads each prospect's profile, writes a personal message, runs the full follow-up across LinkedIn / Email / WhatsApp, routes replies to your Inbox.
+
+    Maps to workflow Steps 4-6 (draft, handle, book).
   </Card>
 </CardGroup>
 
 They pass work between each other:
 
 ```
-List sources find prospects → List → Campaign picks them up → sends personal messages → routes replies to your Inbox
+Brand & Voice + Products (Step 1)
+  → List sources find prospects (Step 2)
+    → List (research runs — Step 3)
+      → Campaign picks them up (Step 4)
+        → sends personal messages
+          → Inbox routes replies (Step 5)
+            → Meetings booked (Step 6)
 ```
-
-## The 5 things Guhan actually does
-
-This is the whole loop — same one shown on our landing page.
-
-<Steps>
-  <Step title="Detect buying signals">
-    Guhan scans its data pipelines continuously — new hires, funding rounds, tech-stack changes, post engagement — to find who's actually ready to buy right now.
-  </Step>
-  <Step title="Research every prospect">
-    Before writing anything, Guhan reads that person's profile, role, company, and recent activity. So the message references what actually matters to them.
-  </Step>
-  <Step title="Enrich and verify contact info">
-    Pulls verified email, LinkedIn URL, phone number, company data — in seconds. No spreadsheets, no lookup tools, no guessing.
-  </Step>
-  <Step title="Reach out personally">
-    Writes and sends hyper-personal messages across LinkedIn, Email, and WhatsApp — one at a time, each shaped to that prospect. Never a template.
-  </Step>
-  <Step title="Book the meeting">
-    Handles the follow-ups. Reads replies. Converts warm interest into a real meeting on your calendar — while you focus on closing.
-  </Step>
-</Steps>
 
 ## A concrete example
 
