@@ -1,14 +1,14 @@
 ---
-title: How prospects land
+title: How prospects get added
 description: What happens between Guhan finding someone and that person appearing in your List, including filters, the fit rating, the research brief, and what you are charged for.
 ---
 
-**Finding a person and landing them in your List are two different steps.** Discovery returns profiles. Then Guhan checks each one against your rules, enriches and rates the ones that pass, and adds them to the List. Knowing the sequence helps you work out why someone is missing, and what you were charged for.
+**Finding a person and adding them to your List are two different steps.** A search returns profiles. Then Guhan checks each one against your rules, enriches and rates the ones that pass, and adds them to the List. Knowing the sequence helps you work out why someone is missing, and what you were charged for.
 
 ## The steps
 
 <Steps>
-  <Step title="Discovery finds profiles">
+  <Step title="A search finds profiles">
     A search or signal returns candidate profiles. Each profile returned is charged (see [What you pay for](#what-you-pay-for)).
   </Step>
   <Step title="Your filters are applied">
@@ -20,7 +20,7 @@ description: What happens between Guhan finding someone and that person appearin
   <Step title="Guhan researches and rates them">
     Guhan writes a short research brief and gives the prospect a fit rating: **Strong fit**, **Moderate fit** or **Weak fit**. Until that finishes, it reads **Pending…**.
   </Step>
-  <Step title="They land in the List">
+  <Step title="They are added to the List">
     The prospect appears in the List. A Campaign that uses the List as its audience can then start messaging them. See [Build a Campaign](/campaigns/build-a-campaign).
   </Step>
 </Steps>
@@ -30,12 +30,12 @@ Prospects from post-based signals are always profile-enriched, because a post on
 ## What you pay for
 
 <Warning>
-  Discovery credits are charged for every profile a run returns, **before** your filters are applied. A profile that is later filtered out still used a credit. Tighter filters improve the quality of what lands, but they do not reduce what a run costs.
+  Credits for finding prospects (shown as **Prospect discovery** on your billing screen) are charged for every profile a run returns, **before** your filters are applied. A profile that is later filtered out still used a credit. Tighter filters improve the quality of who gets added, but they do not reduce what a run costs.
 </Warning>
 
 - **1 credit per profile returned** by a search or signal.
 - Some signals add a company charge; see the [signal catalog](/audience/lists/signal-catalog).
-- **CSV uploads and manual adds** do not use discovery credits.
+- **CSV uploads and manual adds** do not use credits for finding prospects.
 - **Enrichment, research briefs and contact reveals** are separate. See [Enrichment](/audience/enrichment) for the list.
 - If your credits run out partway through a run, the remaining profiles are rejected and not added. Add credits to keep going; see [Plans and credits](/workspace-settings/plans-and-credits).
 
@@ -52,26 +52,26 @@ The fit rating is Guhan's assessment of how well a person matches what you sell.
 | **Weak fit** | Thin alignment with what you sell |
 | **Pending…** | Not assessed yet |
 
-A small 1 to 10 score appears next to the tier on the prospect's page. A Weak fit still lands in your List; the rating helps you decide who to work first. Sort the table by **Fit score** to see the strongest first.
+A small 1 to 10 score appears next to the tier on the prospect's page. A Weak fit is still added to your List; the rating helps you decide who to work first. Sort the table by **Fit score** to see the strongest first.
 
 If you have more than one Product, the prospect's **Research** tab shows a separate rating and reason for each.
 
 {/* SCREENSHOT: fit-rating-and-brief — Prospect Research tab showing the research brief and per-product fit */}
 
 <Note>
-  The research brief and the fit rating come from the same step. If you turn off **Generate research brief + fit score** in [enrichment settings](/audience/enrichment#choose-what-gets-enriched), prospects land without a fit rating.
+  The research brief and the fit rating come from the same step. If you turn off **Generate research brief + fit score** in [enrichment settings](/audience/enrichment#choose-what-gets-enriched), prospects are added without a fit rating.
 </Note>
 
 ### Research brief
 
-The brief is a short write-up about the person and their company, with a suggested angle for outreach. It is written when the prospect lands and appears on the prospect's **Research** tab. Use **Regenerate brief** on the prospect's page if their situation changed. Regenerating costs 1 credit, refunded if it fails.
+The brief is a short write-up about the person and their company, with a suggested angle for outreach. It is written when the prospect is added and appears on the prospect's **Research** tab. Use **Regenerate brief** on the prospect's page if their situation changed. Regenerating costs 1 credit, refunded if it fails.
 
-## Why someone did not land
+## Why someone was not added
 
 Rejected profiles are kept so you can see why:
 
-- **Sources tab on the List → watch history**: each watch shows Landed, Rejected and In flight, with a reason per rejected profile.
-- **Prospects page → filter → Include pipeline-rejected**: rejected people show with status **Rejected**. Open one to read the reason.
+- **Sources tab on the List → watch history**: each watch shows Landed, Rejected and In flight (Landed means added to your List), with a reason per rejected profile.
+- **Prospects page → filter → Include pipeline-rejected**: people Guhan found but filtered out show with status **Rejected**. Open one to read the reason.
 
 | Reason you may see | What it means |
 |---|---|
@@ -89,7 +89,7 @@ If Guhan keeps rejecting people you expected, one of your rules is stricter than
 
 <CardGroup cols={2}>
   <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
-    Check the first landing and tighten your rules.
+    Check your first prospects and tighten your rules.
   </Card>
   <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
     What each enrichment step does and costs.

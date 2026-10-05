@@ -50,7 +50,7 @@
               "audience/import-leads",
               "audience/lists",
               "audience/lists/signal-catalog",
-              "audience/lists/how-prospects-land",
+              "audience/lists/how-prospects-get-added",
               "audience/lists/review-prospects",
               "audience/companies",
               "audience/enrichment"
@@ -146,11 +146,11 @@
     },
     {
       "source": "/agents/watchlist-agents/icp-scoring",
-      "destination": "/audience/lists/how-prospects-land"
+      "destination": "/audience/lists/how-prospects-get-added"
     },
     {
       "source": "/agents/watchlist-agents/prospect-pipeline",
-      "destination": "/audience/lists/how-prospects-land"
+      "destination": "/audience/lists/how-prospects-get-added"
     },
     {
       "source": "/agents/watchlist-agents/review-prospects",
@@ -218,11 +218,11 @@
     },
     {
       "source": "/audience/lists/how-scoring-works",
-      "destination": "/audience/lists/how-prospects-land"
+      "destination": "/audience/lists/how-prospects-get-added"
     },
     {
       "source": "/audience/lists/prospect-pipeline",
-      "destination": "/audience/lists/how-prospects-land"
+      "destination": "/audience/lists/how-prospects-get-added"
     },
     {
       "source": "/meetings/schedule",
@@ -231,6 +231,10 @@
     {
       "source": "/audience/lists/add-prospects",
       "destination": "/audience/import-leads"
+    },
+    {
+      "source": "/audience/lists/how-prospects-land",
+      "destination": "/audience/lists/how-prospects-get-added"
     }
   ],
   "navbar": {
