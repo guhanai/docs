@@ -4,7 +4,7 @@ Mintlify source for the public Guhan docs (docs.guhan.ai). Mintlify rebuilds on 
 
 ## Structure
 
-Navigation order follows the customer journey: brief Guhan, find prospects, run campaigns, handle replies, book meetings.
+Navigation order follows the customer journey: set up Brand & Voice, find prospects, run campaigns, handle replies, book meetings.
 
 ```
 docs.json                       Nav, redirects, SEO
