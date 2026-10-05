@@ -1,90 +1,83 @@
 ---
 title: Lists
-description: A List is a bucket of prospects. Feed it from search criteria, buying signals, competitors, another List, a CSV, or manually — then point a Campaign at it.
+description: A List is where your prospects live. Fill it with a search or a buying signal, or by uploading and adding people yourself, then point a Campaign at it.
 ---
 
-**A List is where your prospects live.** You can fill it from any combination of sources — Guhan's daily discovery search, buying-signal triggers, competitor engagement, another List, a CSV upload, or by hand. A Campaign then works the List — messaging every prospect through your chosen sequence.
+**A List is a bucket of prospects that a Campaign works through.** You fill it, review who landed, and then choose it as the audience when you [build a Campaign](/campaigns/build-a-campaign).
 
-In the SDR workflow, Lists cover *find fit prospects* + *research each one* (Steps 2-3). A prospect landing in a List has already been researched by Guhan (see the automatic research brief on every prospect card). Campaigns then take over for the drafting + outreach steps.
+Common ways to split Lists:
 
-Lists let you separate audiences. Common patterns:
+- **By persona**: "Enterprise VPs", "RevOps managers"
+- **By market**: "US SaaS", "EU fintech"
+- **By motion**: "Funded in the last 90 days", "Engaged with a competitor"
 
-- **One List per persona** — "Enterprise VPs", "SMB Owners", "RevOps Managers"
-- **One List per market** — "US SaaS", "EU Fintech"
-- **One List per campaign** — "Q1 launch outreach", "Conference follow-up"
-
-## How prospects get in
-
-A List can have zero, one, or many **sources**. Each source is a way of feeding new prospects into the List.
+## Ways to fill a List
 
 <CardGroup cols={2}>
-  <Card title="Search criteria" icon="magnifying-glass" href="/audience/lists/add-prospects#search-criteria">
-    Define your ideal customer — job titles, location, industry, company size. Guhan searches daily and lands matches.
+  <Card title="People search" icon="magnifying-glass" href="/audience/lists/add-prospects#people-search">
+    Describe who fits (titles, seniority, location, industry, company size). Guhan finds matching people.
   </Card>
   <Card title="Buying signals" icon="bolt" href="/audience/lists/signal-catalog">
-    Only add people when a triggering event fires — funding rounds, hiring bursts, exec changes, post engagement, competitor evaluation.
-  </Card>
-  <Card title="Competitor engagement" icon="crosshairs" href="/audience/lists/signal-catalog#engaged-with-competitors-content">
-    Watch specific competitors and land the people who liked or commented on their posts.
-  </Card>
-  <Card title="Copy from another List" icon="copy" href="/audience/lists/add-prospects#copy-from-another-list">
-    Duplicate members from an existing List — useful for A/B testing sequences.
+    Add people only when something happens: a funding round, a new executive, a post about your topic, engagement with a competitor.
   </Card>
   <Card title="CSV upload" icon="file-arrow-up" href="/audience/lists/add-prospects#csv-upload">
-    Upload a CSV of names + LinkedIn URLs to seed a List manually.
+    Upload people you already have and map your columns.
   </Card>
-  <Card title="Manual add" icon="user-plus" href="/audience/lists/add-prospects#manual-add">
-    Paste a LinkedIn URL or search by name to add one prospect at a time.
+  <Card title="Add manually" icon="user-plus" href="/audience/lists/add-prospects#add-manually">
+    Type in one prospect at a time, from the List page or the Prospects page.
   </Card>
 </CardGroup>
 
-<Tip>
-  Most Guhan users combine two or three sources on the same List. Example: a "search criteria" source (VP Sales at SaaS companies) plus a "funding raised recently" signal source — the List fills with matching people at recently-funded companies, and every prospect carries clear signal context the message can hook onto.
-</Tip>
+A List can be fed by one search or signal, plus any CSV uploads or manual adds you do on top. To start a new search or signal, use **Import leads** on the Prospects page. It creates the List and its source together. To run a different search, create another List, or use **Clone** on the Lists page to duplicate a List and its settings.
 
-## How prospects get out
+## What happens after people are found
 
-- **Automatically** — Guhan removes prospects who reply "not interested", who go on Do Not Contact, or whose LinkedIn account gets restricted.
-- **Manually** — remove prospects one at a time or in bulk from the List detail page.
-- **After enrollment** — a prospect enrolled in an Campaign stays in the List; enrolling doesn't remove them.
+Everything Guhan finds goes through a short sequence before it shows up as a prospect: your filters are applied, competitors and Do Not Contact entries are removed, and Guhan writes a research brief and a fit rating. [How prospects land](/audience/lists/how-prospects-land) walks through each step and explains what you pay for.
 
-## The List detail page
+## The List page
 
-Every List has a detail page with:
+Open a List from **Lists** in the sidebar. It has three tabs:
 
-- **Prospect table** — every prospect in this List, filterable + searchable + exportable. Each row shows the fit chip (Strong / Moderate / Weak) from [how Guhan scores prospects](/audience/lists/how-scoring-works).
-- **Sources panel** — every source feeding this List, with per-source counts and edit affordances.
-- **Sweep history** — the last 30 discovery runs, drillable into per-prospect detail.
-- **Bound Campaign** — which agent works this List.
+- **Prospects**: everyone in the List, with the fit chip, search, filters and export.
+- **Sources**: the search or signal feeding the List, whether it is on, and its watch activity (found, landed, rejected).
+- **History**: a log of edits made to the source.
 
-## Daily rhythm
+Above the tabs you will find the on/off switch for the source, **Edit**, **Import** (CSV or add manually), **Enrich** ([enrich the whole List](/audience/enrichment#enrich-a-whole-list)) and a menu with **Delete list**.
 
-You don't schedule discovery runs manually. Guhan runs any active source on the List at a rhythm that matches your **daily prospect target** — usually **once per day per signal**, spread across the day to look natural.
+{/* SCREENSHOT: list-detail-header — List page with the three tabs and the action row (Edit, Import, Enrich) */}
 
-<Note>
-  You can set a **daily prospect target** on the List (e.g., "give me 25 new prospects per day"). Once the target is hit, Guhan pauses discovery for the day and picks up tomorrow.
-</Note>
+## Ongoing or one-time
 
-## Deleting a List
+When you set up a search or signal you choose a schedule:
 
-Deleting a List:
-- Does **not** delete the prospects themselves (they keep existing, just no longer in this List).
-- Does **not** stop in-flight Campaign sequences (they finish per the sequence they started).
-- **Does** retire the sources feeding this List.
+- **Ongoing**: Guhan keeps looking and adds new matches as they appear. You can set daily, weekly and monthly limits so a List does not grow faster than you can work it.
+- **One-time**: Guhan runs the search once, up to the number of people you set (or the time window you pick for post-based signals), then stops. A **One-time** badge shows on the List.
+
+Details are in [Adding prospects](/audience/lists/add-prospects#ongoing-or-one-time).
+
+## Limits on a List
+
+- CSV uploads, manual adds and clones count toward your active-prospect limit: **1,000 active prospects per sender** (your licenses plus any extra senders). Prospects who unsubscribed, were stopped or finished a sequence do not count. Prospects found by a search or signal are not held to this limit, because you pay credits for them as they are found.
+- Discovery costs credits. See [How prospects land](/audience/lists/how-prospects-land#what-you-pay-for) and [Plans and credits](/workspace-settings/plans-and-credits).
+
+## Removing prospects and deleting a List
+
+- **Remove a prospect** from outreach from the List page (row menu, or select several) or from the prospect's page. They stay in your workspace, but their status becomes unsubscribed and any active sequence for them stops. See [Prospects](/audience/prospects#removing-a-prospect).
+- **Delete a List** from the List page menu or the Lists table. This permanently removes the List, every prospect membership in it, and the source that fills it. The people themselves, and their membership in other Lists, are untouched. Deleting is blocked while a Campaign uses the List as its audience, so remove it from the Campaign first.
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Adding prospects" icon="plus" href="/audience/lists/add-prospects">
-    Every way to feed a List — search criteria, signals, competitors, another List, CSV, manual.
+    Search, signals, CSV and manual add, in detail.
   </Card>
   <Card title="Signal catalog" icon="bolt" href="/audience/lists/signal-catalog">
-    Every buying signal Guhan detects, with examples of the openers each unlocks.
+    All nine buying signals and their options.
   </Card>
-  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
-    The Strong / Moderate / Weak fit chip and how Guhan decides who's worth reaching out to.
+  <Card title="How prospects land" icon="filter" href="/audience/lists/how-prospects-land">
+    Filters, the fit chip, and what each discovery costs.
   </Card>
   <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
-    What to check after your first landing + how to tighten if Guhan is picking the wrong people.
+    What to check after the first landing and how to tighten.
   </Card>
 </CardGroup>

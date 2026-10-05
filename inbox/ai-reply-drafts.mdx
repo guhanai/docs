@@ -1,120 +1,101 @@
 ---
 title: AI reply drafts
-description: When a prospect replies, Guhan reads what they said, figures out what they mean, and proposes the response — for you to bless, edit, or take over.
+description: How Guhan reads replies, what it does for each kind, and how to choose between drafting for approval, drafting and sending, or leaving replies to you.
 ---
 
-**Every reply that lands in your Inbox: Guhan has already read it, classified it, and (usually) drafted the response. You bless, edit, or take over.**
+**Guhan reads every reply, decides what it means, and acts on it. Whether it also writes a response is up to you.**
 
-Guhan doesn't send a response on its own unless you asked it to. Your approval is the safety net.
+You set one workspace-wide rule, and you can override it at any step of a campaign. Meeting requests are never answered automatically, whatever you choose.
 
-## The classification step
+## What Guhan does with each reply
 
-Every reply gets classified into one of these buckets:
+| What the prospect said | What Guhan does |
+|---|---|
+| **Interested** ("sounds good, tell me more") | Follows your reply policy: hand it to you, or draft a reply. |
+| **Asked for a meeting** | Always hands it to a person, with a **Schedule** task so you can send a booking link. |
+| **Asked a question** | Follows your reply policy. |
+| **Said no** | Stops the sequence for that prospect. Nothing is sent. |
+| **Asked to unsubscribe** | Stops the sequence for that prospect. Nothing is sent. |
+| **Out of office** | Pauses the sequence for 7 days, then resumes. |
+| **Not now** | Pauses the sequence for 30 days, resumes afterwards, and leaves you a note in the Inbox so you can follow up personally if you want. |
 
-| Classification | What it means | What Guhan does |
-|---|---|---|
-| **interested** | "Yes, tell me more" / "Sounds interesting" | Drafts a follow-up + option to auto-send OR hand off |
-| **meeting_request** | "Sure, let's talk" / "How about 3pm?" | Creates a Schedule task with booking link |
-| **not_now** | "Not the right time" / "Ask me in Q3" | Pauses sequence + creates a Notify task; snoozes prospect for N months |
-| **not_interested** | "No thanks" / "Not a fit" | Ends sequence + adds prospect to Do Not Contact |
-| **unsubscribe** | Explicit unsubscribe request | Adds prospect (+ their email/LinkedIn) to Do Not Contact + acknowledges |
-| **question** | "What does the pricing look like?" / "Do you integrate with X?" | Drafts an answer OR hands off to you (configurable) |
-| **out_of_office** | Auto-responder | Ignores, sequence continues (Guhan retries in 3 days) |
-| **spam_filter** | Filter response, not a real reply | Ignores |
-| **wrong_person** | "Not the right contact" / referral | Notify task with the referral note |
+Guhan never auto-replies to a no, an unsubscribe, an out-of-office, or a not-now.
 
-Classification runs in ~2 seconds per reply. You'll see the classification badge on every task in the Inbox.
+<Warning>
+  Stopping a sequence on a no or an unsubscribe does not add the person to your Do Not Contact list. If you want them blocked across every campaign, add their email or domain yourself. See [Do Not Contact](/workspace-settings/do-not-contact).
+</Warning>
 
-## The drafting step
+<Note>
+  When Guhan is not confident that a reply is a no or an unsubscribe, it does not stop the sequence. The thread comes to your Inbox as a **Take over** task so a person decides.
+</Note>
 
-If the classification triggered a draft (interested / question / not_now / etc.), Guhan writes a response using:
+## Reply policy
 
-- The prospect's original message (what they said)
-- The full conversation history
-- Your Brand & Voice settings
-- The product being pitched
-- The prospect's research brief
-
-Every draft:
-- Is 2-4 sentences typical
-- Matches your tone
-- Answers what they asked
-- Suggests the next step (meeting, next email, more info)
-
-## Where to configure this
-
-**On the Campaign's Settings tab** — you can set the workspace-wide default AND override per Campaign:
+Settings, Sending, **Reply handling**. This is the default for any step that does not have its own AI reply step on the campaign.
 
 <CardGroup cols={3}>
-  <Card title="AI drafts + auto-send" icon="wand-magic">
-    Guhan writes the response + sends it without asking. **Safest** for confirmed follow-ups (they said yes, you're just replying "great, let me send you a link"). Risky for anything requiring judgment.
+  <Card title="Escalate to a user" icon="user">
+    Every interested reply and question creates a task in your Inbox. Guhan writes nothing. This is the default.
   </Card>
-  <Card title="AI drafts + hand off" icon="hand-holding">
-    Guhan writes the response + creates an Approve task. You read + approve OR edit + approve. **Recommended default** — you stay in control without doing the writing.
+  <Card title="AI drafts, user approves" icon="hand-holding">
+    Guhan drafts a reply. You see it in the Inbox and approve, edit, or reject it before anything is sent.
   </Card>
-  <Card title="Always hand off" icon="user">
-    Guhan classifies the reply but writes nothing. Creates a Take-over task with a "Reply here" button. **Best for high-touch sales** or high-stakes accounts.
+  <Card title="AI drafts and auto-sends" icon="wand-magic">
+    Guhan drafts and sends one reply without asking. Riskier. Use it once you trust the tone.
   </Card>
 </CardGroup>
 
-## AI reply nodes on the sequence canvas
+{/* SCREENSHOT: reply-handling-settings — Settings, Sending page with the three reply handling options */}
 
-You can also set this per-step by dropping an **AI reply node** on the sequence canvas.
+Auto-send is limited to a single reply per conversation under the workspace policy. If the prospect replies again, or if a send fails, the thread comes to you as a **Take over** task.
 
-Configure:
+## Per-step control: the AI reply step
 
-- **Send for approval** — hand off vs auto-send (per this node)
-- **Max consecutive replies** — how many rounds Guhan handles before mandatory handoff (default: 1)
-- **Loop wait between replies** — 48h / 72h / etc. (how long to wait for their next reply)
-- **Outgoing edges** — where the flow goes after N rounds
+On the campaign canvas, an **AI reply** step placed after a wait-for-reply step overrides the workspace policy for that point in the sequence. Explicit steps always win over the workspace default.
 
-Common shape:
+It has three settings:
 
-```
-Wait for event: reply
-     ↓
-AI reply (auto-send, max 1 round)
-     ↓
-    │
-    ├──→ conversation_done (they closed the loop)
-    ├──→ meeting_requested (they asked for a call)
-    └──→ not_interested (they said no)
-```
+| Setting | What it does |
+|---|---|
+| **Send for approval** | On: the draft waits in your Inbox for approval. Off: it sends automatically. |
+| **Max consecutive replies** | How many replies Guhan can send in a row before the sequence moves on (1 to 10). 1 means a single reply. |
+| **Reply timeout** | How long to wait for the prospect to answer between replies (1 hour to 30 days). |
 
-## Approving a draft
+The step has four exits you wire up on the canvas: **Conversation done**, **Meeting requested**, **Not interested**, and **Reply timeout**. Out-of-office and not-now replies pause and resume on their own, and failed sends land in the Inbox for a manual retry.
 
-Task detail → the draft is shown in an editor. You can:
+For building the canvas, see [Build a campaign](/campaigns/build-a-campaign).
 
-- **Approve as-is** → sends immediately
-- **Edit → Approve** → your changes get sent
-- **Discard + write your own** → free-form reply
+## How drafts are written
 
-Your edits go back to Guhan as implicit feedback — over time it learns your patterns.
+A draft uses the full conversation so far, your [Brand & Voice](/brand-and-voice/overview), the product the campaign is selling, and what Guhan knows about the prospect. If the product has objection answers and offers set up, the draft can use them. See [Products](/brand-and-voice/products).
 
-## When Guhan won't draft
-
-Some replies always go to Take-over (regardless of your settings):
-
-- **Long / complex replies** — over 500 characters, Guhan pauses
-- **Technical questions** — pricing, integrations, security — high-stakes, judgment-heavy
-- **Angry / rude replies** — human handling required
-- **Multiple people on the thread** — group replies need context
-
-You'll see the reason in the task detail — "handoff reason: complex_question".
+When a draft is waiting, you will see it in the thread with a marker showing it was written by Guhan. Approve it as is, edit it, or reject it. See [Handle replies](/inbox/handle-replies).
 
 ## Cost
 
-Each AI reply draft = 1 credit. Doesn't matter if you approve or discard — the credit is spent on generation. Classification is free.
+An AI-drafted reply costs 1 credit. Replies you write yourself cost nothing. When a campaign step is set to approval, the credit is charged when you approve and send. See [Plans and credits](/workspace-settings/plans-and-credits) for every credit cost in one place.
 
-Rough budget: 1 credit per reply your sequence generates. If your sequence gets a 5% reply rate on 500 sends, that's 25 drafts = 25 credits.
+## If something's off
+
+<AccordionGroup>
+  <Accordion title="A reply I expected Guhan to answer came to me instead">
+    Meeting requests always come to a person. Beyond that, check Settings, Sending, Reply handling, and check whether the campaign has its own AI reply step that overrides it. Auto-send also falls back to you after one reply, on a send failure, or when credits run out.
+  </Accordion>
+  <Accordion title="Guhan stopped a sequence and it should not have">
+    Reply meaning is read by a model and can be wrong on short or ambiguous messages. Guhan holds back from stopping when it is unsure, but it can still misjudge a clear-sounding reply. Open the conversation in the Inbox and reply yourself.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Inbox tasks" icon="inbox" href="/inbox/overview">
-    All task modes explained.
+<CardGroup cols={3}>
+  <Card title="Handle replies" icon="reply" href="/inbox/handle-replies">
+    Approve, edit, and take over.
   </Card>
-  <Card title="Sequences" icon="diagram-project" href="/agents/campaigns/sequences">
-    AI reply node on the canvas.
+  <Card title="Build a campaign" icon="diagram-project" href="/campaigns/build-a-campaign">
+    Add an AI reply step to the canvas.
+  </Card>
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    What an AI reply costs.
   </Card>
 </CardGroup>

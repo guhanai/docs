@@ -1,147 +1,125 @@
 ---
 title: Calendar integrations
-description: Connect Google, Outlook, Cal.com, or Calendly to book meetings from Guhan.
+description: Connect Google Calendar, Outlook, Cal.com, or Calendly so Guhan can send booking links and record meetings.
 ---
 
-**Pick the calendar you already use. Guhan supports four — Google, Outlook, Cal.com, Calendly. Setup is one connect, once.**
+**Connect the calendar you already use. Google and Outlook ride on your email sender's sign-in. Cal.com and Calendly use your booking link plus a one-time connection.**
 
-Whichever calendar you pick, prospects book on it directly and events land where you already look.
+Connect once under Settings, Calendars. Each rep connects their own.
 
 <CardGroup cols={2}>
   <Card title="Google Calendar" icon="google">
-    Native OAuth. Best experience — Guhan reads live availability and writes events directly to your calendar.
+    Uses your connected Gmail sender. Guhan hosts the booking page and reads your availability.
   </Card>
   <Card title="Outlook Calendar" icon="microsoft">
-    Native OAuth via Microsoft 365. Same feature set as Google.
+    Uses your connected Outlook sender. Same experience as Google.
   </Card>
   <Card title="Cal.com" icon="calendar">
-    Bring your existing Cal.com booking URL. Guhan wraps it with a tracking parameter so bookings are linked back to prospects.
+    Paste your booking link, then add a one-time connection in Cal.com so Guhan hears about bookings.
   </Card>
   <Card title="Calendly" icon="calendar">
-    Same as Cal.com — bring your booking URL and Guhan handles the tracking layer.
+    Same as Cal.com.
   </Card>
 </CardGroup>
 
-## Google Calendar
+## Google Calendar and Outlook
+
+These need a connected email sender of the same kind first. The calendar uses that sender's sign-in, so there is no second login.
 
 <Steps>
-  <Step title="Go to Settings → Calendars">
-    Sidebar → Settings → Calendars.
+  <Step title="Connect the email sender">
+    If you have not already, connect Gmail or Outlook under Settings, Sender accounts. See [Connect email](/get-started/sender-accounts/connect-email). When you approve access, approve the calendar permissions too. If you leave those boxes unticked, the calendar cannot work.
   </Step>
-  <Step title="Click + Connect → Google Calendar">
-    Provider grid.
+  <Step title="Open Settings, Calendars and connect">
+    Click to connect a calendar and pick **Google Calendar** or **Outlook Calendar**. Admins can connect on behalf of a teammate. Teammates who already have a calendar are greyed out.
   </Step>
-  <Step title="Sign in with Google">
-    Google's OAuth screen. Approve the requested scopes:
-    - **Read your calendar events** — for availability checks
-    - **Write calendar events** — for booking new meetings
-    - **Read basic profile** — for the calendar owner's name
+  <Step title="Pick the sender that hosts your bookings">
+    Choose which email sender to use.
   </Step>
-  <Step title="Back in Guhan">
-    Sender row shows an **Active** dot. Your Google Calendar is now the source of truth for available slots on your Guhan booking page.
+  <Step title="Finish setup">
+    Confirm your timezone, which calendar bookings should land on (if you have more than one), your meeting room, and your working hours and days.
   </Step>
 </Steps>
 
-**Works with:** personal Gmail, Google Workspace (any domain).
+{/* SCREENSHOT: calendar-finish-setup — "Finish setting up your calendar" dialog */}
 
-**Availability logic:** Guhan reads busy/free info from your primary calendar. Events on secondary calendars (family calendar, shared team calendars) block slots too if they show as "busy."
+**Meeting room options:** the platform default (a Google Meet or Teams link added to every booking automatically), Zoom (you paste your personal room link), or a custom meeting URL.
 
-## Outlook Calendar
+**Availability:** open times come from your working hours and days, minus anything marked busy on your calendar.
 
-<Steps>
-  <Step title="Settings → Calendars → + Connect → Outlook Calendar">
-    Same start as Google.
-  </Step>
-  <Step title="Sign in with Microsoft">
-    Microsoft OAuth flow. Approve scopes for calendar read + write + basic profile.
-  </Step>
-  <Step title="Back in Guhan">
-    Active dot. Outlook is now your booking source.
-  </Step>
-</Steps>
-
-**Works with:** personal Outlook / Hotmail, Microsoft 365 (any tenant).
-
-**Common gotcha:** some Microsoft 365 tenants restrict third-party OAuth. Your admin may need to approve Guhan once for the tenant. After that, any user can connect.
+After setup, the calendar row has a **Copy public booking link** button for a link you can share anywhere.
 
 ## Cal.com
 
-If you already use Cal.com for scheduling, keep using it. Guhan just needs your booking URL.
-
 <Steps>
-  <Step title="Copy your Cal.com booking URL">
-    From Cal.com — the URL a prospect would visit to book time with you (e.g., `https://cal.com/yourname/intro-call`).
+  <Step title="Connect in Guhan">
+    Settings, Calendars, connect, **Cal.com**. Paste your booking link (for example `https://cal.com/your-handle/intro30`).
   </Step>
-  <Step title="Guhan Settings → Calendars → + Connect → Cal.com">
-    Paste the URL.
+  <Step title="Copy the connection URL">
+    Guhan shows you a URL to paste into Cal.com.
   </Step>
-  <Step title="Save">
-    Guhan now uses this URL as the scheduling link when a prospect asks for a call.
+  <Step title="Add it in Cal.com">
+    In Cal.com, go to Settings, Developer, Webhooks. Create a new webhook, paste the URL, and subscribe to booking created, booking cancelled, and booking rescheduled.
+  </Step>
+  <Step title="Send a test booking">
+    Click **Listen** in Guhan and make one test booking. Guhan confirms it arrived and marks the calendar active.
   </Step>
 </Steps>
-
-**Tracking:** Guhan appends a metadata parameter to the URL (something like `?metadata[guhanToken]=abc123`) so when a prospect books, Cal.com's webhook can tell Guhan which prospect it was. This means bookings show up on your Meetings page in Guhan linked to the right prospect + conversation.
-
-**What Guhan controls:** the booking link goes into replies + is tracked.
-
-**What Cal.com controls:** available slots, meeting duration, routing forms, custom questions, video-conferencing link generation, calendar writes.
 
 ## Calendly
 
-Same shape as Cal.com — bring your booking URL.
+The same four steps. In Calendly, go to Integrations, Webhook subscriptions, create a new webhook, paste the URL, and subscribe to invitee created and invitee canceled.
 
-<Steps>
-  <Step title="Copy your Calendly link">
-    E.g., `https://calendly.com/yourname/30min`.
-  </Step>
-  <Step title="Guhan Settings → Calendars → + Connect → Calendly">
-    Paste the URL.
-  </Step>
-  <Step title="Save">
-    Ready.
-  </Step>
-</Steps>
+<Note>
+  Guhan adds a hidden tracking tag to your Cal.com or Calendly link so it can match each booking to the prospect it was sent to. Slots, meeting length, questions, and video links stay under your control in that tool.
+</Note>
 
-**Tracking:** Guhan uses `utm_content` on the URL to identify which prospect booked. For this to work, Calendly needs a webhook back to Guhan — Guhan sets this up automatically the first time a booking comes through.
-
-## Which one should you use?
+## Which one should I use?
 
 <AccordionGroup>
-  <Accordion title="Just starting outbound; no existing scheduling tool">
-    Use **Google Calendar** (or **Outlook**) — native integration is smoother. Guhan hosts the booking page for you at `guhan.ai/book/<token>`.
+  <Accordion title="I do not have a scheduling tool">
+    Use Google or Outlook. Guhan hosts the booking page for you.
   </Accordion>
-  <Accordion title="Already using Cal.com or Calendly">
-    Stick with what you have. Guhan wraps your existing URL — you keep every advanced feature (routing, custom questions, video-link generation, etc.).
+  <Accordion title="I already use Cal.com or Calendly">
+    Keep it. You get all of its features, and Guhan still records the meetings.
   </Accordion>
-  <Accordion title="Team with multiple reps sharing bookings">
-    Use whichever calendar each rep already has. Each rep connects their own calendar in Guhan; bookings flow to the calendar of whichever rep's sender sent the last message in the thread.
+  <Accordion title="Several reps">
+    Each rep connects their own. A booking link goes against the calendar of the person who sends it.
   </Accordion>
 </AccordionGroup>
 
-## Reauth
+You can set a workspace default scheduling tool under Settings, Calendars. Each rep can choose their own. See [Meetings](/meetings/overview#meeting-defaults).
 
-Native calendars (Google, Outlook) use OAuth tokens that can expire (typically ~1 year for Google, ~90 days for Microsoft depending on tenant policy).
+## Reconnecting and disconnecting
 
-- Banner at the top of the app: "Your Google/Outlook calendar needs reconnecting"
-- Settings → Calendars → [account] → **Reauth** → one-click through OAuth
+If a calendar loses access, Guhan prompts you to reconnect. For Google and Outlook, reconnecting goes through the same sign-in as your email sender. If the calendar permission was not granted, Guhan says so and asks you to reconnect and approve every box.
 
-Cal.com and Calendly URLs don't expire — nothing to reauth.
+To remove a calendar, use the disconnect button on its row. Meetings already booked are kept. If booking links from that calendar are still in use, Guhan warns you. Without a connected calendar, **Send link** in the Inbox will not work until you connect another.
 
-## Disconnecting
+## If something's off
 
-Settings → Calendars → [calendar] → **Disconnect**.
-
-- Immediately stops booking new meetings through this calendar
-- Previously booked meetings stay on the calendar (Guhan doesn't delete them)
-- If this was your only calendar, your booking-link CTAs stop working — reconnect or add another calendar to resume
+<AccordionGroup>
+  <Accordion title="Google or Outlook is not offered, or says no sender is connected">
+    Connect the matching email sender first. See [Connect email](/get-started/sender-accounts/connect-email).
+  </Accordion>
+  <Accordion title="Calendar permission missing">
+    The calendar boxes were not approved during sign-in. Reconnect and approve every permission.
+  </Accordion>
+  <Accordion title="Test booking never arrives (Cal.com or Calendly)">
+    Check that the connection URL was pasted exactly, and that the booking events listed above are selected.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Meetings concept" icon="calendar" href="/meetings/overview">
-    The full flow — from prospect reply to booked meeting.
+<CardGroup cols={3}>
+  <Card title="Meetings" icon="calendar" href="/meetings/overview">
+    Sending links and the Meetings page.
   </Card>
-  <Card title="Schedule meetings" icon="calendar-check" href="/meetings/schedule">
-    Sending scheduling links from Guhan.
+  <Card title="Connect email" icon="envelope" href="/get-started/sender-accounts/connect-email">
+    Needed first for Google and Outlook.
+  </Card>
+  <Card title="Roles and permissions" icon="users" href="/workspace-settings/roles-and-permissions">
+    Who can connect and manage calendars.
   </Card>
 </CardGroup>

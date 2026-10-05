@@ -1,124 +1,75 @@
 ---
 title: Connect LinkedIn
-description: Add your first (or additional) LinkedIn sender account.
+description: Connect your LinkedIn account so Guhan can send invites, messages, comments, and reactions as you.
 ---
 
-**Connect your LinkedIn once. Guhan uses it to send messages on your behalf — invites, DMs, comments, reactions, profile views.**
-
-LinkedIn is one of three channels Guhan supports (LinkedIn / Email / WhatsApp). Connect it from the launch screen's "How to reach them" popup, from the banner on your Campaign after launch, or here in Settings.
+**Connect your LinkedIn once. Guhan sends invites, messages, comments, reactions, and profile views from it.**
 
 <Note>
-  Your LinkedIn is only used for **sending**. Finding prospects is done entirely by Guhan's own data pipelines — your account never runs discovery searches.
+  Your LinkedIn account is used only for sending. Finding prospects never runs searches from your account.
 </Note>
 
-## The steps
+## Steps
 
 <Steps>
-  <Step title="Go to Settings">
-    Click the gear icon in the sidebar → **Settings** → **Sender accounts**.
+  <Step title="Open Sender accounts">
+    Settings, Sender accounts. You can also connect from your profile under My sender accounts, or from the connect prompt when you set up a campaign's senders.
   </Step>
-  <Step title="Connect a new account">
-    Click **+ Connect** in the top-right → pick **LinkedIn**.
-  </Step>
-  <Step title="Choose the owner (admin only)">
-    If you're a Workspace Admin and your team has multiple members, you can pick who owns this sender. Solo workspace = skip.
+  <Step title="Click Connect and pick LinkedIn">
+    The dialog shows how many senders you have used out of your limit. If you are an admin with teammates, you can also choose who the sender is for.
   </Step>
   <Step title="Sign in on LinkedIn">
-    You'll be redirected to LinkedIn's login page. Sign in with the account you want to connect.
+    Click **Continue authentication**. LinkedIn's sign-in opens in a new tab. Guhan never sees your password.
   </Step>
-  <Step title="Come back to Guhan">
-    LinkedIn redirects you back. You'll see "Finishing setup…" for 1-2 seconds while Guhan verifies the connection.
-  </Step>
-  <Step title="Confirm the sender is active">
-    Your sender account should now show up with a green **Active** dot. If it says **Warming up**, that's normal — new accounts start at 30% pace.
+  <Step title="Return to Guhan">
+    Guhan finishes setup in a moment. The sender appears with an **Active** badge.
   </Step>
 </Steps>
 
-## What Guhan checks
+{/* SCREENSHOT: connect-linkedin-dialog — Connect a sender account dialog with LinkedIn selected */}
 
-Right after connect, Guhan pulls:
+## Sending limits and windows
 
-- Your LinkedIn name + profile URL
-- Your account age
-- Your connection count (>150 = eligible to skip warm-up)
-- Whether Sales Navigator is enabled
+LinkedIn is the channel with the tightest limits. Daily and weekly caps, the sending window, and pacing are all covered in [Sending safety](/campaigns/sending-safety). You can adjust them for each account in its settings.
 
-You'll see all of this in the sender's detail row.
+<Warning>
+  Raising limits above the defaults raises the risk of LinkedIn restricting your account. Keep the defaults unless you have a reason.
+</Warning>
 
-## Sales Navigator
+## Several LinkedIn accounts
 
-If your account has Sales Navigator, Guhan will use it for higher-quality searches automatically. You don't need to do anything — just connect the account.
+You can connect more than one, up to your sender limit (see [Sender accounts](/get-started/sender-accounts/overview#how-many-senders-you-can-connect)). Each has its own limits and schedule. Add several to one campaign and Guhan spreads the work across them.
 
-## What if the OAuth fails?
-
-Common causes + fixes:
+## If something's off
 
 <AccordionGroup>
-  <Accordion title="'LinkedIn refused authorization'">
-    Usually a browser cookie issue. Try in Incognito or a different browser.
+  <Accordion title="The sign-in tab did not open">
+    Your browser may have blocked the pop-up. Allow pop-ups for Guhan and click **Continue authentication** again.
   </Accordion>
-  <Accordion title="'Account already connected'">
-    Somebody else in your workspace already connected this LinkedIn account. Contact them to reassign OR disconnect + reconnect.
+  <Accordion title="LinkedIn refused the sign-in">
+    Try a private window or a different browser, and make sure you are signing into the account you meant to connect.
   </Accordion>
-  <Accordion title="'Session expired'">
-    LinkedIn's OAuth token expired mid-flow. Just retry.
+  <Accordion title="It says the account is already connected">
+    Someone in your organization already connected this LinkedIn account. Ask them, or an admin, to reassign or disconnect it first.
   </Accordion>
-  <Accordion title="Stuck on 'Finishing setup…' forever">
-    LinkedIn's webhook may be delayed. Wait 60 seconds; the account will appear. If not, refresh and retry.
+  <Accordion title="Stuck on finishing setup">
+    Wait a minute, then refresh Settings, Sender accounts. If the sender is not there, connect again.
+  </Accordion>
+  <Accordion title="The sender later shows Re-authorize or Reconnect needed">
+    LinkedIn signed Guhan out. Use the action on the account's row. See [Sender accounts](/get-started/sender-accounts/overview#sender-status).
   </Accordion>
 </AccordionGroup>
 
-## Warm-up
-
-New sender accounts are **warmed up** for 30 days:
-
-- Day 1–7: 30% of daily cap (7 invites/day, 9 DMs/day)
-- Day 8–14: 50%
-- Day 15–21: 75%
-- Day 22–30: 90%
-- Day 30+: 100%
-
-If your account is > 30 days old AND has > 150 connections, Guhan skips warm-up entirely. You can verify from the sender's detail row — look for **Established** vs. **New account** tags.
-
-## Setting the sending window
-
-Every sender has an active-hours window. Default: 10am–6pm Mon–Sat, sender's timezone.
-
-To adjust:
-- Settings → Sender accounts → [account] → **Schedule**
-- Set start hour + end hour + which days
-- Timezone is auto-detected from LinkedIn but overridable
-
-<Warning>
-  Narrower windows look more human but limit daily volume. If you set 10–11am only, Guhan can only send ~10 things per day.
-</Warning>
-
-## Multiple LinkedIn accounts
-
-You can connect multiple LinkedIn accounts to the same workspace:
-
-- Each has independent daily caps + sending window
-- Assign each to different Campaigns (or the same one for rotation)
-- Cost is per-workspace, not per-account — no extra fee for a second sender
-
-## Disconnecting
-
-Settings → Sender accounts → [account] → **Disconnect**.
-
-This:
-- Immediately stops all sends via this account
-- Pauses any in-flight sequence steps that were queued for this sender
-- Preserves conversation history — replies received later still land in your Inbox
-
-The prospect can no longer be contacted via this specific account, but you can attach a different LinkedIn sender to the same sequence and resume.
-
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Connect email" icon="envelope" href="/get-started/sender-accounts/connect-email">
-    Gmail or Outlook next.
-  </Card>
+<CardGroup cols={3}>
   <Card title="Sender accounts" icon="paper-plane" href="/get-started/sender-accounts/overview">
-    Daily caps, warm-up, quotas explained.
+    Limit, statuses, and disconnecting.
+  </Card>
+  <Card title="Sending safety" icon="shield-halved" href="/campaigns/sending-safety">
+    Limits and windows.
+  </Card>
+  <Card title="Connect email" icon="envelope" href="/get-started/sender-accounts/connect-email">
+    Add email next.
   </Card>
 </CardGroup>

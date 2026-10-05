@@ -1,116 +1,75 @@
 ---
-title: Set up Brand & Voice
-description: Teach Guhan how your outreach should sound.
+title: Set up Brand and voice
+description: Fill in each Brand & Voice tab, and what each field does for your messages.
 ---
 
-**Set up Brand & Voice once. Guhan uses it forever. 15 minutes here saves you rewriting every message later.**
+**Work through the tabs in order. Each tile saves on its own, and changes apply to messages drafted from then on.**
 
-Every field maps to something Guhan will (or won't) do when writing to prospects.
+## Brand
 
-## The five tiles
+Click a tile to edit it.
 
-The Brand & Voice page organizes your settings into five tiles:
-
-<CardGroup cols={2}>
-  <Card title="Brand" icon="tag">
-    Industry, company one-liner, target customer.
-  </Card>
-  <Card title="Voice" icon="music">
-    Tone, language, phrases you always/never use.
-  </Card>
-  <Card title="Competitors" icon="users">
-    Who you compete with — powers competitor-engagement signal sources on your Lists + auto-excludes their employees from your outreach.
-  </Card>
-  <Card title="Templates" icon="file-lines">
-    Saved message templates you can drop into any sequence step.
-  </Card>
-  <Card title="Products" icon="box">
-    What you sell — each product is a first-class record you can pick per Campaign.
-  </Card>
-</CardGroup>
-
-## Brand tab
-
-Fields:
-
-- **Industry** — pick from LinkedIn's taxonomy (the same one your prospects' companies use)
-- **Company description & value proposition** — 2-3 sentences explaining what you do
-- **Customer pain points** — specific problems your customers face; used by the message agent to anchor openers
-- **Company website + name** — auto-filled from onboarding
+- **Industry**: pick from the list, or search. This is the industry you operate in.
+- **Company description & value proposition**: two or three plain sentences on what you do and why it matters.
+- **Customer pain points**: the specific problems your customers have.
 
 <Tip>
-  The more specific your pain points, the sharper Guhan's messaging. "Marketing teams struggle to attribute revenue" beats "Marketing has attribution issues."
+  Specific beats general. "Sales teams spend two to three hours a day on manual prospecting and the lists go stale before anyone works them" gives Guhan far more to work with than "prospecting is hard".
 </Tip>
 
-## Voice tab
+{/* SCREENSHOT: brand-tab — Brand tab tiles with example text */}
 
-Fields:
+## Voice
 
-- **Preferred tone** — Professional / Casual / Friendly / Direct / Playful / Professional-casual
-- **Preferred language** — English (default), Spanish, French, German, etc.
-- **Always include** — phrases you want in every message (max 3)
-- **Never say** — banned phrases + words that should never appear ("just wanted to reach out", "hope this finds you well", etc.)
-
-Guhan's message agent respects both lists strictly. If you ban a phrase, it won't appear even in follow-ups.
-
-## Competitors tab
-
-Add competitor **LinkedIn company URLs**:
-
-- Used by the "Engaged with competitor" signal source on a List — finds people who liked/commented on competitor posts
-- Used to **auto-exclude competitor employees** from every List's discovery runs
-
-Each competitor row lets you add a short **pivot note** — how you position against them ("We're the affordable alternative", "We integrate better"). The message agent uses this to differentiate in outreach.
-
-## Templates tab
-
-Message templates are pre-written **briefs** you can pick when configuring a sequence step. Guhan ships 10 defaults:
-
-- Cold connect · no pitch (LinkedIn invite)
-- First message after connect · deliver value (DM / email)
-- Signal hook — funding raise (DM / email / WhatsApp)
-- Signal hook — hiring (DM / email / WhatsApp)
-- Signal hook — post engagement (DM only)
-- Follow-up · new value (Day 7) (DM / email / WhatsApp)
-- Channel shift · 10-min call ask (DM / email / WhatsApp)
-- Break-up · graceful close (DM / email / WhatsApp)
-- First email · async version (email only)
-- Substantive post comment (LinkedIn post comment only)
-
-You can **clone** any template + customize it, then use the cloned version in sequences. You can also create templates from scratch.
+- **Tone**: one of Professional, Conversational, Direct, Authoritative, Technical, Casual, or Consultative. Each has a short description in the picker. Conversational is the default.
+- **Preferred language**: the language Guhan should write in. Treat it as guidance rather than a guarantee.
+- **Words Guhan won't write**: phrases or words to keep out of every message, such as "just wanted to circle back". Type each one and press Enter or a comma. Guhan strictly keeps these out of messages it drafts.
 
 <Note>
-  Templates aren't blast text. They're briefs Guhan uses to draft per-prospect messages. So the same template produces different actual wording per person.
+  There is no "always include" list. Forcing a phrase into every message made messages read as repetitive, so your positioning belongs in the company description and on your products instead.
 </Note>
 
-## Products tab
+## Competitors
 
-Every workspace can have multiple products. Each product has:
+Add each competitor with:
 
-- **Name** + **short description**
-- **Value props** — bullet points of what makes it valuable
-- **Ideal use cases** — when it's the right fit
-- **Pricing** — optional; used for pricing-forward messaging
+- **Name**
+- **Differentiation**: how you differ when this competitor comes up, for example where you win and where you would concede.
 
-When you create an Campaign, you pick which product it's selling. The message agent uses the product's value props + use cases to write messages.
+Guhan uses the differentiation when a prospect mentions that competitor. Use **New competitor** to add one, and the search box to find an existing one.
 
-Multiple products = multiple Campaigns, one per product.
+## Templates and Products & Services
 
-## Saving and using
+These two tabs are covered on their own pages: [Message templates](/brand-and-voice/templates) and [Products](/brand-and-voice/products).
 
-Every change on Brand & Voice takes effect on the **next message drafted**. In-flight drafts (queued in the last hour or so) may use the old settings — new sequences from that moment forward use the new settings.
+## Keeping it stable
 
-<Warning>
-  Changing your tone or banned-phrases list mid-campaign will make messages feel inconsistent to prospects who've received earlier messages. Best practice: change it once, at setup, and keep it stable.
-</Warning>
+Changing tone or the never-say list part-way through a campaign makes later messages sound different from earlier ones, which prospects notice. Settle it early and change it deliberately.
+
+## If something's off
+
+<AccordionGroup>
+  <Accordion title="Messages still use a phrase I banned">
+    The ban applies to messages Guhan drafts. Check whether that step is set to **Fixed message**, where the text is sent as typed, and whether the phrase is in a template or the step's own instructions.
+  </Accordion>
+  <Accordion title="My edits did not seem to apply">
+    Messages drafted before you saved are not changed. Only newly drafted messages pick up the change.
+  </Accordion>
+  <Accordion title="Messages are generic">
+    Add detail to the company description and pain points, then fill in the product the campaign is using. See [Products](/brand-and-voice/products).
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Personalization" icon="wand-magic" href="/agents/campaigns/personalization">
-    How Brand & Voice feeds the message agent.
+<CardGroup cols={3}>
+  <Card title="Brand and voice" icon="palette" href="/brand-and-voice/overview">
+    What each tab is for.
   </Card>
-  <Card title="Write message templates" icon="file-lines" href="/brand-and-voice/templates">
-    Deep-dive into templates.
+  <Card title="Message templates" icon="file-lines" href="/brand-and-voice/templates">
+    Starters and your own.
+  </Card>
+  <Card title="Products" icon="box" href="/brand-and-voice/products">
+    What you sell.
   </Card>
 </CardGroup>

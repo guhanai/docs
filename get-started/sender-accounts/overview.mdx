@@ -1,99 +1,98 @@
 ---
 title: Sender accounts
-description: The LinkedIn, email, and WhatsApp accounts Guhan operates on your behalf.
+description: The LinkedIn, email, and WhatsApp accounts Guhan sends from, how many you can connect, and what the status badges mean.
 ---
 
-**A sender account is one of your own accounts — LinkedIn, Gmail, Outlook, or WhatsApp — that Guhan operates AS you.**
+**A sender account is one of your own accounts (LinkedIn, Gmail, Outlook, or WhatsApp) that Guhan sends from as you.**
 
-Guhan never sends from a "Guhan address." Messages go out from your account, over your identity — the prospect sees you as the sender. You connect the account once; Guhan uses it going forward with the discipline of a good SDR (safe caps, sending windows, warm-up, cooldowns).
+Guhan never sends from a Guhan address. The prospect sees you. You connect an account once and Guhan sends from it within safe limits.
 
 <Note>
-  **Sender accounts are only for outreach.** Finding prospects is done entirely by Guhan's own data pipelines — your personal accounts are never touched to search for people. If you only want to see prospects Guhan finds (without any outreach), you don't need to connect any sender at all.
+  Sender accounts are only for sending. Finding prospects never uses your personal accounts. If you only want to see the prospects Guhan finds, you do not need to connect a sender at all.
 </Note>
 
-## Which senders you can connect
+## Channels you can connect
 
 <CardGroup cols={3}>
-  <Card title="LinkedIn" icon="linkedin">
-    Personal LinkedIn or Sales Navigator. Sends invites, DMs, comments, profile views, reactions.
+  <Card title="LinkedIn" icon="linkedin" href="/get-started/sender-accounts/connect-linkedin">
+    Invites, messages, comments, reactions, and profile views.
   </Card>
-  <Card title="Email (Gmail / Outlook)" icon="envelope">
-    Standard Google Workspace or Microsoft 365 accounts. Sends outbound + threads inbound replies.
+  <Card title="Email" icon="envelope" href="/get-started/sender-accounts/connect-email">
+    Gmail or Outlook. Sends email and brings replies back.
   </Card>
-  <Card title="WhatsApp" icon="whatsapp">
-    Personal or business WhatsApp. Sends outbound + captures inbound replies.
+  <Card title="WhatsApp" icon="whatsapp" href="/get-started/sender-accounts/connect-whatsapp">
+    Sends messages and can also let you chat with Guhan from your phone.
   </Card>
 </CardGroup>
 
-## How to connect one
+## How many senders you can connect
 
-Go to **Settings → Sender accounts → Connect**. Pick a channel, sign in with that provider through their official OAuth screen, and Guhan handles the handshake.
+Your sender limit is the number of licenses on your workspace plus any extra-sender add-ons. Each license includes one sender of any channel, and each add-on adds one more.
 
-<Note>
-  Guhan never sees your password. All connections go through the provider's own secure OAuth flow.
-</Note>
+The Connect dialog shows where you stand, for example "1 of 2 senders used". If you are at the limit, connecting is blocked until you add a license or an add-on. See [Plans and credits](/workspace-settings/plans-and-credits).
 
-## Daily limits
+A sender counts against the limit once it is connected, including when it needs reconnecting. A connection that never finishes does not count.
 
-LinkedIn's published safe caps:
+## Connect one
 
-| Action | Default | Adjustable up to |
+Settings, Sender accounts, then **Connect**. You can also connect from your own profile under My sender accounts. Pick a channel and Guhan opens the provider's own sign-in page in a new tab (or a QR code for WhatsApp). Guhan never sees your password.
+
+Workspace admins can connect a sender on behalf of a teammate and choose the owner.
+
+{/* SCREENSHOT: sender-connect-dialog — Connect a sender account dialog with provider choices and the "N of M senders used" line */}
+
+## Sender status
+
+| Badge | What it means | What to do |
 |---|---|---|
-| Invites | 25/day | ~40/day |
-| DMs | 30/day | ~50/day |
-| Profile views | 30/day | ~500/day |
-| Comments | 100/week | 100/week |
-| Reactions | 300/week | 500/week |
+| **Active** | Connected and sending normally. | Nothing. |
+| **Connecting** | Sign-in is in progress. | Finish the sign-in in the other tab. |
+| **Re-authorize** | The provider needs you to sign in again, for example after a password change. | Open the account's menu and choose **Re-authorize**. |
+| **Reconnect needed** | The account was disconnected or removed on the provider's side while campaigns still depend on it. | Open the account and choose **Reconnect**. |
+| **Rate-limited** or **Suspended** | The provider has restricted the account. | Check the account on the provider's own site. Guhan pauses sending from it. |
+| **Paused**, **Error**, **Disconnected** | The account is not usable right now. | Reconnect it. |
+| **Hibernated** | Your workspace was read-only for a week or more, so Guhan released the connection. Your campaigns and history are kept. | Choose **Reactivate** once the workspace is active again. |
 
-For email + WhatsApp:
+When an account is broken, a banner appears at the top of the app. Sending from it stops until you fix it, and queued steps wait. New prospects keep waiting for a working sender.
 
-| Provider | Default | Note |
-|---|---|---|
-| Gmail | 500/day | Well inside Google's provider-side ceiling |
-| Outlook | 500/day | Well inside Microsoft's provider-side ceiling |
-| WhatsApp | 40/day | Personal-app tier (safe operating range 30-50/day) |
+## Limits, windows, and pacing
 
-You can adjust these per-account in **Settings → Sender accounts → [account] → Quotas**.
+Every sender has daily and weekly limits and a sending window. Guhan checks them before every send and reschedules anything that would go over. They are explained once, in [Sending safety](/campaigns/sending-safety), including default numbers.
 
-## Warm-up
+To change a sender's limits or its sending schedule, open the account's settings from Settings, Sender accounts.
 
-New sender accounts (< 30 days old) start at reduced capacity and ramp over time:
+## Several senders in one campaign
 
-- **Day 0–7**: 30% of full pace
-- **Day 8–14**: 50%
-- **Day 15–21**: 75%
-- **Day 22–30**: 90%
-- **Day 30+**: 100%
+A campaign can use more than one sender per channel. Guhan spreads the work across them, and once a prospect has been contacted from a sender, later steps for that prospect keep using the same sender. Pick senders on the campaign's start step. See [Build a campaign](/campaigns/build-a-campaign).
 
-Established accounts (existing LinkedIn history, > 150 connections) skip the warm-up entirely.
+## Disconnecting
 
-## Sending window
+Use the account's menu, **Disconnect**. If active campaigns still use the sender, it is marked **Reconnect needed** instead of being removed, so those campaigns keep their place and you can reconnect or swap in another sender. Past conversations stay in your Inbox.
 
-Every sender has an active **sending window** — the hours + days of the week when messages actually go out. Default: 10am–6pm Mon–Sat, in the sender's timezone.
+## If something's off
 
-Set narrow windows to look more human. Set broader windows to send more per day. Guhan spreads sends randomly within the window.
-
-## Multiple senders on one Campaign
-
-You can attach multiple senders to a single Campaign — Guhan rotates through them to spread volume. Useful when you have 2-3 LinkedIn accounts (yours + team members') feeding the same Campaign.
-
-## What happens if a sender breaks
-
-If your LinkedIn account gets restricted, or you change your Google password, Guhan can't send anymore. You'll see:
-
-- A **banner at the top of the app** — "Your LinkedIn account needs re-authentication"
-- **In-flight sequence steps** hold in place until you fix it
-- **New enrollments** pause until at least one working sender exists
-
-Click the banner or go to Settings → Sender accounts → **Reauth** to fix.
+<AccordionGroup>
+  <Accordion title="Connect is blocked with a limit message">
+    You are at your sender limit. Add a license or an extra-sender add-on under Settings, Billing.
+  </Accordion>
+  <Accordion title="A banner says a sender needs attention">
+    Click it, or go to Settings, Sender accounts and use the action on the affected row.
+  </Accordion>
+  <Accordion title="I connected the wrong person's account">
+    Disconnect it and connect the right one. Admins can also change a sender's owner from its settings.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Connect LinkedIn" icon="linkedin" href="/get-started/sender-accounts/connect-linkedin">
-    Step-by-step LinkedIn connection.
+<CardGroup cols={3}>
+  <Card title="Sending safety" icon="shield-halved" href="/campaigns/sending-safety">
+    Limits, windows, and pacing.
   </Card>
-  <Card title="Connect email" icon="envelope" href="/get-started/sender-accounts/connect-email">
-    Gmail + Outlook setup.
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    Licenses and extra senders.
+  </Card>
+  <Card title="Roles and permissions" icon="users" href="/workspace-settings/roles-and-permissions">
+    Who can connect senders.
   </Card>
 </CardGroup>

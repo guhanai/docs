@@ -1,0 +1,193 @@
+---
+title: Build a campaign
+description: Create a campaign, set its audience and senders, and build the sequence of steps every prospect walks through.
+---
+
+**You create a campaign with a short setup sheet, then build its sequence in the guided editor, one step at a time.** Nothing sends until you launch.
+
+## Before you start
+
+- At least one [list](/audience/lists) to use as the audience.
+- At least one [connected sender account](/get-started/sender-accounts/overview) for each channel you plan to use.
+- Optional but recommended: a [product](/brand-and-voice/products) and your [brand voice](/brand-and-voice/setup), so messages sound like you and pitch the right thing.
+
+## Create the campaign
+
+<Steps>
+  <Step title="Click New campaign">
+    In **Campaigns**, click **New campaign**. A setup sheet opens.
+  </Step>
+  <Step title="Name it">
+    Use something you will recognize later, such as "Series B fintech founders - Q4".
+  </Step>
+  <Step title="Pick the audience">
+    Choose the lists to **include** (required). Optionally choose lists to **exclude**, so anyone on those lists is never contacted by this campaign.
+  </Step>
+  <Step title="Set product, goal, and context (optional)">
+    - **Product or service** - which product this campaign pitches.
+    - **Goal** - what success looks like, for example "Book a 15-min intro call." Guhan uses it to shape the call to action.
+    - **Context** - a short note on who you are targeting and your hook.
+  </Step>
+  <Step title="Choose senders">
+    Pick the sender accounts for each channel. If your workspace has exactly one active account for a channel, it is selected for you.
+  </Step>
+  <Step title="Click Create">
+    You land on the **Sequence** tab with a blank canvas: a Start step connected to an Exit step. You add every step in between.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT: new-campaign-sheet — the New campaign sheet with name, audience lists, product, goal, context, and senders */}
+
+<Tip>
+Want a head start? [Clone](/campaigns/launch-and-manage#clone-a-campaign) an existing campaign, or start message steps from a [template](/brand-and-voice/templates).
+</Tip>
+
+## Change campaign settings later
+
+Click the **Start** step on the canvas to reopen the same settings in a side sheet. It also holds one setting the creation sheet does not:
+
+- **Re-entry** - turn **Allow re-entry** on to let a prospect enter this campaign more than once. You set a **cooldown** (in days) between entries and an optional **maximum number of entries**. With re-entry off, each prospect can enroll only once.
+
+Settings in the Start sheet are read-only while the campaign is active. Pause the campaign to edit them (see [Launch and manage](/campaigns/launch-and-manage#edit-a-live-campaign)).
+
+## Build the sequence
+
+The sequence editor shows your steps as a top-to-bottom tree. Branching steps split the tree into side-by-side columns.
+
+- **Add a step.** Click the **+** on any connector line and pick a step type. The picker only offers steps that make sense at that spot, and greyed-out options tell you why (for example, "AI reply must follow a wait for a reply").
+- **Edit a step.** Click the step card, or its pencil icon, to open its settings.
+- **Copy, paste, or delete.** Each card has copy and trash icons. Deleting a step in a straight line offers to bridge the gap or remove everything after it. On a branch, you can keep one path and drop the others. Copy works the same way, and a copied step can be pasted on any connector.
+- **Undo and redo.** Press Cmd+Z / Cmd+Shift+Z (Ctrl on Windows).
+- **Autosave.** Changes save automatically as a draft. The header shows save status and whether the sequence is valid.
+
+If a step is missing something, its card shows a plain-language error telling you what to fix.
+
+{/* SCREENSHOT: guided-editor — sequence tab showing a LinkedIn invite, wait, DM, wait for reply, branch tree with + buttons on connectors */}
+
+## Step types
+
+<AccordionGroup>
+  <Accordion title="Send a message">
+    The core step. Pick a channel, then what to do on it:
+
+    - **LinkedIn**: send an invite, send a DM (to a connection), visit their profile, comment on one of their posts, or react to one of their posts.
+    - **Email**: send an email. Follow-up emails in the same sequence reply in the same thread (subject shown as "Re: ...").
+    - **WhatsApp**: send a WhatsApp message.
+
+    For every message step you choose how the text is made. See [Message modes](#message-modes) below.
+
+    Other options on a message step:
+
+    - **Require approval before sending** - Guhan drafts the message, then holds it in your Tasks until you click Send. Available on steps that have text.
+    - **Reference their recent posts & activity** - LinkedIn DMs only. Guhan reads one of the prospect's recent posts and can open with it. If they have no usable post, the message is written without one.
+    - **Comment and react steps** - choose whether Guhan targets their latest post or their most-engaged recent post, and how old a post may be (default 30 days). For reactions, choose the reaction type. If the prospect has no qualifying post, the step is skipped and the sequence moves on.
+    - **Visit profile** triggers a "viewed your profile" notification for the prospect.
+
+    LinkedIn invite notes are limited to 300 characters.
+
+    Guhan shows a warning if no account is connected for the channel you picked. You can still save, but you need one before launch.
+  </Accordion>
+  <Accordion title="Wait">
+    Pauses the prospect for a fixed time. Set days and hours. A wait cannot sit directly next to a wait-for-event step.
+  </Accordion>
+  <Accordion title="Wait for reply / event">
+    Pauses until something happens, or until a timeout passes (default 7 days). You pick the channel first, then the event:
+
+    | Channel | Events |
+    |---|---|
+    | LinkedIn | Invite accepted, They replied on LinkedIn, They replied to your comment |
+    | Email | Link clicked, Email reply |
+    | WhatsApp | They replied on WhatsApp |
+    | Any channel | Any reply on any channel |
+
+    Events are only available when an earlier step can produce them. For example, "Invite accepted" needs an earlier LinkedIn invite step. This step needs at least one earlier message step. Email open tracking is not offered.
+
+    The step has two paths out: the event happened, or the timeout passed.
+  </Accordion>
+  <Accordion title="Branch on a condition">
+    Splits the sequence in two. Build a rule from one or more rows (field, comparison, value) and choose whether **all** or **any** rows must match. Prospects who match follow the **Yes** path; everyone else follows **No**.
+
+    You can branch on:
+
+    - **Prospect**: job title, department, seniority, headline, location, has email, has phone number, do not contact.
+    - **Company**: industry, headcount, HQ country, HQ city, founded year.
+    - **How they were added**: signal source, agent search, manual paste, CSV upload, or cloned from another list.
+    - **Lists**: also in a list, or not in another list.
+    - **Time**: days since added, days in list, days enrolled in this campaign.
+  </Accordion>
+  <Accordion title="Hand off to a teammate">
+    Pauses the automation so a person can step in. Choose an **urgency** and optionally add a subject and context.
+
+    - **Notify** - sends you a heads-up task for context.
+    - **Take over** - you grab the conversation and send the next message yourself while Guhan steps aside. When you have sent (or skipped), the sequence continues down its single outgoing path.
+
+    New handoff steps offer Notify and Take over. For reply approvals, use an AI reply step instead. Older sequences may still contain Approve, Decide, or Schedule handoffs, which keep working.
+  </Accordion>
+  <Accordion title="AI reply">
+    Lets Guhan handle replies. Place it after a wait-for-reply step. When the prospect replies, Guhan works out what they mean and writes a response.
+
+    - **Send for approval** - on, the drafted reply waits in Tasks for you. Off, it sends automatically. Meeting requests always go to a person, whichever way this is set.
+    - **Max consecutive replies** - 1 to 10. Above 1, Guhan keeps the conversation going, waiting for the prospect's next reply each time. Guhan stops at 20 replies per prospect no matter what.
+    - **Reply timeout** - how long to wait for the prospect's next reply (1 hour to 30 days). Default 3 days.
+
+    The step has four paths out: **Conversation done**, **Meeting requested**, **Not interested**, and **Reply timeout**.
+
+    Handled automatically, with no path needed: out-of-office replies pause the prospect for 7 days, "not now" replies pause for 30 days, and failed sends land in Tasks for a manual retry.
+
+    Each automatic reply uses 1 credit. Replies you approve use it when you click Send. See [AI reply drafts](/inbox/ai-reply-drafts).
+  </Accordion>
+  <Accordion title="Exit">
+    Ends the prospect's journey and records why: completed, replied, unsubscribed, bounced, do not contact, paused by you, or a custom reason. Several paths can end at the same Exit.
+  </Accordion>
+  <Accordion title="Start">
+    Where every prospect begins. It has no steps of its own. Clicking it opens the campaign settings sheet described above.
+  </Accordion>
+</AccordionGroup>
+
+## Message modes
+
+Each message step has three modes. Pick one with the tiles at the top of the step settings.
+
+| Mode | What Guhan sends | Credits |
+|---|---|---|
+| **Auto-draft** | Guhan writes the message from the campaign goal and context plus its research on the prospect. No instructions needed. | 1 per message |
+| **Guided** | Guhan writes the message following instructions you give (the angle, the hook, the call to action). | 1 per message |
+| **Fixed message** | Exactly the text you write, with `{{tokens}}` filled in per prospect. Guhan does not rewrite it. | None |
+
+Fixed messages can use tokens such as `{{firstName}}`, `{{company}}`, `{{title}}`, `{{senderFirstName}}`, and `{{signature}}`. The **Insert variable** menu lists everything available. If a token has no value for a prospect, that send is skipped instead of going out with a blank, so you never send "Hi , thanks for reading".
+
+Use **Start from template** to fill in a step from your [template library](/brand-and-voice/templates). A template is copied into the step, so later edits to the template do not change steps you already built.
+
+The step settings include a preview: pick one of your prospects and see the draft Guhan would write. More on how drafts are written in [Personalization](/campaigns/personalization).
+
+## Test the sequence
+
+Click **Test run** in the editor bar, pick a prospect, and walk them through the sequence to see what would happen and in what order. Nothing is sent. The test run shows a template-level preview; it is not a full personalized draft.
+
+## If something is off
+
+<AccordionGroup>
+  <Accordion title="A step shows a red error on its card">
+    Read the message on the card. The most common causes are a step that is not connected to the rest of the sequence, an email step with no subject, or a branch or wait-for-event step missing a required path.
+  </Accordion>
+  <Accordion title="The + picker has greyed-out options">
+    The option would make an invalid sequence at that spot. Hover it for the reason, then add the missing step first (for example, a message step before a wait-for-reply).
+  </Accordion>
+  <Accordion title="I cannot edit the sequence">
+    Active campaigns are view-only. Pause the campaign, make your changes, then resume. See [Launch and manage](/campaigns/launch-and-manage#edit-a-live-campaign).
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Personalization" icon="wand-magic-sparkles" href="/campaigns/personalization">
+    What Guhan reads before it writes.
+  </Card>
+  <Card title="Launch and manage" icon="rocket" href="/campaigns/launch-and-manage">
+    Check readiness and go live.
+  </Card>
+  <Card title="Templates" icon="file-lines" href="/brand-and-voice/templates">
+    Starting points for message steps.
+  </Card>
+</CardGroup>

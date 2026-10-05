@@ -1,93 +1,87 @@
 ---
 title: Roles and permissions
-description: Who can do what in your workspace.
+description: The four built-in roles, what each can do, how invites work, and how licenses relate to seats.
 ---
 
-**Roles decide what a teammate can do — Workspace Admin (everything), Campaign Manager (build + send), Sales Rep (respond + close). Pick carefully at invite time.**
+A role decides what a teammate can see and change. Guhan has four built-in roles, and org admins can create custom roles from a set of individual permissions.
 
-3 built-in roles cover most cases. You can build custom roles too.
+## The four roles
 
-## The built-in roles
+| Capability | Workspace Admin | Campaign Manager | Sales Rep | Viewer |
+|---|:---:|:---:|:---:|:---:|
+| View campaigns, sequences, Lists, companies, products, templates | Yes | Yes | Yes | Yes |
+| Create and edit campaigns and sequences | Yes | Yes | No | No |
+| Launch and publish campaigns | Yes | Yes | No | No |
+| Delete campaigns | Yes | No | No | No |
+| Create and edit Lists | Yes | Yes | No | No |
+| Edit companies, block a company | Yes | Yes | No | No |
+| Delete companies | Yes | No | No | No |
+| Create and edit products and templates | Yes | Yes | No | No |
+| View sender accounts | Yes | Yes | Yes | Yes |
+| Connect, disconnect, and share sender accounts | Yes | No | No | No |
+| Change a sender account's owner | Yes | No | No | No |
+| View calendars and Meetings | Yes | Yes | Yes | Yes |
+| Connect your own calendar | Yes | No | Yes | No |
+| See all conversations | Yes | Yes | No (own only) | Yes |
+| Send messages and replies | Yes | Yes | Yes | No |
+| Reassign conversations | Yes | Yes | No | No |
+| View analytics | Yes | Yes | Yes | Yes |
+| View the Do-Not-Contact list | Yes | Yes | Yes | Yes |
+| Add or remove Do-Not-Contact entries | Yes | Yes | No | No |
+| Invite, remove, and change members | Yes | No | No | No |
+| Edit workspace settings, delete the workspace | Yes | No | No | No |
 
-<CardGroup cols={3}>
-  <Card title="Workspace Admin" icon="crown">
-    Full access. Can create + edit + delete anything, invite teammates, manage billing, connect senders.
-  </Card>
-  <Card title="Campaign Manager" icon="user-tie">
-    Can create + edit + launch agents. Can see everything but can't delete workspace-level records or change billing.
-  </Card>
-  <Card title="Sales Rep" icon="user">
-    Can see their own assigned prospects + conversations. Can reply to their assigned Inbox tasks. Can't create or delete agents.
-  </Card>
-</CardGroup>
+Billing and organization actions, such as plan changes, credit packs, and creating workspaces, are limited to **org admins**.
 
-## Inviting teammates
+## Sales Rep scope
 
-Go to **Settings → Members → Invite** → enter email + pick role.
+A Sales Rep sees only the conversations assigned to them. They can reply and book meetings within that scope, which keeps a team of reps from stepping on each other.
 
-Invitees get an email with a link. When they accept, they land in your workspace.
+## Seats and licenses
+
+**One license is one seat.** The number of members in your workspace can't exceed the number of licenses. When you've used them all, the invite form tells you to add another license first. See [Plans and credits](/workspace-settings/plans-and-credits).
+
+## Invite a teammate
+
+<Steps>
+  <Step title="Open the Team page">
+    Go to **Settings → Team**.
+  </Step>
+  <Step title="Send the invite">
+    Enter their email and pick a role. They receive an email with a link.
+  </Step>
+  <Step title="They accept">
+    The link works for 7 days. You can revoke a pending invite at any time, which invalidates it immediately.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT: team-invite — the Team page with the invite form and the seats-used counter */}
+
+## Change a role or remove a member
+
+On **Settings → Team**, change a member's role or remove them. Data they created, such as Lists and sequences, stays in the workspace.
 
 ## Custom roles
 
-Beyond the three built-in roles, you can create custom roles from **Settings → Roles → New role**. Pick individual permissions:
-
-- View / edit / delete Campaigns
-- View / edit / delete Lists (includes managing their sources)
-- View / edit / delete Prospects
-- View / edit / delete Companies
-- Connect / edit / delete Sender accounts
-- View / edit Brand & Voice
-- View / manage billing
-- Invite users
-- Assign inbox tasks
-
-Assign the role to teammates the same way — Settings → Members → Change role.
-
-## Sales Rep — the "own only" scope
-
-Sales Rep is special. They see only:
-
-- Prospects **assigned to them**
-- Conversations where **they own the sender account** that sent the last message
-- Inbox tasks **assigned to them**
-
-They can reply, resolve tasks, book meetings — but only for their assigned scope. This is how a workspace with 5 reps stays clean.
+Org admins can create custom roles from the Team page by choosing individual permissions. Built-in roles can't be edited, only used as they are. A role that's still assigned to members can't be deleted.
 
 ## Sender account ownership
 
-Every sender (LinkedIn / email / WhatsApp) has an **owner** — the workspace member who connected it (or who was assigned it via delegation). The owner:
+Every sender account has an owner, the person whose LinkedIn, email, or WhatsApp it is. Conversations on that sender are assigned to the owner, and messages go out under their name. Admins can reassign ownership.
 
-- Is assigned to Inbox tasks for that sender's conversations
-- Has their identity attached to outbound messages ("From: Alex Chen")
-- Can reauth if the sender breaks
+## If something's off
 
-Delegated senders (admin connects → assigns to a Sales Rep) work the same way — the Sales Rep becomes the owner.
-
-## Changing plans requires admin
-
-Only Workspace Admins can:
-- Upgrade / downgrade the plan
-- Buy credit packs
-- Add / remove seats
-- Cancel the workspace
-
-## Removing a teammate
-
-From **Settings → Members → [teammate] → Remove**. Their sender accounts:
-- Stay connected but need re-assignment to another admin OR disconnected
-
-Their Inbox tasks:
-- Get reassigned to the workspace admin
-
-Data they created (Lists, sequences, notes) stays in the workspace.
+- **Can't invite anyone.** You're out of seats. Add a license under Billing.
+- **A teammate can't see a conversation.** Sales Reps see only conversations assigned to them. Reassign it or change their role.
+- **A teammate can't see a Settings row.** Several rows are for admins only. See [Workspace settings](/workspace-settings/overview).
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Plans and credits" icon="credit-card" href="/workspace-settings/plans-and-credits">
-    What credits cost, what refills, and how to top up.
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    Licenses, seats, and credits.
   </Card>
-  <Card title="Members" icon="users" href="/workspace-settings/overview">
-    Invite teammates and manage the workspace.
+  <Card title="Do not contact" icon="ban" href="/workspace-settings/do-not-contact">
+    The workspace block list.
   </Card>
 </CardGroup>

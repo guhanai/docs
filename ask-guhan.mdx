@@ -1,91 +1,85 @@
 ---
 title: Ask Guhan
-description: How you talk to Guhan directly — assign work, get updates, check anything.
+description: Chat with Guhan to set up lists and campaigns, check on results, and handle inbox tasks, in the app or from WhatsApp.
 ---
 
-**Ask Guhan is your direct line to Guhan, your AI SDR. Sidebar → `+ Ask Guhan`, or WhatsApp Guhan from your phone. Ask questions, assign new work, request diagnostics — the same channel you would use to message a human SDR on your team.**
+**Ask Guhan is a chat where you tell Guhan what you want in plain language. It looks things up, drafts, and makes changes in your workspace for you.**
 
-The mental model: your workspace has an AI SDR named Guhan. You can message it inside the app or over WhatsApp. Same agent, same memory, same tool access on both surfaces.
-
-Guhan can do almost anything you can do in the app — set up a new Campaign, spin up a List with signals, pull a report, explain why a prospect got filtered. Just type what you want.
+The same assistant is available in the app and, if you turn it on, in a WhatsApp chat with yourself. Both share one conversation.
 
 <Note>
-  Ask Guhan is in beta. Guhan can do most things you can do in the UI, but occasionally makes mistakes. Verify anything you'd act on before hitting Send.
+  Ask Guhan is in beta and can make mistakes. Check anything you plan to act on. Also note that in the sidebar, Ask Guhan is currently listed under "Coming soon", so how you reach it depends on how it has been enabled for your workspace.
 </Note>
 
-## Things you can ask Guhan to do
+## What you can ask
 
 <CardGroup cols={2}>
-  <Card title="Assign new work" icon="bolt">
-    "Set up a List of VPs of Sales at 100–500 person SaaS companies in the US."
-    "Launch a Campaign to my top List with LinkedIn + Email."
-    "Add sarah@acme.com to Do Not Contact."
+  <Card title="Set things up" icon="bolt">
+    "Create a list of VP Sales at 100 to 500 person software companies in the US." "Create a campaign for that list." "Launch it."
   </Card>
-  <Card title="Get an update" icon="magnifying-glass">
-    "Show me all prospects from Series B fintechs."
-    "Which Campaign had the best reply rate last week?"
-    "How many meetings did you book this month?"
+  <Card title="Check on things" icon="magnifying-glass">
+    "How many credits do I have left?" "Show prospects from my latest list." "What meetings are coming up?" "Is my LinkedIn sender healthy?"
   </Card>
-  <Card title="Ask for a draft" icon="pen-nib">
-    "Draft a follow-up to Alex Chen."
-    "Suggest a break-up email variant."
-    "Rewrite my brand voice to be more direct."
+  <Card title="Handle your Inbox" icon="inbox">
+    "What is waiting on me?" Then approve, reject, or answer a task right in the chat.
   </Card>
-  <Card title="Get an explanation" icon="lightbulb">
-    "Why did this prospect get filtered?"
-    "What signals are firing on my List?"
-    "How many credits do I have left this month?"
+  <Card title="Update your setup" icon="pen-nib">
+    Edit your brand voice, add or change a product, or create a message template.
   </Card>
 </CardGroup>
 
-## Things Guhan won't do
+Guhan can also send a scheduling link to a prospect and look up which meetings exist for a person.
 
-By design:
+## What Guhan will not do
 
-- **Delete records** — Guhan can create, update, pause, and unbind — but never delete. If you need to delete a prospect / list / Campaign, use the UI's kebab menu. This is a safety line, not a limitation of the agent.
-- **Change other users' data** — Guhan's actions only touch your workspace and its records.
-- **Complete OAuth flows** — if you say "connect my LinkedIn", Guhan points you at the Settings page where the OAuth handshake happens. Guhan won't do that step for you.
+- **Delete anything.** Guhan can create and change things, but it cannot delete a prospect, list, campaign, product, or anything else. To delete, use the app. This is a deliberate safety limit.
+- **Connect your accounts.** Signing in to LinkedIn, email, or WhatsApp happens on the provider's page. Guhan can point you to Settings but cannot do the sign-in.
+- **Touch other workspaces.** Everything Guhan sees and changes stays inside the current workspace, and respects your permissions.
 
-## How to open the chat
+## Cost
 
-- Click **`+ Ask Guhan`** in the sidebar
-- Or press `Cmd+K` from anywhere in the app (opens a mini search + chat)
+Each message you send costs 1 credit, regardless of how long the answer is. If your workspace is out of credits, or read-only because the trial or plan has ended, Ask Guhan does not respond. See [Plans and credits](/workspace-settings/plans-and-credits).
 
-## Threads and history
+You need permission to create campaigns to use Ask Guhan. See [Roles and permissions](/workspace-settings/roles-and-permissions).
 
-Every conversation with Guhan is a **thread** — a chat you can come back to later. Guhan remembers what you discussed in that thread.
+## Conversations and feedback
 
-- **New thread** — every fresh `+ Ask Guhan` click starts one
-- **History** — the sidebar shows your recent threads; click any to reopen
-- Full history page at **History** in the sidebar
+Every chat is a thread you can come back to. Guhan remembers what was said earlier in the same thread. Your history is available on the History page, and **Cmd or Ctrl + Shift + O** takes you there from anywhere.
 
-## Tool calls in the chat
+Each reply has thumbs up and thumbs down. Use them to flag good and bad answers.
 
-When Guhan does something on your behalf, you'll see a **tool card** in the message stream. Example:
+When Guhan looks something up or makes a change, you see a card showing what it did. Records it mentions link straight to the matching page in the app.
 
-> **Tool: List prospects** — filter: List = "Enterprise VPs"
->
-> Found 47 prospects.
-> [table shown]
+{/* SCREENSHOT: ask-guhan-chat — chat thread with a tool card and a reply with thumbs up and down */}
 
-Every tool call is scoped to your workspace (Guhan can never see other workspaces' data).
+## Ask Guhan on WhatsApp
 
-## The 👍 / 👎 feedback
+Connect a WhatsApp sender, open its settings, and turn on **Conversation agent on WhatsApp**. Then message your own number. Guhan replies in that chat, and you can answer inbox tasks from your phone. See [Connect WhatsApp](/get-started/sender-accounts/connect-whatsapp).
 
-Every response has a thumb-up / thumb-down. Click them — the feedback goes to us and improves how Guhan responds next time.
+## If something's off
 
-## Guhan on WhatsApp
-
-If you connect a WhatsApp sender and turn on **Ask Guhan on WhatsApp** on that account's row (Settings → Sender accounts), you can text Guhan from your phone by messaging your own WhatsApp number. Guhan replies in that self-thread — same agent, same memory, same tool access. See [Connect WhatsApp](/get-started/sender-accounts/connect-whatsapp) for setup.
-
-## Credits
-
-Talking to Guhan is free within your daily token allowance (50k tokens per user per day on Starter). Beyond that, overflow tokens burn from your workspace credit balance at 1 credit per 50k tokens.
+<AccordionGroup>
+  <Accordion title="Guhan does not answer">
+    Check your credit balance and that the workspace is not read-only. Either one stops replies.
+  </Accordion>
+  <Accordion title="Guhan got something wrong">
+    It is in beta. Use thumbs down, and confirm important facts in the app. For changes you care about, check the result on the page it links to.
+  </Accordion>
+  <Accordion title="It says it cannot delete something">
+    That is by design. Delete from the app.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
-    Token budget + overflow billing.
+    What a message costs.
+  </Card>
+  <Card title="Connect WhatsApp" icon="whatsapp" href="/get-started/sender-accounts/connect-whatsapp">
+    Chat from your phone.
+  </Card>
+  <Card title="Handle replies" icon="reply" href="/inbox/handle-replies">
+    The same tasks, in the Inbox.
   </Card>
 </CardGroup>

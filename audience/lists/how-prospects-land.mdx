@@ -1,0 +1,100 @@
+---
+title: How prospects land
+description: What happens between Guhan finding someone and that person appearing in your List, including filters, the fit chip, the research brief, and what you are charged for.
+---
+
+**Finding a person and landing them in your List are two different steps.** Discovery returns profiles. Then Guhan checks each one against your rules, enriches and rates the ones that pass, and adds them to the List. Knowing the sequence helps you work out why someone is missing, and what you were charged for.
+
+## The steps
+
+<Steps>
+  <Step title="Discovery finds profiles">
+    A search or signal returns candidate profiles. Each profile returned is charged (see [What you pay for](#what-you-pay-for)).
+  </Step>
+  <Step title="Your filters are applied">
+    Every Who fits rule you set must match: job title, seniority, location, industry, company HQ, headcount. Guhan also removes anyone who works at a [competitor](/brand-and-voice/overview), anyone on your [Do Not Contact](/workspace-settings/do-not-contact) list (or whose company is), and anything that turns out to be a company page rather than a person. Rules that need profile or company details trigger enrichment first, so a rule is never skipped just because data was missing.
+  </Step>
+  <Step title="Duplicates are skipped">
+    A person Guhan already has in your workspace is not added again, even if a different source finds them.
+  </Step>
+  <Step title="Guhan researches and rates them">
+    Guhan writes a short research brief and gives the prospect a fit chip: **Strong fit**, **Moderate fit** or **Weak fit**. Until that finishes, the chip reads **Pending…**.
+  </Step>
+  <Step title="They land in the List">
+    The prospect appears in the List. A Campaign that uses the List as its audience can then start messaging them. See [Build a Campaign](/campaigns/build-a-campaign).
+  </Step>
+</Steps>
+
+Prospects from post-based signals are always profile-enriched, because a post only carries a headline, not a full role and company.
+
+## What you pay for
+
+<Warning>
+  Discovery credits are charged for every profile a run returns, **before** your filters are applied. A profile that is later filtered out still used a credit. Tighter filters improve the quality of what lands, but they do not reduce what a run costs.
+</Warning>
+
+- **1 credit per profile returned** by a search or signal.
+- Some signals add a company charge; see the [signal catalog](/audience/lists/signal-catalog).
+- **CSV uploads and manual adds** do not use discovery credits.
+- **Enrichment, research briefs and contact reveals** are separate. See [Enrichment](/audience/enrichment) for the list.
+- If your credits run out partway through a run, the remaining profiles are rejected and not added. Add credits to keep going; see [Plans and credits](/workspace-settings/plans-and-credits).
+
+Credit amounts and plans are on [Plans and credits](/workspace-settings/plans-and-credits).
+
+## The fit chip
+
+The chip is Guhan's assessment of how well a person matches what you sell. It is based on their profile, their company, the signal that found them, your [Brand & Voice](/brand-and-voice/overview) and your [Products](/brand-and-voice/products).
+
+| Chip | Meaning |
+|---|---|
+| **Strong fit** | Right role and company, and a clear connection to what you sell |
+| **Moderate fit** | A reasonable match that is weaker on at least one point |
+| **Weak fit** | Thin alignment with what you sell |
+| **Pending…** | Not assessed yet |
+
+A small 1 to 10 score appears next to the tier on the prospect's page. A Weak fit still lands in your List; the chip helps you decide who to work first. Sort the table by **Fit score** to see the strongest first.
+
+If you have more than one Product, the prospect's **Research** tab shows a separate rating and reason for each.
+
+{/* SCREENSHOT: fit-chip-and-brief — Prospect Research tab showing the research brief and per-product fit */}
+
+<Note>
+  The research brief and the fit chip come from the same step. If you turn off **Generate research brief + fit score** in [enrichment settings](/audience/enrichment#choose-what-gets-enriched), prospects land without a chip.
+</Note>
+
+### Research brief
+
+The brief is a short write-up about the person and their company, with a suggested angle for outreach. It is written when the prospect lands and appears on the prospect's **Research** tab. Use **Regenerate brief** on the prospect's page if their situation changed. Regenerating costs 1 credit, refunded if it fails.
+
+## Why someone did not land
+
+Rejected profiles are kept so you can see why:
+
+- **Sources tab on the List → watch history**: each watch shows Landed, Rejected and In flight, with a reason per rejected profile.
+- **Prospects page → filter → Include pipeline-rejected**: rejected people show with status **Rejected**. Open one to read the reason.
+
+| Reason you may see | What it means |
+|---|---|
+| Doesn't fit your audience | Missed one of your Who fits rules |
+| Works at a competitor | Their employer is in your Brand & Voice competitors |
+| Blocked by Do-Not-Contact / Company on DNC | They or their company are on your Do Not Contact list |
+| Company / Page (not a person) | LinkedIn returned a page, not a profile |
+| No current employer on LinkedIn profile | Their profile does not show where they work |
+| Profile fetch failed | The profile could not be read, for example if it is private |
+| Profile enrichment never completed | Enrichment did not finish in time |
+
+If Guhan keeps rejecting people you expected, one of your rules is stricter than you meant. See [Reviewing prospects](/audience/lists/review-prospects).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
+    Check the first landing and tighten your rules.
+  </Card>
+  <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
+    What each enrichment step does and costs.
+  </Card>
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    Credit costs and how to add more.
+  </Card>
+</CardGroup>

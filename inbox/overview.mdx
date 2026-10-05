@@ -1,98 +1,91 @@
 ---
-title: Inbox tasks
-description: Where Guhan hands work back to you — draft approvals, real replies, meeting requests.
+title: Inbox
+description: One place for every reply and every decision Guhan needs from you, across LinkedIn, email, and WhatsApp.
 ---
 
-**Your Inbox is where Guhan drops the stuff that actually needs YOU — real replies, meeting requests, approvals. Everything else, Guhan handles alone.**
+**The Inbox shows every conversation your campaigns have started, and puts the ones that need you at the top.**
 
-In the SDR workflow, the Inbox is Step 5 (*handle replies*). A competent SDR resolves routine replies without escalating — out-of-office, "not now", unsubscribes — and escalates only the ones that need human judgment. Guhan works the same way. You will not see every "Thanks, not interested." You will see the replies with a decision to make.
+Guhan reads each incoming reply, works out what it means, and either handles it, pauses the sequence, or hands the thread to you. You open the Inbox to deal with what is waiting, not to sort through everything.
 
-## What lands in the Inbox
+## What you'll see
+
+The Inbox is a two-pane view: a list of conversations on the left, the open conversation on the right.
+
+<CardGroup cols={2}>
+  <Card title="Needs you" icon="bolt">
+    Conversations with something waiting on a person: a draft to approve, a thread to take over, a meeting request, or a choice to make.
+  </Card>
+  <Card title="Active" icon="comments">
+    Conversations in motion where nothing is waiting on you right now.
+  </Card>
+  <Card title="Resolved" icon="circle-check">
+    Closed conversations. A new reply from the prospect reopens the thread automatically.
+  </Card>
+  <Card title="Filters" icon="filter">
+    Switch between **Mine** and **Team** (Team needs permission to view everyone's conversations), pick a channel tab (All, Email, LinkedIn, WhatsApp), or search by prospect name.
+  </Card>
+</CardGroup>
+
+{/* SCREENSHOT: inbox-overview — Inbox with the three sections, channel tabs, and one open thread */}
+
+Each row carries a small tag that tells you what kind of decision is waiting:
+
+| Tag | What it means |
+|---|---|
+| **Approve** | Guhan drafted a reply and is waiting for your OK. |
+| **Take over** | Guhan is stepping back. The conversation is yours to write. |
+| **Decide** | Guhan needs you to pick between a few options. |
+| **Schedule** | The prospect wants to meet. You send a booking link. |
+| **FYI** | Something happened that needs no action. Acknowledge it and move on. |
+
+The right pane shows the full thread for that prospect, with a marker on the last message if a decision is pending. If the same person is also in a conversation on another channel, chips at the top of the thread let you jump across.
+
+## How replies reach you
+
+Guhan sorts every reply into one of seven kinds. What happens next depends on the kind and on your [reply policy](/inbox/ai-reply-drafts#reply-policy).
+
+| What the prospect said | What Guhan does |
+|---|---|
+| Interested | Hands the thread to you, or drafts a reply, depending on your reply policy. |
+| Asked for a meeting | Always hands it to a person. Never answered automatically. |
+| Asked a question | Hands the thread to you, or drafts a reply, depending on your reply policy. |
+| Said no | Stops the sequence for that prospect. |
+| Asked to unsubscribe | Stops the sequence for that prospect. |
+| Out of office | Pauses the sequence for 7 days, then resumes. |
+| Not now | Pauses the sequence for 30 days, then resumes, and leaves you a note in the Inbox. |
+
+If Guhan is not confident that a reply is a "no" or an unsubscribe, it does not stop anything. It hands the thread to you instead, because stopping a sequence cannot be undone.
+
+<Note>
+  Bounced emails never show up as replies. A bounce is recorded on the original message and the sequence for that prospect stops.
+</Note>
+
+Full detail on drafts and approvals is on [AI reply drafts](/inbox/ai-reply-drafts). The click-by-click daily routine is on [Handle replies](/inbox/handle-replies).
+
+## If something's off
 
 <AccordionGroup>
-  <Accordion title="Someone replied">
-    A prospect responded to one of your sequences. Guhan classified it (interested / not now / meeting request / question / not interested) and either drafted a reply for you to approve OR handed it off entirely.
+  <Accordion title="I don't see Team">
+    Team view needs permission to see every conversation in the workspace. Without it you see only your own. See [Roles and permissions](/workspace-settings/roles-and-permissions).
   </Accordion>
-  <Accordion title="Guhan needs approval">
-    A message step you configured with **Require approval** — Guhan drafted the message, but won't send until you say OK.
+  <Accordion title="A reply is missing from the Inbox">
+    Replies are matched to a conversation Guhan started. A message sent to the same account outside a campaign will not appear. Check that the sender account is healthy under Settings, Sender accounts.
   </Accordion>
-  <Accordion title="Meeting request">
-    A prospect asked to book a call. Guhan generates a scheduling link + drops a task with "send scheduling link" as the primary action.
-  </Accordion>
-  <Accordion title="Escalation">
-    The AI reply agent finished N rounds and reached its handoff limit — over to you.
-  </Accordion>
-  <Accordion title="Notification">
-    A prospect took an action (accepted your invite, opened your email, viewed your profile) without replying. FYI-only, no action required.
+  <Accordion title="I closed a thread and it came back">
+    That is expected. When the prospect replies again, the conversation reopens.
   </Accordion>
 </AccordionGroup>
 
-## The five action types
-
-Every task has a **mode** telling you what Guhan expects:
-
-| Mode | What you do |
-|---|---|
-| **Notify** | Read it, close it. No action needed. |
-| **Approve** | Guhan drafted something; approve to send OR edit + approve. |
-| **Decide** | Guhan needs you to pick between 2–3 options. Click one. |
-| **Take over** | Guhan is handing the whole conversation to you. Reply from your inbox. |
-| **Schedule** | A meeting request — send the scheduling link or book the time manually. |
-
-Filter tasks by mode from the top of the Inbox.
-
-## Deadlines
-
-Most tasks have an implicit deadline based on their mode:
-
-- **Approve** — 4 hours (then Guhan sends without approval OR discards, depending on the step config)
-- **Decide** — 2 hours (then falls through to a default choice)
-- **Schedule** — 24 hours (then auto-sends a fallback booking link)
-- **Take over / Notify** — no deadline
-
-If a deadline passes without you acting, Guhan follows the fallback rule you configured on the sequence step.
-
-## Task detail view
-
-Click any task and you see:
-
-- **Prospect card** — who this is, where they work, ICP score
-- **Full conversation thread** — every message sent + every reply, chronological
-- **Reply classification** — Guhan's read of the incoming message ("meeting request", "not interested", etc.)
-- **Suggested action(s)** — buttons for the primary next step
-
-You can also:
-- Reassign the task to a teammate
-- Add a note that stays on the prospect record
-- Snooze the task until a later time
-- Mark it done manually
-
-## Assignment
-
-Tasks can be assigned to:
-- **You** — default for solo workspaces
-- **A specific teammate** — if you have multiple sender accounts owned by different people, tasks for a given prospect go to the owner of the sender that sent the last message
-- **Any admin** — for shared workspaces
-
-Reassign from the task detail page's Assign button.
-
-## Filters and views
-
-Top of Inbox:
-- **Status** — Open / Snoozed / Closed
-- **Mode** — Notify / Approve / Decide / Take over / Schedule
-- **Assignee** — Yours only / all admins / specific person
-- **Age** — Overdue / today / this week / older
-
-Save frequent filters as **views** you can jump to.
-
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Handle replies from the Inbox" icon="reply" href="/inbox/handle-replies">
-    Walkthrough with real examples.
+<CardGroup cols={3}>
+  <Card title="Handle replies" icon="reply" href="/inbox/handle-replies">
+    The daily routine, step by step.
   </Card>
   <Card title="AI reply drafts" icon="wand-magic" href="/inbox/ai-reply-drafts">
-    How Guhan drafts responses.
+    Reply policy and how drafts work.
+  </Card>
+  <Card title="Meetings" icon="calendar" href="/meetings/overview">
+    What happens after a meeting request.
   </Card>
 </CardGroup>

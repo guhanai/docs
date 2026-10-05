@@ -1,0 +1,85 @@
+---
+title: Personalization
+description: How Guhan writes each campaign message for the specific prospect, what it reads first, and when to write the text yourself.
+---
+
+**Guhan writes Auto-draft and Guided messages fresh for each prospect, using what it knows about your company, your product, and the person. If you want exact wording, use a Fixed message instead.**
+
+You choose per step. Each message step in your [sequence](/campaigns/build-a-campaign#message-modes) is set to Auto-draft, Guided, or Fixed message.
+
+## What Guhan reads before it writes
+
+For every AI-written message:
+
+- **The prospect** - name, title, company, headline, past roles, and where they are based.
+- **Research on the prospect** - a short brief Guhan builds from their profile and company. If a prospect has none yet when a message is due, Guhan builds one at that moment so the message is not generic.
+- **The reason they are on your list** - the signal that brought them in, when there is one.
+- **Your brand** - your company name and story, industry, customer pain points, preferred language, and the tone and words-to-avoid you set in [Brand and voice](/brand-and-voice/setup).
+- **Your product** - the product you attached to the campaign. See [Products](/brand-and-voice/products).
+- **The campaign** - its goal and context note.
+- **Where the message sits** - a first LinkedIn invite is short; a follow-up email later in the sequence can say more.
+- **Your instructions** - in Guided mode, the angle, hook, and call to action you wrote for that step.
+
+Change your brand voice or product once and every message written from then on follows it.
+
+## Choosing a message mode
+
+| Use this | When |
+|---|---|
+| **Auto-draft** | You are happy with the campaign goal and context and want Guhan to decide the angle. |
+| **Guided** | You know the angle you want (a hook, a proof point, a question) but want it adapted per person. |
+| **Fixed message** | Wording matters exactly, for compliance or because you have a proven script. |
+
+Fixed messages are filled in with `{{tokens}}` like `{{firstName}}` and `{{company}}` and are sent word for word. They cost no credits. Auto-draft and Guided use 1 credit per message. See [Plans and credits](/workspace-settings/plans-and-credits).
+
+[Templates](/brand-and-voice/templates) give you a ready-made starting point for Guided or Fixed steps.
+
+## Opening with a recent post
+
+On a LinkedIn DM step you can turn on **Reference their recent posts & activity**. Guhan then reads one of the prospect's recent posts and can use it as the opener. If the prospect has no usable post, the message is written without one.
+
+LinkedIn comment and react steps work on one of the prospect's recent posts too. You choose between their latest post and their most-engaged one, and how old a post may be. With no qualifying post, the step is skipped.
+
+## Preview before you launch
+
+Open any message step and use the preview to pick one of your prospects and read the draft Guhan would write for them. Check that it:
+
+- Sounds like you.
+- Refers to something specific about that person.
+- Has a clear, low-effort call to action.
+
+If it misses, adjust your instructions, your brand voice, or the campaign context, and preview again. Previewing does not send anything.
+
+## Stay in control
+
+- **Require approval before sending** - turn this on for any message step and Guhan holds each draft in your Tasks until you approve it.
+- **Fixed message** - removes the AI from that step entirely.
+- **Pause at any time** - see [Launch and manage](/campaigns/launch-and-manage).
+
+## If something is off
+
+<AccordionGroup>
+  <Accordion title="Messages feel generic">
+    Fill in the campaign goal and context, attach a product, and add detail to your brand setup. Guided mode with a specific hook usually helps more than Auto-draft.
+  </Accordion>
+  <Accordion title="A Fixed message was skipped">
+    A token in the text had no value for that prospect (for example `{{company}}` for someone with no company on file). Guhan skips the send rather than send a blank. Remove the token, or add a fallback in the wording.
+  </Accordion>
+  <Accordion title="The tone is wrong">
+    Update the tone and words-to-avoid in [Brand and voice](/brand-and-voice/setup). It applies to the next messages Guhan writes, not ones already sent.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Brand and voice" icon="palette" href="/brand-and-voice/overview">
+    Teach Guhan how you sound.
+  </Card>
+  <Card title="Templates" icon="file-lines" href="/brand-and-voice/templates">
+    Reusable starting points.
+  </Card>
+  <Card title="Build a campaign" icon="hammer" href="/campaigns/build-a-campaign">
+    Add and configure message steps.
+  </Card>
+</CardGroup>

@@ -1,180 +1,147 @@
 ---
 title: Troubleshooting
-description: Common issues and fixes.
+description: Fixes for the most common problems with senders, Lists, Campaigns, replies, meetings, and billing.
 ---
 
-**Something not working? Start here. Each section covers the fix in 1-2 clicks. If you can't find your issue, email hello@guhan.ai.**
+If you can't find your issue here, email [hello@guhan.ai](mailto:hello@guhan.ai) with what you tried, what you expected, what happened, and your workspace name.
 
 ## Sender accounts
 
 <AccordionGroup>
-  <Accordion title="LinkedIn sender says 'needs re-authentication'">
-    Your LinkedIn OAuth token expired (usually happens if you changed your password or logged out from all sessions on LinkedIn).
+  <Accordion title="A sender says it needs reauthorization">
+    The connection expired, usually after a password change or a sign-out from all sessions.
 
-    **Fix:** Settings → Sender accounts → [account] → **Reauth**. One-click re-sign-in with LinkedIn.
+    **Fix:** open **Settings → Sender accounts**, find the account, and reconnect it. Guhan shows a banner while any sender is broken, and sends from it are paused until it's fixed.
   </Accordion>
-  <Accordion title="LinkedIn account got restricted">
-    LinkedIn flagged unusual activity and paused your account temporarily.
+  <Accordion title="A LinkedIn account was restricted">
+    LinkedIn flagged activity and limited the account.
 
     **Fix:**
-    1. Sign in to LinkedIn manually (not through Guhan) — you'll see a message from LinkedIn
-    2. Appeal or wait out the restriction (usually 24-48 hours for a first offense)
-    3. Once LinkedIn lifts it, return to Guhan → Settings → Sender accounts → Reauth
-    4. Guhan resumes at 50% of pace to help rebuild reputation
-
-    **Prevention:** stick to defaults (25 invites/day, 30 DMs/day), allow warm-up on new accounts, use active-hours windows that match your normal usage.
+    1. Sign in to LinkedIn directly and follow what it asks.
+    2. Once the restriction is lifted, reconnect the account in Guhan.
+    3. Review your caps and sending window. See [Sending safety](/campaigns/sending-safety).
   </Accordion>
-  <Accordion title="Email sender bounced messages">
-    Some bounces are normal (bad addresses, full mailboxes). If your bounce rate is > 5%, something is off.
+  <Accordion title="Emails are bouncing">
+    A few bounces are normal. Many bounces usually mean a reputation or setup problem.
 
-    **Common causes:**
-    - Your domain has poor sending reputation → use a warmed-up domain
-    - You have no SPF / DKIM / DMARC configured → set these up with your DNS provider
-    - Your emails are hitting spam → check your Brand & Voice for spammy phrases (excessive caps, "guaranteed", "limited time only")
+    **Check:**
+    - Your domain has SPF, DKIM, and DMARC set up.
+    - You're not sending far more than the mailbox is used to.
+    - Your messages avoid spammy phrasing.
   </Accordion>
-  <Accordion title="WhatsApp sender disconnected">
-    WhatsApp's phone-linked session expired.
+  <Accordion title="WhatsApp disconnected">
+    The phone-linked session ended.
 
-    **Fix:** Settings → Sender accounts → [WhatsApp account] → Reconnect. Scan the QR code with your WhatsApp mobile app.
+    **Fix:** reconnect the account under **Settings → Sender accounts** and scan the QR code with your phone.
+  </Accordion>
+  <Accordion title="I can't connect another sender">
+    Each license includes one sender. Add a license or an extra-sender add-on under **Settings → Billing**. See [Plans and credits](/workspace-settings/plans-and-credits).
   </Accordion>
 </AccordionGroup>
 
-## Lists and discovery
+## Lists and prospects
 
 <AccordionGroup>
-  <Accordion title="List is active but finding zero prospects">
-    Filters are too strict.
+  <Accordion title="A List isn't finding anyone">
+    The filters may be too strict, or the List may be out of credits.
 
     **Check:**
-    - **Filtered accordion** — is Guhan finding people but rejecting them all? Reason column tells you why.
-    - **Titles** — try broader ("Sales Leader" instead of "VP of Enterprise Sales")
-    - **HQ country** — is it filtering out people who are in your target country but their company HQ is elsewhere?
-    - **Signal** — loosen the recency window or drop a signal source and see if the search-criteria source alone finds people
+    - **Credits.** Discovery stops when the balance reaches zero.
+    - **Titles.** Try broader titles.
+    - **Company filters.** Loosen industry, size, or headquarters.
+    - **Signal.** Remove or loosen the signal to see whether it's the cause.
 
-    **Debug:** temporarily pause every signal source on the List, leaving only the search-criteria source. If prospects start landing, one of your signals was the problem. If still zero, your search criteria is too tight.
+    **To isolate it:** pause every signal source but one and see whether prospects land.
   </Accordion>
-  <Accordion title="List is finding too many prospects (500+/day)">
-    Filters are too loose.
-
-    **Options:**
-    - Set a **daily prospect target** on the List (e.g., 25/day). Guhan pauses when you hit it.
-    - Add a stricter **signal source**
-    - Tighten **titles**, **industry**, or **company size** on the search-criteria source
-    - Make more fields **Required** (hard gates) instead of Nice-to-have
+  <Accordion title="A List is finding too many">
+    Tighten the filters on the source: narrower titles, a smaller size range, or a stricter signal. Remember that every profile a sweep returns costs a credit, even if it doesn't pass your filters.
   </Accordion>
-  <Accordion title="Same person keeps showing up in filtered as 'already in workspace'">
-    Guhan found this person via a prior discovery run or a different source. They're not being messaged twice — this is normal deduplication.
-
-    Find them via **Prospects** page (search their name) — they're already in your List somewhere.
+  <Accordion title="The wrong seniority is landing">
+    Title matching is literal. "Sales Director" and "Director of Sales" match differently, so add the exact forms you want. Remove suggested variations that are below your target level.
   </Accordion>
-  <Accordion title="Prospects landing but the wrong seniority">
-    Common cause: your title filter is missing seniority modifiers.
-
-    "Sales Director" isn't the same as "Director of Sales" — LinkedIn matches them differently. Add the specific version you want.
-
-    Auto-variants may include titles below your target seniority. Delete unwanted variant chips from the source's WHO panel.
+  <Accordion title="Someone shows up as already in the workspace">
+    Guhan skips people it already has, so nobody is contacted twice. Search the **Prospects** page for the name to find them.
+  </Accordion>
+  <Accordion title="I can't add more prospects from a CSV">
+    Uploads are limited by an active-prospect cap that scales with your licenses and senders. Remove prospects you no longer need or add a license. See [Plans and credits](/workspace-settings/plans-and-credits).
   </Accordion>
 </AccordionGroup>
 
 ## Campaigns
 
 <AccordionGroup>
-  <Accordion title="Campaign is 'Active' but no messages have gone out">
-    **Common causes:**
-    - **Empty audience** — your List has no prospects yet. Wait for the List's sources to land some.
-    - **Outside sending window** — Guhan won't send at 3am. Wait for your active hours.
-    - **Sender broken** — check Sender accounts for red/amber dots.
-    - **Auto-enroll off** — prospects need manual approval. Check the Campaign's Leads tab for unapproved prospects.
-  </Accordion>
-  <Accordion title="Reply rate is 0%">
-    After 100+ sends with zero replies:
-    - **Read a sent message** — look at any prospect timeline. Does the message read like something YOU'd write? Or does it feel like an AI blast?
-    - **Adjust your Brand & Voice** — tone might be off, or you might have too many "always include" phrases making messages feel scripted
-    - **Check your sequence** — is the first message a hard pitch (bad) or a soft observation (good)?
-    - **Check timing** — sending Monday 9am? Everyone else is too. Try Tuesday 2pm.
-  </Accordion>
-  <Accordion title="Reply rate is high but no meetings">
-    Replies but no bookings usually means:
-    - Your CTA is unclear — messages don't ask for a call
-    - Your CTA is too heavy — asking for 30 min on first touch is a lot
-    - Prospects reply "not now" — try a longer nurture sequence
-    - Meeting request classification is misfiring — check Inbox tasks for "interested" replies you might have missed
-  </Accordion>
-  <Accordion title="Messages feel repetitive across prospects">
-    Guhan personalizes but your BRAND VOICE + TEMPLATE combo might be over-constrained.
+  <Accordion title="My Campaign isn't sending">
+    **Check:**
+    - **It's still a draft.** Campaigns need to be launched.
+    - **No sequence,** or the sequence has errors.
+    - **No List** is selected as the audience.
+    - **No sender** is assigned for a channel the sequence uses, or a sender is disconnected.
+    - **Outside the sending window.** Sends wait for your active hours.
+    - **Out of credits.** AI-drafted messages cost a credit each.
+    - **The workspace is read-only.** See Billing below.
 
-    - Remove "always include" phrases that turn into filler
-    - Simplify the sequence brief — over-specific briefs produce over-similar outputs
-    - Turn on **Fetch recent post** for DM steps → messages ground in each prospect's actual content
+    An empty audience only warns; it doesn't block a launch. See [Launch and manage](/campaigns/launch-and-manage).
+  </Accordion>
+  <Accordion title="I can't edit my Campaign">
+    A running Campaign has to be paused before you edit it. Pause it, make your changes, then resume. See [Launch and manage](/campaigns/launch-and-manage).
+  </Accordion>
+  <Accordion title="Nobody is replying">
+    Read a few sent messages from a prospect's timeline. Do they sound like you? Tone in Brand & Voice, a heavy first-message pitch, and a weak signal fit are the usual causes. Try a softer opening and a tighter List.
+  </Accordion>
+  <Accordion title="Messages feel repetitive">
+    Over-specific step briefs and too many required phrases produce samey drafts. Simplify the brief, trim your "never include" list to what matters, and turn on recent-post fetching for LinkedIn DM steps so messages reference real content.
   </Accordion>
 </AccordionGroup>
 
-## Inbox + replies
+## Inbox and replies
 
 <AccordionGroup>
-  <Accordion title="Replies aren't showing up in my Inbox">
-    **For LinkedIn:** Guhan gets reply notifications via a real-time webhook. There's a 1-5 minute delay typically. If nothing arrives after 15+ minutes, contact support.
-
-    **For email:** replies land within 30 seconds usually. If not, check your sender's Reauth status.
+  <Accordion title="Replies aren't appearing">
+    Check that the sender account is connected and healthy under **Settings → Sender accounts**, and reconnect it if it shows a problem. If a sender looks fine and replies are still missing, contact support.
   </Accordion>
-  <Accordion title="A prospect replied but Guhan didn't classify it">
-    Very short replies ("k", "thx", "no") sometimes get skipped. They'll still show in the prospect timeline but might not create a task.
-
-    Also: replies from non-prospects (colleagues cc'd, autoresponders) get filtered.
+  <Accordion title="Guhan didn't draft a reply">
+    Drafting depends on your reply rules under **Settings → Sending & Reply Rules**. With **Escalate to a user**, replies come to you instead. Meeting requests always go to a person. AI drafts also need credits.
   </Accordion>
-  <Accordion title="Guhan created a task but classified the reply wrong">
-    Report it — 👎 on the classification. We use these for model improvement.
-
-    In the meantime: click the task's kebab menu → **Reclassify** → pick the correct category.
+  <Accordion title="A reply was classified wrongly">
+    Take over the conversation and handle it yourself. Guhan labels replies as positive, meeting request, question, negative, unsubscribe, out of office, or not now. Low-confidence "negative" and "unsubscribe" verdicts are sent to a person rather than stopping the sequence.
   </Accordion>
 </AccordionGroup>
 
 ## Meetings
 
 <AccordionGroup>
-  <Accordion title="Prospect can't book any time on my calendar">
-    Your Google/Outlook calendar shows you as busy across the offered window. Check:
-    - Working hours in Google/Outlook are correct
-    - No all-day blocking events that shouldn't be there
-    - Meeting duration + buffer in Guhan aren't too long (30 min meeting + 15 min buffer = need 45 min gap; if your calendar shows only 30 min gaps, no slot appears)
+  <Accordion title="Prospects can't find a time to book">
+    Your calendar may show you as busy across the offered window. Check working hours, all-day blocking events, and that your meeting duration plus buffer fits your free gaps.
   </Accordion>
-  <Accordion title="Meeting booked but not on my calendar">
-    Sync delay from Google/Outlook, usually resolves in ~1 minute.
-
-    If it's been longer:
-    - Check your Guhan calendar connection — Settings → Calendars → [account] → status should be Active
-    - Reauth the calendar
-    - Meeting should appear on your calendar as soon as Guhan resyncs
+  <Accordion title="A meeting isn't on my calendar">
+    Syncing can lag a little. If it persists, check the account's status under **Settings → Calendars** and reconnect it.
   </Accordion>
-  <Accordion title="Calendly / Cal.com booking not tracked">
-    Guhan uses UTM parameters (Calendly) or custom metadata (Cal.com) to track bookings. If the prospect clicks the link but the tracking gets stripped:
-    - Some URL shorteners strip UTMs — check your Guhan-generated links
-    - Cal.com's webhook may not be configured — Settings → Calendars → Cal.com → check webhook status
+  <Accordion title="A Cal.com or Calendly booking isn't tracked">
+    Tracking relies on information carried in the booking link. Some link shorteners strip it. Use the link Guhan generates as is, and check the calendar's status under **Settings → Calendars**.
   </Accordion>
 </AccordionGroup>
 
 ## Billing
 
 <AccordionGroup>
-  <Accordion title="Credit balance says 0 but I just got a fresh plan">
-    Sync delay. Refresh the page. If still 0, check:
-    - Billing anniversary — did the plan actually renew? Settings → Billing → next renewal date
-    - Payment issue — did the card charge fail? Look for a payment-failed banner
+  <Accordion title="My balance is 0, or sends stopped">
+    Check **Settings → Billing**. Zero credits stops discovery, enrichment, and AI drafting. A workspace is read-only if the trial ended without a subscription or a failed renewal wasn't fixed within 7 days; update your payment method to lift it.
   </Accordion>
-  <Accordion title="Charged twice for the same plan">
-    Contact hello@guhan.ai with your invoice number. We'll refund one immediately.
+  <Accordion title="A plan change failed">
+    This is usually the payment method. Update it under Billing and try again. Reducing licenses is blocked if you have more members or senders than the new count.
   </Accordion>
-  <Accordion title="Can't upgrade — 'plan change failed'">
-    Usually a payment method issue. Update your card in Settings → Billing → Payment methods, then retry the upgrade.
+  <Accordion title="I was charged twice">
+    Email [hello@guhan.ai](mailto:hello@guhan.ai) with the invoice details.
   </Accordion>
 </AccordionGroup>
 
-## Still stuck?
+## Related
 
-Email **hello@guhan.ai** with:
-- What you tried
-- What you expected
-- What actually happened
-- Your workspace name / URL (so we can look it up)
-
-Typical response time: within 4 hours during business days.
+<CardGroup cols={2}>
+  <Card title="FAQ" icon="circle-question" href="/help/faq">
+    Quick answers to common questions.
+  </Card>
+  <Card title="Sending safety" icon="shield" href="/campaigns/sending-safety">
+    Caps, windows, and keeping accounts healthy.
+  </Card>
+</CardGroup>

@@ -1,99 +1,103 @@
 ---
 title: Meetings
-description: Book meetings on autopilot — Guhan sends the link, the prospect picks a time, the event lands on your calendar.
+description: Turn a meeting request into a booked call. Send a booking link, the prospect picks a time, and it lands on your calendar.
 ---
 
-**When a prospect says "let's talk", Guhan sends them a booking link. They pick a time. It lands on your calendar. You never open a scheduling tool.**
+**When a prospect asks to meet, you send a booking link from the Inbox. They pick a time, the event lands on your calendar, and the meeting appears on the Meetings page.**
 
-In the SDR workflow, Meetings are Step 6 — *book the meeting*. Guhan converts warm interest into a confirmed calendar event without back-and-forth. Connect a calendar once; Guhan handles the rest.
+A meeting request is the one reply Guhan never answers on its own. It always comes to a person, so you decide when to put your calendar in front of a prospect.
 
-## Supported calendars
+## Before you start
 
-<CardGroup cols={4}>
-  <Card title="Google Calendar" icon="google">
-    Native — same OAuth as Gmail sender.
-  </Card>
-  <Card title="Outlook Calendar" icon="microsoft">
-    Native — same OAuth as Outlook sender.
-  </Card>
-  <Card title="Cal.com" icon="calendar">
-    Bring your Cal.com booking URL.
-  </Card>
-  <Card title="Calendly" icon="calendar">
-    Bring your Calendly booking URL.
-  </Card>
-</CardGroup>
+You need a connected calendar. Set one up under Settings, Calendars. See [Calendar integrations](/meetings/calendar-integrations) for Google, Outlook, Cal.com, and Calendly.
 
-## Connect a calendar
+## Book a meeting
 
-Go to **Settings → Calendars → Connect** and pick a provider.
+<Steps>
+  <Step title="A meeting request arrives">
+    The conversation appears in your Inbox under "Needs you" with a **Schedule** tag. Guhan marks these as high priority.
+  </Step>
+  <Step title="Click Send link">
+    At the bottom of the thread. Guhan creates a booking link for you and sends it to the prospect in the same conversation.
+  </Step>
+  <Step title="The prospect books">
+    With Google or Outlook, they open a Guhan-hosted booking page showing your open times, pick one, and confirm. With Cal.com or Calendly, they land on your own booking page.
+  </Step>
+  <Step title="The meeting shows up">
+    The event is on your calendar and listed under Meetings, linked to the prospect and the conversation it came from.
+  </Step>
+</Steps>
 
-**For Google / Outlook**: connects natively. Guhan reads availability + writes events directly.
+{/* SCREENSHOT: meetings-send-link — Inbox thread for a meeting request with the Send link button */}
 
-**For Cal.com / Calendly**: paste your booking URL. Guhan drops the link into replies + tracks who books via a UTM/metadata parameter.
+You can also share your public booking link yourself, for example in a manual reply. Copy it from the calendar's row in Settings, Calendars. Bookings from it are matched to a prospect by email where possible.
 
-## How meetings surface
+## The Meetings page
 
-Three ways:
+Sidebar, Meetings. Tabs:
+
+| Tab | Shows |
+|---|---|
+| **Upcoming** | Booked and still ahead, grouped by Today, Tomorrow, This week, Next week, Later. |
+| **Past** | Meetings that have already happened. |
+| **Cancelled** | Meetings cancelled by either side. |
+| **Unmatched** | Meetings on your calendar that Guhan could not tie to a prospect, such as bookings made outside Guhan. |
+| **All** | Everything. |
+
+Each meeting carries a badge for where it was booked: Picker (Guhan's booking page), Cal.com, Calendly, or Calendar (picked up from your calendar).
+
+Click a meeting to see the prospect, the time, the join link, and the conversation behind it. To cancel, use **Cancel meeting**. The event is removed from the calendar and the prospect is notified by their calendar provider.
+
+{/* SCREENSHOT: meetings-page — Meetings page, Upcoming tab with grouped rows and source badges */}
+
+<Note>
+  To reschedule, the prospect uses the reschedule link in their calendar invite. There is no reschedule button inside Guhan.
+</Note>
+
+## Meeting defaults
+
+Workspace admins set defaults under Settings, Calendars, in the **Workspace meeting defaults** card:
+
+| Setting | Options |
+|---|---|
+| **Default meeting length** | 15, 20, 30 (default), 45, 60, or 90 minutes |
+| **Buffer between meetings** | No buffer (default), 5, 10, 15, or 30 minutes |
+| **Default meeting title** | Supports `{firstName}` and `{lastName}`. Blank uses "Intro chat with {firstName}". |
+| **Default scheduling tool** | Built-in picker, Cal.com link, or Calendly link |
+
+Each rep can override their scheduling tool, and set their own working hours, timezone, and meeting room on their own calendar. The meeting length is fixed into a booking link when it is created, so changing the default later does not change links already sent.
+
+## Teams
+
+Each rep connects their own calendar. A booking link is created against the calendar of the person sending it, so the meeting lands on that person's calendar. Round-robin across reps is not supported.
+
+## If something's off
 
 <AccordionGroup>
-  <Accordion title="Prospect asks for a call in a reply">
-    Guhan classifies their reply as "meeting request". A task lands in your Inbox with mode = **Schedule**. Primary action: **Send scheduling link**. One click → link goes out.
+  <Accordion title="Send link says no calendar is connected">
+    The person clicking needs their own active calendar. Connect it under Settings, Calendars, or from your profile under My calendars.
   </Accordion>
-  <Accordion title="Sequence step includes a meeting ask">
-    If your sequence has a step that asks for a meeting, and the prospect responds positively, Guhan handles the booking flow automatically.
+  <Accordion title="A booking is not showing on the Meetings page">
+    For Cal.com and Calendly, bookings arrive through a connection you set up once in that tool. If it was never set up, or was set up incorrectly, bookings will not appear. Re-check the setup steps in [Calendar integrations](/meetings/calendar-integrations).
   </Accordion>
-  <Accordion title="You initiate manually">
-    From any prospect detail page or Inbox task, click **Send scheduling link** to generate a fresh booking URL + insert it into your next message.
+  <Accordion title="The prospect says no times are available">
+    Open times come from your calendar's working hours and busy events. Check the working hours and timezone on the calendar under Settings, Calendars.
+  </Accordion>
+  <Accordion title="A booking link was shared by mistake">
+    There is no way to revoke an individual link from the app today. If a public link has been shared more widely than you intended, contact support.
   </Accordion>
 </AccordionGroup>
 
-## Native (Google/Outlook) booking page
-
-Guhan hosts a booking page for you: `guhan.ai/book/<token>`. When you send this link:
-
-- Prospect sees your available slots (pulled from your live calendar)
-- They pick a time
-- Guhan writes the event to your calendar
-- Both you and the prospect get calendar invites
-
-You configure:
-- **Meeting duration** — default 30 min (workspace-level)
-- **Buffer time** — default 15 min between meetings
-- **Meeting title template** — default `Guhan intro call with {{prospect name}}`
-
-## Meetings page
-
-The **Meetings** page shows every meeting Guhan is aware of:
-
-- **Upcoming** — booked but not yet happened
-- **Past** — completed
-- **Cancelled** — cancelled by prospect or you
-
-Grouped by Today / Tomorrow / This week / Next week / Later.
-
-Click any meeting to see:
-- Prospect + Company
-- Which Campaign generated the booking
-- Which conversation thread led to it
-- The exact booking link that was used
-
-## Per-rep vs. shared workspace
-
-- **Solo workspace** — meetings go on your calendar
-- **Team workspace** — each rep connects their own calendar; meetings go on the calendar of whoever's booking link went out
-
-## Deleting a booking token
-
-Every scheduling link is a unique token. If a link gets shared publicly by mistake, delete the token from the Meetings page → the link stops working. The prospect can request a new one from you.
-
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Schedule meetings" icon="calendar-check" href="/meetings/schedule">
-    Setup + first booking.
+<CardGroup cols={3}>
+  <Card title="Calendar integrations" icon="calendar" href="/meetings/calendar-integrations">
+    Connect Google, Outlook, Cal.com, or Calendly.
   </Card>
-  <Card title="Inbox tasks" icon="inbox" href="/inbox/overview">
+  <Card title="Handle replies" icon="reply" href="/inbox/handle-replies">
     Where meeting requests land.
+  </Card>
+  <Card title="AI reply drafts" icon="wand-magic" href="/inbox/ai-reply-drafts">
+    Why meeting requests always reach a person.
   </Card>
 </CardGroup>

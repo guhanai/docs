@@ -1,0 +1,63 @@
+---
+title: API and MCP
+description: Create a personal access token, call the Guhan REST API, and connect an AI client over MCP.
+---
+
+You can work with your Guhan workspace from your own code or from an AI client. Both use a **personal access token** that acts as you, with your role and your workspace memberships.
+
+## Create an API key
+
+<Steps>
+  <Step title="Open your profile">
+    Open your **Profile** and choose the **API keys** tab. API keys belong to you, not to the workspace, so they're not under Settings.
+  </Step>
+  <Step title="Create a token">
+    Choose **New token**, give it a name, and pick an expiry or **Never expires**.
+  </Step>
+  <Step title="Copy it now">
+    The token is shown once. Store it in a password manager or secret store. If you lose it, revoke it and create a new one.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT: profile-api-keys — the API keys tab with a freshly created token banner */}
+
+The list shows each token's status (active, expired, or revoked), when it was created, and when it was last used. Revoke a token and anything using it stops working immediately. Tokens start with `pat_live_`.
+
+<Warning>
+  A token can do everything you can do. It has no narrower scope, so treat it like a password, and use an expiry for anything temporary.
+</Warning>
+
+## REST API
+
+The public API is documented interactively in the app at `/docs/api`, and the OpenAPI specification is available at `/api/v1/openapi.json`. Send your token as a bearer token:
+
+```
+Authorization: Bearer pat_live_...
+```
+
+The API covers the main things you do in the app, including campaigns, Lists, prospects, companies, conversations, the Do-Not-Contact list, meetings, products, templates, and brand voice. Every call is checked against the same permissions as the app, so a token can only do what your role allows.
+
+## MCP
+
+Guhan also runs an MCP server at `/api/mcp` on your Guhan domain, so MCP-capable AI clients can read and act on your workspace using the same tools as the API. Point your client at that URL and authenticate with your token as a bearer token. Calls are rate limited per token.
+
+<Note>
+  The sidebar shows **Claude MCP** and **Codex MCP** under **Coming soon**. Those are planned shortcuts and aren't available yet. The MCP server above is what to use today.
+</Note>
+
+## If something's off
+
+- **401 Unauthorized.** The token is missing, mistyped, expired, or revoked. Create a new one.
+- **403 Forbidden.** Your role doesn't allow that action. See [Roles and permissions](/workspace-settings/roles-and-permissions).
+- **Rate limited.** MCP calls are limited per token; slow down and retry.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Roles and permissions" icon="key" href="/workspace-settings/roles-and-permissions">
+    What a token can do depends on your role.
+  </Card>
+  <Card title="Ask Guhan" icon="comment" href="/ask-guhan">
+    Prefer chat? Ask in plain language.
+  </Card>
+</CardGroup>

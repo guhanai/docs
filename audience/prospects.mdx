@@ -1,87 +1,98 @@
 ---
 title: Prospects
-description: The people Guhan is reaching out to for you — contact info, timeline, reply history, and every signal that fired.
+description: Everyone Guhan has found or you have added, with their contact details, research, fit chip and activity. Includes contact reveal, removing prospects and exports.
 ---
 
-**A prospect is one real person Guhan is reaching out to. Their name, role, company, contact info, and every message + reply — all in one place.**
+**A prospect is one real person in your workspace.** Open **Prospects** in the sidebar and you land on the **People** tab: every person across all your Lists, in one table. (The **Companies** tab sits next to it; see [Companies](/audience/companies).)
 
-Every prospect is tied to a real Company. Click a prospect to see everything Guhan knows about them.
+## The People tab
 
-## What's in a Prospect record
+<CardGroup cols={2}>
+  <Card title="Import leads" icon="file-import" href="/audience/lists/add-prospects">
+    Search, signals or CSV, into a new or existing List.
+  </Card>
+  <Card title="Create lead" icon="user-plus" href="/audience/lists/add-prospects#add-manually">
+    Add one person by hand.
+  </Card>
+</CardGroup>
 
-- **Name, title, headline** — pulled from their LinkedIn profile
-- **Company** — links to the [Company](/audience/companies) record
-- **Contact channels** — LinkedIn URL, email (if revealed), phone (if revealed)
-- **Source** — which List source found them + which signal triggered
-- **Fit chip** — Strong / Moderate / Weak fit from Guhan's research agent (+ per-product breakdown when the workspace has multiple Products)
-- **Timeline** — every message sent to them + every reply received
-- **Research brief** — a rich account-research paragraph Guhan wrote about them (used by the message agent when drafting)
-- **Notes** — anything you want to jot down
+The table shows name, job title, company, location, email, phone, fit, status and whether they are enriched. Extra columns (headline, industry, company details, Lists, Campaigns, dates) can be switched on from the column menu.
 
-## Prospects page
+- **Filter** with rules: job title, company, location, email, phone, LinkedIn URL, status, List, signal source and Campaign. Rules combine with "and".
+- **Edit in place**: click a cell to edit name, title, company, location, email or phone. Editing a company detail such as industry or size changes it for the company record, and so for every prospect there.
+- **Export CSV**: exports the filtered view, or only the rows you selected. Up to 10,000 prospects per export; narrow your filters if you have more.
+- **Rejected people**: by default the table shows people who landed. Add the **Include pipeline-rejected** filter to see profiles Guhan found but filtered out. See [How prospects land](/audience/lists/how-prospects-land#why-someone-did-not-land).
 
-The **Audience → Prospects** page shows everyone in your workspace:
+{/* SCREENSHOT: prospects-people-tab — People tab with toolbar, filters and a few rows */}
 
-- **Filter by** — List, source, Campaign, status, channel
-- **Search by** — name, title, company, email
-- **Sort by** — most recent, name, fit tier
-- **Export** — download as CSV (up to 10,000 at a time)
+### Status
 
-By default it shows **landed** prospects only — people who passed all Guhan's filters. Toggle **Include filtered-out** to see everyone (including those Guhan decided didn't match).
+| Status | Meaning |
+|---|---|
+| **Cold** | In your workspace but not in a sequence yet |
+| **Active** | Part-way through a Campaign sequence |
+| **Replied** | Has replied to a message |
+| **Paused** | Their sequence is paused |
+| **Do not contact** | On your [Do Not Contact](/workspace-settings/do-not-contact) list |
+| **Unmailable** | A channel failed, for example a bounced email |
+| **Rejected** | Found by discovery but filtered out; only shown with the filter above |
 
-## Prospect detail page
+## The prospect page
 
-Click into any prospect and you'll see:
+Click a name to open the prospect in a side panel, or expand it to a full page. Tabs:
+
+- **Details**: editable fields, with an **Enrich** button that refreshes their LinkedIn profile.
+- **Overview**: contact channels, company, **Signals: why we matched**, List memberships, and role and experience.
+- **Research**: the research brief, fit chip and per-Product ratings. See [How prospects land](/audience/lists/how-prospects-land#the-fit-chip).
+- **Activity**: every message, reply and event for this person.
+
+## Contact details and reveal
+
+LinkedIn is the main channel. Email and phone are not included by default.
+
+- **Reveal work email**: 4 credits.
+- **Reveal phone number**: 12 credits. Phone is needed for WhatsApp.
+
+You are only charged when a result is actually found. Reveal needs the prospect's LinkedIn URL. You can reveal one prospect from their page, or many at once; see [Enrichment](/audience/enrichment#reveal-email-and-phone).
+
+## Removing a prospect
+
+On a prospect's page (the **...** menu) or in a List's table (row menu, or select several), choose **Remove from outreach**.
+
+- The prospect's status becomes **unsubscribed** and any active or paused Campaign sequence for them stops.
+- The person is **not erased**. Their record stays in your workspace.
+- This is not Do Not Contact. If you never want to reach this person or company again, add them to [Do Not Contact](/workspace-settings/do-not-contact).
+
+Other actions in the **...** menu: **Pause enrollments** and **Flag for handoff**, which marks the conversation as warm so a person takes over.
+
+<Note>
+  To permanently delete a person's data (for example, a privacy request), contact support. Ask Guhan cannot delete records either.
+</Note>
+
+## If something looks off
 
 <AccordionGroup>
-  <Accordion title="Header">
-    Avatar, name, current title + company, direct link to their LinkedIn profile.
+  <Accordion title="A prospect has no job title or company">
+    They have probably not been enriched. Use the **Enrich** button on their page, or the sparkle on the column header for many at once. See [Enrichment](/audience/enrichment).
   </Accordion>
-  <Accordion title="Research brief">
-    A rich account-research paragraph (10-14 sentences) covering who they are, what's happening at their company right now, industry pressure, why they fit what you sell, and the specific hook to lead with. Generated once at landing; regenerate on-demand from the Prospect detail page.
+  <Accordion title="The fit chip says Pending…">
+    The research step has not finished, or research brief generation is turned off in your enrichment options.
   </Accordion>
-  <Accordion title="Contact channels">
-    LinkedIn URL, email address (or **Reveal** button if hidden — costs 4 credits), phone (Reveal button — costs 12 credits, needed for WhatsApp).
-  </Accordion>
-  <Accordion title="Source panel">
-    Which List source found them + which signal triggered + when. Click through to see the triggering post / job / funding announcement.
-  </Accordion>
-  <Accordion title="Timeline">
-    Chronological feed of every message sent, every reply, every profile view, every reaction. Also shows in-flight sequence steps.
-  </Accordion>
-  <Accordion title="Company card">
-    Snapshot of their employer — industry, headcount, HQ, recent funding.
+  <Accordion title="I cannot reveal an email">
+    Reveal needs a LinkedIn URL on the prospect. If one is present and nothing comes back, you are not charged.
   </Accordion>
 </AccordionGroup>
-
-## Prospect status
-
-Every prospect has a derived status:
-
-| Status | What it means |
-|---|---|
-| **Replied** | Prospect responded to at least one message |
-| **Active** | In-flight in a sequence, no reply yet |
-| **Paused** | Sequence paused (agent paused OR prospect on "not now") |
-| **DNC** | On Do Not Contact list |
-| **Unmailable** | No reachable channels found |
-| **Cold** | Discovered but not yet enrolled in any sequence |
-
-## Blocking a prospect
-
-Right-click a prospect (or use the kebab menu on their detail page) → **Block** → moves them to Do Not Contact + ends any in-flight sequences for them.
-
-## Deleting
-
-Prospects are NOT deletable from the UI (chat agent tools can't delete them either — safety design). To permanently remove: contact hello@guhan.ai. Blocking is usually what you want.
 
 ## Related
 
 <CardGroup cols={2}>
+  <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
+    Fill in profiles, companies, briefs and contact details.
+  </Card>
   <Card title="Companies" icon="building" href="/audience/companies">
-    The organizations prospects work at.
+    The organisations your prospects work at.
   </Card>
   <Card title="Lists" icon="rectangle-list" href="/audience/lists">
-    How prospects are grouped for outreach.
+    How prospects are grouped for Campaigns.
   </Card>
 </CardGroup>

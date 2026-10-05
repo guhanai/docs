@@ -1,128 +1,73 @@
 ---
 title: How Guhan works
-description: The whole product in 2 minutes — the SDR workflow, and how Guhan runs each step.
+description: The whole product in one flow — brief Guhan, build a List, run a Campaign, handle replies, book meetings.
 ---
 
-**Guhan is an AI SDR. It runs the same six-step workflow a human SDR runs — executed in software, 24/7, at scale.**
+Guhan runs the same workflow a human SDR runs, in software. There is one flow to learn, and two nouns you'll meet along the way: **Lists** and **Campaigns**.
 
-## The SDR workflow Guhan runs
-
-Every good SDR does these six things. Guhan does them for you.
+## The flow
 
 <Steps>
-  <Step title="Learn the business">
-    Read what you sell, who buys it, what problems it solves, how you differ from competitors, what your brand voice sounds like.
+  <Step title="Brief Guhan">
+    Fill in **Brand & Voice** (how you sound) and **Products** (what you sell and why it matters). This is the context behind every message Guhan writes.
 
-    **What this maps to in the app:** Brand & Voice + Products. You brief Guhan by filling these in.
-
-    **Why it matters:** every message Guhan writes downstream is only as good as the context you give here. This is where quality comes from.
+    {/* SCREENSHOT: brand-and-voice-overview — Brand & Voice page with tone and a product filled in */}
   </Step>
-  <Step title="Find fit prospects">
-    Continuously scan for people who match your ideal customer AND look ready to buy — hiring, funding, exec changes, post engagement.
-
-    **What this maps to in the app:** Lists with signal sources. Each source has a WHO filter (titles, geo, industry, headcount) + optional buying signals.
+  <Step title="Build a List">
+    A **List** is a bucket of prospects. It fills from signal sources (people matching your criteria, optionally filtered by a buying signal like funding or hiring), a CSV upload, or another List. As prospects land, Guhan researches them and marks how well they fit.
   </Step>
-  <Step title="Research every prospect">
-    Read the person's profile, role, company, and recent activity before writing anything.
-
-    **What this maps to in the app:** the research brief that runs on every landed prospect. You never trigger it manually.
-  </Step>
-  <Step title="Draft hyper-personalized outreach">
-    Write from scratch, per prospect, per channel — same brief adapts to LinkedIn, Email, and WhatsApp with each version referencing that person's real work.
-
-    **What this maps to in the app:** the message agent inside every Campaign step. It reads Brand & Voice + Product + research brief for each draft.
+  <Step title="Run a Campaign">
+    A **Campaign** points at one or more Lists and runs a sequence — for example a LinkedIn invite, a wait, a DM, then an email. Each message is drafted for the individual prospect from your brief, their profile, and the signal that brought them in. Campaigns send from the sender accounts you connect.
   </Step>
   <Step title="Handle replies">
-    Route "not now" replies to a pause. Drop unsubscribe requests onto DNC. Classify meeting requests. Escalate real conversations to you.
-
-    **What this maps to in the app:** the Inbox. Guhan shows you only what needs your judgment.
+    Replies arrive in your **Inbox**. Guhan classifies each one, and your reply rules decide what happens next: hand it to a person, draft a response for you to approve, or answer automatically. Meeting requests always go to a person.
   </Step>
   <Step title="Book meetings">
-    Convert warm interest into calendar events without back-and-forth. Send scheduling links; sync the meeting to your calendar.
-
-    **What this maps to in the app:** Meetings + calendar integrations + booking links.
+    Connect a calendar, and Guhan shares your booking link when someone is ready. Booked calls appear under **Meetings**.
   </Step>
 </Steps>
 
-## The two building blocks: Lists and Campaigns
+## An example
 
-Under the hood the workflow above runs through two records:
+You sell an analytics tool to VPs of Marketing at SaaS companies.
 
-<CardGroup cols={2}>
-  <Card title="A List" icon="rectangle-list">
-    A bucket of prospects. You feed it from search criteria, buying signals, competitors, another List, or a CSV — Guhan discovers new prospects daily and lands them here.
-
-    Maps to workflow Step 2 (find) + Step 3 (research).
-  </Card>
-  <Card title="A Campaign" icon="paper-plane">
-    Points at a List. Reads each prospect's profile, writes a personal message, runs the full follow-up across LinkedIn / Email / WhatsApp, routes replies to your Inbox.
-
-    Maps to workflow Steps 4-6 (draft, handle, book).
-  </Card>
-</CardGroup>
-
-They pass work between each other:
-
-```
-Brand & Voice + Products (Step 1)
-  → List sources find prospects (Step 2)
-    → List (research runs — Step 3)
-      → Campaign picks them up (Step 4)
-        → sends personal messages
-          → Inbox routes replies (Step 5)
-            → Meetings booked (Step 6)
-```
-
-## A concrete example
-
-Say you sell an analytics tool to VPs of Marketing at SaaS companies.
-
-**Your List** (you set this up once) has two sources:
-- Search criteria: **VP of Marketing** at **SaaS companies** with **50–500 employees**
-- Signal source: **posted about attribution** in the last 30 days
-
-Every day, discovery runs against both sources. People matching either land in your List — with a Strong / Moderate / Weak fit chip Guhan's research agent assigns.
-
-**Your Campaign** (also set up once):
-- Pulls prospects from that List
-- Runs this sequence:
-  - Day 0 — LinkedIn invite
-  - Day 3 — LinkedIn DM
-  - Day 7 — Email
-  - Day 14 — Follow-up email
-
-Every message is written from scratch, referencing the specific post that person made about attribution — or whichever signal brought them in.
-
-**You** open Guhan once a day, see who replied, jump into the interesting conversations. That's it.
-
-## The work you never see
-
-You don't have to think about any of this — but it's why Guhan actually works:
-
-- **Reads every profile before writing** — so the message quotes their real role, company, recent post.
-- **Throttles daily volume** to LinkedIn-safe limits — so your account doesn't get restricted.
-- **Retries failed sends** — rate limits, network blips, temporary bans — so you don't lose anyone.
-- **Withdraws stale invites after 14 days** — keeps your pending queue clean.
-- **Classifies every reply** — meeting requests turn into calendar links, out-of-office replies pause the sequence for 7 days, unsubscribe requests drop them onto Do Not Contact.
+- **Your List** has a signal source for **VP of Marketing** at **SaaS companies** with **50–500 employees** who **posted about attribution**. New matches land in the List as Guhan finds them.
+- **Your Campaign** uses that List and runs an invite, a DM, and a follow-up email, each written around the post that person shared.
+- **You** open Guhan, check the Inbox, and take the conversations worth taking.
 
 ## Where you fit in
 
-Guhan handles the volume. You handle the judgment:
+Guhan does the volume; you keep the judgment.
 
-- **Review prospects** as they land — is this really your buyer?
-- **Approve drafts** when Guhan asks for a second look on a high-stakes reply.
-- **Take over threads** — Guhan hands you the conversation, you close it.
+- **Review prospects** as they land. Is this really your buyer?
+- **Approve drafts** where you've asked to see them first.
+- **Take over conversations** when a reply needs a person.
 
-## The three screens you'll actually use daily
+## The screens you'll use
 
 <CardGroup cols={3}>
   <Card title="Home" icon="house">
-    Today's snapshot — new prospects, pending replies, upcoming meetings.
+    A daily snapshot of what needs attention and what Guhan has been doing.
   </Card>
-  <Card title="Inbox" icon="inbox">
-    Tasks that need you — draft approvals, meeting requests, escalations.
+  <Card title="Inbox" icon="inbox" href="/inbox/overview">
+    Replies and tasks that need you.
   </Card>
-  <Card title="Ask Guhan" icon="comment">
-    Chat with your workspace: "show me all prospects from Series B fintechs" or "which sequence performed best last week?"
+  <Card title="Ask Guhan" icon="comment" href="/ask-guhan">
+    Ask questions or assign work in plain language.
+  </Card>
+</CardGroup>
+
+## What Guhan spends
+
+Finding and enriching prospects, writing messages, and revealing contact details use **credits**. Sending itself is free, but it's governed by daily limits that protect your accounts. See [Plans and credits](/workspace-settings/plans-and-credits) for what costs what, and [Sending safety](/campaigns/sending-safety) for the limits.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Launch your first Campaign.
+  </Card>
+  <Card title="Lists" icon="rectangle-list" href="/audience/lists">
+    How prospects get found and land.
   </Card>
 </CardGroup>

@@ -1,0 +1,75 @@
+---
+title: Do not contact
+description: Block email addresses and whole domains so Guhan never messages them, and see what happens to people already in flight.
+---
+
+The **Do-Not-Contact (DNC)** list is your workspace's block list. Anyone who matches an entry never lands in a List, and anyone already in a sequence is stopped.
+
+## What you can block
+
+| Entry | Example | Blocks |
+|---|---|---|
+| **Email address** | `bo@example.com` | That exact address |
+| **Domain** | `acme.com` | Any email address at that domain |
+
+Those are the only two kinds. There's no block for a LinkedIn profile URL or a phone number, so to keep someone out you block their email address or their company's domain.
+
+<Tip>
+  Add your own company's domain so Guhan never reaches out to your own team.
+</Tip>
+
+## Add entries
+
+<Steps>
+  <Step title="Open the list">
+    Go to **Settings → Do-Not-Contact list**.
+  </Step>
+  <Step title="Paste entries">
+    Put one email address or domain on each line. Entries are lowercased and trimmed, and adding one that already exists is harmless. Lines that aren't a valid email or domain are rejected and listed so you can fix them.
+  </Step>
+  <Step title="Add to list">
+    Choose **Add to list**. You can search existing entries from the same page.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT: dnc-settings — the Add entries box with a pasted list and the existing entries below */}
+
+## Block a company
+
+On the **Companies** page or a company's detail page, choose **Block**. This adds the company's domain to the DNC list and marks the company as blocked, together in one step.
+
+Unblocking a company doesn't remove its domain from the DNC list. Remove the entry on the DNC page if you want it gone.
+
+## What happens when you add an entry
+
+Adding an entry takes effect right away, including on people already in your workspace:
+
+- **Prospects already in sequences** that match are paused and won't receive further messages.
+- **Matching prospects in your Lists** are marked as unsubscribed.
+- **New prospects** that match are rejected before they land in a List.
+
+## Removing an entry
+
+Removing an entry doesn't bring anyone back. Prospects who were paused stay paused, and prospects marked as unsubscribed stay that way. To re-engage someone, add them back to a List and enroll them in a Campaign yourself.
+
+## Good to know
+
+- DNC is per workspace. Blocking `acme.com` in one workspace doesn't block it in another.
+- You can add up to 500 entries at a time.
+- There's no import or export; entries are added by pasting.
+
+## If something's off
+
+- **A blocked person still got a message.** Check that the entry matches the address they were sent to. An entry for a person's work email doesn't cover a different address of theirs.
+- **I can't see the DNC page.** The Settings row is shown to admins. See [Roles and permissions](/workspace-settings/roles-and-permissions).
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Companies" icon="building" href="/audience/companies">
+    Block a company from its page.
+  </Card>
+  <Card title="Handle replies" icon="inbox" href="/inbox/handle-replies">
+    What happens when someone asks not to be contacted.
+  </Card>
+</CardGroup>

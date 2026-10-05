@@ -1,82 +1,75 @@
 ---
 title: Companies
-description: The companies your prospects work at — with industry, headcount, HQ, and every buying signal that fired.
+description: The companies your prospects work at, with industry, headcount and location. Includes enriching, blocking and deleting a company.
 ---
 
-**A Company is the org your prospect works at. Guhan tracks every company it touches — industry, headcount, HQ, what signals fired on it, which prospects are inside.**
+**A company record is the employer shared by your prospects.** If three prospects work at Acme, they all point to one Acme record. That is useful for account-based selling: open a company and see everyone you have found there.
 
-Useful when you're doing account-based selling — target a company, see everyone Guhan found there.
+## The Companies tab
 
-## What's in a Company record
+Open **Prospects** in the sidebar and switch to the **Companies** tab. (Older links to the Companies page redirect here.)
 
-- **Name, domain, LinkedIn URL**
-- **Industry** — LinkedIn's taxonomy (Software Development, Financial Services, etc.)
-- **Headcount** — current employee count
-- **HQ location** — country + city
-- **Description** — pulled from LinkedIn's company page
-- **Signals** — recent funding, hiring activity, growth metrics (what drives your List's signal sources)
-- **Related prospects** — everyone you've discovered at this company
+- **Filter** by industry, country, city, headcount and status.
+- **Edit in place**: name, industry, size, location and domain can be edited in the table. The change shows on every prospect at that company.
+- **Create company**: add one by hand with name, website, LinkedIn URL, industry, location, employee range, founded year, description and notes. Most companies arrive on their own when a prospect lands.
+- By default the table shows companies with at least one landed prospect. If there are companies with none yet, a filter option lets you include them.
 
-## Companies page
+{/* SCREENSHOT: companies-tab — Companies tab with filters and the Create company button */}
 
-The **Audience → Companies** page shows every org Guhan has discovered:
+## Enrich a company
 
-- **Filter by** — industry, headcount range, HQ, has-prospects
-- **Search by** — name, domain
-- **Sort by** — most recent, name, headcount
+Companies often arrive with only a name. Enrichment fills in industry, headcount, HQ, founded year and description from the company's LinkedIn page.
 
-By default it shows companies with **at least one landed prospect**. Toggle **Include companies without prospects** to see everyone (including companies discovered via a signal but where nobody landed yet).
+- **One company**: open it and click **Enrich** on the Details tab.
+- **Many**: select rows and click **Enrich company** in the bar at the bottom, or click the sparkle on the Industry, Size or Location column header to enrich the selection.
 
-## Company detail page
+Each company costs 1 credit. It needs the company's LinkedIn URL. See [Enrichment](/audience/enrichment).
+
+## The company page
+
+Click a company to open it. Tabs:
+
+- **Details**: editable company fields.
+- **People**: every prospect you have found at this company.
+- **Lists**: the Lists those prospects are in.
+- **Research**: a company brief, plus recent funding and hiring highlights where available.
+- **Activity**: messages and replies across the people there.
+
+## Block a company
+
+If you never want to contact anyone at a company, open it and choose **... → Block company**.
+
+- The company's domain is added to your [Do Not Contact](/workspace-settings/do-not-contact) list. Future prospects at that domain are rejected, and in-flight sequences for matching prospects are paused.
+- Common uses: your own company, competitors, and existing customers you do not want to cold-message.
+- **Unblock** reverses the company's status only. The domain stays on your Do Not Contact list until you remove it there.
+
+Blocking needs a domain on the company to take effect. Without one, only the status changes.
+
+## Delete a company
+
+**... → Delete** permanently removes the company record. Prospects there are kept, but lose their company link until they are enriched again. If you only want to stop outreach, block the company instead.
+
+## If something looks off
 
 <AccordionGroup>
-  <Accordion title="Header">
-    Logo (favicon-derived from domain), name, LinkedIn URL, website link.
+  <Accordion title="Company enrichment did nothing">
+    The company needs a LinkedIn URL. Add one in the Details tab, then enrich again.
   </Accordion>
-  <Accordion title="Firmographics">
-    Industry · headcount · HQ · founded year · funding stage.
-  </Accordion>
-  <Accordion title="Signals">
-    What Guhan knows: recent funding rounds, hiring activity, executive changes, growth metrics. These are what drive List signal sources.
-  </Accordion>
-  <Accordion title="Related prospects">
-    Everyone at this company Guhan has found — their names, titles, current status.
-  </Accordion>
-  <Accordion title="Timeline">
-    Chronological feed of every prospect you've discovered at this company + every outbound / inbound message across them.
+  <Accordion title="Two records for the same company">
+    Companies are matched by domain, and by name when there is no domain. Different spellings can create two records. Assign the prospect to the existing company from the company cell in the People table instead of typing a new name.
   </Accordion>
 </AccordionGroup>
-
-## Blocking a company
-
-If you never want to reach out to anyone at a company:
-
-- **Block a company** → automatically applies Do Not Contact to every prospect at that company + prevents future prospects at this company from landing
-
-Common uses:
-- Blocking your own company (so you don't outreach yourself)
-- Blocking competitors (auto-detected — see Brand & Voice → Competitors)
-- Blocking customers you already have relationships with
-
-## How companies get discovered
-
-Three ways:
-
-1. **Via a prospect** — you found a person; Guhan pulls their employer as a Company
-2. **Via a signal** — a signal like "funded recently" finds a Company first; then people at that Company get pulled
-3. **Manual** — you can add a company by URL from the Companies page
-
-## Deleting
-
-Companies are NOT deletable from the UI (chat agent tools can't delete them either). Blocking is the typical action.
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Prospects" icon="users" href="/audience/prospects">
-    The people who work at these companies.
+    The people at these companies.
   </Card>
-  <Card title="Lists" icon="rectangle-list" href="/audience/lists">
-    Buckets that group prospects across companies.
+  <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
+    Costs and options for enriching companies.
+  </Card>
+  <Card title="Do Not Contact" icon="ban" href="/workspace-settings/do-not-contact">
+    Manage blocked emails and domains.
   </Card>
 </CardGroup>

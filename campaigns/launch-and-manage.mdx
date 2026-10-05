@@ -1,0 +1,147 @@
+---
+title: Launch and manage
+description: Check a campaign is ready, launch it, then pause, edit, resume, clone, or delete it.
+---
+
+**Launching checks that the campaign can actually send, then turns it on. After that, one header button controls it: Pause, then Resume.**
+
+## Launch checklist
+
+Click **Launch** on the campaign page. Guhan checks the campaign first. **Blockers** stop the launch until you fix them. **Warnings** do not stop it.
+
+### Blockers
+
+<Steps>
+  <Step title="The sequence has at least one step">
+    An empty sequence cannot launch. Add steps in the [Sequence tab](/campaigns/build-a-campaign).
+  </Step>
+  <Step title="The sequence is valid">
+    Every step is connected and has what it needs. Cards with a red error show you where.
+  </Step>
+  <Step title="An audience list is selected">
+    Open the **Start** step and include at least one list.
+  </Step>
+  <Step title="Every channel in the sequence has senders">
+    If a step uses LinkedIn, email, or WhatsApp, the campaign needs a sender for that channel. Connect an account in [Sender accounts](/get-started/sender-accounts/overview) if you have none, or pick one in the Start step.
+  </Step>
+  <Step title="At least one sender per channel is connected">
+    If every sender for a channel has disconnected, reconnect one or add another.
+  </Step>
+  <Step title="There are no unsaved changes">
+    Changes you made on the canvas must be saved as part of the launch. If Guhan reports unsaved changes, wait for the save indicator in the editor bar to settle and try again.
+  </Step>
+</Steps>
+
+If the button is disabled or the launch is refused, the message lists exactly what is missing, with a link to fix it.
+
+### Warnings
+
+You can launch with these, but they are worth a look:
+
+- **No prospects in the audience yet.** The campaign sits ready and picks up prospects as they land on the list. Nothing sends until then.
+- **No product set.** Messages go out without a product to pitch.
+- **No brand voice configured.** Messages may not match your tone.
+
+### A quick sanity check
+
+Before you click Launch, [preview a message](/campaigns/personalization#preview-before-you-launch) for a real prospect, confirm the sender's [send window and limits](/campaigns/sending-safety) match what you want, and make sure your own company's email domain is on your [Do Not Contact list](/workspace-settings/do-not-contact).
+
+## Campaign statuses
+
+| Status | Meaning |
+|---|---|
+| **Draft** | Being built. Nothing sends. |
+| **Active** | Live. Prospects enroll and sends go out inside each sender's window and limits. |
+| **Paused** | Sends are held. Prospects stay where they are. |
+
+The header button changes with the status: **Launch** on a draft, **Pause** on an active campaign, **Resume** on a paused one. Right after launch, the Overview tab shows Guhan finding your first prospects.
+
+## How prospects enroll
+
+- When a campaign goes active, prospects already on its audience lists enroll.
+- While it is active, any prospect that lands on an included list enrolls automatically. There is no separate toggle.
+- Prospects on an excluded list never enroll.
+- A prospect can only be active in one enrollment of the same campaign at a time. With **Allow re-entry** on, they can enter again after the cooldown, up to the maximum entries you set. With it off, each prospect enrolls once.
+
+Each prospect gets one sender per channel and keeps it for the whole campaign, so a conversation stays with the same account.
+
+The **Leads** tab lists every enrollment with its current step and status:
+
+| Status | Meaning |
+|---|---|
+| **Active** | Moving through the sequence. |
+| **Paused** | Held, for example because the campaign is paused, the sender disconnected, or the prospect sent an out-of-office reply. |
+| **Handoff** | Waiting on a person, such as a take-over or an approval. |
+| **Replied** | The prospect replied. |
+| **Completed** | Reached the end of the sequence. |
+| **Stopped** | Ended early, for example the prospect matched your Do Not Contact list or the step they were on was removed. |
+| **Waiting** | On the audience list but not enrolled yet. |
+
+## Pause and resume
+
+Click **Pause** and confirm. Sends stop right away. Prospects in flight stay where they are, and when you **Resume** they continue from their next scheduled step.
+
+Individual prospects also pause on their own when their sender disconnects, and resume when it is reconnected.
+
+## Edit a live campaign
+
+Active campaigns are view-only, so you cannot change a sequence mid-send by accident.
+
+<Steps>
+  <Step title="Pause the campaign">
+    The sequence editor and the Start settings sheet unlock.
+  </Step>
+  <Step title="Make your changes">
+    Edit steps, audience, product, goal, context, re-entry rules, or senders. Changes to the sequence and campaign content save as a draft.
+  </Step>
+  <Step title="Click Resume">
+    If you have unpublished changes, a dialog shows what changed. Choose **Publish & resume** to apply them, or **Discard edits & resume** to go back to the live version.
+  </Step>
+</Steps>
+
+When you publish, prospects already in flight move to the new version. If the step a prospect was on no longer exists, they skip ahead to the next step that does. If there is none, their enrollment stops. Prospects who join after you publish follow the new version from the start. Prospects added to the audience while the campaign was paused enroll when you resume.
+
+{/* SCREENSHOT: resume-diff-dialog — Resume dialog showing the changes list with Discard edits & resume and Publish & resume */}
+
+## Test run
+
+Use **Test run** in the Sequence editor to walk a prospect through the steps and see what would fire, in order, without sending anything. See [Build a campaign](/campaigns/build-a-campaign#test-the-sequence).
+
+## Clone a campaign
+
+Open the **...** menu on the campaign page and choose **Clone campaign**. You get a new draft with the same steps, re-entry rules, and senders. The audience is not copied, so pick one before you launch. This stops the copy from contacting the same prospects as the original.
+
+## Delete a campaign
+
+Open the **...** menu and choose **Delete campaign**. Active campaigns cannot be deleted, so pause first. The confirmation shows what will be removed: enrolled prospects, conversation threads, message records, open tasks, and meetings. Deleting is permanent. Prospects stay on your lists; only this campaign's record of them is removed.
+
+## If something is off
+
+<AccordionGroup>
+  <Accordion title="Launch is disabled">
+    Hover the button or open the launch message. It lists each blocker with a link to fix it.
+  </Accordion>
+  <Accordion title="Sent count is zero after launch">
+    The sender may be outside its send window or on a day it does not send, the daily limit may be reached, or the audience list may still be empty. Check the sender in [Sender accounts](/get-started/sender-accounts/overview) and see [Sending safety](/campaigns/sending-safety).
+  </Accordion>
+  <Accordion title="Prospects are paused and I did not pause them">
+    Check the sender account for a disconnected or restricted warning. Reconnecting resumes its prospects. An out-of-office reply pauses a prospect for 7 days on its own.
+  </Accordion>
+  <Accordion title="Nothing sends and the workspace shows read-only">
+    Sending stops when a trial or billing period has ended. See [Plans and credits](/workspace-settings/plans-and-credits).
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={3}>
+  <Card title="Sending safety" icon="shield" href="/campaigns/sending-safety">
+    Limits, windows, and pacing.
+  </Card>
+  <Card title="Handle replies" icon="reply" href="/inbox/handle-replies">
+    What happens when prospects answer.
+  </Card>
+  <Card title="Troubleshooting" icon="stethoscope" href="/help/troubleshooting">
+    Fixing a stuck campaign.
+  </Card>
+</CardGroup>

@@ -1,93 +1,79 @@
 ---
-title: Brand & Voice
-description: The business context Guhan uses to write every message. Fill it in like you're briefing a new SDR joining your team.
+title: Brand and voice
+description: Tell Guhan about your business and how you want to sound, so every message it writes reflects both.
 ---
 
-**Brand & Voice is where you brief Guhan on your business. Your tone, what you sell, who your competitors are, what to never say, what customer pain you solve. Every message Guhan writes downstream reads from these fields.**
+**Brand & Voice is where you brief Guhan, the way you would brief a new SDR: what you sell, who it is for, how you talk, and what never to say.**
 
-<Note>
-  **This is the single biggest quality lever.** Guhan is an AI SDR — its message quality is a direct function of the business context you give it here. Rich context (real pain points, real competitor positioning, real value propositions with case studies) produces messages that read as if someone who understands the customer's problem wrote them. Thin context produces generic peer register. Founders who invest 30 minutes on Brand & Voice see meaningfully higher first-touch reply rates.
-</Note>
+Everything a campaign writes draws on it. The more specific you are about the problem you solve and the customer you solve it for, the less generic the messages read.
 
-Find it in the sidebar under Library. Set it once, forget it — every future draft picks it up.
+Find it in the sidebar under Brand & Voice. Set it up once, then adjust as you learn.
 
-## What lives here
-
-Five tabs organized as tiles:
+## The five tabs
 
 <CardGroup cols={2}>
-  <Card title="Brand" icon="tag">
-    Industry · Company description & value proposition · Customer pain points.
+  <Card title="Brand" icon="tag" href="/brand-and-voice/setup#brand">
+    Industry, company description and value proposition, customer pain points.
   </Card>
-  <Card title="Voice" icon="music">
-    Preferred tone · Preferred language · Always-include phrases · Never-say phrases.
+  <Card title="Voice" icon="music" href="/brand-and-voice/setup#voice">
+    Tone, preferred language, and words Guhan will not write.
   </Card>
-  <Card title="Competitors" icon="users">
-    LinkedIn URLs of competitors · Positioning notes per competitor.
+  <Card title="Competitors" icon="users" href="/brand-and-voice/setup#competitors">
+    How you differ from each competitor, for when a prospect brings one up.
   </Card>
-  <Card title="Templates" icon="file-lines">
-    Reusable message briefs you can pick when configuring sequence steps.
+  <Card title="Templates" icon="file-lines" href="/brand-and-voice/templates">
+    Reusable starting points for campaign messages.
   </Card>
-  <Card title="Products" icon="box">
-    Everything you sell — each product carries value props + ideal use cases.
+  <Card title="Products & Services" icon="box" href="/brand-and-voice/products">
+    What you sell, with proof and free resources. Pick one per campaign.
   </Card>
 </CardGroup>
 
-## Why this matters
+{/* SCREENSHOT: brand-voice-tabs — Brand & Voice page with the five tabs */}
 
-The message agent that writes every outbound message pulls from Brand & Voice on every call:
+## How Guhan uses it
 
-- **Tone + language** control HOW the message sounds
-- **Always-include / never-say** enforce specific phrases in or out
-- **Industry + pain points + value prop** give the message its subject-matter grounding
-- **Product context** anchors the pitch to what you sell
-- **Competitor positioning** shapes how Guhan differentiates when responding to a competitor-related reply
+- **Company description, industry, and pain points** give messages and replies their subject matter.
+- **Tone** sets how messages sound. Guhan follows it as a style guide.
+- **Words Guhan will not write** are strictly kept out of messages it drafts.
+- **Preferred language** is a hint for the language to write in. It guides Guhan but is not a hard rule.
+- **Competitor differentiation** is used when a prospect mentions that competitor.
+- **The product on your campaign** supplies the specific pitch, proof, and offers. See [Products](/brand-and-voice/products).
 
-Change any of these and every future draft matches. Nothing here is locked.
+Two things to know:
 
-## When to update Brand & Voice
+<Note>
+  Only **tone** and **words Guhan will not write** count as a configured voice. If tone is left at the default and the never-say list is empty, Guhan treats your voice as not set up yet.
+</Note>
 
-- **After onboarding** — the wizard pre-fills; refine anything that doesn't sound like you
-- **After the first 20 messages** — read what Guhan sent; if messages feel off, tune the voice
-- **When launching a new product line** — add a new Product record + set up a dedicated Campaign for it
-- **When entering a new market** — adjust customer pain points to match the new segment's language
+<Note>
+  Brand & Voice applies to messages Guhan writes: Auto-draft, Guided, and AI replies. A step set to **Fixed message** is sent exactly as you typed it, so none of this changes it.
+</Note>
 
-## What NOT to put here
+## Workspace-wide
 
-- ❌ **Prospect-specific info** — that goes on individual prospect notes
-- ❌ **One-off campaign messaging** — use a message template instead
-- ❌ **Rules that change per prospect** — use sequence Branch nodes
+There is one brand and voice per workspace. It applies to every campaign. Product-specific details live on the product, not here.
 
-Brand & Voice is workspace-wide — everything here applies to every Campaign's every message.
+Do not put prospect-specific notes here. Those belong on the prospect.
 
-## The Templates tab
+## When to revisit it
 
-Message templates are pre-written **briefs** you pick from when configuring a sequence step:
+- After onboarding, which pre-fills it from your website. Edit anything that does not sound like you.
+- After the first batch of messages, if the drafts feel off.
+- When you launch a new product, add it under Products & Services.
 
-- 10 defaults ship with every workspace (cold connect, signal hooks, follow-ups, break-ups, etc.)
-- Clone any default to customize
-- Templates work across multiple channels (one template can be a LinkedIn DM, an email, and a WhatsApp message)
-- Templates aren't blast text — Guhan personalizes per prospect
-
-See [Write message templates](/brand-and-voice/templates) for the deep dive.
-
-## The Products tab
-
-Each product record holds:
-- Name + short description
-- Value props (bulleted)
-- Ideal use cases
-- Optional pricing
-
-When you create an Campaign, you pick which Product it's pitching. Multiple products = multiple Campaigns.
+Changes apply to messages drafted after you save. Messages already sent are not changed.
 
 ## Related
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Set up Brand & Voice" icon="palette" href="/brand-and-voice/setup">
-    Step-by-step configuration walkthrough.
+    Field by field.
   </Card>
-  <Card title="Personalization" icon="wand-magic" href="/agents/campaigns/personalization">
-    How the message agent uses Brand & Voice at draft time.
+  <Card title="Message templates" icon="file-lines" href="/brand-and-voice/templates">
+    Starters and your own.
+  </Card>
+  <Card title="Personalization" icon="wand-magic" href="/campaigns/personalization">
+    How a message gets written.
   </Card>
 </CardGroup>

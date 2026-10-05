@@ -1,134 +1,98 @@
 ---
-title: Write message templates
-description: Reusable message briefs — pick from 10 built-in defaults or write your own. Guhan personalizes the wording per prospect.
+title: Message templates
+description: Reusable starting points for campaign messages. Use the five starters or write your own, as instructions for Guhan or as a fixed message.
 ---
 
-**A template is a re-usable brief — a short paragraph telling Guhan WHAT a message should say. Guhan writes the actual words per prospect.**
+**A template is a saved starting point for a campaign message step. Pick one on a step and it fills the step in for you.**
 
-Not a fill-in-the-blank template. You describe the intent. Guhan does the writing.
+A template can be written two ways:
 
-## Where to manage templates
-
-**Brand & Voice → Templates**. All your templates in one table.
-
-## The 10 defaults Guhan ships
-
-Every new workspace gets these built-in. Read-only (clone to customize):
-
-| Template | Channels | When to use |
+| Type | What you write | What gets sent |
 |---|---|---|
-| Cold connect · no pitch | LinkedIn invite | First-touch, no ask |
-| First message after connect · deliver value | LinkedIn DM + email | Right after invite accepted |
-| Signal hook — funding raise | DM + email + WhatsApp | After they raised |
-| Signal hook — hiring | DM + email + WhatsApp | After they posted jobs |
-| Signal hook — post engagement | LinkedIn DM | After they engaged with a post |
-| Follow-up · new value (Day 7) | DM + email + WhatsApp | Adding new angle mid-sequence |
-| Channel shift · 10-min call ask | DM + email + WhatsApp | Nudge for a call |
-| Break-up · graceful close | DM + email + WhatsApp | End-of-sequence "one last note" |
-| First email · async version | Email only | Cold email opener |
-| Substantive post comment | LinkedIn post comment | Public engagement |
+| **Guided** | Instructions for Guhan: the angle, the hook, the ask. | A message Guhan writes fresh for each prospect from your instructions, their research, and your Brand & Voice. |
+| **Fixed message** | The exact message. | Your text, as typed, with variables like `{{firstName}}` filled in per prospect. Guhan does not rewrite it. |
 
-## Creating a new template
+A step also has a third mode, **Auto-draft**, where Guhan writes from the campaign's goal alone. Templates fill Guided or Fixed steps. See [Personalization](/campaigns/personalization).
+
+## The five starters
+
+Every workspace comes with five starter templates. Starters are read-only. Clone one to edit it.
+
+| Starter | Channel | Use it for |
+|---|---|---|
+| **Follow-up email · Referral ask (widen the funnel)** | Email | A second email a few days after the first, asking to be pointed to the right person if this is not their area. |
+| **Deliver value · Give it up front** | Email | Delivering the free resource you promised, without waiting for a reply. |
+| **WhatsApp · After reply** | WhatsApp | A first WhatsApp message after the prospect has already replied elsewhere or agreed to hear from you. |
+| **WhatsApp · Gentle nudge** | WhatsApp | One gentle follow-up on WhatsApp after no answer, then stop. |
+| **Re-engagement · Old trial + new signal** | Email | Reaching out to someone who tried your product before and went quiet. |
+
+{/* SCREENSHOT: templates-table — Templates tab listing the five starters with kind badges */}
+
+The WhatsApp starters are built for people who have already engaged with you. WhatsApp is not meant for cold first contact.
+
+## Create a template
 
 <Steps>
-  <Step title="Brand & Voice → Templates → + New template">
-    Top-right button.
+  <Step title="Open Brand & Voice, Templates">
+    Click **New template**.
   </Step>
-  <Step title="Give it a name">
-    "Signal hook — new leadership" or "Break-up — direct".
+  <Step title="Name it and pick channels">
+    One template can serve more than one channel. Email templates also have a **Subject** field.
   </Step>
-  <Step title="Pick channels">
-    Which channels can use this template — LinkedIn DM, email, WhatsApp, comment, invite. Multi-select.
+  <Step title="Choose the template type">
+    **Guided** for instructions, **Fixed message** for exact text.
   </Step>
-  <Step title="Write the brief">
-    A short paragraph describing WHAT to say — not the exact words.
-
-    Good:
-    > Congratulate them on the funding announcement. Reference the specific round and lead investor if visible. Offer a specific value angle relevant to their stage.
-
-    Bad:
-    > `Hi {firstName}, saw that {companyName} raised! Congrats!`
-    (Bad because it's the literal template; Guhan wants intent + context.)
+  <Step title="Write it">
+    For Guided, describe what the message should do. For Fixed, write the message itself. The **Insert variable** menu adds prospect, company, sender, and workspace variables where you need them.
   </Step>
-  <Step title="Optional: fetch recent post">
-    For DM channels, opt in to fetching the prospect's most recent LinkedIn post at send time. Guhan uses it as the opener. Costs 1 credit per fetch.
-  </Step>
-  <Step title="Optional: subject brief (for email)">
-    A short prompt for the subject line. Guhan generates the actual subject per prospect.
+  <Step title="Optional: tag and recent-post hook">
+    A tag helps you find the template later. On LinkedIn message templates you can turn on the recent-post hook, which lets Guhan open with the prospect's latest post. Fetching posts may use credits; see [Plans and credits](/workspace-settings/plans-and-credits).
   </Step>
   <Step title="Save">
-    Template is now available in any Campaign's sequence steps.
+    The template appears in the picker on campaign steps.
   </Step>
 </Steps>
 
-## Using a template in a sequence
+<Tip>
+  Good Guided instructions are specific about the opener, the value on offer, the length, and the single ask. "Congratulate them on the round, name the lead investor if visible, offer one benchmark from similar-stage companies, end with a question" beats "say congrats and pitch".
+</Tip>
 
-Any Send step → "Start from template" dropdown → pick your template.
+For Fixed messages, a send is skipped if a variable it needs has no value for that prospect. Preview the step against a real prospect before launching.
 
-The step gets pre-filled with the template's brief + channel. You can:
-- Use the brief as-is (recommended)
-- Edit for this specific step (overrides the template)
-- Change channels if the step's channel is one of the template's supported channels
+## Use a template on a campaign step
 
-<Note>
-  Editing a template doesn't retroactively change sequences that started from it. Each sequence step captures the brief at creation time.
-</Note>
+On a message step, open its settings and choose **Start from template**. The template's text is copied into the step. After that the step is independent: editing the template later does not change steps that already used it, and editing the step does not change the template. The template picker is not shown on Auto-draft steps.
 
-## Cloning + customizing a default
+## Clone, edit, filter
 
-<Steps>
-  <Step title="Find the default template">
-    Templates table → click the template name.
-  </Step>
-  <Step title="Click Clone">
-    Kebab menu → **Clone**. You get a new editable copy.
-  </Step>
-  <Step title="Rename + edit">
-    Give it your own name + tweak the brief to match your voice.
-  </Step>
-  <Step title="Save">
-    Your custom version now shows up in the picker alongside the default.
-  </Step>
-</Steps>
+- **Clone to edit** on a starter creates your own editable copy.
+- Your own templates can be edited, cloned, or deleted from the row menu.
+- Filter the list by channel, by tag, or by kind (all, starters only, custom only), or search by name, tag, or instructions.
 
-## Tips for writing effective briefs
+## If something's off
 
 <AccordionGroup>
-  <Accordion title="Be specific about the opener">
-    `Reference their post on {topic}` > "Compliment their content."
-
-    "Congratulate the specific Series A + name-drop the lead VC if visible" > "Say congrats."
+  <Accordion title="I cannot edit a template">
+    It is a starter. Clone it, then edit the copy.
   </Accordion>
-  <Accordion title="Include the value angle">
-    "Offer one specific insight from working with 3 other Series A founders in the same 90-day window" beats "Offer to help".
+  <Accordion title="A Fixed message did not send">
+    A variable in it probably had no value for that prospect. Preview the step with that prospect to see which one.
   </Accordion>
-  <Accordion title="Constrain length + format">
-    "3 short paragraphs, no signature" or "1 sentence, question format" — Guhan will honor.
-  </Accordion>
-  <Accordion title="Specify the CTA">
-    "Ask if they'd like a 90-second explainer video" — Guhan will end with that ask. Otherwise it'll pick its own.
-  </Accordion>
-  <Accordion title="Anti-patterns to explicitly block">
-    "Don't use the phrase 'I hope this finds you well'" or "No emoji" — Guhan strictly obeys.
+  <Accordion title="My edit to a template did not change my campaign">
+    Steps copy the template when you pick it. Pick the template again on the step, or edit the step directly.
   </Accordion>
 </AccordionGroup>
 
-## Filtering the template picker
-
-The Templates table has filters:
-- **By tag** — you can tag your templates for organization
-- **By channel** — only see templates that support a specific channel
-- **By tone** — professional / casual / friendly / direct / playful
-
-Useful when you have 30+ templates and need to find the right one quickly.
-
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Brand & Voice" icon="palette" href="/brand-and-voice/setup">
-    Where templates live.
+<CardGroup cols={3}>
+  <Card title="Personalization" icon="wand-magic" href="/campaigns/personalization">
+    Auto-draft, Guided, and Fixed.
   </Card>
-  <Card title="Build a sequence" icon="diagram-project" href="/agents/campaigns/build-sequence">
-    Using templates in sequence steps.
+  <Card title="Build a campaign" icon="diagram-project" href="/campaigns/build-a-campaign">
+    Use templates on steps.
+  </Card>
+  <Card title="Brand and voice" icon="palette" href="/brand-and-voice/overview">
+    The voice behind Guided messages.
   </Card>
 </CardGroup>

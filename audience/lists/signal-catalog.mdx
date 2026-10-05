@@ -1,158 +1,130 @@
 ---
 title: Signal catalog
-description: Every buying signal Guhan detects — funding rounds, hiring bursts, post engagement, exec changes, and more. Add any of these as a source on a List.
+description: The nine buying signals you can add to a List, what each one needs from you, and what it costs.
 ---
 
-**Every signal Guhan supports, in one place.** Use this as a reference when picking a signal source for a List. Signals turn "we found people who match your ICP" into "we found people who match your ICP AND look ready to talk right now."
+**A signal adds people to a List only when something happens.** Use it when "this person matches my criteria" is not enough and you want "and there is a reason to talk to them now."
 
-Signals are grouped into 3 categories: Content & Engagement, Career changes, and Hiring & Growth.
+This page is the reference for every signal. To use one, choose **Import leads → From Signals** on the Prospects page. See [Adding prospects](/audience/lists/add-prospects).
 
-## Content & Engagement
+## How signals work
+
+- **One signal per source.** Each List source runs a single signal.
+- **Two kinds.**
+  - *Person signals* find people directly: someone who wrote, commented on or was tagged in a post. Your **Who fits** rules then filter those people.
+  - *Company signals* find companies first (funded, hiring, new executive, uses a technology), then look for people at those companies who match your **Who fits** rules, such as the right title.
+- **Schedule.** Most signals can run [Ongoing or One-time](/audience/lists/add-prospects#ongoing-or-one-time).
+- **Cost.** You are charged per profile a run finds, before your filters are applied. See [How prospects land](/audience/lists/how-prospects-land#what-you-pay-for). Technology adoption has extra charges, listed below.
+
+## Content and engagement
 
 ### Posted about specific topics
 
-People who authored or engaged with LinkedIn posts matching keywords you provide.
+People who wrote, engaged with, or were tagged in LinkedIn posts that match your keywords.
 
-**Configure:**
-- **Keywords** — one or more terms or short phrases
-- **Target** — `authors` (people writing about the topic), `engagers` (people liking/commenting), or `both`
-- **Recency** — how recent the post activity should be
+**You configure**
+- **Keywords**: one or more words or phrases, added as tags. Pain language such as "struggling with" or "what tool do you use" works well.
+- **People to import** (pick any combination): **Authors** (people who wrote the post), **Engagers** (people who liked or commented), **Mentioned** (people tagged inside the post).
+- **Engagement type** (when Engagers is selected): **Commenters only** (the default; higher intent) or **Commenters + reactions** (more volume, lower intent).
+- In **One-time** mode: a time window (past day, past week or past month) and a maximum number of posts per keyword.
 
-**Best for:** finding people actively discussing topics in your space. Great for peer-tone openers ("your post on X hit a nerve").
-
-**Message opener example:**
-> Your post on attribution the other day was spot on — the point you made about last-touch was exactly what we ran into. Curious how you're solving [X].
-
----
+**Good for:** reaching people who are talking about your problem right now.
 
 ### Engaged with specific posts
 
-People who reacted to or commented on specific LinkedIn post URLs you paste in.
+People who reacted to or commented on LinkedIn posts you choose, such as your own post, a thought leader's, or a competitor's.
 
-**Configure:**
-- **Post URLs** — one or more exact post URLs (yours, a competitor's, a thought leader's)
-- **Post decay is automatic:** engagement pulled 2×/day the first week, 1×/day weeks 2-3, then dormant
+**You configure**
+- **Post URLs**: paste each post's URL.
+- **People to import**: **Engagers** (default) and/or **Mentioned**.
+- **Engagement type**: Commenters only (default) or Commenters + reactions.
 
-**Best for:** amplifying content you know is relevant to your ICP + catching people mid-consideration.
-
-**Message opener example:**
-> Saw your comment on [author]'s post about [topic] — loved your take on [specific point].
-
----
+**Schedule:** each post is checked twice a day in its first week, once a day for the next two weeks, then goes dormant. A dormant post can be renewed from the source.
 
 ### Engaged with competitors' content
 
-People who reacted to or commented on posts by named competitors.
+People who engaged with, or were tagged in, posts published by a competitor.
 
-**Configure:**
-- **Company or profile URLs** — LinkedIn company URLs (watches every employee's posts) OR individual profile URLs (e.g. their CEO / VP of Sales / marketing lead)
+**You configure**
+- **Competitor URLs**: a LinkedIn company URL (watches posts from that company page) or an individual profile URL (for example a competitor's CEO).
+- **People to import**: **Engagers** (default) and/or **Mentioned**.
+- **Engagement type**: Commenters only (default) or Commenters + reactions.
+- In **One-time** mode: a time window (last 24 hours, 7 days, 30 days, 3 months, 6 months or 1 year) and a maximum number of posts per source.
 
-**Best for:** catching prospects mid-evaluation of your category — highest-intent signal Guhan supports.
-
-**Message opener example:**
-> Saw your comment on [Competitor]'s post about [topic]. We had a similar internal debate — happy to share how we think about it.
-
----
+**Good for:** reaching people who are following your category and the vendors in it.
 
 ## Career changes
 
+These two signals take company URLs, so the companies are already chosen. Because of that, the company-side **Who fits** rules (industry, company HQ, headcount) are hidden and not applied. Title, seniority and location rules still apply.
+
 ### New executive (in last 90 days)
 
-Companies where an executive or director joined recently.
+People who joined one of your chosen companies as an executive or director in the last 90 days.
 
-**Configure:**
-- **Company LinkedIn URLs** — companies you want to monitor for exec turnover
-
-**Best for:** catching companies inside a common buying-trigger window. New execs re-evaluate ~40% of key tooling in their first 90 days.
-
-**Message opener example:**
-> Congrats on the new role at Acme. Curious how the [X function] tooling looks — happy to share how peers at [similar company] structure it.
-
----
+**You configure**
+- **Company URLs**: the LinkedIn company pages to watch.
 
 ### New leadership (C-level / VP)
 
-Same as "New executive" but narrower — only senior leadership.
+The same, narrowed to senior leadership.
 
-**Configure:**
-- **Company LinkedIn URLs** — same as above; the difference is which seniority levels count
+**You configure**
+- **Company URLs**: the LinkedIn company pages to watch.
 
-**Best for:** larger-deal targeting when only senior leadership matters. Higher-stakes hires; longer decision-making windows.
+**Good for:** account-based plays where a new leader may be reconsidering tools and vendors.
 
----
+## Hiring and growth
 
-## Hiring & Growth
+These are company signals. Your **Who fits** rules pick the right person at each company that triggers.
 
 ### Recently raised funding
 
-Companies that announced a funding round.
+Companies that announced a funding round on LinkedIn in the last 90 days.
 
-**Configure:**
-- **Stages** — which rounds qualify: pre-seed, seed, Series A, B, C, D+, IPO, acquired
-- **Recency** — 30 / 60 / 90 / 180 / 365 days
+**You configure:** nothing beyond turning it on. The 90-day window is fixed.
 
-**Best for:** selling anything expensive that requires budget. Timing with the "we just closed" moment (< 60 days is peak).
-
-**Message opener example:**
-> Saw your Series A announcement — congrats. Founders at that stage usually run into [X] — happy to share how [Y other company] handled it.
-
----
+**Tip:** pair it with titles for the people who control the new budget, such as finance, operations or revenue operations.
 
 ### Hiring growth
 
-Companies whose headcount grew above a threshold.
+Companies whose headcount grew by at least a percentage you choose over a period you choose.
 
-**Configure:**
-- **Growth threshold** — % increase over a window (e.g., +20% / +50% / +100%)
-- **Window** — 3 / 6 / 12 months
-
-**Best for:** finding fast-scaling companies. Growth = budget = active buying window.
-
----
+**You configure**
+- **Min headcount growth (%)**: 1 to 500 (starts at 20).
+- **Over the last**: 1, 3, 6 or 12 months (starts at 6).
 
 ### Hiring in specific areas
 
-Companies posting jobs in specific departments.
+Companies with open LinkedIn job postings in the functions you pick, from the last 30 days.
 
-**Configure:**
-- **Departments** — Sales, Engineering, Marketing, Product, Customer Success, Operations, People/HR
-- **Minimum open jobs** — 1+ / 3+ / 5+ / 10+
-- **Recency** — 30 / 60 / 90 days
-
-**Best for:** selling tools that scale with a specific function (great for SaaS targeting a scaling department).
-
-**Message opener example:**
-> Noticed you're hiring 5 SDRs — that's the moment when onboarding time bloats. Curious if you've got a plan for it.
-
----
-
-## Coming soon
+**You configure**
+- **Job functions**: choose from a list such as Sales, Engineering, Marketing, Product Management, Customer Support, Finance, Human Resources and Operations.
+- Industry and region come from your **Who fits** rules automatically.
 
 ### Uses a specific technology
 
-Wired into the registry but not shipped for customer use yet. Will surface companies detected as using a specific tool (via public tech-stack signals like BuiltWith, HG Insights, etc.).
+Companies that use technologies you name, such as Shopify, HubSpot or Snowflake. LinkedIn does not expose tech stacks reliably, so this signal uses a separate data source.
 
-Email hello@guhan.ai if you'd find this useful — we prioritize by demand.
+**You configure**
+- **Technologies**: search and pick from the suggestions. You can type a name that is not suggested, but it is flagged because it may not match anything.
 
----
+**Cost:** 3 credits for each matching company (1 to find it, 2 to confirm the technology), plus 1 credit for each profile found at those companies. See [Plans and credits](/workspace-settings/plans-and-credits).
 
-## Combining signals on one List
+## Combining signals
 
-You can add multiple signal sources to the same List. Every signal source runs independently, and Guhan de-dupes so no prospect gets added twice.
+A source runs one signal, so to combine signals, create a List for each. A person who appears in more than one List is still one person in your workspace. Guhan recognises them and does not create a duplicate.
 
-**Common pattern:** pair a broad "search criteria" source (WHO panel — VP Sales at 500+ headcount SaaS) with a tight signal source (WHEN — funding raised in last 60 days). The List fills with people matching both.
+## No signal at all
 
-## No signals
-
-You can skip signals entirely and use only a search-criteria source. Guhan runs a plain daily search matching your WHO panel — higher volume, lower reply rates.
+You can skip signals and use **From People Search** alone. You get a steady stream of people who match your criteria, without the "why now" trigger.
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Adding prospects to a List" icon="plus" href="/audience/lists/add-prospects">
-    Every way to feed a List — including signal sources.
+  <Card title="Adding prospects" icon="plus" href="/audience/lists/add-prospects">
+    Set up a source and choose Ongoing or One-time.
   </Card>
-  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
-    The Strong / Moderate / Weak fit chip and how signal context feeds into it.
+  <Card title="How prospects land" icon="filter" href="/audience/lists/how-prospects-land">
+    What happens after a signal fires and what you pay.
   </Card>
 </CardGroup>

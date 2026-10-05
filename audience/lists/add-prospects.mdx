@@ -1,147 +1,129 @@
 ---
 title: Adding prospects to a List
-description: Every way to fill a List — search criteria, buying signals, competitor engagement, another List, CSV upload, or manually.
+description: Fill a List with Import leads (people search, buying signals or a CSV), or add prospects by hand. Includes the Ongoing and One-time schedule.
 ---
 
-**A List can be fed by any combination of sources. Pick the ones that fit your workflow — there's no "right" mix.**
+**Use Import leads to find new prospects, or add people you already know.** The result is the same either way: people land in a List, where you can review them and point a Campaign at them.
 
-Every source lives on the List detail page under **+ Add source**. You can add, edit, pause, or remove sources at any time.
+## Start with Import leads
 
-## Search criteria
+On the **Prospects** page, click **Import leads**. Pick where the leads come from:
 
-The most common source. You describe your ideal customer — job titles, location, industry, company size — and Guhan searches its data pipelines every day for people matching.
+| Option | Use it when |
+|---|---|
+| **From People Search** | You can describe who fits: title, industry, location, size. |
+| **From Signals** | You want people only when something happens (funding, hiring, a post, a new executive). |
+| **Upload CSV** | You already have a list of people. |
+
+Each option opens a two-step form. Step 1 sets up the source (who fits, the signal, or the file). Step 2 is the destination: which List, its schedule, and the enrichment options.
+
+<Steps>
+  <Step title="Set up the source">
+    Fill in who fits, configure the signal, or upload and map your CSV.
+  </Step>
+  <Step title="Choose the List">
+    Pick an existing List or choose **Create new list**. Lists that already have a search or signal source are greyed out ("already has a source"), so a List stays tied to one search or signal. Lists that only hold CSV uploads or hand-added people can still be picked.
+  </Step>
+  <Step title="Set the schedule and enrichment">
+    Choose [Ongoing or One-time](#ongoing-or-one-time) and review the enrichment options. Then click **Import leads**.
+  </Step>
+</Steps>
+
+{/* SCREENSHOT: import-leads-picker — Import leads dialog showing People Search, Signals and Upload CSV */}
+
+## People search
+
+Describe your ideal customer under **Who fits**. Each rule you add is a must-match: a prospect has to satisfy every rule you set to land in the List.
 
 <AccordionGroup>
   <Accordion title="Job titles">
-    Add each title as a chip. Guhan auto-generates variants so you don't have to list every wording:
-    - You type: **VP of Sales**
-    - Guhan matches: Vice President Sales, SVP Sales, Senior Vice President Sales, Head of Revenue, Head of Sales…
-
-    You can see and edit the auto-variants below the input.
+    Add each title as a chip. Use **Suggest variants** to see alternative wordings (for example "VP of Sales" and "Vice President Sales"). Variants are only added when you pick them. "Sales Director" and "Director of Sales" are different strings, so list the forms you want.
+  </Accordion>
+  <Accordion title="Seniority">
+    Individual Contributor, Manager, Director, VP or C-level.
   </Accordion>
   <Accordion title="Location">
-    Autocomplete-backed. Type "San Francisco" → pick from suggestions. Multi-select with OR logic.
-
-    Cities, states, countries, regions all work. "United States" catches everyone in the US; "New York" catches NY-metro only.
+    Where the person is based. Cities, states, countries and regions are all accepted, and Guhan matches at the level you pick. A city does not widen to its whole country.
   </Accordion>
   <Accordion title="Industry">
-    LinkedIn's official industry taxonomy. Pick one or many.
-
-    <Warning>
-      "SaaS" isn't a LinkedIn industry — it's a subset of "Software Development". Use "Software Development" and let a signal or your headcount range narrow further.
-    </Warning>
+    Choose from LinkedIn's industry list. "SaaS" is not one of them; use "Software Development" and narrow with other rules.
   </Accordion>
-  <Accordion title="Company size">
-    Headcount slider. Leave both ends blank = no cap.
-
-    Common ranges:
-    - **1–10** — pre-seed startups
-    - **11–50** — seed to Series A
-    - **51–200** — post-Series-A scaleups
-    - **201–1000** — mid-market
-    - **1001+** — enterprise
-  </Accordion>
-  <Accordion title="HQ country (optional)">
-    If you sell to a specific geography (e.g., US companies only), set HQ = United States. This is stricter than person-location — the *company* has to be HQ'd there, not just the person.
+  <Accordion title="Company HQ and headcount">
+    Company HQ country is stricter than person location: the company has to be headquartered there. Headcount takes a minimum and a maximum; leave one blank for no limit.
   </Accordion>
 </AccordionGroup>
 
 <Tip>
-  Search criteria alone is enough to fill a List. If you don't add a buying-signal source on top, Guhan runs a plain daily search for people matching your criteria.
+  Every rule you fill in is required. If a List is coming back empty or full of the wrong people, loosen or tighten the rules. See [Reviewing prospects](/audience/lists/review-prospects).
 </Tip>
 
 ## Buying signals
 
-Only add people when a triggering event fires. Signals turn a broad audience into a "reach out to them right now" moment.
+Pick **From Signals**, choose one signal, and configure it. A source runs one signal. Some signals find people directly (a post author or commenter); others find companies first and then look for people at them using your **Who fits** rules.
 
-Pick from six signal types on the WHEN panel:
-
-- 💰 **Funding raised recently** — companies that just raised a round
-- 📈 **They're hiring** — companies posting roles in a department you care about
-- 👔 **New leadership joined** — companies where an exec or director joined recently
-- 🎯 **Engaged with a competitor's post** — people who liked or commented on your named competitors' posts
-- 📢 **Posted about specific keywords** — people writing (or engaging with) posts matching your keywords
-- 🎁 **Engaged with a specific post URL** — people who reacted to or commented on exact post URLs you paste in
-
-Each signal has its own config (recency window, keywords, competitor URLs, etc.).
-
-<Card title="Full signal reference" icon="bolt" href="/audience/lists/signal-catalog">
-  Every signal Guhan supports, with configuration options and example openers.
+<Card title="Signal catalog" icon="bolt" href="/audience/lists/signal-catalog">
+  All nine signals, what each one is configured with, and what it costs.
 </Card>
-
-## Competitor engagement
-
-A special case of the "posts" signals — you paste your competitors' LinkedIn URLs and Guhan watches every one of their posts, landing the people who engage.
-
-- **Company URLs** watch every employee's posts from that company.
-- **Individual profile URLs** watch a specific person (e.g., a competitor CEO or head of marketing).
-
-This is the highest-intent signal Guhan supports — someone commenting on your competitor is actively evaluating your category.
-
-<Card title="Set up competitor engagement" icon="crosshairs" href="/audience/lists/signal-catalog#engaged-with-competitors-content">
-  Details + example openers.
-</Card>
-
-## Copy from another List
-
-Duplicate the current members of an existing List into a new one. Useful when you want to:
-
-- **A/B test** two sequences against the same audience
-- **Segment** further — take an "All US SaaS" List and copy into a smaller "US SaaS · Enterprise" List
-- **Reactivate** — copy a stale List into a new one with a fresh sequence
-
-The copy is a snapshot at the moment you click Copy. Future prospects landing in the source List don't auto-flow to the copy.
 
 ## CSV upload
 
-Upload a CSV of prospects you already have. Guhan enriches them from LinkedIn and treats them like any other prospect.
+Upload a CSV from **Import leads → Upload CSV**, or from a List's **Import → Import CSV**. Your column names do not need to match anything: Guhan guesses the mapping, shows a three-row preview, and lets you change any column.
 
-**Minimum columns:**
-- `linkedin_url` OR `email` (at least one)
-- `name` (optional but recommended)
+Each row needs:
 
-**Optional columns:**
-- `email` — pre-populates so Guhan doesn't need to reveal it (saves credits)
-- `company_name`, `title`, `phone` — anything else you have
+- **Last name** (required)
+- At least one of **email**, **phone** (with country code, for example `+14155550123`) or **LinkedIn profile URL**
 
-<Tip>
-  Guhan enriches every uploaded row from LinkedIn — so even a bare CSV with 500 LinkedIn URLs becomes 500 fully-profiled prospects with fit tiers, research briefs, and current-role data.
-</Tip>
+Optional columns: first name, job title, department, seniority, company name, company domain, company LinkedIn URL, industry and location.
 
-## Manual add
+<Note>
+  Profile enrichment works from the prospect's LinkedIn URL. Rows without one are still imported, but they cannot be enriched from LinkedIn. Add the column if you can.
+</Note>
 
-Paste a LinkedIn URL or search by name to add one prospect at a time. Best for:
+After upload, the enrichment options in step 2 decide what Guhan fills in (profile, company, research brief, and so on). Turn every option off if you want no enrichment. Each option has a credit cost; see [Enrichment](/audience/enrichment).
 
-- **Warm leads** — someone you already know is a fit; skip discovery entirely
-- **Referrals** — a colleague forwarded you a lead
-- **Testing** — add yourself to a List before launching to confirm the messaging looks right
+CSV rows do not use discovery credits, but they do count toward your [active-prospect limit](/audience/lists#limits-on-a-list). If an upload would go over, the rows that fit are imported and the rest are skipped with a message.
 
-Guhan enriches from LinkedIn on add, so a manually-added prospect behaves identically to a discovery-sourced one downstream.
+## Add manually
 
-## Multiple sources on one List
+Open a List and choose **Import → Add manually**, or click **Create lead** on the Prospects page. You enter the person's name, at least one of email, phone or LinkedIn URL, their role and their company. On the Prospects page you can also choose a List; if you leave it empty the person is saved to your workspace without being in a List. The same active-prospect limit applies.
 
-You can add as many sources as you want to the same List. Every source runs independently — Guhan de-dupes so no prospect gets added twice.
+Use it for warm leads, referrals, or adding yourself to test a Campaign before launch.
 
-**Example:** an "Enterprise Sales Leaders" List might have:
-- Search criteria source: VP Sales at 500+ headcount SaaS companies
-- Funding signal source: same criteria + only when funding announced in last 90 days
-- Competitor engagement source: watch two competitor company URLs
+## Ongoing or one-time
 
-Prospects who match multiple sources are added once and tagged with all matching sources — the message can reference whichever one is most relevant.
+For people search and signals, step 2 asks how the source should run.
+
+| | Ongoing | One-time |
+|---|---|---|
+| What it does | Keeps looking and adds new matches as they appear | Runs once, then stops |
+| What you set | Daily, weekly and monthly limits (daily in steps of 25, from 25 to 1,000; weekly and monthly can be left at no cap) | **How many to import** (1 to 5,000) |
+| For post-based signals | Catches new posts as they are published | Looks back over a time window you pick, with a cap on posts |
+
+The wording stays the same for every signal. Only the options under it change:
+
+- **Post-based signals** (competitor posts, topics) in One-time mode let you choose a time window and a maximum number of posts. Competitor posts offer 24 hours up to 1 year; topic posts offer past day, week or month.
+- **Engaged with specific posts** follows its own schedule: each post you add is checked twice a day for its first week, once a day for the next two weeks, then goes dormant. You can renew a dormant post.
+
+You can switch a source between Ongoing and One-time later from **Edit** on the List page.
+
+<Warning>
+  Limits cap how many people are added, not what each one costs. You are charged for every profile a run finds, including ones your filters later reject. See [How prospects land](/audience/lists/how-prospects-land#what-you-pay-for).
+</Warning>
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Signal catalog" icon="bolt" href="/audience/lists/signal-catalog">
-    Full reference for every signal, with configuration and openers.
+    Every signal and its options.
   </Card>
-  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
-    The fit chip and how Guhan decides what lands.
+  <Card title="How prospects land" icon="filter" href="/audience/lists/how-prospects-land">
+    What happens between discovery and the prospect appearing.
   </Card>
-  <Card title="Reviewing prospects" icon="magnifying-glass" href="/audience/lists/review-prospects">
-    What to check after the first landing.
+  <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
+    Profile, company, research brief and contact reveal.
   </Card>
-  <Card title="Campaign" icon="paper-plane" href="/agents/campaigns/overview">
-    How prospects flow out of the List into messaging.
+  <Card title="Build a Campaign" icon="paper-plane" href="/campaigns/build-a-campaign">
+    Point a Campaign at your List.
   </Card>
 </CardGroup>

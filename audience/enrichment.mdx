@@ -1,0 +1,118 @@
+---
+title: Enrichment
+description: Fill in profiles, companies, research briefs and contact details for your prospects. Covers the column wand, bulk enrich, enriching a whole List, reveal, and what each step costs.
+---
+
+**Enrichment adds detail to the people and companies you already have.** A prospect might arrive with just a name and a LinkedIn URL. Enrichment fills in their role, location and company, writes the research brief, and, if you ask, reveals their email and phone.
+
+Discovery runs enrich new prospects automatically using your enrichment settings (see [How prospects land](/audience/lists/how-prospects-land)). This page is about enriching people and companies yourself, and about choosing which steps run.
+
+## The steps
+
+| Step | What you get | Credits |
+|---|---|---|
+| **Enrich prospect profile** | Title, company, location, experience and education | 1 |
+| **Fetch prospect's recent posts** | Their last 30 days of LinkedIn posts (up to 5) | 0.25 |
+| **Enrich company profile** | Industry, headcount, HQ, founded year, description | 1 |
+| **Fetch company's recent posts** | The company's last 30 days of posts (up to 5) | 0.25 |
+| **Generate research brief + fit score** | A written brief and the Strong / Moderate / Weak fit chip | 1 |
+| **Reveal work email** | A verified work email | 4 |
+| **Reveal phone number** | A direct mobile number | 12 |
+
+Credits are charged per successful result. [Plans and credits](/workspace-settings/plans-and-credits) is the canonical list of every credit cost.
+
+**On by default:** profile, company and research brief. **Off by default:** both posts steps, email reveal and phone reveal, because they cost more or are not needed for every prospect.
+
+## Choose what gets enriched
+
+You can set this at three levels. The most specific one wins.
+
+1. **Workspace default**: **Settings → Enrichment**. Applies everywhere unless something more specific is set. **Reset to defaults** clears your changes.
+2. **Per List**: in step 2 of **Import leads**, and from **Edit** on a List. "Unset toggles inherit from workspace settings."
+3. **Per run**: when you start an enrichment (for example the **Enrich whole list** panel), the choices you make there apply to that run only.
+
+If you have several Products, the research brief toggle has a picker so the brief and fit rating score against only the Products you choose.
+
+<Note>
+  Some steps cannot be turned off. If one of your **Who fits** rules needs profile data (title, seniority, location) or company data (industry, company HQ, headcount), that step is checked and locked, with the note "Required by your filter." Without that data the rule could not be applied correctly.
+</Note>
+
+{/* SCREENSHOT: enrichment-options — Enrichment options card with the seven toggles and credit badges */}
+
+## Ways to enrich
+
+### The column wand
+
+Hover over a column header on the People table (email, phone, job title, company, location, headline, industry, domain, company HQ, company size) and click the sparkle. It enriches the rows you selected, or every row on the page if none are selected. Empty cells show **Enriching…** while work is in progress. Cells that already have a value are skipped.
+
+Hover over an empty cell to enrich that one prospect.
+
+### Select rows, then Enrich
+
+Select prospects (or companies) with the checkboxes and use the **Enrich** action in the bar that appears. A message tells you how many are queued and roughly how many credits it will use.
+
+### Enrich a whole List
+
+On a List page, click **Enrich → Enrich whole list**. Tick the steps you want (each shows its credit cost) and start. Guhan enriches every eligible prospect in the List and shows progress on the List page. Anything that is not eligible, such as someone with no LinkedIn URL, is skipped with a reason.
+
+### One prospect or company
+
+Click **Enrich** on the Details tab of a prospect or a company. For a prospect this runs the steps your settings enable.
+
+### CSV uploads
+
+The enrichment options in step 2 of **Upload CSV** decide what is filled in after the upload. Turn everything off if you do not want any.
+
+## Reveal email and phone
+
+Email and phone are not included with a LinkedIn profile, so you ask for them.
+
+- Click the **Email** or **Phone** chip on a prospect (it shows the credit cost), use the column wand on the Email or Phone column, or turn the reveal options on for a List.
+- **You are only charged when a result is found.** No result, no charge.
+- Reveal needs the prospect's LinkedIn URL.
+- Revealing the same prospect again within a day and getting the same value does not charge twice.
+
+Phone is needed for WhatsApp steps in a Campaign. Email is needed for email steps.
+
+## Research brief
+
+The brief is written when a prospect lands, if the step is on. To write or rewrite one later, use **Regenerate brief** on the prospect's page, or run the research step in bulk. A prospect that already has a brief is skipped in bulk unless you regenerate. If the AI fails, the credit is refunded.
+
+## What gets skipped, and why
+
+Enrichment is careful not to spend credits twice. A step is skipped when:
+
+- The prospect has **no LinkedIn URL**.
+- Their profile was enriched in the **last 7 days**, or enrichment has already been tried several times without success.
+- Recent posts were fetched in the **last 3 days**.
+- They **already have a research brief**, or are not on a List (the brief lives on the List entry).
+- The same step is **already running** for that prospect. Starting it again does nothing and you are told it is in progress.
+- A company step is requested but the prospect has no company on record.
+
+## If something looks off
+
+<AccordionGroup>
+  <Accordion title="I clicked enrich and nothing was charged">
+    Probably every selected item was skipped (see the list above). The message after you start shows how many were queued.
+  </Accordion>
+  <Accordion title="Enrichment stopped partway">
+    If you run out of credits, the remaining items stop. Add credits in [Plans and credits](/workspace-settings/plans-and-credits) and start again. Items already enriched are not charged again. Workspaces in read-only mode (expired trial or subscription) cannot enrich.
+  </Accordion>
+  <Accordion title="A prospect keeps failing to enrich">
+    After a few failed attempts Guhan stops retrying. In the List table, click **Retry** next to the prospect's enrichment badge to try again.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Prospects" icon="users" href="/audience/prospects">
+    The prospect record and reveal chips.
+  </Card>
+  <Card title="Companies" icon="building" href="/audience/companies">
+    Enrich and block companies.
+  </Card>
+  <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
+    Every credit cost, and how to add credits.
+  </Card>
+</CardGroup>

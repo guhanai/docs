@@ -1,90 +1,91 @@
 ---
 title: Plans and credits
-description: How Guhan's credit system works. Current prices live on guhan.ai/pricing.
+description: The Guhan plan, what each action costs in credits, credit packs, and what happens when your trial ends or you cancel.
 ---
 
-**Guhan uses credits. Each plan comes with monthly credits. Actions like finding a prospect or revealing an email spend credits. Sending doesn't.**
+Guhan has one plan, priced per license, and a single pool of **credits** that pays for the work Guhan does. Sending messages is free. Finding, enriching, and writing are what spend credits.
 
-Think of it like data on a phone plan — you get an allowance every month, top-ups are available if you run out.
+## The plan
 
-<Card title="See current plan prices + features" icon="tag" href="https://guhan.ai/#pricing">
-  Live pricing, plan features, and pack sizes on guhan.ai. This page focuses on how credits *work* — the actual numbers can change and the pricing page is always the source of truth.
-</Card>
+| | |
+|---|---|
+| **Price** | $49 per license per month billed annually, or $59 per license per month billed monthly |
+| **One license includes** | 1 team seat, 1 sender account on any channel, and 2,000 credits each month |
+| **More licenses** | Add licenses to scale seats, senders, and credits together. Adding takes effect immediately; reducing takes effect at the next cycle. |
+| **Extra senders** | An add-on for an additional sender account on any channel, without adding a seat or credits: $15 per month billed annually, or $18 per month billed monthly |
 
-## What costs a credit
+Manage your plan under **Settings → Billing**. Only admins can change it.
 
-| Action | Credits | When it fires |
+## What costs credits
+
+This table is the single source of truth for credit costs.
+
+| Action | Credits | Notes |
 |---|---|---|
-| Land a prospect | 1 | A List source adds a prospect to a List |
-| Reveal an email | 4 | Email step needs an address; Guhan looks it up |
-| Reveal a phone | 12 | WhatsApp step needs a phone; Guhan looks it up |
-| AI reply draft | 1 | AI reply node drafts a response |
-| Recent-post fetch | 0.25 | Optional post fetch on DM steps |
-| CSV lead enrich | 1 | LinkedIn profile fetch for a CSV-uploaded prospect |
-| Company deep enrich | 2 | Fetches industry, headcount, funding etc. (only when the monthly Company brief budget is exhausted) |
-| Research brief | 1 | Per-prospect research brief written by the LLM (only when the monthly free budget is exhausted) |
-| Ask Guhan overflow | 1 / 50k tokens | Past the daily per-user Ask Guhan token cap |
+| Prospect discovery | 1 per profile returned | Charged when a sweep returns the profile, **before** Guhan checks fit. Prospects that don't pass your filters still cost a credit. |
+| Company discovery | 1 per company | Technology-adoption signals find companies first and people second. One credit for each company the signal returns, plus the technology match below. |
+| Prospect enrichment | 1 | Fetching the full profile for a prospect |
+| Company enrichment | 1 | Fetching the company profile |
+| Research brief | 1 | Per-prospect research and fit assessment |
+| Work email reveal | 4 | Charged only when an email is found |
+| Phone reveal | 12 | Charged only when a number is found |
+| Recent posts | 0.25 | Fetching a LinkedIn post or a prospect's recent posts |
+| Technology match | 2 | Each company confirmed as using the technology you named |
+| AI-drafted message | 1 | Each message Guhan writes, whether a first touch or a reply. **Fixed message** steps aren't AI-drafted and don't cost this. |
+| Ask Guhan | 1 | Per turn |
 
-Sending doesn't cost credits — LinkedIn / email / WhatsApp actions are gated by daily send caps on your sender accounts, not by credits.
+**Sending itself is free.** Invites, DMs, emails, and WhatsApp messages never cost credits. They are limited by daily caps on each sender account instead. See [Sending safety](/campaigns/sending-safety).
 
-## Two credit pools
+Email and phone reveals are charged only when a result is found, and a research brief is refunded if Guhan fails to produce one.
 
-Your workspace has **two credit balances** that stack:
+## How credits work
 
-<CardGroup cols={2}>
-  <Card title="Monthly grant" icon="calendar">
-    Refills to your plan amount on your billing anniversary. Unused credits DON'T carry over.
-  </Card>
-  <Card title="Top-up pool" icon="battery-full">
-    Bought as credit packs. Carries over 12 months. Spent AFTER the monthly grant is depleted.
-  </Card>
-</CardGroup>
+Your workspace has two balances:
 
-## What happens when you run out
+- **Monthly credits** refill to 2,000 per license each cycle. Unused monthly credits don't carry over.
+- **Top-up credits** come from packs. They last 12 months and are spent after your monthly credits run out.
 
-If your combined balance hits 0:
+You can see the balance, a breakdown of where credits went this cycle, and the full history under **Settings → Billing**.
 
-- **Prospect discovery pauses** — Lists stop landing new prospects
-- **Email / phone reveals pause** — steps needing an unreachable channel skip
-- **AI reply drafts pause** — replies fall back to plain-classify + hand off to you
-- **Ask Guhan works** but every response burns overflow (which fails when balance = 0 → Ask Guhan tells you)
-- **Sending doesn't pause** — messages already drafted continue going out (sending itself is free)
+### Credit packs
 
-You'll see a **banner** at the top of the app. Buy a pack OR wait for the monthly reset.
+| Pack | Price |
+|---|---|
+| 200 credits | $10 |
+| 1,000 credits | $45 |
+| 2,000 credits | $80 |
 
-## Upgrading and downgrading
+Buy from the **Credit packs** tab on the Billing page.
 
-**Upgrade** — takes effect immediately. Guhan credits the difference between old + new monthly grant to your wallet on the same day.
+### When you run out
 
-**Downgrade** — scheduled for the end of your current billing cycle. You keep the higher plan until then; new plan starts at renewal. You can cancel the scheduled downgrade before it lands.
+Actions that spend credits are refused until you add a pack or your next cycle starts. In practice, Lists stop landing new prospects, enrichment and reveals stop, and Guhan can't draft new messages. A banner at the top of the app tells you.
 
-Both from **Settings → Billing → Change plan**.
+## Trial
 
-## Trial period
+New workspaces start with a **7-day trial** and 1,000 credits. At signup you authorize a card or UPI mandate; no money moves then, and your first charge happens after the trial. When your subscription starts, the balance resets to 2,000 credits per license, so unspent trial credits don't roll over.
 
-- **Day 0–7** — full Starter features, no credit card required
-- **Day 8** — trial ends; you'll be prompted to add payment
-- **Day 8–14** — if no payment, workspace goes read-only; all data preserved
-- **Day 15+** — no payment yet? Data preserved for 30 more days, then archived
+## Read-only mode
 
-## Payment failures on a paid plan
+A workspace becomes **read-only** when the trial ends without a subscription, or when a failed renewal isn't fixed within a 7-day grace period. In read-only mode, sweeps and sends stop, but your data and any unused credits are kept. Updating your payment method or subscribing lifts it.
 
-If a monthly renewal charge fails, your workspace enters a **7-day grace period**:
-- Day 0–7 of grace: full access, banner asks you to update your card
-- Day 8+ of grace: workspace flips to read-only; data preserved
-- Update payment anytime to lift the read-only state
+## Cancelling
 
-## Refunds
+Admins can cancel from the **Subscription** tab on **Settings → Billing**; the link is at the bottom of the tab. Your workspace keeps working until the end of the trial or paid period, then sweeps and sends stop. Unused credits are kept.
 
-Full refund on charges within 7 days of the invoice. Email hello@guhan.ai.
+## If something's off
+
+- **Balance looks wrong.** Refresh, then check the history on the Billing page for the charge in question.
+- **Can't add a license or sender.** Only admins can change billing, and reducing licenses is blocked if it would leave you with more members or connected senders than licenses.
+- **Payment failed.** Update your payment method under Billing. See [Troubleshooting](/help/troubleshooting).
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Current pricing" icon="tag" href="https://guhan.ai/#pricing">
-    Plan prices, pack sizes, and feature comparison on guhan.ai.
+  <Card title="Roles and permissions" icon="key" href="/workspace-settings/roles-and-permissions">
+    Who can change billing.
   </Card>
-  <Card title="Roles + permissions" icon="key" href="/workspace-settings/roles-and-permissions">
-    Who in your workspace can spend credits.
+  <Card title="Enrichment" icon="sparkles" href="/audience/enrichment">
+    Choose which enrichment steps run automatically.
   </Card>
 </CardGroup>

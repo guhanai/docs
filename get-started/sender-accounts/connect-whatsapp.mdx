@@ -1,146 +1,82 @@
 ---
 title: Connect WhatsApp
-description: Add WhatsApp as a sender for prospect outreach or Ask Guhan on your phone.
+description: Connect WhatsApp by scanning a QR code, to send messages to prospects and to chat with Guhan from your phone.
 ---
 
-**Connect WhatsApp for outbound to prospects — OR to chat with Guhan from your phone. (Or both.)**
+**Connect WhatsApp by scanning a QR code, the same way you link WhatsApp Web. Use it to send to prospects, to talk to Guhan from your phone, or both.**
 
-WhatsApp has the highest reply rate of any channel Guhan supports — prospects treat it as personal, not marketing. Daily volume is lower (~40 messages/day) but engagement per message is much higher.
+## What you need
 
-Connecting also unlocks **Ask Guhan on your phone** — chat with your workspace by messaging Guhan on WhatsApp.
+- A phone with WhatsApp installed (personal or Business).
+- A minute to scan a QR code.
 
-## Two use cases
-
-<CardGroup cols={2}>
-  <Card title="Outreach sender" icon="paper-plane">
-    Guhan sends WhatsApp messages to prospects as part of a sequence.
-  </Card>
-  <Card title="Ask Guhan on the go" icon="mobile">
-    Chat with your workspace from your phone — "show me today's replies" via WhatsApp.
-  </Card>
-</CardGroup>
-
-The connection flow is the same for both — you connect once, then decide what the sender does.
-
-## What you'll need
-
-- Your phone with **WhatsApp installed** (personal WhatsApp or WhatsApp Business, both work)
-- **60 seconds** to scan a QR code
-
-<Note>
-  Same secure OAuth substrate as LinkedIn and email. Nothing goes through Meta's Cloud API — no template pre-approval, no Business Manager setup.
-</Note>
+WhatsApp is treated as a personal channel. Use it for people who have already replied or agreed to hear from you, not for cold outreach.
 
 ## Steps
 
 <Steps>
-  <Step title="Go to Settings → Sender accounts → + Connect">
-    Sidebar → Settings → Sender accounts. Click **+ Connect** in the top-right.
+  <Step title="Open Sender accounts">
+    Settings, Sender accounts, then **Connect**. You can also connect from your profile under My sender accounts.
   </Step>
   <Step title="Pick WhatsApp">
-    From the provider grid.
+    The dialog shows how many senders you have used out of your limit. Click **Continue authentication**.
   </Step>
-  <Step title="Scan the QR code with your phone">
-    A QR code appears in the browser. On your phone:
-
-    - **WhatsApp** → Settings → **Linked Devices** → **Link a Device**
-    - Scan the QR code on screen
-
-    Same flow as connecting WhatsApp Web.
+  <Step title="Scan the QR code">
+    On your phone, open WhatsApp, go to Settings, Linked Devices, Link a Device, and scan the code on screen. Codes expire quickly. If yours does, generate a new one.
   </Step>
-  <Step title="Confirm the connection">
-    Once scanned, your browser shows "Connected — verifying…" for 5-10 seconds. Then the sender appears in your list with an **Active** dot.
-  </Step>
-  <Step title="Choose what this WhatsApp account does">
-    Two toggles on the sender's row:
-    - **Use for outreach** — Guhan can use this WhatsApp for outbound sequence steps
-    - **Enable Ask Guhan on WhatsApp** — turns your own WhatsApp into a chat interface for your workspace. You send a message to *yourself* (your own number) and Guhan replies in that chat.
-
-    You can enable both.
+  <Step title="Confirm it is active">
+    After a short check, the sender appears with an **Active** badge.
   </Step>
 </Steps>
 
-## Daily limits
+{/* SCREENSHOT: connect-whatsapp-qr — QR code step of the WhatsApp connection */}
 
-WhatsApp has the tightest safety limits of any channel:
+## Sending to prospects
 
-| Setting | Default | Adjustable up to |
-|---|---|---|
-| Messages per day | 40 | 100 |
-| Messages per hour | 10 | 15 |
+Add a WhatsApp step to a campaign and choose this sender. The prospect needs a phone number on their record. If a prospect has no phone number, the step cannot send. You can reveal phone numbers from the prospect list. See [Enrichment](/audience/enrichment).
+
+Every WhatsApp message goes out from your own number as a one-to-one chat. Replies come back to your Inbox.
+
+WhatsApp has the lowest daily limit of any channel. See [Sending safety](/campaigns/sending-safety).
 
 <Warning>
-  WhatsApp doesn't use Meta's Cloud API (no template pre-approval required) but your personal/business account can still get temporarily banned if you send high-volume outreach. Stick close to defaults.
+  Sending a lot of unsolicited WhatsApp messages can get your number restricted by WhatsApp. Stay near the defaults.
 </Warning>
-
-## What Guhan sends
-
-Every WhatsApp message is:
-- **Generated per prospect** — no template blasts
-- **Sent from your name + your WhatsApp number**
-- **A real 1:1 conversation** — prospects reply back to you directly
-
-Guhan reads incoming replies + drops them in your Inbox like any other channel.
-
-## Prospect must have a phone
-
-WhatsApp requires the prospect to have a phone number. If Guhan doesn't have their phone yet:
-- Guhan reveals it at send time via a phone lookup (costs 12 credits)
-- OR skips this step if the reveal fails (no phone number found)
-
-Enable phone reveal on your workspace's Auto-reveal settings if you want Guhan to proactively look up phones as prospects land.
 
 ## Ask Guhan on WhatsApp
 
-If you enabled **Ask Guhan on WhatsApp** on your WhatsApp sender's row, chatting from your phone works via a **self-message** — you open a WhatsApp thread with your own phone number, type a question, and Guhan replies in that thread.
+Open the account's settings and turn on **Conversation agent on WhatsApp**. Then message your own number from your phone. Guhan answers in that chat, with the same abilities as the in-app chat. See [Ask Guhan](/ask-guhan).
 
-```
-You:   Show me today's replies
-Guhan: [message thread]
+Only messages you send to yourself are picked up. Messages to prospects or contacts are never intercepted.
 
-You:   How many prospects landed today?
-Guhan: 8 prospects landed today across your 2 active Lists. Want the breakdown?
-```
+## Disconnecting and reconnecting
 
-Same commands as the web chat — see [Ask Guhan concept](/ask-guhan) for the full list.
+Use the account's menu, **Disconnect**, or unlink Guhan from your phone under WhatsApp, Settings, Linked Devices. If WhatsApp ends the linked session, the sender shows a status that needs attention and Guhan cannot send until you reconnect and scan a fresh QR code. See [Sender accounts](/get-started/sender-accounts/overview#sender-status).
 
-<Tip>
-  Ask Guhan only fires on **self-messages** (you texting your own number). Messages you send to actual prospects or contacts go out normally — Guhan doesn't intercept them. This is why the toggle exists at the sender-account level rather than a keyword prefix.
-</Tip>
+## If something's off
 
-## Disconnecting
-
-Settings → Sender accounts → [WhatsApp account] → **Disconnect**.
-
-This:
-- Immediately stops all outreach through this WhatsApp
-- Ends the Ask-Guhan-on-WhatsApp session
-- Doesn't affect your WhatsApp app itself — just removes Guhan's linked-device session
-
-You can also unlink from your phone: WhatsApp → Settings → Linked Devices → Guhan → Log out.
-
-## Reauth
-
-If WhatsApp's linked-device session expires (usually after 30 days of inactivity), Guhan can't send.
-
-- Banner at the top of the app: "Your WhatsApp account needs to reconnect"
-- Settings → Sender accounts → [account] → **Reconnect** → scan QR again
-
-Takes 30 seconds.
-
-## What if the QR code times out?
-
-QR codes expire after 60 seconds. If yours does:
-- Click **Regenerate QR** in the modal
-- Scan the fresh one
+<AccordionGroup>
+  <Accordion title="The QR code expired">
+    Generate a new code and scan it again.
+  </Accordion>
+  <Accordion title="A step did not send">
+    The prospect may have no phone number, or the sender may need reconnecting. Check the prospect record and the sender's status.
+  </Accordion>
+  <Accordion title="Ask Guhan does not reply on WhatsApp">
+    Check that the toggle is on for that account, and that you are messaging your own number rather than another chat.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="Connect LinkedIn" icon="linkedin" href="/get-started/sender-accounts/connect-linkedin">
-    LinkedIn setup.
+<CardGroup cols={3}>
+  <Card title="Ask Guhan" icon="comments" href="/ask-guhan">
+    What you can ask from your phone.
   </Card>
-  <Card title="Connect email" icon="envelope" href="/get-started/sender-accounts/connect-email">
-    Gmail + Outlook setup.
+  <Card title="Sender accounts" icon="paper-plane" href="/get-started/sender-accounts/overview">
+    Limit and statuses.
+  </Card>
+  <Card title="Sending safety" icon="shield-halved" href="/campaigns/sending-safety">
+    WhatsApp limits.
   </Card>
 </CardGroup>

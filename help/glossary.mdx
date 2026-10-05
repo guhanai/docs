@@ -1,124 +1,94 @@
 ---
 title: Glossary
-description: Every term Guhan uses.
+description: Guhan's terms in plain English.
 ---
-
-**Every Guhan-specific word, in plain English. Use this as a cheat sheet when you hit an unfamiliar term.**
 
 ## A
 
-**Ask Guhan** — the chat interface. Type questions, run actions, or build agents in natural language.
+**Ask Guhan** — the chat assistant for your workspace. Ask questions or assign work in plain language. It can't delete anything.
 
-**Auto-enroll** — a setting on an Campaign. When ON, new prospects landing in the bound List get enrolled automatically. When OFF, you approve each enrollment.
+**AI-drafted message** — a message Guhan writes for a specific prospect. Costs 1 credit. Compare **Fixed message**.
 
 ## B
 
-**Brand & Voice** — settings page for how Guhan should sound. Industry, tone, voice, competitors, templates, products.
+**Brand & Voice** — where you set how Guhan sounds: tone, things to never include, and your products.
 
-**Brief** — a short description of what a message should say. You write the intent; Guhan writes the actual per-prospect words.
+**Brief** — a short description of what a step should say. You give the intent; Guhan writes the actual words for each prospect.
 
 ## C
 
-**Company** — an organization record. Every prospect ties to a Company. Companies have industry, headcount, HQ, and signals.
+**Campaign** — the unit that does the outreach. A Campaign uses one or more Lists and runs a sequence across your channels.
 
-**Credit** — Guhan's unit of billing. 1 credit = 1 landed prospect OR 4 credits = 1 email reveal OR 12 = 1 phone reveal OR 1 = 1 AI reply draft.
+**Company** — an organization record. Every prospect belongs to one. You can block a company, which adds its domain to Do-Not-Contact.
 
-**CTA** — call to action. The ask in your message.
+**Credit** — the unit Guhan spends on finding, enriching, and writing. Sending is free. See [Plans and credits](/workspace-settings/plans-and-credits) for costs.
 
 ## D
 
-**Do Not Contact (DNC)** — a workspace-level block list. Guhan will never message anyone on it.
+**Do-Not-Contact (DNC)** — a workspace block list of email addresses and domains. See [Do not contact](/workspace-settings/do-not-contact).
 
-**Dedup / Deduplication** — Guhan skips prospects already in your workspace, so no one gets messaged twice.
+**Draft** — a Campaign that hasn't been launched, or a message waiting for your approval.
 
 ## E
 
-**Enrichment** — pulling a prospect's full LinkedIn profile (headline, posts, past roles) so Guhan can personalize.
+**Enrichment** — pulling more detail about a prospect or company, such as the full profile, recent posts, a work email, or a phone number, so Guhan can personalize. See [Enrichment](/audience/enrichment).
 
-**Enrollment** — a specific prospect being placed into a specific Campaign's sequence.
+**Enrollment** — one prospect being placed in one Campaign's sequence.
 
 ## F
 
-**Fit chip** — the Strong / Moderate / Weak tag Guhan's research agent assigns every landed prospect, based on how well they match what you sell. Sortable on every prospect table.
+**Fit** — Guhan's assessment of how well a prospect matches what you sell, shown as Strong, Moderate, or Weak.
+
+**Fixed message** — a step that sends your exact text with variables like the prospect's name filled in. Not AI-drafted, so it doesn't cost an AI-message credit.
 
 ## H
 
-**Handoff** — when Guhan pauses its automation and drops a task in your Inbox for you to handle.
-
-**Headcount** — company employee count. Used in ICP filtering.
-
-**HQ country** — where a company is headquartered. Different from a prospect's location (where they live/work).
+**Handoff** — a point where Guhan stops automating and gives the conversation to a person. Modes include notify, approve, decide, take over, and schedule.
 
 ## I
 
-**ICP** — Ideal Customer Profile. Your description of who you sell to.
+**ICP** — Ideal Customer Profile: who you sell to.
 
-**In-flight** — a prospect currently mid-sequence (received one message, waiting for the next, hasn't exited).
-
-**Inbox** — the tasks page. Where Guhan hands things back to you.
-
-**Invite** — a LinkedIn connection request. First step of most outbound sequences.
+**Inbox** — where replies and tasks that need you appear.
 
 ## L
 
-**Land / Landed** — a prospect that passed every filter on a source and got added to your List. This is what you're billed 1 credit for.
+**Land** — when a prospect passes your filters and is added to a List.
 
-**List** — a bucket of prospects. A List can be fed by any combination of sources (search criteria, buying signals, competitor engagement, another List, CSV, manual). An Campaign then drains it.
+**License** — the unit you buy. One license is one team seat, one sender account, and 2,000 monthly credits.
 
-## M
-
-**Message agent** — the LLM that drafts your outbound messages. Reads Brand & Voice + prospect profile + step context.
-
-## N
-
-**Node** — a step on the sequence canvas. Send / wait / branch / handoff / AI reply / etc.
-
-## O
-
-**Campaign** — the messaging half of Guhan. Sends personalized outreach to prospects from a List via a sequence.
+**List** — a collection of prospects. A List is filled by one or more signal sources, a CSV, or by copying from another List. Campaigns draw from Lists. See [Lists](/audience/lists).
 
 ## P
 
-**Persona** — a shorthand for a specific type of prospect (e.g., "Enterprise VPs of Sales").
+**Product** — a description of something you sell, including its value proposition. Messages draw on it. Set under Brand & Voice.
 
-**Prospect** — one person you're reaching out to. A real human tied to a Company.
-
-**Pipeline (prospect pipeline)** — the 5-stage flow from LinkedIn search to landed prospect. Search → enrich → score → dedupe → land.
+**Prospect** — one person Guhan is reaching out to.
 
 ## Q
 
-**Quota** — daily / weekly cap on how many actions a sender account can take. LinkedIn: 25 invites/day, 30 DMs/day (defaults).
+**Quota** — a daily or weekly cap on how many actions a sender account can take.
 
 ## R
 
-**Reauth** — re-signing in via OAuth when a sender's token expires.
+**Reauthorize** — reconnecting a sender account whose connection expired.
 
-**Research brief** — the rich account-research paragraph (10-14 sentences) Guhan's research agent writes about each prospect. Used by the message agent to personalize.
+**Read-only mode** — what a workspace enters when its trial ends without a subscription or a failed renewal isn't fixed in time. Sweeps and sends stop; your data is kept.
+
+**Research brief** — a short write-up Guhan produces about a prospect to personalize messages and assess fit. Costs 1 credit.
 
 ## S
 
-**Sender account** — one of your connected LinkedIn / email / WhatsApp accounts that Guhan uses to send.
+**Sender account** — a LinkedIn, email, or WhatsApp account Guhan sends from.
 
-**Sequence** — the step-by-step flow that runs for every prospect enrolled in an Campaign.
+**Sequence** — the steps a Campaign runs for each prospect: sends, waits, conditions, handoffs, and exits.
 
-**Signal** — a real-world event (funding, hiring, engagement) that triggers a List's signal source to find prospects.
+**Signal** — a real-world event, such as new funding, hiring growth, or posting about a topic, that makes someone worth reaching out to now. See the [signal catalog](/audience/lists/signal-catalog).
 
-**Source** — a discovery configuration on a List. A List can have zero, one, or many sources. Types include search criteria, buying signals, competitor engagement, another List, CSV upload, and manual add.
+**Signal source** — a discovery rule on a List: who to look for, plus an optional signal. A List can have several, and each source uses one signal.
 
-**Sweep** — one discovery run against a source on a List. Usually happens once per day per signal.
+**Sweep** — one discovery run for a signal source.
 
 ## T
 
-**Template** — a reusable brief you can start any Send step from. Lives in Brand & Voice.
-
-**Trigger** — synonym for Signal. What causes a prospect to become worth reaching out to now.
-
-**Turn** — one step in the onboarding wizard.
-
-## W
-
-**Warm-up** — the 30-day ramp for new sender accounts. Starts at 30% of daily caps, grows to 100% over 30 days.
-
-**WHO panel** — the ICP fields on a List's search-criteria source (title, location, industry, size).
-
-**WHEN panel** — the signals section on a List.
+**Template** — a reusable starting brief for a step. See [Templates](/brand-and-voice/templates).

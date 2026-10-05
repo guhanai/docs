@@ -1,120 +1,68 @@
 ---
 title: Workspace settings
-description: Every tab under Settings, what it controls, and when you'd use it.
+description: What lives under Settings, who can see it, and where to go for each task.
 ---
 
-**Settings is everything about your workspace itself — name, teammates, sender accounts, billing, integrations. Everyone-in-one-place plumbing.**
+Settings is the plumbing for your workspace: sender accounts, calendars, sending rules, the block list, your team, billing, enrichment defaults, and workspace identity. Open it from **Workspace settings** at the bottom of the sidebar.
 
-Open from the gear icon at the bottom of the sidebar.
+Some rows are visible only to org admins. Everyone else sees **Sender accounts**, **Calendars**, and **Team**.
 
-## General
-
-- **Workspace name** — how your workspace shows in the sidebar and on invites
-- **Workspace slug** — the URL fragment (e.g., `guhan.ai/acme` where "acme" is the slug)
-- **Time zone** — used for sending windows, sweep schedules, and Meetings display
-- **Delete workspace** — permanent; contact support to restore
-
-## Members
-
-Manage who has access.
-
-- **Invite** — send an email invite; pick a role
-- **Change role** — promote / demote a teammate
-- **Remove** — offboard a teammate (their sender accounts stay but need reassignment)
-- **Pending invites** — resend or revoke
-
-## Roles
-
-Beyond the 3 built-in roles (Workspace Admin, Campaign Manager, Sales Rep), you can create custom roles with granular permissions.
-
-Built-ins:
-- **Workspace Admin** — full access
-- **Campaign Manager** — create + edit + launch agents; can't delete workspace records or manage billing
-- **Sales Rep** — see + reply to assigned prospects only
-
-See [Roles and permissions](/workspace-settings/roles-and-permissions) for details.
+{/* SCREENSHOT: settings-index — the Settings index page listing every row */}
 
 ## Sender accounts
 
-Every LinkedIn / email / WhatsApp account Guhan uses to send.
-
-- **+ Connect** — add a new sender
-- **Reauth** — re-authorize when OAuth expires
-- **Schedule** — set the sender's active hours + timezone + weekdays
-- **Quotas** — adjust per-action daily caps
-- **Owner** — reassign to a teammate
-- **Disconnect** — remove; pauses any in-flight sequences using this sender
-
-See [Sender accounts](/get-started/sender-accounts/overview) for concept + safety detail.
+The LinkedIn, email, and WhatsApp accounts Guhan sends from. Connect, reauthorize, edit active hours, and reassign owners here. Every license includes one sender slot; extra senders are an add-on. See [Sender accounts](/get-started/sender-accounts/overview) and [Sending safety](/campaigns/sending-safety).
 
 ## Calendars
 
-Connect your calendar for meeting bookings.
+Booking calendars and scheduling links, plus workspace-level meeting defaults. Individual team members can also connect their own calendar from **Profile → My calendars**. See [Calendar integrations](/meetings/calendar-integrations).
 
-- **Google Calendar** — native OAuth
-- **Outlook Calendar** — native OAuth
-- **Cal.com** — paste your booking URL
-- **Calendly** — paste your booking URL
+## Sending & Reply Rules
 
-Configure meeting duration, buffer time, meeting title template, available hours.
+Admin only. Set working hours and time zone per channel, daily caps, and blackout windows. This page is also where you choose how Guhan handles replies when a sequence has no AI reply step:
 
-See [Meetings](/meetings/overview) for the full flow.
+- **Escalate to a user** — every reply becomes a task in the Inbox.
+- **AI drafts, user approves** — Guhan drafts a reply for you to approve, edit, or reject.
+- **AI drafts and auto-sends** — Guhan sends without approval. Use this only once you trust the tone.
 
-## Do Not Contact (DNC)
+Meeting requests always go to a person, whichever you choose. See [Sending safety](/campaigns/sending-safety) and [Handle replies](/inbox/handle-replies).
 
-The workspace-wide block list.
+## Do-Not-Contact list
 
-- **Emails** — specific email addresses to never message
-- **LinkedIn URLs** — specific people to never message
-- **Domains** — every prospect at this domain gets auto-blocked (add your own domain here so you don't outreach yourself)
-- **Companies** — LinkedIn company URLs; auto-blocks all their employees
+Admin only. Blocked email addresses and domains. See [Do not contact](/workspace-settings/do-not-contact).
 
-Enforced globally across every agent.
+## Team
 
-## Data sources
-
-Guhan's data pipelines that power discovery, enrichment, and sender OAuth. All fully managed — nothing for you to configure.
-
-- **Discovery** — the pipelines that find prospects matching your ICP + buying signals
-- **Enrichment** — verified email + phone reveal on demand
-- **Sender OAuth** — the secure connection layer for your LinkedIn, Email, and WhatsApp senders
-
-You'll see connection status here. There's nothing to buy separately — everything is included in your Guhan plan.
+Members, invites, and roles. See [Roles and permissions](/workspace-settings/roles-and-permissions).
 
 ## Billing
 
-Manage your plan + credits + payment method.
+Admin only. Your plan, licenses, credit balance, credit packs, sender add-ons, and where credits went. See [Plans and credits](/workspace-settings/plans-and-credits).
 
-- **Current plan** — Starter / Growth / Scale + current billing cycle
-- **Credit balance** — monthly grant + top-up pool + last 50 ledger entries
-- **Buy credit pack** — top up with a 200 / 1,000 / 2,000 credit pack
-- **Change plan** — upgrade (immediate) or downgrade (at cycle end)
-- **Payment methods** — cards + billing address
-- **Invoices** — download past invoices
-- **Cancel subscription** — takes effect at cycle end
+## Enrichment settings
 
-See [Plans and credits](/workspace-settings/plans-and-credits) for the full pricing overview.
+Admin only. The workspace defaults for which enrichment steps run on newly landed prospects: profile, recent posts, work email, phone, company profile, company posts, and research brief. Each shows its credit cost. A List can override these defaults. See [Enrichment](/audience/enrichment).
 
-## Notifications
+## Workspace & advanced
 
-Configure how Guhan pings you.
+Admin only. Rename the workspace, change its URL slug (old links keep working), and edit workspace identity. Org admins can also turn on multiple workspaces here and create or delete workspaces.
 
-- **Real-time** — new Inbox task, meeting request, sender reauth needed
-- **Daily digest** — 8am summary
-- **Weekly summary** — Monday morning stats
-- **Channels** — email / in-app / SMS / WhatsApp (if you enabled Ask Guhan on WhatsApp)
+<Warning>
+  Deleting a workspace is permanent. Members lose access, and its campaigns, lists, and messages are removed.
+</Warning>
 
-## API keys (Advanced)
+## Elsewhere
 
-For programmatic access — currently limited to a few internal use cases. Contact hello@guhan.ai if you need API access.
+- **API keys** live under **Profile → API keys**, not Settings. See [API and MCP](/workspace-settings/api-and-mcp).
+- **Brand & Voice** and **Products** have their own sidebar pages. See [Brand & Voice](/brand-and-voice/overview).
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Plans and credits" icon="coins" href="/workspace-settings/plans-and-credits">
-    What credits cost + how to buy more.
+    Pricing, credit costs, and packs.
   </Card>
   <Card title="Roles and permissions" icon="key" href="/workspace-settings/roles-and-permissions">
-    Built-in roles + custom-role builder.
+    Who can do what.
   </Card>
 </CardGroup>

@@ -1,104 +1,68 @@
 ---
 title: Reviewing prospects
-description: What to check after your first landing + how to tighten if Guhan is picking the wrong people.
+description: What to check after the first prospects land in a List, and how to tighten your rules if Guhan is picking the wrong people.
 ---
 
-**Prospects are landing in your List. Here's what to check — and what to tighten if Guhan is picking the wrong people.**
+**Check the first batch before you point a Campaign at the List.** A few minutes now is cheaper than messaging the wrong people.
 
-Give discovery 20 minutes after you add the first source. Then start reviewing.
+## Check the List
 
-## The List detail page
+Open the List from **Lists** in the sidebar.
 
-Top of the page:
+1. **Prospects tab**: scan the table. Sort by **Fit score** to see the strongest matches first. Do the names, titles and companies look like who you meant?
+2. **Sources tab**: look at the watch activity. It shows how many profiles were found, landed and rejected. Click into a watch to see each profile under **Landed**, **Rejected** and **In flight**.
+3. **Rejected**: open a few. If Guhan rejected people you wanted, the reason tells you which rule is too strict. See [How prospects land](/audience/lists/how-prospects-land#why-someone-did-not-land).
 
-- **Today's discovery** — landed count + filtered count + running count
-- **In-flight** — how many are being processed right now
-- **Enriched** — how many have their LinkedIn profile fully pulled
+{/* SCREENSHOT: list-sources-tab — Sources tab with watch activity and the watch history sheet open */}
 
-Below:
-- **Prospect table** — every prospect in the List, filterable + searchable + exportable
-- **Sources panel** — every source feeding this List, with per-source counts
-- **Sweep history** — click any row → drill into that specific discovery run's prospects
+## Open a prospect
 
-### The Filtered accordion
+Click a row to open the prospect. The tabs are:
 
-Every prospect Guhan considered but rejected shows here with a plain-English reason:
+- **Details**: name, role, contact fields, company and location. Most fields can be edited in place.
+- **Overview**: contact channels, company, **Signals: why we matched** (the post, hire or event that brought them in), List memberships, and role and experience.
+- **Research**: the research brief, the fit chip and score, and a rating per Product if you have several.
+- **Activity**: messages and replies, once a Campaign starts.
 
-- **Wrong job title** — their title didn't match
-- **Wrong location** — outside your regions
-- **Company / Page (not a person)** — LinkedIn returned a Page or Company ID
-- **Competitor employee** — works at one of your competitors
-- **Do Not Contact** — on your DNC list
-- **Already in your workspace** — you've found them before
-- **No reachable identity** — no LinkedIn URL / email / phone
+Ask: **would I send this person a personalised message right now?**
 
-**Read a few filtered prospects.** If Guhan is rejecting people you think should qualify, one of your filters is too strict. Common finds:
+- **Yes**: keep them.
+- **No**: take them out of outreach (see [Prospects](/audience/prospects#removing-a-prospect)), add them to [Do Not Contact](/workspace-settings/do-not-contact) if you never want to reach them, and tighten the source's rules so similar people do not come back.
 
-- Titles filter too narrow — expand with more variants
-- Location filter set to a city when you wanted the country
-- Industry set to a specific sub-category when a broader one fits
-- Hard gates too strict — flip industry or headcount from Required to Nice-to-have
+## Tighten the rules
 
-## Prospect detail page
-
-Click any prospect to open their detail page:
-
-1. **Header** — name, current title + company, LinkedIn profile link
-2. **Fit chip** — Strong / Moderate / Weak from Guhan's research agent
-3. **Research brief** — the rich SDR-quality summary Guhan wrote about them (10-14 sentences of actual account research)
-4. **Per-product fit breakdown** — one row per product with its own tier + reason
-5. **Contact channels** — LinkedIn URL, email (or Reveal button), phone (Reveal button)
-6. **Source panel** — which source (search criteria / signal / competitor / CSV) brought them in
-7. **Timeline** — every message + reply + event (empty until you start messaging)
-8. **Company card** — their employer
-
-Ask yourself: **would I send them a personalized message right now?**
-
-- **Yes** → they're a good match. Keep them in the List.
-- **No** → they slipped through your filters. Options:
-  - Add them to Do Not Contact so they don't come back
-  - Tighten the source's hard gates
-  - Just remove them from the List (right-click → Remove)
-
-## Sort by fit tier
-
-Every prospect table is sortable by **Fit tier (Strong→Weak)** — the default sort. Work your Strong prospects first, then Moderate, then decide whether to reach out to Weak.
-
-## Common early surprises
+Open **Edit** on the List to change the source. Common fixes:
 
 <AccordionGroup>
-  <Accordion title="'Guhan found 100 people but only 20 look right'">
-    The fit chip is doing its job — you probably have 20 Strong, 40 Moderate, 40 Weak. Work the Strong first. If the Moderate rate is too high, tighten your hard gates (add industry or headcount as required).
+  <Accordion title="Wrong seniority">
+    Your job titles may be missing the wording people actually use. "Sales Director" and "Director of Sales" are different strings. Use **Suggest variants** to add the forms you want, and set the **Seniority** rule.
   </Accordion>
-  <Accordion title="'All 30 prospects are the wrong seniority'">
-    Your job titles filter is missing the seniority word. "Sales Director" isn't the same as "Director of Sales" — they can match different LinkedIn results. Add explicit variants.
+  <Accordion title="Wrong industry">
+    "Software Development" covers a lot. Pick a narrower industry, add a headcount range, or use a signal to narrow further.
   </Accordion>
-  <Accordion title="'Everyone's from the wrong industry'">
-    Your industry filter is too broad. "Software Development" catches all SaaS + non-SaaS software. Add a more specific sub-industry OR add a signal source that narrows further.
+  <Accordion title="Wrong location">
+    A city rule only matches that city. Use the country if you meant the country.
   </Accordion>
-  <Accordion title="'Most prospects don't have an email'">
-    Normal — LinkedIn hides emails by default. Guhan reveals them at send time (costs 4 credits per reveal) OR you can enable auto-reveal at landing (Settings → Auto-reveal, uses more credits per landed prospect).
+  <Accordion title="Almost nobody lands">
+    Every rule you fill in is required, so a long list of rules can leave very little. Remove the ones you do not strictly need. The reasons under **Rejected** show which rule is rejecting the most.
   </Accordion>
-  <Accordion title="'The discovery run found nobody'">
-    Your filters are too strict. Loosen a signal, remove HQ country filter, or add more title variants. Check the Filtered accordion — if it shows N filtered, your filters are running but rejecting everyone.
+  <Accordion title="Most prospects have no email">
+    Email and phone are not included by default. You can [reveal them](/audience/enrichment#reveal-email-and-phone) for 4 and 12 credits each, or turn on reveal in your enrichment options.
+  </Accordion>
+  <Accordion title="Mostly Moderate or Weak fit">
+    The List is matching your rules but not what you sell. Rewrite the search around your real customer, or pair it with a signal that is closer to buying intent. Also check that your [Brand & Voice](/brand-and-voice/overview) and [Products](/brand-and-voice/products) describe who you sell to, because the fit rating is based on them.
   </Accordion>
 </AccordionGroup>
 
-## After the first few discovery runs
-
-Once you've seen 50–100 prospects:
-
-- **Mostly Strong fits?** → do nothing, let it run daily.
-- **Mostly Moderate?** → tighten your hard gates (make industry or headcount required).
-- **Mostly Weak?** → your source's WHO panel doesn't match your real ICP. Rewrite the search criteria from scratch, or add a signal source that filters more tightly.
+Rule changes apply to future runs. They do not remove people already in the List.
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="How Guhan scores prospects" icon="chart-simple" href="/audience/lists/how-scoring-works">
-    The fit chip and the hard gates.
+  <Card title="How prospects land" icon="filter" href="/audience/lists/how-prospects-land">
+    Filters, the fit chip and rejection reasons.
   </Card>
-  <Card title="Prospect pipeline" icon="filter" href="/audience/lists/prospect-pipeline">
-    The full flow from search to landed.
+  <Card title="Prospects" icon="users" href="/audience/prospects">
+    The prospect record, statuses and contact reveal.
   </Card>
 </CardGroup>
