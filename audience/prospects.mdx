@@ -20,10 +20,39 @@ The table shows name, job title, company, location, email, phone, fit, status an
 
 - **Filter** with rules: job title, company, location, email, phone, LinkedIn URL, status, List, signal source and Campaign. Rules combine with "and".
 - **Edit in place**: click a cell to edit name, title, company, location, email or phone. Editing a company detail such as industry or size changes it for the company record, and so for every prospect there.
+- **Select people**: tick rows, or tick the box in the column header to select the whole page. When more people match your filters than fit on a page, a bar appears: **Select all N matching your filters**. That selects everyone who matches, across pages, up to 10,000. Changing a filter clears the selection.
+- **Add to list**: with people selected, choose **Add to list** to put them in another List, for example to start a new Campaign with a filtered group. Pick a List that is not fed by a search or signal, or create a new one. Anyone already in that List is skipped. See [Add people to a List](#add-people-to-a-list).
 - **Export CSV**: exports the filtered view, or only the rows you selected. Up to 10,000 prospects per export; narrow your filters if you have more.
 - **Rejected people**: by default the table shows people who were added to your Lists. Add the **Include pipeline-rejected** filter to see people Guhan found but filtered out. See [How prospects get added](/audience/lists/how-prospects-get-added#why-someone-was-not-added).
 
 {/* SCREENSHOT: prospects-people-tab — People tab with toolbar, filters and a few rows */}
+
+### Add people to a List
+
+Filter the table to the group you want, select them, and click **Add to list**.
+
+<Steps>
+  <Step title="Select people">
+    Tick rows, or select the whole page and then **Select all N matching your filters**.
+  </Step>
+  <Step title="Choose the List">
+    Pick an existing List, or **Create new list**. Lists that are fed by a search or signal are greyed out, because Guhan fills those itself.
+  </Step>
+  <Step title="Confirm">
+    Guhan tells you how many were added and how many were already in the List. Their fit rating and research come with them, so nothing is rewritten or charged again.
+  </Step>
+</Steps>
+
+<Note>
+  If the List is the audience of an active Campaign, the dialog says so. New people added to it are enrolled in that Campaign automatically and can start receiving messages.
+</Note>
+
+Adding more than 500 people runs in the background. A progress banner appears on the List's page.
+
+Adding people counts toward your [active-prospect limit](/audience/lists#limits-on-a-list). If you are near the limit, only the people who fit are added and Guhan tells you how many were left out.
+
+{/* SCREENSHOT: add-to-list-dialog — Add to list dialog with a List picked and the active-campaign note showing */}
+{/* SCREENSHOT: select-all-matching-bar — Prospects table with a full page selected and the Select all N matching bar */}
 
 ### Status
 
