@@ -46,12 +46,12 @@
           {
             "group": "Find prospects",
             "pages": [
+              "audience/prospects",
+              "audience/import-leads",
               "audience/lists",
-              "audience/lists/add-prospects",
               "audience/lists/signal-catalog",
               "audience/lists/how-prospects-land",
               "audience/lists/review-prospects",
-              "audience/prospects",
               "audience/companies",
               "audience/enrichment"
             ]
@@ -126,11 +126,11 @@
     },
     {
       "source": "/agents/watchlist-agents/create",
-      "destination": "/audience/lists/add-prospects"
+      "destination": "/audience/import-leads"
     },
     {
       "source": "/agents/watchlist-agents/configure-icp",
-      "destination": "/audience/lists/add-prospects"
+      "destination": "/audience/import-leads"
     },
     {
       "source": "/agents/watchlist-agents/signals",
@@ -227,6 +227,10 @@
     {
       "source": "/meetings/schedule",
       "destination": "/meetings/overview"
+    },
+    {
+      "source": "/audience/lists/add-prospects",
+      "destination": "/audience/import-leads"
     }
   ],
   "navbar": {
