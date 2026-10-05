@@ -15,7 +15,7 @@ Discovery runs enrich new prospects automatically using your enrichment settings
 | **Fetch prospect's recent posts** | Their last 30 days of LinkedIn posts (up to 5) | 0.25 |
 | **Enrich company profile** | Industry, headcount, HQ, founded year, description | 1 |
 | **Fetch company's recent posts** | The company's last 30 days of posts (up to 5) | 0.25 |
-| **Generate research brief + fit score** | A written brief and the Strong / Moderate / Weak fit chip | 1 |
+| **Generate research brief + fit score** | A written brief and the Strong / Moderate / Weak fit rating | 1 |
 | **Reveal work email** | A verified work email | 4 |
 | **Reveal phone number** | A direct mobile number | 12 |
 
@@ -67,7 +67,7 @@ The enrichment options in step 2 of **Upload CSV** decide what is filled in afte
 
 Email and phone are not included with a LinkedIn profile, so you ask for them.
 
-- Click the **Email** or **Phone** chip on a prospect (it shows the credit cost), use the column wand on the Email or Phone column, or turn the reveal options on for a List.
+- Click **Email** or **Phone** on a prospect (it shows the credit cost), use the column wand on the Email or Phone column, or turn the reveal options on for a List.
 - **You are only charged when a result is found.** No result, no charge.
 - Reveal needs the prospect's LinkedIn URL.
 - Revealing the same prospect again within a day and getting the same value does not charge twice.
@@ -107,7 +107,7 @@ Enrichment is careful not to spend credits twice. A step is skipped when:
 
 <CardGroup cols={2}>
   <Card title="Prospects" icon="users" href="/audience/prospects">
-    The prospect record and reveal chips.
+    The prospect record and the Email and Phone reveal buttons.
   </Card>
   <Card title="Companies" icon="building" href="/audience/companies">
     Enrich and block companies.
