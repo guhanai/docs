@@ -31,13 +31,13 @@ Guhan never auto-replies to a no, an unsubscribe, an out-of-office, or a not-now
 
 ## Reply policy
 
-Settings, Sending, **Reply handling**. This is the default for any step that does not have its own AI reply step on the campaign.
+Settings, Sending & Reply Rules, **Reply handling**. This is the default for any step that does not have its own AI reply step on the campaign.
 
 <CardGroup cols={3}>
   <Card title="Escalate to a user" icon="user">
     Every interested reply and question creates a task in your Inbox. Guhan writes nothing. This is the default.
   </Card>
-  <Card title="AI drafts, user approves" icon="hand-holding">
+  <Card title="AI drafts — user approves before sending" icon="hand-holding">
     Guhan drafts a reply. You see it in the Inbox and approve, edit, or reject it before anything is sent.
   </Card>
   <Card title="AI drafts and auto-sends" icon="wand-magic">
@@ -46,7 +46,7 @@ Settings, Sending, **Reply handling**. This is the default for any step that doe
 </CardGroup>
 
 <Frame caption="Settings, Sending & Reply Rules: how Guhan handles replies">
-  <img src="/images/reply-handling-settings.png" alt="Settings, Sending & Reply Rules: how Guhan handles replies" width="1440" height="900" />
+  <img src="/images/reply-handling-settings.png" alt="Settings, Sending & Reply Rules: how Guhan handles replies" width="1440" height="1300" />
 </Frame>
 
 Auto-send is limited to a single reply per conversation under the workspace policy. If the prospect replies again, or if a send fails, the thread comes to you as a **Take over** task.
@@ -81,7 +81,7 @@ An AI-drafted reply costs 1 credit. Replies you write yourself cost nothing. Whe
 
 <AccordionGroup>
   <Accordion title="A reply I expected Guhan to answer came to me instead">
-    Meeting requests always come to a person. Beyond that, check Settings, Sending, Reply handling, and check whether the campaign has its own AI reply step that overrides it. Auto-send also falls back to you after one reply, on a send failure, or when credits run out.
+    Meeting requests always come to a person. Beyond that, check Settings, Sending & Reply Rules, Reply handling, and check whether the campaign has its own AI reply step that overrides it. Auto-send also falls back to you after one reply, on a send failure, or when credits run out.
   </Accordion>
   <Accordion title="Guhan stopped a sequence and it should not have">
     Reply meaning is read by a model and can be wrong on short or ambiguous messages. Guhan holds back from stopping when it is unsure, but it can still misjudge a clear-sounding reply. Open the conversation in the Inbox and reply yourself.
