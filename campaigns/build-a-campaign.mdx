@@ -36,13 +36,17 @@ description: Create a campaign, set its audience and senders, and build the sequ
   </Step>
 </Steps>
 
-<Frame caption="New campaign: name, audience lists, product, goal, context, senders and re-entry">
-  <img src="/images/new-campaign-sheet.png" alt="New campaign: name, audience lists, product, goal, context, senders and re-entry" width="1440" height="1400" />
-</Frame>
-
 <Tip>
 Want a head start? [Clone](/campaigns/launch-and-manage#clone-a-campaign) an existing campaign, or start message steps from a [template](/brand-and-voice/templates).
 </Tip>
+
+<Frame caption="New campaign: the name, then the audience lists to include and exclude">
+  <img src="/images/cp-new.png" alt="New campaign: the name, then the audience lists to include and exclude" width="1100" height="700" />
+</Frame>
+
+<Frame caption="Further down the same sheet: the senders for each channel, the re-entry switch and Create campaign">
+  <img src="/images/cp-new-senders.png" alt="Further down the same sheet: the senders for each channel, the re-entry switch and Create campaign" width="1100" height="700" />
+</Frame>
 
 ## Change campaign settings later
 
@@ -60,12 +64,16 @@ The sequence editor shows your steps as a top-to-bottom tree. Branching steps sp
 - **Edit a step.** Click the step card, or its pencil icon, to open its settings.
 - **Copy, paste, or delete.** Each card has copy and trash icons. Deleting a step in a straight line offers to bridge the gap or remove everything after it. On a branch, you can keep one path and drop the others. Copy works the same way, and a copied step can be pasted on any connector.
 - **Undo and redo.** Press Cmd+Z / Cmd+Shift+Z (Ctrl on Windows).
-- **Autosave.** Changes save automatically as a draft. The header shows save status and whether the sequence is valid.
+- **Autosave.** Changes save automatically as a draft. The bar above the canvas shows **Editing** and whether the sequence is **Valid**, and has undo and redo buttons, **Test run**, **Discard changes** and a full-screen toggle.
 
 If a step is missing something, its card shows a plain-language error telling you what to fix.
 
-<Frame caption="A draft campaign's sequence in the editor: LinkedIn invite, wait for acceptance, message, wait for a reply, then what happens next. The + buttons add a step">
-  <img src="/images/guided-editor.png" alt="A draft campaign's sequence in the editor: LinkedIn invite, wait for acceptance, message, wait for a reply, then what happens next. The + buttons add a step" width="1440" height="900" />
+<Frame caption="The sequence editor: the bar above the canvas, a + on a connector to add a step, and a step card with its edit, copy and delete icons">
+  <img src="/images/cp-editor.png" alt="The sequence editor: the bar above the canvas, a + on a connector to add a step, and a step card with its edit, copy and delete icons" width="1100" height="700" />
+</Frame>
+
+<Frame caption="The + picker only offers steps that fit. Greyed-out options say why">
+  <img src="/images/cp-plus-menu.png" alt="The + picker only offers steps that fit. Greyed-out options say why" width="1100" height="700" />
 </Frame>
 
 ## Step types
@@ -141,16 +149,20 @@ If a step is missing something, its card shows a plain-language error telling yo
     Each automatic reply uses 1 credit. Replies you approve use it when you click Send. See [AI reply drafts](/inbox/ai-reply-drafts).
   </Accordion>
   <Accordion title="Exit">
-    Ends the prospect's journey and records why: completed, replied, unsubscribed, bounced, do not contact, paused by you, or a custom reason. Several paths can end at the same Exit.
+    Ends the prospect's journey and records why: completed, replied, no response, unsubscribed, bounced, do not contact, paused by you, or a custom reason. Several paths can end at the same Exit.
   </Accordion>
   <Accordion title="Start">
     Where every prospect begins. It has no steps of its own. Clicking it opens the campaign settings sheet described above.
   </Accordion>
 </AccordionGroup>
 
+<Frame caption="A message step: pick the channel and the action, then how the message is written">
+  <img src="/images/cp-node-message.png" alt="A message step: pick the channel and the action, then how the message is written" width="1100" height="700" />
+</Frame>
+
 ## Message modes
 
-Each message step has three modes. Pick one with the tiles at the top of the step settings.
+Each message step has three modes. Pick one with the tiles under **How do you want this message written?** in the step settings.
 
 | Mode | What Guhan sends | Credits |
 |---|---|---|
@@ -163,6 +175,10 @@ Fixed messages can use tokens such as `{{firstName}}`, `{{company}}`, `{{title}}
 Use **Start from template** to fill in a step from your [template library](/brand-and-voice/templates). A template is copied into the step, so later edits to the template do not change steps you already built.
 
 The step settings include a preview: pick one of your prospects and see the draft Guhan would write. More on how drafts are written in [Personalization](/campaigns/personalization).
+
+<Frame caption="Further down the step: preview a draft against one of your prospects, require approval, and reference their posts">
+  <img src="/images/cp-node-options.png" alt="Further down the step: preview a draft against one of your prospects, require approval, and reference their posts" width="1100" height="700" />
+</Frame>
 
 ## Test the sequence
 

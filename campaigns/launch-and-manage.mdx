@@ -27,12 +27,9 @@ Click **Launch** on the campaign page. Guhan checks the campaign first. **Blocke
   <Step title="At least one sender per channel is connected">
     If every sender for a channel has disconnected, reconnect one or add another.
   </Step>
-  <Step title="There are no unsaved changes">
-    Changes you made on the canvas must be saved as part of the launch. If Guhan reports unsaved changes, wait for the save indicator in the editor bar to settle and try again.
-  </Step>
 </Steps>
 
-If the button is disabled or the launch is refused, the message lists exactly what is missing, with a link to fix it.
+If the launch is refused, Guhan shows a **Cannot launch** message that lists what is missing. Fix those items and try again. Unpublished sequence edits do not block a launch: Launch and Resume publish them.
 
 ### Warnings
 
@@ -46,15 +43,25 @@ You can launch with these, but they are worth a look:
 
 Before you click Launch, [preview a message](/campaigns/personalization#preview-before-you-launch) for a real prospect, confirm the sender's [send window and limits](/campaigns/sending-safety) match what you want, and make sure your own company's email domain is on your [Do Not Contact list](/workspace-settings/do-not-contact).
 
+<Frame caption="Launch asks you to confirm before the campaign goes live. Cancel keeps it a draft">
+  <img src="/images/cp-launch-dialog.png" alt="Launch asks you to confirm before the campaign goes live. Cancel keeps it a draft" width="1100" height="700" />
+</Frame>
+
 ## Campaign statuses
 
 | Status | Meaning |
 |---|---|
 | **Draft** | Being built. Nothing sends. |
-| **Active** | Live. Prospects enroll and sends go out inside each sender's window and limits. |
+| **Live** | Running. Prospects enroll and sends go out inside each sender's window and limits. |
 | **Paused** | Sends are held. Prospects stay where they are. |
+| **Done** | The campaign has finished its work. |
+| **Archived** | Put away. It no longer runs. |
 
-The header button changes with the status: **Launch** on a draft, **Pause** on an active campaign, **Resume** on a paused one. Right after launch, the Overview tab shows Guhan finding your first prospects.
+The header button changes with the status: **Launch** on a draft, **Pause** on a live campaign, **Resume** on a paused one. Right after launch, the Overview tab shows Guhan finding your first prospects.
+
+<Frame caption="Statuses in the Campaigns list: Live, Paused and Draft">
+  <img src="/images/cp-list.png" alt="Statuses in the Campaigns list: Live, Paused and Draft" width="1280" height="720" />
+</Frame>
 
 ## How prospects enroll
 
@@ -83,6 +90,10 @@ Click **Pause** and confirm. Sends stop right away. Prospects in flight stay whe
 
 Individual prospects also pause on their own when their sender disconnects, and resume when it is reconnected.
 
+<Frame caption="Pause this campaign: sends stop right away and prospects stay where they are">
+  <img src="/images/cp-pause-dialog.png" alt="Pause this campaign: sends stop right away and prospects stay where they are" width="1100" height="700" />
+</Frame>
+
 ## Edit a live campaign
 
 Active campaigns are view-only, so you cannot change a sequence mid-send by accident.
@@ -102,7 +113,7 @@ Active campaigns are view-only, so you cannot change a sequence mid-send by acci
 When you publish, prospects already in flight move to the new version. If the step a prospect was on no longer exists, they skip ahead to the next step that does. If there is none, their enrollment stops. Prospects who join after you publish follow the new version from the start. Prospects added to the audience while the campaign was paused enroll when you resume.
 
 <Frame caption="Resuming a paused campaign with unpublished edits: publish them or discard them">
-  <img src="/images/resume-diff-dialog.png" alt="Resuming a paused campaign with unpublished edits: publish them or discard them" width="1440" height="900" />
+  <img src="/images/resume-diff-dialog.png" alt="Resuming a paused campaign with unpublished edits: publish them or discard them" width="1100" height="700" />
 </Frame>
 
 ## Test run
@@ -113,9 +124,17 @@ Use **Test run** in the Sequence editor to walk a prospect through the steps and
 
 Open the **...** menu on the campaign page and choose **Clone campaign**. You get a new draft with the same steps, re-entry rules, and senders. The audience is not copied, so pick one before you launch. This stops the copy from contacting the same prospects as the original.
 
+<Frame caption="The ... menu on the campaign page: Clone campaign and Delete campaign">
+  <img src="/images/cp-more-menu.png" alt="The ... menu on the campaign page: Clone campaign and Delete campaign" width="1100" height="700" />
+</Frame>
+
 ## Delete a campaign
 
-Open the **...** menu and choose **Delete campaign**. Active campaigns cannot be deleted, so pause first. The confirmation shows what will be removed: enrolled prospects, conversation threads, message records, open tasks, and meetings. Deleting is permanent. Prospects stay on your lists; only this campaign's record of them is removed.
+Open the **...** menu and choose **Delete campaign**. Active campaigns cannot be deleted, so pause first. The confirmation shows what will be removed: enrolled prospects, conversation threads, message records, open tasks, and meetings. You have to type **delete** to confirm. Deleting is permanent. Prospects stay on your lists; only this campaign's record of them is removed. A short audit record (the campaign's name, created date and total send and reply counts) is kept so billing still adds up.
+
+<Frame caption="Delete asks you to type delete and lists what will be removed">
+  <img src="/images/cp-delete-dialog.png" alt="Delete asks you to type delete and lists what will be removed" width="1100" height="700" />
+</Frame>
 
 ## If something is off
 

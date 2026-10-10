@@ -29,6 +29,14 @@ You can review and change an account's limits in its settings under **Settings >
 
 Nothing is skipped. When an account reaches a limit, the step waits and sends once the limit resets. A sequence just takes longer to move through when an account is saturated, so add senders or spread prospects over more days if you need more volume.
 
+<Frame caption="Each sender shows what it has sent today against its daily limit">
+  <img src="/images/sa-limits.png" alt="Each sender shows what it has sent today against its daily limit" width="1100" height="640" />
+</Frame>
+
+<Frame caption="Open a sender's settings to change its daily limit and its sending schedule">
+  <img src="/images/sa-configure.png" alt="Open a sender's settings to change its daily limit and its sending schedule" width="760" height="900" />
+</Frame>
+
 ## Send window
 
 Guhan only sends inside each sender account's active hours.
@@ -37,7 +45,11 @@ Guhan only sends inside each sender account's active hours.
 - **Timezone:** the sender account's timezone, set when you connect it. It is the sender's working hours that count, not the prospect's local time.
 - **Outside the window:** the step waits and sends when the window next opens.
 
-Change an account's hours, days, and timezone in **Settings > Sender accounts**. The new settings apply to the next send.
+Change an account's hours, days, and timezone in **Settings > Sender accounts**. The new settings apply to the next send. The defaults for accounts you connect later are under **Workspace settings > Sending rules**; each account's own schedule wins once it is set.
+
+<Frame caption="Sending rules: working hours and days per channel. These are defaults for new accounts; each account's own schedule wins">
+  <img src="/images/se-sending-hours.png" alt="Sending rules: working hours and days per channel. These are defaults for new accounts; each account's own schedule wins" width="1280" height="800" />
+</Frame>
 
 ## Pacing
 
@@ -47,7 +59,7 @@ If LinkedIn refuses an invite because the prospect was invited recently, Guhan p
 
 ## Prospect-finding limits and warm-up
 
-The **pacing setting** (Conservative, Balanced, Aggressive) and the **30-day warm-up** on new LinkedIn accounts control how much prospect-finding activity Guhan runs from an account, such as profile lookups and searches. They do not set a ramp for invites, DMs, or emails: those use the limits in the table above from the start. Start new accounts gently anyway, and watch the account's health after connecting.
+The **30-day warm-up** on new LinkedIn accounts controls how much prospect-finding activity Guhan runs from an account, such as profile lookups and searches. They do not set a ramp for invites, DMs, or emails: those use the limits in the table above from the start. Start new accounts gently anyway, and watch the account's health after connecting.
 
 ## Pending invites are cleaned up
 

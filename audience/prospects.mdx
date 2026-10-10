@@ -16,18 +16,34 @@ description: Everyone you have imported or added, with their contact details, a 
   </Card>
 </CardGroup>
 
+<Frame caption="Prospects is in the sidebar. People and Companies are the two tabs, and Create lead and Import leads are at the top right">
+  <img src="/images/pr-page.png" alt="Prospects is in the sidebar. People and Companies are the two tabs, and Create lead and Import leads are at the top right" width="1100" height="700" />
+</Frame>
+
 By default the table shows name, job title, email, phone, LinkedIn URL, company, location, fit and status. Other columns (headline, industry, company details, Lists, Campaigns, dates, whether a prospect is enriched) can be switched on, and any default column hidden, from the column menu.
 
-- **Filter** with rules: job title, company, location, email, phone, LinkedIn URL, status, List, signal source and Campaign. Rules combine with "and".
+<Frame caption="The column menu: switch any column on or off. Fit score and Status are in the Fit & pipeline group">
+  <img src="/images/pr-columns.png" alt="The column menu: switch any column on or off. Fit score and Status are in the Fit & pipeline group" width="1100" height="880" />
+</Frame>
+
+- **Filter** with rules: name, job title, company, location, email, phone, LinkedIn URL, status, List, signal source and Campaign. Rules combine with "and".
+
+<Frame caption="Filter: pick a field, an operator and a value. Include pipeline-rejected is at the end of the field list">
+  <img src="/images/pr-filter.png" alt="Filter: pick a field, an operator and a value. Include pipeline-rejected is at the end of the field list" width="1100" height="820" />
+</Frame>
+
 - **Edit in place**: click a cell to edit name, title, company, location, email or phone. Editing a company detail such as industry or size changes it for the company record, and so for every prospect there.
 - **Select people**: tick rows, or tick the box in the column header to select the whole page. When more people match your filters than fit on a page, a bar appears: **Select all N matching your filters**. That selects everyone who matches, across pages, up to 10,000. Changing a filter clears the selection. **Enrich** works on the people ticked on the current page; **Add to list** and **Export** also work on a select-all.
-- **Add to list**: with people selected, choose **Add to list** to put them in another List, for example to start a new Campaign with a filtered group. Pick a List that is not fed by a search or signal, or create a new one. Anyone already in that List is skipped. See [Add people to a List](#add-people-to-a-list).
-- **Export CSV**: exports the filtered view, or only the rows you selected. Up to 10,000 prospects per export; narrow your filters if you have more.
-- **Rejected people**: by default the table shows people who were added to your Lists. Add the **Include pipeline-rejected** filter to see people Guhan found but filtered out. See [How prospects get added](/audience/lists/how-prospects-get-added#why-someone-was-not-added).
 
-<Frame caption="Prospects, People tab: search, the column picker, and the table with fit and status">
-  <img src="/images/prospects-people-tab.png" alt="Prospects, People tab: search, the column picker, and the table with fit and status" width="1440" height="1000" />
+<Frame caption="Tick the header box to select the page. Select all 75 matching your filters appears above the table, and the bar at the bottom has Enrich, Export, Add to list and Cancel">
+  <img src="/images/pr-select-all.png" alt="Tick the header box to select the page. Select all 75 matching your filters appears above the table, and the bar at the bottom has Enrich, Export, Add to list and Cancel" width="1100" height="760" />
 </Frame>
+
+- **Add to list**: with people selected, choose **Add to list** to put them in another List, for example to start a new Campaign with a filtered group. Pick a List that is not fed by a search or signal, or create a new one. Anyone already in that List is skipped. See [Add people to a List](#add-people-to-a-list).
+
+- **Export CSV**: exports the filtered view, or only the rows you selected. Up to 10,000 prospects per export; narrow your filters if you have more.
+
+- **Rejected people**: by default the table shows people who were added to your Lists. Add the **Include pipeline-rejected** filter to see people Guhan found but filtered out. See [How prospects get added](/audience/lists/how-prospects-get-added#why-someone-was-not-added).
 
 ### Add people to a List
 
@@ -36,9 +52,14 @@ Filter the table to the group you want, select them, and click **Add to list**.
 <Steps>
   <Step title="Select people">
     Tick rows, or select the whole page and then **Select all N matching your filters**.
+
   </Step>
   <Step title="Choose the List">
     Pick an existing List, or **Create new list**. Lists that are fed by a search or signal are greyed out, because Guhan fills those itself.
+
+    <Frame caption="Pick a List or create a new one. Lists fed by a search or signal are greyed out">
+      <img src="/images/pr-add-to-list.png" alt="Pick a List or create a new one. Lists fed by a search or signal are greyed out" width="900" height="640" />
+    </Frame>
   </Step>
   <Step title="Confirm">
     Guhan tells you how many were added and how many were already in the List. Their fit rating and research come with them, so nothing is rewritten or charged again.
@@ -52,13 +73,6 @@ Filter the table to the group you want, select them, and click **Add to list**.
 Adding more than 500 people runs in the background. A progress banner appears on the List's page.
 
 Adding people counts toward your [active-prospect limit](/audience/lists#limits-on-a-list). If you are near the limit, only the people who fit are added and Guhan tells you how many were left out.
-
-<Frame caption="Add to list: pick a list or create a new one; lists fed by a search or signal are greyed out">
-  <img src="/images/add-to-list-dialog.png" alt="Add to list: pick a list or create a new one; lists fed by a search or signal are greyed out" width="1440" height="900" />
-</Frame>
-<Frame caption="With a page selected, &quot;Select all 75 matching your filters&quot; appears and Add to list is in the bottom bar">
-  <img src="/images/select-all-matching-bar.png" alt="With a page selected, &quot;Select all 75 matching your filters&quot; appears and Add to list is in the bottom bar" width="1440" height="900" />
-</Frame>
 
 ### Status
 
@@ -77,18 +91,41 @@ Adding people counts toward your [active-prospect limit](/audience/lists#limits-
 Click a name to open the prospect in a side panel, or expand it to a full page. Tabs:
 
 - **Details**: editable fields, with an **Enrich** button that refreshes their LinkedIn profile.
+
+<Frame caption="The Details tab: editable fields, and an Enrich button">
+  <img src="/images/pr-panel-details.png" alt="The Details tab: editable fields, and an Enrich button" width="1000" height="900" />
+</Frame>
+
 - **Overview**: contact channels, company, **Signals: why we matched**, List memberships, and role and experience.
+
+<Frame caption="The Overview tab: contact, company, signals, Lists, and role and experience">
+  <img src="/images/pr-panel-overview.png" alt="The Overview tab: contact, company, signals, Lists, and role and experience" width="1000" height="1300" />
+</Frame>
+
 - **Research**: the research brief, fit rating and per-Product ratings. See [How prospects get added](/audience/lists/how-prospects-get-added#the-fit-rating).
+
+<Frame caption="The Research tab: the research brief and a fit rating for each product">
+  <img src="/images/pr-panel-research.png" alt="The Research tab: the research brief and a fit rating for each product" width="1000" height="900" />
+</Frame>
+
 - **Activity**: every message, reply and event for this person.
+
+<Frame caption="The Activity tab: enrollments and every message and event for this person">
+  <img src="/images/pr-panel-activity.png" alt="The Activity tab: enrollments and every message and event for this person" width="1000" height="900" />
+</Frame>
 
 ## Contact details and reveal
 
 LinkedIn is the main channel. Email and phone are not included by default.
 
-- **Reveal work email**: 4 credits.
-- **Reveal phone number**: 12 credits. Phone is needed for WhatsApp.
+- **Find email**: 4 credits.
+- **Find phone**: 12 credits. Phone is needed for WhatsApp.
 
 You are only charged when a result is actually found. Reveal needs the prospect's LinkedIn URL. You can reveal one prospect from their page, or many at once; see [Enrichment](/audience/enrichment#reveal-email-and-phone).
+
+<Frame caption="Find email (4 credits) and Find phone (12 credits) sit under the prospect's name">
+  <img src="/images/pr-reveal.png" alt="Find email (4 credits) and Find phone (12 credits) sit under the prospect's name" width="1000" height="560" />
+</Frame>
 
 ## Removing a prospect
 
@@ -103,6 +140,10 @@ Other actions in the **...** menu: **Pause enrollments** and **Flag for handoff*
 <Note>
   To permanently delete a person's data (for example, a privacy request), contact support. Ask Guhan cannot delete records either.
 </Note>
+
+<Frame caption="On the full prospect page, the ... menu has Pause enrollments, Flag for handoff and Remove from outreach">
+  <img src="/images/pr-full-menu.png" alt="On the full prospect page, the ... menu has Pause enrollments, Flag for handoff and Remove from outreach" width="1100" height="760" />
+</Frame>
 
 ## If something looks off
 

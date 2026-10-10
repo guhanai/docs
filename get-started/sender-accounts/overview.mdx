@@ -15,7 +15,7 @@ Guhan never sends from a Guhan address. The prospect sees you. You connect an ac
 
 <CardGroup cols={3}>
   <Card title="LinkedIn" icon="linkedin" href="/get-started/sender-accounts/connect-linkedin">
-    Invites, messages, comments, reactions, and profile views.
+    Invites, messages, comments, reactions, and profile views. Sign in with email and password, or with a session cookie.
   </Card>
   <Card title="Email" icon="envelope" href="/get-started/sender-accounts/connect-email">
     Gmail or Outlook. Sends email and brings replies back.
@@ -33,21 +33,29 @@ The Connect dialog shows where you stand, for example "1 of 2 senders used". If 
 
 A sender counts against the limit once it is connected, including when it needs reconnecting. A connection that never finishes does not count.
 
+<Frame caption="Add sender shows how many of your senders are used, here 2 of 3 with 3 licenses">
+  <img src="/images/sa-dialog-usage.png" alt="Add sender shows how many of your senders are used, here 2 of 3 with 3 licenses" width="800" height="580" />
+</Frame>
+
 ## Connect one
 
 Settings, Sender accounts, then **Add sender**. You can also connect from your own profile under Sender accounts. Pick a channel and Guhan opens the provider's own sign-in page in a new tab (or a QR code for WhatsApp). Guhan never sees your password.
 
 Workspace admins can connect a sender on behalf of a teammate and choose the owner.
 
-<Frame caption="Connect a sender account: choose LinkedIn, Email or WhatsApp">
-  <img src="/images/sender-connect-dialog.png" alt="Connect a sender account: choose LinkedIn, Email or WhatsApp" width="1440" height="900" />
+<Frame caption="Open Workspace settings from the sidebar, then Sender accounts. Add sender is at the top right">
+  <img src="/images/sa-page.png" alt="Open Workspace settings from the sidebar, then Sender accounts. Add sender is at the top right" width="1100" height="640" />
+</Frame>
+
+<Frame caption="Add sender: choose LinkedIn, Email (Gmail or Outlook) or WhatsApp, then Continue authentication">
+  <img src="/images/sa-dialog-providers.png" alt="Add sender: choose LinkedIn, Email (Gmail or Outlook) or WhatsApp, then Continue authentication" width="800" height="580" />
 </Frame>
 
 ## Sender status
 
 | Badge | What it means | What to do |
 |---|---|---|
-| **Active** | Connected and sending normally. | Nothing. |
+| *No badge* | Connected and sending normally. | Nothing. |
 | **Connecting** | Sign-in is in progress. | Finish the sign-in in the other tab. |
 | **Re-authorize** | The provider needs you to sign in again, for example after a password change. | Open the account's menu and choose **Re-authorize**. |
 | **Reconnect needed** | The account was disconnected or removed on the provider's side while campaigns still depend on it. | Open the account and choose **Reconnect**. |
@@ -63,6 +71,14 @@ Every sender has daily and weekly limits and a sending window. Guhan checks them
 
 To change a sender's limits or its sending schedule, open the account's settings from Settings, Sender accounts.
 
+<Frame caption="Each sender shows what it has sent today against its daily limit">
+  <img src="/images/sa-limits.png" alt="Each sender shows what it has sent today against its daily limit" width="1100" height="640" />
+</Frame>
+
+<Frame caption="A sender's settings: the daily limit and the sending schedule">
+  <img src="/images/sa-configure.png" alt="A sender's settings: the daily limit and the sending schedule" width="760" height="900" />
+</Frame>
+
 ## Several senders in one campaign
 
 A campaign can use more than one sender per channel. Guhan spreads the work across them, and once a prospect has been contacted from a sender, later steps for that prospect keep using the same sender. Pick senders on the campaign's start step. See [Build a campaign](/campaigns/build-a-campaign).
@@ -70,6 +86,10 @@ A campaign can use more than one sender per channel. Guhan spreads the work acro
 ## Disconnecting
 
 Use the account's menu, **Disconnect**. If active campaigns still use the sender, it is marked **Reconnect needed** instead of being removed, so those campaigns keep their place and you can reconnect or swap in another sender. Past conversations stay in your Inbox.
+
+<Frame caption="A sender's menu: Configure or Disconnect">
+  <img src="/images/sa-menu.png" alt="A sender's menu: Configure or Disconnect" width="1100" height="640" />
+</Frame>
 
 ## If something's off
 
