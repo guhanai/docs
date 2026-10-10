@@ -12,8 +12,8 @@ Open **Prospects** in the sidebar. On the **People** tab, the top right has two 
 - **Import leads**: find people with a search or a signal, or upload a CSV.
 - **Create lead**: add one person by hand. See [Add one person](#add-manually).
 
-<Frame caption="Create lead and Import leads, at the top right of Prospects">
-  <img src="/images/prospects-top-right-buttons.png" alt="Create lead and Import leads, at the top right of Prospects" width="1216" height="76" />
+<Frame caption="Prospects is in the sidebar. Import leads and Create lead are at the top right">
+  <img src="/images/pr-page.png" alt="Prospects is in the sidebar. Import leads and Create lead are at the top right" width="1100" height="700" />
 </Frame>
 
 ## Start with Import leads
@@ -28,23 +28,32 @@ Click **Import leads**. Pick where the leads come from:
 
 Each option opens a two-step form. Step 1 sets up the source (who fits, the signal, or the file). Step 2 is the destination: which List, its schedule, and the enrichment options.
 
+<Frame caption="Import leads: From People Search, From Signals (opened here to show all nine signals) or Upload CSV">
+  <img src="/images/il-picker-expanded.png" alt="Import leads: From People Search, From Signals (opened here to show all nine signals) or Upload CSV" width="900" height="1250" />
+</Frame>
+
 <Steps>
   <Step title="Set up the source">
     Fill in who fits, configure the signal, or upload and map your CSV.
+
   </Step>
   <Step title="Choose the List">
     Pick an existing List or choose **Create new list**. Lists that already have a search or signal source are greyed out ("already has a source"), so a List stays tied to one search or signal. Lists that only hold CSV uploads or hand-added people can still be picked.
+
+    <Frame caption="Step 2: choose the List. Lists that already have a search or signal are greyed out">
+      <img src="/images/il-destination.png" alt="Step 2: choose the List. Lists that already have a search or signal are greyed out" width="1000" height="1000" />
+    </Frame>
   </Step>
   <Step title="Set the schedule and enrichment">
     Choose [Ongoing or One-time](#ongoing-or-one-time) and review the enrichment options. Then click **Import leads**.
 
     If an active Campaign uses the List you picked, the dialog tells you: new prospects are enrolled in that Campaign automatically.
+
+    <Frame caption="Step 2: the schedule (One-time here) and the enrichment options, each with its credit cost">
+      <img src="/images/il-schedule-enrichment.png" alt="Step 2: the schedule (One-time here) and the enrichment options, each with its credit cost" width="1000" height="1300" />
+    </Frame>
   </Step>
 </Steps>
-
-<Frame caption="Import leads: from People Search, from Signals, or Upload CSV">
-  <img src="/images/import-leads-picker.png" alt="Import leads: from People Search, from Signals, or Upload CSV" width="1440" height="900" />
-</Frame>
 
 ## People search
 
@@ -56,6 +65,9 @@ Describe your ideal customer under **Who fits**. Each rule you add is a must-mat
   </Accordion>
   <Accordion title="Seniority">
     Individual Contributor, Manager, Director, VP or C-level.
+  </Accordion>
+  <Accordion title="Time at current company and time in current role">
+    Two separate rules, each a single dropdown. Time at current company: Recently joined, Less than 1 year, 1–2 years, 2–5 years, 5–10 years or 10+ years. Time in current role: Less than 3 months, 3–6 months, 6–12 months, 1–2 years, 2–5 years or 5+ years. Use them to find people who have just started somewhere new.
   </Accordion>
   <Accordion title="Location">
     Where the person is based. Cities, states, countries and regions are all accepted, and Guhan matches at the level you pick. A city does not widen to its whole country.
@@ -72,6 +84,10 @@ Describe your ideal customer under **Who fits**. Each rule you add is a must-mat
   Every rule you fill in is required. If a List is coming back empty or full of the wrong people, loosen or tighten the rules. See [Reviewing prospects](/audience/lists/review-prospects).
 </Tip>
 
+<Frame caption="People Search, step 1: a job title entered. Suggest variants offers other wordings, and Add rule lists the other fields you can match on">
+  <img src="/images/il-search-1.png" alt="People Search, step 1: a job title entered. Suggest variants offers other wordings, and Add rule lists the other fields you can match on" width="1000" height="800" />
+</Frame>
+
 ## Buying signals
 
 Pick **From Signals**, choose one signal, and configure it. A source runs one signal. Some signals find people directly (a post author or commenter); others find companies first and then look for people at them using your **Who fits** rules.
@@ -80,7 +96,13 @@ Pick **From Signals**, choose one signal, and configure it. A source runs one si
   All nine signals, what each one is configured with, and what it costs.
 </Card>
 
+<Frame caption="A signal source, here Hiring growth: configure it, then add the same Who fits rules">
+  <img src="/images/sg-hiring-growth.png" alt="A signal source, here Hiring growth: configure it, then add the same Who fits rules" width="1000" height="800" />
+</Frame>
+
 ## CSV upload
+
+A CSV can have up to 500 rows.
 
 Upload a CSV from **Import leads → Upload CSV**. Your column names do not need to match anything: Guhan guesses the mapping, shows a three-row preview, and lets you change any column.
 
@@ -99,11 +121,19 @@ After upload, the enrichment options in step 2 decide what Guhan fills in (profi
 
 CSV rows do not use credits for finding prospects, but they do count toward your [active-prospect limit](/audience/lists#limits-on-a-list). If an upload would go over, the rows that fit are imported and the rest are skipped with a message.
 
+<Frame caption="Guhan guesses the column mapping and shows a three-row preview. Change any column">
+  <img src="/images/il-csv-map.png" alt="Guhan guesses the column mapping and shows a three-row preview. Change any column" width="1000" height="1000" />
+</Frame>
+
 ## Add manually
 
 On the **Prospects** page, click **Create lead**. You enter the person's name, at least one of email, phone or LinkedIn URL, their role and their company. You can also choose a List; if you leave it empty the person is saved to your workspace without being in a List. The same active-prospect limit applies.
 
 Use it for warm leads, referrals, or adding yourself to test a Campaign before launch.
+
+<Frame caption="Create lead: first and last name, then at least one of email, phone or LinkedIn URL. Role and company are further down">
+  <img src="/images/il-create-lead.png" alt="Create lead: first and last name, then at least one of email, phone or LinkedIn URL. Role and company are further down" width="1000" height="1000" />
+</Frame>
 
 ## Shortcuts inside a List
 
@@ -113,6 +143,10 @@ You don't have to leave a List to add to it. Open the List from **Lists** in the
 - On a List that has no search or signal yet, the **Sources** tab shows **Add source**. It opens the same Import leads dialog, already pointed at that List.
 
 These are shortcuts to the same forms. The Prospects page is the one place that offers everything, and it is the only place to start a search or signal that creates a new List.
+
+<Frame caption="Inside a List, Import offers Import CSV and Add manually">
+  <img src="/images/ls-import-menu.png" alt="Inside a List, Import offers Import CSV and Add manually" width="1100" height="700" />
+</Frame>
 
 ## Ongoing or one-time
 
@@ -134,6 +168,10 @@ You can switch a source between Ongoing and One-time later from **Edit** on the 
 <Warning>
   Limits cap how many people are added, not what each one costs. You are charged for every profile a run finds, including ones your filters later reject. See [How prospects get added](/audience/lists/how-prospects-get-added#what-you-pay-for).
 </Warning>
+
+<Frame caption="Ongoing keeps looking and adds new matches. Set daily, weekly and monthly limits">
+  <img src="/images/il-ongoing.png" alt="Ongoing keeps looking and adds new matches. Set daily, weekly and monthly limits" width="1000" height="1300" />
+</Frame>
 
 ## Related
 

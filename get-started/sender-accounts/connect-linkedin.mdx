@@ -15,20 +15,77 @@ description: Connect your LinkedIn account so Guhan can send invites, messages, 
   <Step title="Open Sender accounts">
     Settings, Sender accounts. You can also connect from your profile under Sender accounts, or from the connect prompt when you set up a campaign's senders.
   </Step>
-  <Step title="Click Connect and pick LinkedIn">
+  <Step title="Click Add sender and pick LinkedIn">
     The dialog shows how many senders you have used out of your limit. If you are an admin with teammates, you can also choose who the sender is for.
+
+    <Frame caption="Add sender with LinkedIn selected. Click Continue authentication">
+      <img src="/images/sa-dialog-linkedin.png" alt="Add sender with LinkedIn selected. Click Continue authentication" width="800" height="580" />
+    </Frame>
   </Step>
   <Step title="Sign in on LinkedIn">
-    Click **Continue authentication**. LinkedIn's sign-in opens in a new tab. Guhan never sees your password.
+    Click **Continue authentication**. LinkedIn's sign-in opens in a new tab, with two ways to sign in: your **email and password**, or a **session cookie**. Choose one, as described below. Guhan never sees your password.
   </Step>
   <Step title="Return to Guhan">
-    Guhan finishes setup in a moment. The sender appears with an **Active** badge.
+    Guhan finishes setup in a moment. The sender appears in the list. A healthy sender shows no warning badge.
   </Step>
 </Steps>
 
-<Frame caption="Connect a sender account, with LinkedIn selected">
-  <img src="/images/connect-linkedin-dialog.png" alt="Connect a sender account, with LinkedIn selected" width="1440" height="900" />
+## Two ways to sign in
+
+At the top of the sign-in page, pick a method: **Credentials** or **Cookies**.
+
+### Method 1: email and password
+
+Open the **Credentials** tab, enter the email and password you use for LinkedIn, and click **Login**. This is the simplest way. If it does not work for you, use a session cookie instead.
+
+<Frame caption="The Credentials tab: enter your LinkedIn email and password, then click Login">
+  <img src="/images/linkedin-signin-default.png" alt="The Credentials tab: enter your LinkedIn email and password, then click Login" width="512" height="578" />
 </Frame>
+
+### Method 2: session cookie
+
+A session cookie is a small value that LinkedIn keeps in your browser while you are signed in. Copy one value from your browser, called **li_at**, and paste it into the **Cookies** tab. You do not need your password.
+
+<Frame caption="The Cookies tab: paste your li_at value. The li_a field is optional, for Recruiter and Sales Navigator accounts">
+  <img src="/images/linkedin-signin-using-cookie.png" alt="The Cookies tab: paste your li_at value. The li_a field is optional, for Recruiter and Sales Navigator accounts" width="512" height="585" />
+</Frame>
+
+<Warning>
+  Treat the cookie like a password. Paste it only into this sign-in page and never share it. Signing out of LinkedIn ends that session, and the cookie stops working.
+</Warning>
+
+Your cookie has to be collected in the same browser as the sign-in page. Finding it is not possible on a phone or tablet app, so use a computer.
+
+#### How to find your li_at cookie
+
+This is what the **How to find them?** link on the sign-in page explains.
+
+<Steps>
+  <Step title="Open LinkedIn">
+    Open [linkedin.com](https://www.linkedin.com) in a new tab of the same browser.
+  </Step>
+  <Step title="Log in">
+    Log in to the LinkedIn account you want to connect.
+  </Step>
+  <Step title="Open your browser's developer tools">
+    Press **F12** in Chrome, Edge or Firefox, or **Option + Command + I** in Safari. Then open the **Application** tab (Chrome and Edge) or the **Storage** tab (Firefox and Safari).
+  </Step>
+  <Step title="Open the LinkedIn cookies">
+    In the left list, open **Cookies** and click **https://www.linkedin.com**.
+  </Step>
+  <Step title="Copy the li_at value">
+    Find the row named **li_at**. Typing `li_at` in the filter box finds it quickly. Click the row and copy the **Cookie Value**.
+
+    <Frame caption="In your browser's developer tools, open Cookies, then https://www.linkedin.com, and copy the Cookie Value of the li_at row">
+      <img src="/images/linkedin-session-cookie.png" alt="In your browser's developer tools, open Cookies, then https://www.linkedin.com, and copy the Cookie Value of the li_at row" width="1063" height="916" />
+    </Frame>
+  </Step>
+  <Step title="Paste it and log in">
+    Go back to the sign-in tab, paste the value into **Enter your li_at value**, and click **Login**.
+  </Step>
+</Steps>
+
+If your account has a Recruiter or Sales Navigator subscription, also copy the **li_a** cookie the same way and paste it into the optional **li_a** field.
 
 ## Sending limits and windows
 
@@ -49,7 +106,7 @@ You can connect more than one, up to your sender limit (see [Sender accounts](/g
     Your browser may have blocked the pop-up. Allow pop-ups for Guhan and click **Continue authentication** again.
   </Accordion>
   <Accordion title="LinkedIn refused the sign-in">
-    Try a private window or a different browser, and make sure you are signing into the account you meant to connect.
+    Try the other sign-in method (Credentials or Cookies), a private window, or a different browser, and make sure you are signing into the account you meant to connect. If a cookie is refused, log in to LinkedIn again and copy a fresh **li_at** in the same browser.
   </Accordion>
   <Accordion title="It says the account is already connected">
     Someone in your organization already connected this LinkedIn account. Ask them, or an admin, to reassign or disconnect it first.

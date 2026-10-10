@@ -34,7 +34,17 @@ Already have the people in Guhan? Filter the table on the **Prospects** page, se
 
 **New list** on the Lists page creates an empty List with just a name. Fill it afterwards with Import leads, or with the shortcuts on the List's own page ([details](/audience/import-leads#shortcuts-inside-a-list)).
 
-A List can be fed by one search or signal, plus any CSV uploads or manual adds you do on top. To run a different search, create another List, or use **Clone** on the Lists page to duplicate a List and its settings.
+A List can be fed by one search or signal, plus any CSV uploads or manual adds you do on top. To run a different search, create another List, or use **Clone list** from a row's menu on the Lists page to duplicate a List and its settings.
+
+On the Lists page, **Source** shows what feeds each List: the signal's name, **Search only** for a people search with no signal, or **CSV upload**, **Manual** or **Copied from list**. **Status** is **Active** while a source is running, **Paused** when it is paused, and **Draft** for a List that has no search or signal yet.
+
+<Frame caption="The Lists page: each List with its source, status and number of prospects. New list is at the top right">
+  <img src="/images/ls-index.png" alt="The Lists page: each List with its source, status and number of prospects. New list is at the top right" width="1280" height="720" />
+</Frame>
+
+<Frame caption="New list asks only for a name. The new List starts empty">
+  <img src="/images/ls-new.png" alt="New list asks only for a name. The new List starts empty" width="1280" height="720" />
+</Frame>
 
 ## What happens after people are found
 
@@ -48,10 +58,10 @@ Open a List from **Lists** in the sidebar. It has three tabs:
 - **Sources**: the search or signal feeding the List, whether it is on, and its watch activity (found, added, rejected).
 - **History**: a log of edits made to the source.
 
-Above the tabs you will find the **Pause** (or **Resume**) button for the source, **Edit**, **Import** (CSV or add manually), **Enrich** ([enrich the whole List](/audience/enrichment#enrich-a-whole-list)) and a menu with **Delete list**.
+On the same row as the tabs you will find the **One-time** or **Ongoing** badge, the List's status, the **Pause** (or **Resume**) button for the source, **Edit**, **Import** (CSV or add manually), **Enrich** ([enrich the whole List](/audience/enrichment#enrich-a-whole-list)) and a menu with **Delete list**.
 
-<Frame caption="A list's page: Prospects, Sources and History tabs, with Edit, Import and Enrich">
-  <img src="/images/list-detail-header.png" alt="A list's page: Prospects, Sources and History tabs, with Edit, Import and Enrich" width="1440" height="1000" />
+<Frame caption="A List's page: the Prospects, Sources and History tabs, the One-time or Ongoing badge and status, and the Pause, Edit, Import and Enrich buttons and menu">
+  <img src="/images/ls-header.png" alt="A List's page: the Prospects, Sources and History tabs, the One-time or Ongoing badge and status, and the Pause, Edit, Import and Enrich buttons and menu" width="1280" height="720" />
 </Frame>
 
 ## Ongoing or one-time
@@ -71,7 +81,11 @@ Details are in [Import leads](/audience/import-leads#ongoing-or-one-time).
 ## Removing prospects and deleting a List
 
 - **Remove a prospect** from outreach from the List page (row menu, or select several) or from the prospect's page. They stay in your workspace, but their status becomes unsubscribed and any active sequence for them stops. See [Prospects](/audience/prospects#removing-a-prospect).
-- **Delete a List** from the List page menu or the Lists table. This permanently removes the List, every prospect membership in it, and the source that fills it. The people themselves, and their membership in other Lists, are untouched. Deleting is blocked while a Campaign uses the List as its audience, so remove it from the Campaign first.
+- **Delete a List** from the List page menu or the Lists table (the menu on each row). This permanently removes the List, every prospect membership in it, and the source that fills it. The people themselves, and their membership in other Lists, are untouched. Deleting is blocked while a Campaign uses the List as its audience, so remove it from the Campaign first.
+
+<Frame caption="Each row's menu on the Lists page: Edit list, Clone list and Delete list">
+  <img src="/images/ls-row-menu.png" alt="Each row's menu on the Lists page: Edit list, Clone list and Delete list" width="1280" height="720" />
+</Frame>
 
 ## Related
 
