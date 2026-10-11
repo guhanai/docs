@@ -23,7 +23,6 @@
               "introduction",
               "get-started/how-guhan-works",
               "quickstart",
-              "get-started/chrome-extension",
               {
                 "group": "Sender accounts",
                 "pages": [
@@ -100,6 +99,32 @@
               "help/troubleshooting",
               "help/keyboard-shortcuts",
               "help/glossary"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Chrome extension",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": [
+              "chrome-extension/overview",
+              "chrome-extension/get-started"
+            ]
+          },
+          {
+            "group": "Using the extension",
+            "pages": [
+              "chrome-extension/profiles",
+              "chrome-extension/searches-and-imports",
+              "chrome-extension/other-pages"
+            ]
+          },
+          {
+            "group": "Help",
+            "pages": [
+              "chrome-extension/safety-and-troubleshooting"
             ]
           }
         ]
