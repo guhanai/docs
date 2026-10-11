@@ -23,6 +23,7 @@
               "introduction",
               "get-started/how-guhan-works",
               "quickstart",
+              "get-started/chrome-extension",
               {
                 "group": "Sender accounts",
                 "pages": [

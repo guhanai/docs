@@ -12,7 +12,7 @@ introduction.mdx                Landing page
 quickstart.mdx                  First-run setup
 ask-guhan.mdx                   Ask Guhan chat
 
-get-started/                    How Guhan works + sender accounts (LinkedIn / Email / WhatsApp)
+get-started/                    How Guhan works + sender accounts (LinkedIn / Email / WhatsApp) + the Chrome extension
 brand-and-voice/                Brand + Voice, Templates, Products
 audience/                       Lists, signals, how prospects land, review, Prospects, Companies, enrichment
 campaigns/                      Overview, build a campaign, personalization, launch and manage, sending safety
@@ -42,6 +42,7 @@ The app repo is the source of truth, in this order: code under `src/`, then `doc
 | User docs area | Feature docs (app repo `docs/features/`) |
 |---|---|
 | get-started, sender accounts | `sender-accounts.md`, `onboarding-wizard.md`, `rate-limits.md` |
+| get-started/chrome-extension | `chrome-extension.md` |
 | brand-and-voice | `brand-voice.md`, `message-templates.md`, `products.md` |
 | audience | `lists.md`, `lists-signal-sources.md`, `prospects.md`, `companies.md`, `pipeline.md`, `enrichment-jobs.md`, `enrichment-policy.md`, `technographs.md` |
 | campaigns | `campaigns.md`, `guided-view.md`, `rate-limits.md`, `safety-layer.md` |
