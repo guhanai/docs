@@ -1,6 +1,6 @@
 ---
 title: Safety and troubleshooting
-description: What the Guhan Chrome extension never does on LinkedIn, how credits are shown, and what to do when something looks off.
+description: What the Guhan Chrome extension never does on LinkedIn, what it changes on the page, how credits are shown, and what to do when something looks off.
 ---
 
 ## What the extension doesn't do
@@ -9,18 +9,26 @@ description: What the Guhan Chrome extension never does on LinkedIn, how credits
 - It only reads the page you're on. It never opens other people's profiles to collect details.
 - It doesn't use credits unless you choose to enrich, find an email or phone number, or generate a brief, and the cost is always shown before you confirm. See [Plans and credits](/workspace-settings/plans-and-credits).
 - Adding people to a List is free. Your plan's active-prospect limit still applies.
+- It only scrolls a page when you ask: **Load full details** on a profile, or a bulk import you started.
+
+## What it changes on the LinkedIn page
+
+The drawer, the floating icon, the checkboxes, the bar and the profile button are all Guhan's own and sit apart from LinkedIn's page. The one change to LinkedIn's own layout is some extra space on the left of each result row so the checkbox fits. It is put back as soon as the checkboxes are removed.
 
 ## If something looks off
 
 <AccordionGroup>
-  <Accordion title="The panel says to reload the LinkedIn tab">
+  <Accordion title="I don't see the Guhan icon, checkboxes or button">
+    Reload the LinkedIn tab. A tab that was open before the extension was installed or updated needs one reload. The toolbar icon also opens the drawer.
+  </Accordion>
+  <Accordion title="The drawer says to reload the LinkedIn tab">
     The extension was updated after that tab opened. Reload the LinkedIn tab, then try again.
   </Accordion>
-  <Accordion title="The panel says to open a profile, a search, a company or an event">
-    The extension works on those pages. Other LinkedIn pages, such as your feed or messages, aren't read.
+  <Accordion title="The drawer says &quot;You've left that page&quot;">
+    You moved to a LinkedIn page Guhan doesn't read, such as your feed. The drawer keeps the last page it could work with, and your picks are kept. Open a profile, people search, company or event to carry on.
   </Accordion>
   <Accordion title="Experience and Education aren't showing">
-    LinkedIn only loads them as the page is scrolled. Click **Load full details** in the panel. See [Read the full profile](/chrome-extension/profiles#read-the-full-profile).
+    LinkedIn only loads them as the page is scrolled. Click **Load full details** in the drawer. See [Read the full profile](/chrome-extension/profiles#read-the-full-profile).
   </Accordion>
   <Accordion title="An import stopped partway">
     LinkedIn may have asked you to check something, or the tab was closed. Look at the LinkedIn tab, finish anything it asks for, then start the import again. People already added stay added, and anyone already in the List is skipped.
@@ -29,7 +37,7 @@ description: What the Guhan Chrome extension never does on LinkedIn, how credits
     Lists that are fed by a search or a signal fill themselves, so you can't add to them by hand. Pick or create a List you add to by hand.
   </Accordion>
   <Accordion title="Someone I added shows up twice">
-    People from followers and following lists are matched by their LinkedIn member ID, so someone already in Guhan under only a profile link can be added again. Search **Prospects** for the name and remove the extra one.
+    People from connections, followers and following lists are matched by their LinkedIn member ID, so someone already in Guhan under only a profile link can be added again. Search **Prospects** for the name and remove the extra one.
   </Accordion>
 </AccordionGroup>
 
