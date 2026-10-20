@@ -1,6 +1,6 @@
 ---
 title: Searches and imports
-description: Tick people on a LinkedIn search or on your own connections, followers and following, add them to a Guhan List, or bulk import many at once.
+description: Tick people on a LinkedIn or Sales Navigator search or on your own connections, followers and following, add them to a Guhan List, or bulk import many at once.
 ---
 
 Run any LinkedIn people search, with any filters you like. Guhan adds its own checkboxes and a bar to the results, and the drawer shows each person's status, the same badges described in [On a LinkedIn profile](/chrome-extension/profiles#see-whos-already-in-guhan).
@@ -27,7 +27,7 @@ To add many people at once, press **Bulk import…** in the bar (or in the drawe
 
 - On a search, it shows about how many pages are left and the most people they hold, for example "About 3 pages to go, up to 30 people."
 - On your connections, followers or following, it shows how many people the list has.
-- The most you can import in one go is 999, or the room left in your workspace if that is smaller. Ask for more than exist and it stops early.
+- The most you can import in one go is 999 (2,500 on a Sales Navigator search), or the room left in your workspace if that is smaller. Ask for more than exist and it stops early.
 
 Guhan then goes through the result pages (or scrolls the list) for you, a few seconds apart, the way you'd browse. Keep the LinkedIn tab open while it runs. When LinkedIn shows a person's current title and company in the results, those come along.
 
@@ -42,6 +42,17 @@ A progress card at the top of the drawer shows how many people have been added, 
 <Frame caption="Progress for a running import, with Pause and Stop">
   <img src="/images/ext-progress.webp" alt="A progress card for a running import with Pause and Stop buttons" width="400" height="720" />
 </Frame>
+
+## Sales Navigator
+
+On a Sales Navigator people search you get the same checkboxes, the same Guhan bar and the same bulk import. Sales Navigator shows 25 people a page and at most 100 pages, so one search holds up to 2,500 people, and that is the most one import takes.
+
+- **Pages load as you scroll.** Sales Navigator fills in each page's rows only as the list scrolls. During a bulk import, Guhan scrolls the results for you in small, uneven steps, like a person reading down the page, then moves to the next page. A page takes roughly half a minute.
+- **If a page doesn't finish loading,** the import stops with "Some results on this page didn't load" and keeps everyone already added. Scroll down the results once, then start again.
+- **Matching.** Sales Navigator rows don't carry a profile link, so people are matched by their LinkedIn member ID. Someone who is already in Guhan under only a profile link may be added again.
+- **Only people searches.** Lead pages, account searches and saved lists in Sales Navigator are not read.
+
+You need your own LinkedIn Sales Navigator subscription.
 
 ## Your connections, followers and following
 

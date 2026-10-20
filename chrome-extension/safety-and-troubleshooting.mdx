@@ -13,7 +13,7 @@ description: What the Guhan Chrome extension never does on LinkedIn, what it cha
 
 ## What it changes on the LinkedIn page
 
-The drawer, the floating icon, the checkboxes, the bar and the profile button are all Guhan's own and sit apart from LinkedIn's page. The one change to LinkedIn's own layout is some extra space on the left of each result row so the checkbox fits. It is put back as soon as the checkboxes are removed.
+The drawer, the floating icon, the checkboxes, the bar and the profile button are all Guhan's own and sit apart from LinkedIn's page. The one change to LinkedIn's own layout is some extra space on the left of each result row so the checkbox fits. It is put back as soon as the checkboxes are removed. On a Sales Navigator search it changes nothing: our checkbox sits in the row's own layout.
 
 ## If something looks off
 
@@ -32,6 +32,9 @@ The drawer, the floating icon, the checkboxes, the bar and the profile button ar
   </Accordion>
   <Accordion title="An import stopped partway">
     LinkedIn may have asked you to check something, or the tab was closed. Look at the LinkedIn tab, finish anything it asks for, then start the import again. People already added stay added, and anyone already in the List is skipped.
+  </Accordion>
+  <Accordion title="A Sales Navigator import stopped with &quot;Some results on this page didn't load&quot;">
+    Sales Navigator only fills in a page's rows as the list scrolls, and this page didn't finish. Everyone already added stays added. Scroll down the results once, then start the import again.
   </Accordion>
   <Accordion title="The List I want isn't offered">
     Lists that are fed by a search or a signal fill themselves, so you can't add to them by hand. Pick or create a List you add to by hand.
