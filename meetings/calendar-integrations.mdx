@@ -3,7 +3,7 @@ title: Calendar integrations
 description: Connect Google Calendar, Outlook, Cal.com, or Calendly so Guhan can send booking links and record meetings.
 ---
 
-**Connect the calendar you already use. Google and Outlook ride on your email sender's sign-in. Cal.com and Calendly use your booking link plus a one-time connection.**
+**Connect the calendar you already use. Google and Outlook ride on your email sender's sign-in. Cal.com and Calendly use your booking link plus a one-time token.**
 
 Connect once under Settings, Calendars. Each rep connects their own.
 
@@ -15,10 +15,10 @@ Connect once under Settings, Calendars. Each rep connects their own.
     Uses your connected Outlook sender. Same experience as Google.
   </Card>
   <Card title="Cal.com" icon="calendar">
-    Paste your booking link, then add a one-time connection in Cal.com so Guhan hears about bookings.
+    Paste your booking link and a Cal.com API key. Guhan sets up the booking webhook on your Cal.com account for you.
   </Card>
   <Card title="Calendly" icon="calendar">
-    Same as Cal.com.
+    Paste your event URL and a Calendly Personal Access Token. Guhan sets up the webhook subscription on your Calendly account for you.
   </Card>
 </CardGroup>
 
@@ -57,27 +57,42 @@ After setup, the calendar row has a **Copy public booking link** button for a li
 
 ## Cal.com
 
+Guhan sets up the booking webhook on your Cal.com account for you — you just paste your booking link and an API key.
+
 <Steps>
+  <Step title="Get a Cal.com API key">
+    In Cal.com, go to **Settings → Developer → API keys** and create a new key. Copy it before you leave the page — Cal.com only shows it once.
+  </Step>
   <Step title="Connect in Guhan">
-    Settings, Calendars, connect, **Cal.com**. Paste your booking link (for example `https://cal.com/your-handle/intro30`).
+    Settings, Calendars, **Connect calendar**, pick **Cal.com**. Paste your booking link (for example `https://cal.com/your-handle/intro30`) and the API key you just created.
   </Step>
-  <Step title="Copy the connection URL">
-    Guhan shows you a URL to paste into Cal.com.
-  </Step>
-  <Step title="Add it in Cal.com">
-    In Cal.com, go to Settings, Developer, Webhooks. Create a new webhook, paste the URL, and subscribe to booking created, booking cancelled, and booking rescheduled.
-  </Step>
-  <Step title="Send a test booking">
-    Click **Listen** in Guhan and make one test booking. Guhan confirms it arrived and marks the calendar active.
+  <Step title="Done">
+    Guhan registers the webhook on your Cal.com account automatically and marks the calendar active. Every booking, cancel, and reschedule flows into Guhan from this point on.
   </Step>
 </Steps>
 
 ## Calendly
 
-The same four steps. In Calendly, go to Integrations, Webhook subscriptions, create a new webhook, paste the URL, and subscribe to invitee created and invitee canceled.
+Guhan sets up the webhook subscription on your Calendly account for you — you just paste your event URL and a Personal Access Token.
+
+<Steps>
+  <Step title="Get a Calendly Personal Access Token">
+    In Calendly, go to **Integrations & apps → API & webhooks** and create a Personal Access Token. Copy it before you leave the page — Calendly only shows it once.
+
+    <Note>
+      Creating a webhook subscription needs a paid Calendly plan (Standard, Teams, Enterprise, or Professional / Standard Plus / Teams Plus). If you're on Free, Guhan will say so and point you to upgrade in Calendly.
+    </Note>
+  </Step>
+  <Step title="Connect in Guhan">
+    Settings, Calendars, **Connect calendar**, pick **Calendly**. Paste your event URL (for example `https://calendly.com/your-handle/30min`) and the token you just created.
+  </Step>
+  <Step title="Done">
+    Guhan registers the webhook subscription on your Calendly account automatically and marks the calendar active. Every new and canceled booking flows into Guhan from this point on.
+  </Step>
+</Steps>
 
 <Note>
-  Guhan adds a hidden tracking tag to your Cal.com or Calendly link so it can match each booking to the prospect it was sent to. Slots, meeting length, questions, and video links stay under your control in that tool.
+  Guhan stores your Cal.com API key and Calendly Personal Access Token encrypted at rest and only uses them to manage the booking webhook on your account. The booking link itself is appended with a hidden tracking tag so Guhan can match each booking to the prospect it was sent to. Slots, meeting length, questions, and video links stay under your control in that tool.
 </Note>
 
 ## Which one should I use?
@@ -111,8 +126,14 @@ To remove a calendar, use the disconnect button on its row. Meetings already boo
   <Accordion title="Calendar permission missing">
     The calendar boxes were not approved during sign-in. Reconnect and approve every permission.
   </Accordion>
-  <Accordion title="Test booking never arrives (Cal.com or Calendly)">
-    Check that the connection URL was pasted exactly, and that the booking events listed above are selected.
+  <Accordion title="Cal.com or Calendly connect says the token didn't work">
+    Create a new one and paste it in. Cal.com API keys live under **Settings → Developer → API keys**. Calendly tokens live under **Integrations & apps → API & webhooks**. Both only display the token once at creation, so start fresh if you lost yours.
+  </Accordion>
+  <Accordion title="Calendly connect says I need a paid plan">
+    Calendly only lets paid plans create webhook subscriptions. Upgrade to Standard, Teams, or Enterprise (Professional, Standard Plus, and Teams Plus also work), then try again.
+  </Accordion>
+  <Accordion title="Bookings aren't flowing into Guhan">
+    Open Settings, Calendars, and check that the row is **Active**. If it says Disconnected, reconnect it with a fresh token.
   </Accordion>
 </AccordionGroup>
 
